@@ -1,0 +1,56 @@
+---
+title: "Concevoir une politique d'authentification"
+subtitle: "10 minutes en groupe, puis 5 à 10 minutes de discussion"
+categories: ["Étude de cas"]
+---
+
+Cet exercice met en pratique le chapitre [L'authentification](../cours/05-authentification.qmd).
+
+## La situation
+
+La caisse de pension de Marie :
+
+- 180 collaborateurs.
+- Un logiciel métier installé sur site, une messagerie dans le cloud.
+- Un portail pour les assurés, accessible depuis Internet.
+- Six prestataires informatiques externes avec des accès administrateur.
+
+Quatre populations : **collaborateurs, administrateurs, prestataires externes, assurés**.
+
+## Votre mission
+
+::: {.question}
+**1.** Pour chaque population, quel moyen d'authentification imposez-vous ? Pour chaque moyen
+écarté, citez l'attaque concrète qui le justifie.
+:::
+
+::: {.question}
+**2.** Un utilisateur perd son téléphone ou sa clé : comment récupère-t-il son accès, sans que
+cette procédure devienne la porte d'entrée des attaquants ?
+:::
+
+::: {.question}
+**3.** Où acceptez-vous de compliquer un peu la vie des utilisateurs, et où refusez-vous de le
+faire ? Pourquoi ?
+:::
+
+Si le temps manque, concentrez-vous sur la question 1.
+
+## Pour vous aider
+
+- Le [classement des moyens MFA](../cours/05-authentification.qmd#mfa-classement) par résistance au
+  phishing.
+- Les niveaux AAL du [chapitre 8](../cours/08-gouvernance.qmd).
+- La différence entre employés et clients au [chapitre 9](../cours/09-frontieres.qmd).
+
+::: {.callout-note title="Pistes de réponse (à ouvrir après avoir cherché)" collapse="true"}
+- **Administrateurs et prestataires :** passkeys ou clés FIDO2 (niveau AAL3).
+- **Collaborateurs :** passkeys, ou application avec code à recopier.
+- **Assurés :** passkeys proposées, avec un parcours de secours soigné et un niveau de vérification
+  adapté au risque (niveau AAL2).
+
+**Le piège à repérer :** la récupération par SMS ou par e-mail ramène tout le monde au niveau du
+SMS.
+
+Le choix des niveaux se fait par une analyse de risque, comme le demande NIST SP 800-63-4.
+:::

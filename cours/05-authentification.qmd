@@ -1,0 +1,258 @@
+---
+title: "L'authentification"
+subtitle: "Facteurs, mots de passe, MFA, passkeys, récupération de compte"
+categories: ["Chapitre 5"]
+---
+
+::: {.question-du-chapitre}
+Marie se connecte le premier jour. Comment prouve-t-elle que c'est elle, et qu'est-ce qui résiste
+vraiment au phishing ? C'est le chapitre où les idées reçues sont les plus tenaces.
+:::
+
+## Les trois facteurs d'authentification
+
+::: {.cartes}
+::: {.carte}
+### Ce que je sais
+*Mot de passe, code PIN, question de récupération.*
+
+Se copie sans laisser de trace et se transmet par phishing. C'est le seul facteur qu'un utilisateur
+peut donner à un attaquant sans s'en rendre compte.
+:::
+
+::: {.carte}
+### Ce que je possède
+*Téléphone, clé de sécurité, carte à puce, certificat.*
+
+Exige d'avoir l'objet. Qualité très variable : un code reçu par SMS et une clé FIDO2 sont dans la
+même catégorie et ne protègent pas du tout pareil.
+:::
+
+::: {.carte}
+### Ce que je suis
+*Empreinte, visage, iris, voix.*
+
+Ne se change pas en cas de vol. En pratique, sert presque toujours à déverrouiller localement un
+objet (le téléphone), pas à s'authentifier à distance.
+:::
+:::
+
+Le mot important est *catégorie*. Le multifacteur (MFA) combine deux catégories différentes, pas
+deux secrets.
+
+| Combinaison | Verdict |
+|--------------------------------------------------|--------------------------------------------------|
+| Mot de passe + passkey | [MFA]{.niveau .resistant} |
+| Mot de passe + question secrète | [Pas du MFA]{.niveau .faible} deux fois « je sais » |
+| Mot de passe + code envoyé à une adresse e-mail protégée par le même mot de passe | [Pas du MFA]{.niveau .faible} |
+
+La biométrie ne prouve rien à distance. Face ID ne dit rien au serveur : il déverrouille la clé
+privée stockée dans le téléphone, et c'est cette clé qui s'authentifie. Le facteur « je suis » sert
+donc presque toujours à protéger localement un facteur « je possède ».
+
+## Mots de passe : les règles ont changé
+
+::: {.cartes .deux}
+::: {.carte}
+### Ce que recommande le NIST
+
+- La longueur d'abord : viser 15 caractères ou plus, autoriser jusqu'à 64, accepter tous les
+  caractères (espaces, accents).
+- Comparer chaque nouveau mot de passe à une liste de mots de passe déjà volés.
+- Pas de règles de composition imposées (majuscule, chiffre, caractère spécial).
+- Pas de changement périodique : changer seulement si le mot de passe a été volé.
+- Supprimer les questions secrètes : facteur faible et souvent public.
+:::
+
+::: {.carte}
+### Ce qu'on trouve encore en entreprise
+
+- 8 caractères minimum, avec les quatre familles de caractères obligatoires.
+- Changement obligatoire tous les 90 jours.
+- Interdiction du copier-coller, ce qui empêche d'utiliser un gestionnaire de mots de passe.
+- Résultat : `Été2026!` puis `Automne2026!` puis `Hiver2026!`. La règle a produit exactement le
+  comportement qu'elle voulait empêcher.
+:::
+:::
+
+La référence est NIST SP 800-63-4, version finale du 31 juillet 2025. Le point qui surprend le
+plus : la fin du changement obligatoire tous les 90 jours. Pour comparer aux mots de passe déjà
+volés, le service Have I Been Pwned propose une interface interrogeable sans transmettre le mot de
+passe complet.
+
+## Stocker un mot de passe correctement
+
+- **Un mot de passe ne se chiffre pas, il se hache.** Le chiffrement est réversible : si vous
+  pouvez déchiffrer, un attaquant qui obtient la clé le peut aussi.
+- **La fonction de hachage doit être lente et réglable.** SHA-256 est excellent pour vérifier
+  l'intégrité d'un fichier, mais inadapté ici : il est trop rapide.
+- **Fonctions adaptées :** Argon2id en premier choix, scrypt, bcrypt, PBKDF2 quand une norme
+  l'impose.
+- **Un sel unique par utilisateur :** deux mots de passe identiques donnent deux empreintes
+  différentes, et les tables précalculées deviennent inutiles.
+- **Un poivre, en option :** un secret global stocké hors de la base, idéalement dans un boîtier
+  matériel. Il protège encore si seule la base fuit.
+- **Réviser les réglages régulièrement :** ce qui coûtait une seconde de calcul en 2018 n'en coûte
+  qu'une fraction aujourd'hui.
+
+::: {.callout-tip title="Exemple : la fuite LinkedIn de 2012"}
+Les empreintes étaient calculées en SHA-1 sans sel. La grande majorité des 6,5 millions
+d'empreintes ont été cassées en quelques jours. Avec bcrypt ou Argon2id et un sel par utilisateur,
+chaque compte aurait coûté des heures.
+:::
+
+::: {.callout-important title="Question d'examen classique"}
+Que se passe-t-il si la base fuit ? Avec Argon2id bien réglé et un sel par utilisateur, l'attaquant
+doit attaquer chaque compte séparément, à un coût prohibitif.
+:::
+
+## Tous les MFA ne se valent pas {#mfa-classement}
+
+C'est le tableau le plus important du chapitre. Le classement se fait par résistance au phishing en
+temps réel, pas par confort.
+
+| Moyen | Ce qu'un attaquant peut en faire | Niveau |
+|----------------------|--------------------------------------------------------------|----------------|
+| SMS et appel vocal | Interception par vol de numéro (*SIM swap*) ou détournement réseau. Le code se transmet par phishing. | [Faible]{.niveau .faible} |
+| Code à usage unique (TOTP) | Mieux que le SMS, mais l'utilisateur peut toujours taper son code sur un faux site. | [Faible]{.niveau .faible} |
+| Notification « Approuver ? » | Fatigue MFA : l'attaquant répète les demandes jusqu'à ce que l'utilisateur accepte pour avoir la paix. | [Faible]{.niveau .faible} |
+| Notification avec code à recopier | L'utilisateur recopie un nombre affiché par le service. Bloque la fatigue MFA, pas le relais en temps réel. | [Moyen]{.niveau .moyen} |
+| FIDO2, passkeys, carte à puce | La preuve est liée cryptographiquement au nom de domaine du site. Un faux site n'obtient rien d'utilisable. | [Résistant]{.niveau .resistant} |
+
+::: {.callout-important title="Le bon critère"}
+Ce n'est pas « combien de facteurs », mais « que peut faire un attaquant qui se place entre
+l'utilisateur et le site, en temps réel ? ». C'est pour cela que ce cours ne parle jamais de « MFA »
+sans préciser lequel.
+:::
+
+## Comment on contourne un MFA en 2026
+
+::: {.cartes}
+::: {.carte}
+[1]{.num}
+
+### Relais en temps réel
+Un faux site s'intercale entre l'utilisateur et le vrai service, relaie mot de passe et code, puis
+vole le cookie de session. Le MFA a marché.
+:::
+
+::: {.carte}
+[2]{.num}
+
+### Fatigue MFA
+L'attaquant a déjà le mot de passe. Il déclenche des dizaines de notifications jusqu'à ce que
+l'utilisateur accepte, souvent la nuit.
+:::
+
+::: {.carte}
+[3]{.num}
+
+### Vol de session
+Le cookie ou le jeton est volé sur le poste par un logiciel espion, puis réutilisé ailleurs, sans
+nouvelle authentification.
+:::
+
+::: {.carte}
+[4]{.num}
+
+### Appel au support
+L'attaquant se fait passer pour un collaborateur en difficulté et fait réinitialiser le MFA.
+L'humain reste le maillon le plus rentable.
+:::
+
+::: {.carte}
+[5]{.num}
+
+### Phishing au consentement
+Aucun mot de passe tapé : l'utilisateur autorise une application malveillante à lire ses données.
+L'accès survit au changement de mot de passe.
+:::
+
+::: {.carte}
+[6]{.num}
+
+### Vol de numéro (SIM swap)
+Prise de contrôle du numéro auprès de l'opérateur : tous les codes SMS sont captés, y compris ceux
+de récupération de compte.
+:::
+:::
+
+| Cas réel | Ce qui s'est passé |
+|------------------------------|----------------------------------------------------------------------|
+| **Uber, 2022** | Fatigue MFA : le prestataire a fini par accepter après des dizaines de notifications nocturnes. |
+| **MGM Resorts, 2023** | Appel au support : réinitialisation du MFA obtenue en une dizaine de minutes, casinos à l'arrêt plusieurs jours. |
+| **Okta, 2023** | Vol de session : des fichiers de session déposés sur le portail de support ont été dérobés. |
+| **Midnight Blizzard contre Microsoft, 2024** | Un compte de test sans MFA, puis l'abus d'une application OAuth dotée de droits élevés. |
+
+::: {.callout-important title="À retenir"}
+Quatre de ces six attaques échouent face à FIDO2 ou aux passkeys. C'est la mesure
+d'authentification au meilleur rapport coût / efficacité. Le MFA n'est pas une case à cocher, c'est
+un choix technique.
+:::
+
+## FIDO2, WebAuthn, passkeys : comment ça marche
+
+::: {.etapes}
+1. **Enregistrement.** L'appareil (téléphone, clé) crée une paire de clés propre au site. La clé
+   privée ne quitte jamais l'appareil.
+2. **Clé publique.** Seule la clé publique est envoyée au service et stockée. Si la base fuit, elle
+   ne contient aucun secret.
+3. **Défi.** À la connexion, le service envoie un nombre aléatoire à signer.
+4. **Signature liée au site.** L'appareil signe le défi avec le vrai nom de domaine du site. Un
+   faux site obtient une signature invalide.
+:::
+
+::: {.callout-tip title="Exemple : Marie et le faux site"}
+Marie enregistre sa clé sur `login.caisse.ch`. Un attaquant l'attire sur `login-caisse.ch`. Le
+navigateur fait signer un défi pour `login-caisse.ch`, qui ne correspond à aucune clé enregistrée :
+la clé refuse, ou la signature est inutilisable. Marie n'a rien eu à vérifier elle-même.
+:::
+
+Ce que ça règle
+: Le phishing de mots de passe, le rejeu, les bases de mots de passe volées, la réutilisation entre
+  sites.
+
+Ce que ça ne règle pas
+: Le vol de session après connexion, un poste déjà infecté, et surtout la procédure de récupération
+  de compte.
+
+Point de vigilance
+: Une passkey synchronisée suit le compte personnel (Apple, Google). En entreprise, il faut
+  choisir : synchronisée, ou liée à l'appareil ?
+
+Ce n'est pas de la magie : c'est une signature cryptographique liée au nom de domaine. Il n'y a
+aucun secret partagé à voler côté serveur.
+
+## Récupérer son accès : le maillon faible
+
+| Moyen de récupération | Ce qu'un attaquant en fait | Niveau |
+|--------------------------|----------------------------------------------------------|----------------|
+| Lien par e-mail ou code SMS | Ramène tout au niveau de la boîte e-mail ou du SMS : c'est la porte que l'attaquant choisira à la place de la passkey. | [Faible]{.niveau .faible} |
+| Questions secrètes | Réponses publiques ou devinables (réseaux sociaux, fuites de données). | [Faible]{.niveau .faible} |
+| Appel au support sans vérification | Ingénierie sociale : le support veut aider (MGM Resorts, 2023). | [Faible]{.niveau .faible} |
+| Codes de secours, seconde passkey | Enregistrés à l'avance. Il faut voler l'objet. À conserver hors du téléphone, à régénérer après usage. | [Résistant]{.niveau .resistant} |
+| Validation du responsable, remise en main propre | Le responsable valide dans l'outil IGA, le support remet un lien d'enrôlement en personne ou après vidéo-identification. Coûteux, mais aussi fort que l'enrôlement du premier jour. | [Résistant]{.niveau .resistant} |
+
+::: {.callout-tip title="Une récupération bien conçue, et une mal conçue"}
+**Bien conçue :** chaque utilisateur enregistre deux passkeys (son téléphone et une clé physique
+rangée au bureau). S'il perd les deux, son responsable valide la demande et le support remet un
+lien d'enrôlement à usage unique en main propre.
+
+**Mal conçue :** passkey obligatoire, mais « mot de passe oublié » envoie un lien sur l'adresse
+e-mail personnelle. L'attaquant cible l'adresse personnelle, qui n'a pas de MFA.
+:::
+
+::: {.callout-important title="La règle"}
+La récupération doit être au moins aussi forte que l'authentification qu'elle remplace. Sinon
+l'attaquant ne force pas la porte blindée, il passe par la porte de secours.
+:::
+
+Pour mettre ce chapitre en pratique, faites l'exercice
+[Concevoir une politique d'authentification](../exercices/politique-authentification.qmd).
+
+::: {.callout-note title="Références" collapse="true" icon=false}
+NIST SP 800-63B-4 (types d'authentificateurs, mots de passe, récupération). CISA, *Implementing
+Phishing-Resistant MFA* (2022). ANSSI, recommandations relatives à l'authentification multifacteur
+et aux mots de passe (2021). OWASP Password Storage Cheat Sheet et RFC 9106 (Argon2). W3C WebAuthn
+Level 2.
+:::

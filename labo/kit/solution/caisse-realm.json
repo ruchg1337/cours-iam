@@ -1,0 +1,107 @@
+{
+  "realm": "caisse",
+  "displayName": "Caisse de pension romande",
+  "enabled": true,
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "bruteForceProtected": true,
+  "ssoSessionIdleTimeout": 1800,
+  "accessTokenLifespan": 300,
+  "roles": {
+    "realm": [
+      { "name": "gestionnaire-prestations", "description": "Peut valider des rentes" },
+      { "name": "collaborateur", "description": "Accès de base" }
+    ]
+  },
+  "users": [
+    {
+      "username": "mdupont",
+      "enabled": true,
+      "firstName": "Marie",
+      "lastName": "Dupont",
+      "email": "marie.dupont@caisse.local",
+      "emailVerified": true,
+      "attributes": { "service": ["Prestations"], "numeroRH": ["4711"] },
+      "credentials": [ { "type": "password", "value": "Marie2026!", "temporary": false } ],
+      "realmRoles": ["gestionnaire-prestations", "collaborateur"]
+    },
+    {
+      "username": "pmartin",
+      "enabled": true,
+      "firstName": "Paul",
+      "lastName": "Martin",
+      "email": "paul.martin@caisse.local",
+      "emailVerified": true,
+      "attributes": { "service": ["Informatique"], "numeroRH": ["4702"] },
+      "credentials": [ { "type": "password", "value": "Paul2026!", "temporary": false } ],
+      "realmRoles": ["collaborateur"]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "app-prestations",
+      "name": "Application de gestion des prestations",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "secret-du-labo-a-changer",
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "rootUrl": "http://localhost:8000",
+      "baseUrl": "/",
+      "redirectUris": ["http://localhost:8000/callback"],
+      "webOrigins": ["http://localhost:8000"],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:8000/*"
+      },
+      "defaultClientScopes": ["openid", "profile", "email", "roles", "web-origins", "acr", "basic"],
+      "protocolMappers": [
+        {
+          "name": "roles du realm dans le jeton d'identite",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "claim.name": "realm_access.roles",
+            "jsonType.label": "String",
+            "multivalued": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
+          "name": "source de l'identite",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "source",
+            "claim.name": "source",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
+          "name": "service",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "service",
+            "claim.name": "service",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+---
+title: "L'autorisation"
+subtitle: "DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles"
+categories: ["Chapitre 4"]
+---
+
+::: {.question-du-chapitre}
+Marie a maintenant un compte. Qu'a-t-elle le droit de faire, selon quel modèle, et qui l'a décidé ?
+:::
+
+C'est le chapitre le plus conceptuel de la première moitié du cours. Le
+[tableau de synthèse](#synthese-modeles) résume tout.
+
+## Les deux modèles historiques : DAC et MAC
+
+Vous connaissez les deux sans les nommer.
+
+::: {.cartes .deux}
+::: {.carte}
+### DAC : le propriétaire décide
+
+- Le propriétaire d'un fichier ou d'un dossier choisit qui y accède.
+- C'est le modèle des partages de fichiers classiques et du cloud (Drive, SharePoint).
+- Souple, immédiat, compris de tous.
+- Faiblesse : la politique de sécurité est éparpillée chez des milliers d'utilisateurs. Personne
+  n'a de vue d'ensemble.
+:::
+
+::: {.carte}
+### MAC : une autorité centrale décide
+
+- Une autorité centrale fixe les règles. Le propriétaire ne peut pas y déroger.
+- Fondé sur des niveaux de classification (confidentiel, secret) et des habilitations.
+- Modèle militaire, repris par SELinux et AppArmor.
+- Très fort pour la confidentialité, très lourd au quotidien.
+:::
+:::
+
+Le DAC, c'est ainsi que naissent les dossiers partagés accessibles à toute l'entreprise : un
+dossier SharePoint partagé « à toute l'organisation » par commodité en 2021 contient aujourd'hui
+les contrats des collaborateurs. Le MAC, c'est un serveur où même l'administrateur ne peut pas
+faire lire par le serveur web un fichier étiqueté pour la base de données. Il est peu utilisé tel
+quel en entreprise, mais ses idées reviennent dans la classification des données.
+
+Aucun des deux n'est « le bon » : ils répondent à des menaces différentes.
+
+## RBAC : le modèle le plus utilisé en entreprise
+
+| Utilisateur | Rôle | Permission | Ressource |
+|---|---|---|---|
+| Marie Dupont | Gestionnaire de prestations | Valider une rente < 50 000 CHF | Application de gestion des prestations |
+
+Le principe
+: L'utilisateur reçoit des rôles, le rôle porte les permissions. Aucun droit n'est jamais donné
+  directement à une personne. C'est cette indirection qui rend le modèle lisible et auditable.
+
+Rôle métier et rôle technique
+: Le rôle métier décrit ce qu'un poste fait (« gestionnaire de prestations »). Le rôle technique
+  décrit ce qu'une application autorise (`PREST_VALIDER`). Un rôle métier regroupe plusieurs rôles
+  techniques : cette traduction coûte cher à maintenir.
+
+Ce que ça apporte
+: Répondre à la question d'audit « qui peut valider une rente ? » sans ouvrir chaque application.
+  Donner les bons accès dès le premier jour. Retirer d'un coup tous les droits d'un poste lors
+  d'un changement.
+
+### La limite : l'explosion du nombre de rôles
+
+Chaque exception demandée par le métier crée un nouveau rôle : « gestionnaire de prestations, site
+de Lausanne, hors rentes d'invalidité ». Le nombre de rôles se multiplie avec chaque critère :
+fonction × site × type de client × niveau de délégation.
+
+::: {.cartes .deux}
+::: {.carte}
+[2 400]{.chiffre}
+rôles pour 2 000 collaborateurs. À ce stade, chaque rôle décrit une personne. Le modèle a été
+respecté à la lettre et vidé de son sens.
+:::
+
+::: {.carte}
+### Les signaux d'alarme
+
+- Il y a presque autant de rôles que d'utilisateurs.
+- Plus personne ne sait ce que contient un rôle, donc les revues des accès sont validées les yeux
+  fermés.
+- Test rapide : parmi les 20 rôles les plus récents, combien ont un seul membre ?
+:::
+:::
+
+Les solutions : une hiérarchie de rôles, une séparation stricte entre rôles métier et rôles
+techniques, et surtout accepter que le RBAC ne couvre pas tout.
+
+## ABAC : décider à partir d'attributs
+
+| Attributs de la personne | Attributs de la ressource | Attributs de l'action | Attributs du contexte |
+|---|---|---|---|
+| Service, fonction, niveau d'habilitation, ancienneté, appareil conforme | Classification, propriétaire, service rattaché, montant, statut du dossier | Lecture, écriture, export, suppression, validation | Heure, adresse réseau, pays, niveau de risque de la session, moyen d'authentification utilisé |
+
+::: {.question}
+**Exemple de règle.** Marie peut lire un dossier d'assuré SI son service = service du dossier ET
+son appareil est conforme ET il est entre 7 h et 20 h.
+:::
+
+::: {.cartes .deux}
+::: {.carte}
+### Ce que l'ABAC apporte
+
+- Souplesse : une règle remplace des centaines de rôles.
+- Décision selon le contexte : le même utilisateur n'a pas les mêmes droits selon l'appareil ou
+  l'heure.
+:::
+
+::: {.carte}
+### Ce qu'il coûte
+
+- Il faut des attributs fiables et à jour, partout. C'est le vrai obstacle.
+- Répondre à « qui peut faire quoi ? » redevient difficile : il faut calculer les règles, pas les
+  lire.
+:::
+:::
+
+« Appareil conforme » suppose un inventaire des appareils à jour et un agent installé partout.
+« Service de la personne » suppose que les RH mettent à jour les mutations le jour même. Un exemple
+d'ABAC que tout le monde utilise : l'accès conditionnel d'Entra ID, qui autorise la connexion si
+l'appareil est géré, le pays attendu et le risque faible.
+
+## ReBAC et PBAC : sortir l'autorisation du code
+
+Les deux modèles ont le même but, mais ne répondent pas à la même question. ReBAC : qui est lié à
+quoi ? PBAC : quelle règle s'applique ?
+
+### ReBAC : le droit vient d'une relation
+
+Comme le partage dans Google Drive : on ne donne pas un rôle, on relie des objets, et les droits
+suivent les liens.
+
+> **Marie** *est membre de* **l'équipe Prestations**, *qui est propriétaire du* **dossier
+> Sinistres**, *qui contient* **le document D**.
+
+Marie peut-elle lire le document D ? Oui : trois liens, une décision. Un nouveau document dans le
+dossier est aussitôt lisible par toute l'équipe, sans toucher à aucun rôle. En RBAC, il faudrait un
+rôle par dossier, puis par sous-dossier.
+
+Google a décrit ce modèle en 2019 (Zanzibar, le service d'autorisation derrière Drive, YouTube et
+Calendar). OpenFGA et SpiceDB en sont des reprises libres, très utilisées dans les SaaS récents. Le
+prix à payer : il faut tenir à jour le graphe des relations.
+
+### PBAC : la règle sort du code
+
+L'application ne contient plus de « si… alors » cachés. À chaque action, elle pose la question à un
+moteur de règles, qui répond oui ou non.
+
+::: {.etapes}
+1. **L'application** (point d'application, PEP) demande : « Marie peut-elle valider la
+   rente 4512 ? »
+2. **Le moteur de règles** (point de décision, PDP) lit les attributs nécessaires auprès des
+   sources (point d'information, PIP) : RH, annuaire, dossier.
+3. **Il applique la règle**, écrite une seule fois : AUTORISER si rôle = gestionnaire ET
+   dossier.service = utilisateur.service ET montant < 50 000.
+4. **Il répond** « oui » ou « non ». L'application applique la décision.
+:::
+
+Ce que ça change : une règle pour toutes les applications, modifiable sans redéployer, testée et
+auditée comme du code. Pour répondre à « qui peut valider une rente de plus de 50 000 CHF ? », on
+lit la règle au lieu de fouiller dix applications. Ce que ça coûte : les attributs doivent être
+fiables, et une règle fausse se propage à toutes les applications d'un coup, d'où les tests.
+Produits : Open Policy Agent, Cedar (AWS), XACML (l'ancêtre, encore présent dans les banques).
+
+::: {.callout-important title="Le point commun"}
+La décision sort du code applicatif. Un « si » caché dans une application n'est ni auditable, ni
+modifiable, ni testable.
+:::
+
+## Choisir un modèle : il n'y a pas de gagnant {#synthese-modeles}
+
+| Modèle | Décide selon | Point fort | Point faible | Contexte typique |
+|----------|--------------------|----------------------|------------------------|------------------------|
+| **DAC** | Le choix du propriétaire | Simple, autonome | Aucune vue d'ensemble | Partages de fichiers, outils collaboratifs |
+| **MAC** | Une classification imposée | Confidentialité forte | Très rigide au quotidien | Défense, systèmes durcis |
+| **RBAC** | Le rôle de l'utilisateur | Auditable, compris du métier | Explosion du nombre de rôles | Entreprise, applications métier |
+| **ABAC** | Des attributs et le contexte | Souple, règles très précises | Dépend d'attributs fiables | Accès conditionnel, données sensibles |
+| **ReBAC** | Les relations entre objets | Partage et héritage naturels | Outils encore jeunes, complexe à raisonner | SaaS multi-clients, collaboratif |
+
+::: {.callout-important title="En pratique, on combine"}
+Les architectures matures utilisent le RBAC pour la base et la preuve d'audit (qui a quoi), l'ABAC
+pour les conditions d'accès (quand et depuis où), et le ReBAC pour le partage entre utilisateurs,
+document par document.
+:::
+
+## Deux principes qui structurent tout le reste
+
+::: {.cartes .deux}
+::: {.carte}
+### 1. Le moindre privilège
+
+Chacun n'a que les droits strictement nécessaires à son travail, et seulement pendant la durée où
+il en a besoin.
+
+La dimension du temps est celle qu'on oublie : un droit justifié en janvier ne l'est plus en
+septembre. Un droit devrait avoir une date de fin par défaut, pas une durée illimitée par défaut.
+:::
+
+::: {.carte}
+### 2. La séparation des tâches
+
+Personne ne doit pouvoir réaliser seul une opération sensible de bout en bout : créer un
+fournisseur et valider son paiement, créer un compte administrateur et effacer les journaux,
+développer et mettre en production.
+
+Elle se traduit par des règles de conflit dans l'outil IGA.
+:::
+:::
+
+Ces deux principes sont exigés par ISO 27001 et par presque toutes les normes sectorielles. Ce sont
+aussi les deux premiers abandonnés sous la pression du quotidien. La séparation des tâches est plus
+facile à faire accepter, car elle protège aussi le collaborateur : si une seule personne peut créer
+un fournisseur et payer, elle sera la première suspectée en cas de fraude, même innocente.
+
+## Construire un modèle de rôles
+
+::: {.cartes .deux}
+::: {.carte}
+### Depuis le métier (descendant)
+
+- Partir de l'organisation : fonctions, processus, postes de travail.
+- Définir ce qu'un poste devrait pouvoir faire, sans regarder l'existant.
+- Donne un modèle propre, défendable devant un auditeur.
+- Limite : ne colle jamais tout à fait à la réalité, et tous les écarts remontent au moment du
+  déploiement.
+:::
+
+::: {.carte}
+### Depuis l'existant (ascendant)
+
+- Extraire les droits réellement donnés, puis chercher les regroupements qui reviennent.
+- Fait apparaître des rôles implicites que personne n'avait écrits.
+- Limite majeure : reproduit fidèlement le désordre accumulé, y compris les droits obtenus par
+  erreur.
+- À utiliser comme diagnostic, jamais comme modèle cible.
+:::
+:::
+
+::: {.callout-tip title="Exemple d'analyse ascendante"}
+80 % des personnes du service « sinistres » ont les mêmes 9 groupes : voilà un rôle implicite.
+Mais 3 personnes ont aussi un accès à la paie. Erreur ou exception légitime ? À trancher avec le
+responsable, pas à copier dans le modèle.
+:::
+
+::: {.callout-important title="La méthode qui marche"}
+Le descendant pour définir la cible, l'ascendant pour mesurer l'écart, puis décider chaque écart
+avec le responsable métier concerné. Commencez par un département pilote de taille moyenne, pas
+par la direction ni par l'informatique.
+:::
+
+::: {.callout-note title="Références" collapse="true" icon=false}
+Sandhu et al. (1996) et ANSI/INCITS 359-2004 pour le RBAC. NIST SP 800-162 pour l'ABAC et le
+découpage PEP / PDP / PIP. Pang et al., « Zanzibar: Google's Consistent, Global Authorization
+System », USENIX ATC 2019. ISO 27001:2022 A.5.3 (séparation des tâches) et A.8.2 (droits d'accès
+privilégiés).
+:::

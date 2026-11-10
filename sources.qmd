@@ -1,0 +1,84 @@
+---
+title: "Sources"
+subtitle: "Normes, spécifications, rapports, lectures et cas réels cités dans le cours"
+---
+
+Les normes NIST et les RFC sont gratuites. ISO 27001 et ISO 24760 sont payantes. Les lois suisses
+sont sur [fedlex.admin.ch](https://www.fedlex.admin.ch).
+
+::: {.callout-tip title="Un conseil"}
+Lisez une spécification complète, une seule fois dans votre carrière. OpenID Connect Core 1.0 est
+la plus courte et la plus utile de celles citées ici.
+:::
+
+## Normes et cadre légal
+
+- NIST SP 800-63-4, *Digital Identity Guidelines*, version finale, juillet 2025, quatre volumes
+  ([pages.nist.gov/800-63-4](https://pages.nist.gov/800-63-4/)).
+- NIST SP 800-207, *Zero Trust Architecture*, 2020.
+- NIST SP 800-162, *Guide to Attribute Based Access Control*, 2014.
+- ISO/IEC 27001:2022, annexe A, mesures 5.15 à 5.18.
+- ISO/IEC 24760-1:2019, vocabulaire de la gestion d'identité.
+- ANSSI, *Recommandations relatives à l'authentification multifacteur et aux mots de passe*, 2021
+  ([cyber.gouv.fr](https://cyber.gouv.fr)).
+- CISA, *Implementing Phishing-Resistant MFA*, fiche d'octobre 2022.
+- LPD révisée (RS 235.1), en vigueur depuis le 1^er^ septembre 2023, et son ordonnance (OPDo).
+- FINMA, circulaire 2023/1 *Risques et résilience opérationnels*, en vigueur depuis 2024.
+- RGPD (UE) 2016/679 et directive NIS2 (UE) 2022/2555.
+- Loi fédérale sur l'identité électronique (LeID), votation du 28 septembre 2025. Informations
+  officielles sur [eid.admin.ch](https://www.eid.admin.ch).
+
+## Spécifications techniques
+
+- OASIS, SAML 2.0 Core et Bindings, 2005.
+- [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749) (OAuth 2.0),
+  [RFC 7636](https://www.rfc-editor.org/rfc/rfc7636) (PKCE),
+  [RFC 9700](https://www.rfc-editor.org/rfc/rfc9700) (bonnes pratiques de sécurité OAuth 2.0,
+  janvier 2025), brouillon OAuth 2.1 (`draft-ietf-oauth-v2-1`).
+- [RFC 7519](https://www.rfc-editor.org/rfc/rfc7519) (JWT),
+  [RFC 8725](https://www.rfc-editor.org/rfc/rfc8725) (bonnes pratiques JWT),
+  [RFC 7662](https://www.rfc-editor.org/rfc/rfc7662) (introspection de jeton),
+  [RFC 8693](https://www.rfc-editor.org/rfc/rfc8693) (échange de jeton).
+- OpenID Connect Core 1.0 et Discovery 1.0, OpenID Foundation.
+- [RFC 7642](https://www.rfc-editor.org/rfc/rfc7642),
+  [7643](https://www.rfc-editor.org/rfc/rfc7643) et
+  [7644](https://www.rfc-editor.org/rfc/rfc7644) (SCIM 2.0).
+- [RFC 4510](https://www.rfc-editor.org/rfc/rfc4510) à 4519 (LDAP v3).
+- W3C, *Web Authentication Level 2*, 2021. FIDO Alliance, CTAP 2.1 et spécifications passkeys.
+- OWASP, *Password Storage Cheat Sheet*, *Authentication Cheat Sheet* et *SAML Security Cheat
+  Sheet* ([cheatsheetseries.owasp.org](https://cheatsheetseries.owasp.org)).
+
+## Rapports et chiffres
+
+- Verizon, *2025 Data Breach Investigations Report* : abus d'identifiants premier vecteur d'entrée
+  (22 %), 88 % des attaques web avec identifiants volés.
+- Microsoft, *Digital Defense Report 2025* (octobre 2025) : 97 % des attaques sur l'identité sont
+  des attaques par mot de passe, +32 % au premier semestre 2025.
+- Gartner, *Forecast: Information Security, Worldwide, 2024-2030, 3Q26* (septembre 2026) et
+  *Information Security Market Current Outlook 1Q26* (mars 2026) : 247 milliards de dollars de
+  dépenses en 2026, dont 23 milliards en IAM.
+- CyberArk, *Identity Security Threat Landscape Report 2024* : rapport entre identités machines et
+  humaines.
+- Okta, *Businesses at Work 2024* : nombre d'applications par organisation.
+- Office fédéral de la justice, communiqués sur l'e-ID (avril et juin 2026).
+
+## Lectures et cours
+
+- Y. Wilson et A. Hingnikar, *Solving Identity Management in Modern Applications*, Apress,
+  2^e^ édition, 2022.
+- G. Harry, *IAM : concepts et état de l'art*, en libre accès sur HAL.
+- InCommon / Internet2, webinaires *IAM Online*, archives publiques.
+- Pang et al., « Zanzibar: Google's Consistent, Global Authorization System », USENIX ATC 2019,
+  pour comprendre le ReBAC.
+
+## Cas réels
+
+Pour les cas réels, appuyez-vous sur les rapports publiés par les entreprises elles-mêmes plutôt
+que sur la presse : ils décrivent précisément la chaîne d'attaque.
+
+| Cas | Ce qui s'est passé | Source |
+|----------------------------|--------------------------------------------|----------------------------|
+| **Uber**, septembre 2022 | Intrusion par fatigue MFA (notifications répétées) | Rapport public d'Uber |
+| **MGM Resorts**, septembre 2023 | Réinitialisation du MFA obtenue par appel au support | Communiqués et presse |
+| **Okta**, octobre 2023 | Vol de fichiers de session sur le portail de support | Rapport d'incident d'Okta |
+| **Microsoft / Midnight Blizzard**, janvier 2024 | Compte de test sans MFA et abus d'une application OAuth | Rapport MSRC |

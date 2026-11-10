@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% block content %}
+<h1>Ce que l'application a reçu</h1>
+
+<h2>1. Les claims du jeton d'identité, en clair</h2>
+<div class="carte">
+<table>
+  <tr><th>Question</th><th>Claim</th><th>Valeur</th></tr>
+  <tr><td>Qui ?</td><td><code>sub</code> / <code>preferred_username</code></td><td>{{ id_payload.sub }} / {{ id_payload.preferred_username }}</td></tr>
+  <tr><td>Émis par qui ?</td><td><code>iss</code></td><td>{{ id_payload.iss }}</td></tr>
+  <tr><td>Pour quelle application ?</td><td><code>aud</code></td><td>{{ id_payload.aud }}</td></tr>
+  <tr><td>Quand, jusqu'à quand ?</td><td><code>iat</code> / <code>exp</code></td><td>{{ id_payload.iat }} / {{ id_payload.exp }} (expire dans {{ id_payload.exp - now }} s)</td></tr>
+  <tr><td>Comment authentifié ?</td><td><code>amr</code> / <code>acr</code></td><td>{{ id_payload.amr }} / {{ id_payload.acr }}</td></tr>
+  <tr><td>Anti-rejeu</td><td><code>nonce</code></td><td>{{ id_payload.nonce }}</td></tr>
+  <tr><td>Par quel fournisseur d'identité ?</td><td><code>source</code> (mapper à ajouter, partie 2)</td><td>{% if id_payload.source %}{{ id_payload.source }}{% else %}<span class="muted">absent : utilisateur local, ou mapper non configuré</span>{% endif %}</td></tr>
+  <tr><td>Rôles (pour l'autorisation)</td><td><code>realm_access.roles</code></td><td>{% if id_payload.realm_access %}{{ id_payload.realm_access.roles | join(", ") }}{% else %}<span class="ko">absent du jeton d'identité</span> <span class="muted">(partie 3 : ajouter le mapper)</span>{% endif %}</td></tr>
+</table>
+</div>
+
+<h2>2. Le jeton d'identité (ID token) complet</h2>
+<div class="carte">
+  <p class="muted">Signé, pas chiffré : tout se lit. Collez-le sur jwt.io pour le vérifier vous-même. En-tête :</p>
+  <pre>{{ pretty(id_header) }}</pre>
+  <p class="muted">Charge utile :</p>
+  <pre>{{ pretty(id_payload) }}</pre>
+  <p class="muted">Jeton brut :</p>
+  <pre>{{ id_token }}</pre>
+</div>
+
+<h2>3. Le jeton d'accès (access token)</h2>
+<div class="carte">
+  <p class="muted">Destiné aux API, pas à l'application. Chez Keycloak c'est aussi un JWT ; chez d'autres fournisseurs c'est une chaîne opaque.</p>
+  <pre>{{ pretty(at_payload) }}</pre>
+  <p class="muted">Jeton brut :</p>
+  <pre>{{ access_token }}</pre>
+</div>
+{% endblock %}

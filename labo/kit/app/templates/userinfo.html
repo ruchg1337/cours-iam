@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<h1>Point d'information (userinfo)</h1>
+<div class="carte">
+  <p>L'application a appelé <code>userinfo_endpoint</code> avec le <strong>jeton d'accès</strong> dans l'en-tête <code>Authorization: Bearer …</code>. Réponse HTTP : <strong>{{ status }}</strong></p>
+  <pre>{{ body }}</pre>
+  <p class="muted">C'est le bon usage du jeton d'accès : autoriser l'application auprès d'une API. Il n'est pas fait pour identifier l'utilisateur dans l'application (c'est le rôle du jeton d'identité).</p>
+</div>
+{% endblock %}

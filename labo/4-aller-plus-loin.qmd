@@ -1,0 +1,42 @@
+---
+title: "Partie 4 : aller plus loin"
+subtitle: "Facultative, au choix"
+categories: ["Labo"]
+---
+
+Quatre pistes indépendantes. Choisissez celle qui vous intéresse.
+
+## Passkeys
+
+1. Realm `caisse` → **Authentication → Policies → WebAuthn Passwordless Policy** : laissez les
+   valeurs par défaut.
+2. **Authentication → Flows** : dupliquez « browser », remplacez l'étape « Username Password Form »
+   par « WebAuthn Passwordless Authenticator » (Required), et liez ce flux au realm (**Action →
+   Bind flow → Browser flow**).
+3. **Users → mdupont → Required actions** → « Webauthn Register Passwordless ».
+
+À la prochaine connexion, Marie enregistre une passkey (`localhost` compte comme contexte
+sécurisé). Comparez l'adresse d'autorisation et `acr` avant et après. Voir
+[FIDO2, WebAuthn, passkeys](../cours/05-authentification.qmd).
+
+## Durée de vie et révocation
+
+**Realm settings → Sessions** et **→ Tokens** : passez le jeton d'accès à 1 minute et la session
+SSO à 5 minutes. Observez quand l'application vous redemande de vous connecter. Retrouvez
+[les trois jetons](../cours/07-protocoles.qmd) dans le cours.
+
+## Casser pour comprendre
+
+- Dans `.env`, mettez un mauvais secret.
+- Dans Keycloak, changez l'URI de redirection.
+- Passez « Require PKCE » à Off, puis essayez une requête d'autorisation sans `code_challenge` :
+  copiez l'adresse de l'étape 1 et retirez les deux paramètres PKCE.
+
+À chaque fois : qui refuse, à quelle étape, avec quel message ?
+
+## Les traces
+
+**Realm settings → Events → User events settings** : Save events : **On**. Rejouez une connexion
+réussie, une connexion ratée, une déconnexion, puis lisez **Events**.
+
+C'est la quatrième question du [chapitre 1](../cours/01-bases.qmd) : qui a fait quoi ?

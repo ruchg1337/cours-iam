@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 310" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#17252e">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5c6b73"/></marker>
+  </defs>
+
+  <!-- La personne -->
+  <rect x="8" y="8" width="170" height="294" rx="10" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="93" y="34" text-anchor="middle" font-weight="700" fill="#0f5964" font-size="14">La personne</text>
+  <circle cx="93" cy="110" r="38" fill="#0f5964"/>
+  <text x="93" y="118" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">MD</text>
+  <text x="93" y="176" text-anchor="middle" font-weight="700">Marie Dupont</text>
+  <text x="93" y="204" text-anchor="middle" fill="#5c6b73" font-size="12">L'être humain réel.</text>
+  <text x="93" y="222" text-anchor="middle" fill="#5c6b73" font-size="12">Vérifiée une fois,</text>
+  <text x="93" y="240" text-anchor="middle" fill="#5c6b73" font-size="12">à l'engagement.</text>
+
+  <line x1="184" y1="155" x2="212" y2="155" stroke="#5c6b73" stroke-width="1.5" marker-end="url(#f)"/>
+
+  <!-- Identité numérique -->
+  <rect x="218" y="8" width="240" height="294" rx="10" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="338" y="34" text-anchor="middle" font-weight="700" fill="#0f5964" font-size="14">Identité numérique</text>
+  <g>
+    <rect x="232" y="52" width="212" height="30" rx="6" fill="#0f5964"/>
+    <text x="244" y="72" fill="#fff">Numéro RH</text><text x="432" y="72" text-anchor="end" font-weight="700" fill="#fff">4711</text>
+    <text x="244" y="108" fill="#5c6b73">Nom</text><text x="432" y="108" text-anchor="end">Marie Dupont</text>
+    <line x1="232" y1="120" x2="444" y2="120" stroke="#e4e0d6"/>
+    <text x="244" y="142" fill="#5c6b73">Service</text><text x="432" y="142" text-anchor="end">Prestations</text>
+    <line x1="232" y1="154" x2="444" y2="154" stroke="#e4e0d6"/>
+    <text x="244" y="176" fill="#5c6b73">Fonction</text><text x="432" y="176" text-anchor="end">Gestionnaire</text>
+    <line x1="232" y1="188" x2="444" y2="188" stroke="#e4e0d6"/>
+    <text x="244" y="210" fill="#5c6b73">Responsable</text><text x="432" y="210" text-anchor="end">Paul Martin</text>
+    <line x1="232" y1="222" x2="444" y2="222" stroke="#e4e0d6"/>
+    <text x="244" y="244" fill="#5c6b73">Fin de contrat</text><text x="432" y="244" text-anchor="end">aucune (CDI)</text>
+  </g>
+  <text x="338" y="282" text-anchor="middle" fill="#5c6b73" font-size="12">Attributs fournis par les RH</text>
+
+  <line x1="464" y1="155" x2="492" y2="155" stroke="#5c6b73" stroke-width="1.5" marker-end="url(#f)"/>
+
+  <!-- Comptes -->
+  <rect x="498" y="8" width="274" height="294" rx="10" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="635" y="34" text-anchor="middle" font-weight="700" fill="#0f5964" font-size="14">Comptes</text>
+  <g>
+    <rect x="512" y="52" width="246" height="66" rx="6" fill="#fff" stroke="#e4e0d6"/>
+    <text x="524" y="74" font-weight="700">Active Directory</text>
+    <rect x="672" y="60" width="78" height="22" rx="11" fill="#0f5964"/><text x="711" y="75" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">mdupont</text>
+    <text x="524" y="102" fill="#5c6b73" font-size="12">actif · groupe GRP_PREST · passkey</text>
+
+    <rect x="512" y="128" width="246" height="66" rx="6" fill="#fff" stroke="#e4e0d6"/>
+    <text x="524" y="150" font-weight="700">Messagerie</text>
+    <rect x="614" y="136" width="136" height="22" rx="11" fill="#0f5964"/><text x="682" y="151" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">m.dupont@caisse.ch</text>
+    <text x="524" y="178" fill="#5c6b73" font-size="12">actif · boîte 50 Go</text>
+
+    <rect x="512" y="204" width="246" height="66" rx="6" fill="#fff" stroke="#e4e0d6"/>
+    <text x="524" y="226" font-weight="700">Application métier</text>
+    <rect x="672" y="212" width="78" height="22" rx="11" fill="#0f5964"/><text x="711" y="227" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">MDUPONT</text>
+    <text x="524" y="254" fill="#5c6b73" font-size="12">actif · rôle PREST_VALIDER</text>
+  </g>
+  <text x="635" y="290" text-anchor="middle" fill="#5c6b73" font-size="12">Attributs propres à chaque système</text>
+</svg>

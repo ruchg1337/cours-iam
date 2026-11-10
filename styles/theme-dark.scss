@@ -1,0 +1,30 @@
+/*-- scss:defaults --*/
+
+// Thème sombre : mêmes règles que theme.scss, seules les couleurs changent.
+$body-bg:      #12191e !default;
+$body-color:   #e7e3d8 !default;
+$primary:      #6fc3cc !default;
+$link-color:   #6fc3cc !default;
+$navbar-bg:    #0c1216 !default;
+$footer-bg:    #12191e !default;
+$border-color: #2b3840 !default;
+$code-color:   #f0b27a !default;
+$code-bg:      #1c262d !default;
+
+/*-- scss:rules --*/
+
+:root {
+  --iam-carte-bg: #18222a;
+  --iam-carte-trait: #2b3840;
+  --iam-doux: #9fb0b8;
+  --iam-accent: #f0a35e;
+  --iam-primaire: #6fc3cc;
+  --iam-teinte: #17262b;
+}
+
+.etapes > ol > li::before { color: #0c1216; }
+.btn-iam { color: #0c1216 !important; }
+.btn-iam.secondaire { color: var(--iam-primaire) !important; }
+.niveau.faible    { background: #4a211a; color: #f3b8ac; }
+.niveau.moyen     { background: #473a10; color: #f1d98a; }
+.niveau.resistant { background: #1c3d27; color: #a8dcb5; }

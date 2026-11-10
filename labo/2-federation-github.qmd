@@ -1,0 +1,89 @@
+---
+title: "Partie 2 : fédérer avec GitHub"
+subtitle: "Keycloak fait confiance à GitHub (30 min)"
+categories: ["Labo"]
+---
+
+Marie a désormais un compte interne. La caisse fait aussi appel à des développeurs externes qui ont
+déjà un compte GitHub. Plutôt que de leur créer un mot de passe de plus, Keycloak va **faire
+confiance à GitHub**.
+
+Keycloak devient ici le *courtier d'identité* : pour l'application, il reste le fournisseur
+d'identité, et pour GitHub, il est un client OAuth.
+
+## 2.1 Déclarer Keycloak auprès de GitHub
+
+Sur GitHub : votre avatar → **Settings → Developer settings → OAuth Apps → New OAuth App**.
+
+| Champ | Valeur |
+|---|---|
+| Application name | `Keycloak labo IAM` |
+| Homepage URL | `http://localhost:8080` |
+| Authorization callback URL | `http://localhost:8080/realms/caisse/broker/github/endpoint` |
+
+**Register**, puis **Generate a new client secret**. Notez le Client ID et le Client secret.
+
+::: {.question}
+**Question 6.** Cette adresse de retour, c'est l'équivalent de quoi dans la partie 1 ? Qui est le
+client OAuth ici, et qui est le serveur d'autorisation ?
+:::
+
+## 2.2 Déclarer GitHub dans Keycloak
+
+Dans la console Keycloak, realm `caisse` → **Identity providers → GitHub** : saisissez le Client ID
+et le Client secret de l'étape 2.1 → **Add**.
+
+**Marquer l'origine des comptes.** Onglet **Mappers → Add mapper** :
+
+| Champ | Valeur |
+|---|---|
+| Name | `source = github` |
+| Sync mode override | Inherit |
+| Mapper type | **Hardcoded attribute** |
+| User attribute | `source` |
+| User attribute value | `github` |
+
+**Save**. Ce mapper marque chaque compte créé par GitHub. Pour comparer, donnez à Marie l'attribut
+`source` = `keycloak` (**Users → mdupont → Attributes**).
+
+**Transmettre cet attribut à l'application.** Il faut un mapper côté client : **Clients →
+app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User
+Attribute** :
+
+| Champ | Valeur |
+|---|---|
+| Name | `source` |
+| User Attribute | `source` |
+| Token Claim Name | `source` |
+| Add to ID token | On |
+
+**Save**.
+
+## 2.3 Se connecter avec GitHub
+
+Déconnectez-vous de l'application, puis cliquez sur « Se connecter via Keycloak » : un bouton
+**GitHub** est apparu.
+
+Suivez le parcours. GitHub vous demande votre mot de passe (et votre MFA), puis si vous autorisez
+« Keycloak labo IAM » à lire votre profil. Keycloak vous demande ensuite de compléter votre profil.
+Sur **Mon profil**, la ligne « Par quel fournisseur d'identité ? » doit dire `github`.
+
+Dans la console Keycloak, **Users** : un nouvel utilisateur existe, avec un onglet **Identity
+provider links**.
+
+::: {.question}
+**Question 7.** GitHub a-t-il transmis votre mot de passe à Keycloak ? Keycloak l'a-t-il transmis à
+l'application ? Dessinez les trois (quatre ?) acteurs et les flèches.
+:::
+
+::: {.question}
+**Question 8.** Ce compte créé par GitHub : qui le fermera le jour où le développeur externe ne
+travaille plus pour la caisse ? Quel chapitre du cours parle de ce problème ?
+:::
+
+::: {.question}
+**Question 9.** Dans **Identity providers → GitHub**, l'option « Trust email » est à Off. Que se
+passerait-il à On si un utilisateur GitHub déclarait l'adresse `marie.dupont@caisse.local` ?
+:::
+
+Passez à la [partie 3](3-roles.qmd).

@@ -1,0 +1,139 @@
+---
+title: "Le cours"
+subtitle: "Dix chapitres, une histoire : celle de Marie Dupont"
+---
+
+## L'identité, première porte d'entrée des attaquants
+
+::: {.cartes}
+::: {.carte}
+[N° 1]{.chiffre}
+des vecteurs d'entrée des intrusions : l'abus d'identifiants (22 % des cas), devant les failles
+exploitées. 88 % des attaques sur les applications web utilisent des identifiants volés.
+
+*Verizon, DBIR 2025*
+:::
+
+::: {.carte}
+[97 %]{.chiffre}
+des attaques contre l'identité sont des attaques par mot de passe. Les attaques sur l'identité ont
+augmenté de 32 % au premier semestre 2025.
+
+*Microsoft, Digital Defense Report 2025*
+:::
+
+::: {.carte}
+[23 Mrd $]{.chiffre}
+dépensés en gestion des identités et des accès en 2026, sur 247 milliards de dépenses en
+sécurité, soit près d'un dollar sur dix.
+
+*Gartner, 2026*
+:::
+:::
+
+On n'entre plus par effraction dans les systèmes, on s'y connecte avec des identifiants valides.
+L'intrusion chez Uber en 2022 n'a exploité aucune faille logicielle : un mot de passe acheté et une
+série de notifications envoyées jusqu'à ce que la victime accepte ont suffi. Le contrôle des accès
+est devenu la nouvelle frontière.
+
+::: {.callout-tip title="À propos du « 80 % » que l'on cite souvent"}
+Le chiffre « plus de 80 % des intrusions impliquent des identifiants volés » vient des éditions
+2020 et 2021 du rapport Verizon. Il ne faut plus le citer tel quel : l'édition 2025 parle de 22 %
+des intrusions comme vecteur d'accès initial, et de 88 % dans la catégorie des attaques simples
+contre les applications web.
+:::
+
+## Le fil rouge : Marie Dupont
+
+Marie est engagée le 1^er^ novembre comme gestionnaire de prestations à la **Caisse de pension
+romande**, une organisation fictive : 180 collaborateurs, un logiciel métier installé sur site, une
+messagerie dans le cloud, un portail pour les assurés et six prestataires informatiques externes.
+
+Nous la suivons de son engagement à son départ. Chaque chapitre répond à une question que son
+parcours pose. Une caisse de pension a tout ce qu'il faut pour cela : des données sensibles, des
+assurés externes, des prestataires avec des droits d'administration et un régulateur.
+
+## Les dix chapitres
+
+### Une identité et ses droits
+
+::: {.cartes}
+::: {.carte}
+[01]{.num}
+
+### [Les bases](01-bases.qmd)
+Avant de suivre Marie, se mettre d'accord sur les mots, les quatre questions et la carte du domaine.
+:::
+
+::: {.carte}
+[02]{.num}
+
+### [Où vivent les identités](02-annuaires.qmd)
+Sa fiche est créée dans le logiciel RH, qui fait foi.
+:::
+
+::: {.carte}
+[03]{.num}
+
+### [Le cycle de vie](03-cycle-de-vie.qmd)
+Ses comptes sont créés, elle change de poste, elle part.
+:::
+
+::: {.carte}
+[04]{.num}
+
+### [L'autorisation](04-autorisation.qmd)
+Ce qu'elle a le droit de faire : rôles, attributs, relations.
+:::
+
+::: {.carte}
+[05]{.num}
+
+### [L'authentification](05-authentification.qmd)
+Comment elle prouve que c'est elle, et ce qui résiste au phishing.
+:::
+:::
+
+### Connecter, fédérer, gouverner
+
+::: {.cartes}
+::: {.carte}
+[06]{.num}
+
+### [SSO et fédération](06-sso-federation.qmd)
+Une seule connexion pour ses quarante applications.
+:::
+
+::: {.carte}
+[07]{.num}
+
+### [Les protocoles](07-protocoles.qmd)
+SAML, OAuth, OpenID Connect, SCIM : comment ça circule.
+:::
+
+::: {.carte}
+[08]{.num}
+
+### [Gouvernance et conformité](08-gouvernance.qmd)
+Revues, journaux, comptes à privilèges, normes et lois.
+:::
+
+::: {.carte}
+[09]{.num}
+
+### [Les frontières actuelles](09-frontieres.qmd)
+Zero Trust, cloud, clients, machines, e-ID suisse.
+:::
+
+::: {.carte}
+[10]{.num}
+
+### [Mener un projet IAM](10-projet.qmd)
+Enjeux, acteurs, étapes, erreurs à éviter.
+:::
+:::
+
+La première moitié suit l'identité de Marie de sa création à sa suppression, puis ce qu'elle a le
+droit de faire et comment elle prouve qui elle est. La seconde élargit : plusieurs applications,
+le contrôle dans la durée, ce qui dépasse l'employé (clients, machines, e-ID), et enfin le projet.
+Pour finir, [sept idées à emporter](a-retenir.qmd).

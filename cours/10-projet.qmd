@@ -1,0 +1,143 @@
+---
+title: "Mener un projet IAM"
+subtitle: "Enjeux, acteurs, étapes, erreurs à éviter"
+categories: ["Chapitre 10"]
+---
+
+::: {.question-du-chapitre}
+Du constat au programme : par où commencer dans votre organisation ?
+:::
+
+## Ce qu'un projet IAM rapporte
+
+C'est la réponse à la question que posera tout comité de direction : pourquoi dépenser pour ça ?
+
+::: {.cartes .deux}
+::: {.carte}
+[1]{.num}
+
+### Conformité
+Prouver aux auditeurs que les accès sont donnés, revus et retirés comme prévu. Exigé par ISO 27001,
+la FINMA, la LPD, le RGPD et PCI DSS pour les cartes de paiement.
+:::
+
+::: {.carte}
+[2]{.num}
+
+### Moins de risques
+Fermer vite les accès au départ, supprimer les comptes orphelins, limiter les comptes
+administrateur, imposer une authentification forte. Moins de portes ouvertes pour un attaquant.
+:::
+
+::: {.carte}
+[3]{.num}
+
+### Moins de coûts
+Moins de tickets au support, moins de saisies à la main, revues des accès préparées
+automatiquement. Le travail reste, mais il est fait une fois, pas 90 fois.
+:::
+
+::: {.carte}
+[4]{.num}
+
+### Service au métier
+Accès prêts le premier jour, demandes en libre-service, collaboration plus simple avec partenaires
+et prestataires, nouvelles applications intégrées plus vite.
+:::
+:::
+
+::: {.callout-tip title="Ordres de grandeur"}
+Lors d'un audit ISO 27001, l'auditeur demande la liste des personnes ayant accès à la paie et la
+preuve de la dernière revue. Sans outil, cela prend des jours. Avec, quelques minutes.
+
+Chaque réinitialisation de mot de passe par le support coûte entre 15 et 30 CHF en temps de
+travail. Le libre-service la ramène à zéro.
+
+Sur la durée, une gestion manuelle coûte 2 à 4 fois plus cher qu'une solution automatisée (modèle
+Forrester, 3 300 utilisateurs, 100 applications). Les chiffres du modèle datent, le rapport reste
+observé.
+:::
+
+## Un projet IAM n'est pas un projet informatique
+
+| Acteur | Ce qu'il apporte | Ce qui se passe quand il manque |
+|--------------------|------------------------------------------|--------------------------------------|
+| **Ressources humaines** | La liste de référence des personnes : arrivées, changements de poste, départs, dates de fin de contrat | Tout le cycle de vie est manuel et faux |
+| **Responsables métier** | La définition de ce qu'un poste doit pouvoir faire, et la validation des demandes | L'informatique invente les rôles et personne n'en est responsable |
+| **Équipe informatique** | La connexion technique des applications, les connecteurs, l'exploitation | Les applications restent gérées à la main, hors du système central |
+| **Sécurité** | La politique, les règles de séparation des tâches, le niveau de risque accepté | Le projet devient un outil de confort sans effet sur le risque |
+| **Audit et conformité** | L'exigence de preuve : qui a validé quoi, quand, sur quelle base | Les revues des accès deviennent un rituel qui ne prouve rien |
+| **Utilisateurs** | L'adoption. Une demande d'accès trop lourde sera contournée | Les accès s'obtiennent hors processus |
+
+La première cause d'échec n'est pas technique : c'est l'absence de responsable métier pour les
+rôles. Faites signer dès le début une liste de propriétaires de rôles par département.
+
+::: {.callout-tip title="Exemple"}
+Un projet où les RH refusent de livrer la date de fin de contrat des externes « parce que ce n'est
+pas dans leur système ». Résultat : tous les prestataires ont des comptes sans date de fin, et le
+projet se retrouve à gérer à la main ce qu'il devait automatiser.
+:::
+
+## Par étapes, pas en une seule fois
+
+Les projets IAM échouent quand ils veulent tout faire d'un coup. L'ordre proposé va du plus simple
+et du plus rentable (les départs automatiques) au plus long (les rôles).
+
+::: {.etapes}
+1. **Inventaire.** Identités, sources, applications, comptes administrateur, comptes de service.
+   Comptez les comptes orphelins trouvés : c'est l'argument pour le budget.
+2. **Source de référence.** Obtenir des RH un flux fiable, avec date de fin, y compris pour les
+   externes. Sans cette étape, le reste ne tient pas.
+3. **Départs automatiques d'abord.** Brancher le flux RH sur la désactivation au fournisseur
+   d'identité. Premier gain de sécurité mesurable en quelques semaines.
+4. **Fédération et MFA des applications principales.** SSO et authentification résistante au
+   phishing là où sont les données sensibles.
+5. **Rôles et demandes d'accès.** Commencer par un département pilote, livrer, corriger, étendre.
+   Itérations de 2 à 3 mois, pas un modèle complet avant la première livraison.
+6. **Revues et comptes à privilèges.** PAM, zéro droit permanent, revues des accès lisibles par le
+   métier.
+7. **Mesurer et répéter.** Délai de fermeture des accès, taux de retrait en revue, nombre de
+   comptes administrateur permanents.
+:::
+
+::: {.callout-tip title="Un inventaire qui débloque un budget"}
+1 200 comptes actifs pour 800 collaborateurs, 17 administrateurs du domaine, 60 comptes de service
+sans propriétaire. Présenté au comité de direction, ce constat vaut tous les discours.
+:::
+
+::: {.callout-important title="Les facteurs de succès"}
+Traiter les risques tôt, livrer de la valeur à chaque itération, limiter les développements sur
+mesure, et une seule équipe réunissant métier, informatique, sécurité et audit.
+:::
+
+## Dix erreurs qui font échouer un projet IAM
+
+1. Traiter l'IAM comme un projet informatique alors que c'est un projet d'organisation.
+2. Démarrer sans liste de référence fiable des personnes, surtout pour les externes.
+3. Vouloir un modèle de rôles complet avant de livrer quoi que ce soit.
+4. Automatiser l'ouverture des accès avant leur fermeture, parce que c'est ce que le métier
+   réclame.
+5. Négliger les prestataires et les enseignants ou intervenants externes, qui concentrent le plus
+   de comptes sans date de fin.
+6. Laisser les comptes de service hors du périmètre, faute de responsable identifié.
+7. Confondre installation d'un outil et mise en place d'une gouvernance.
+8. Faire valider des revues des accès illisibles, et se contenter du taux de réponse.
+9. Sous-estimer la procédure de récupération de compte, qui devient le maillon faible de tout le
+   dispositif.
+10. Oublier que le fournisseur d'identité est un point unique de panne, et ne pas prévoir sa panne.
+
+::: {.callout-important title="À retenir"}
+Une seule de ces dix erreurs est technique. Les neuf autres relèvent du processus et de la
+gouvernance.
+:::
+
+::: {.callout-tip title="Deux de ces erreurs, en vrai"}
+**Erreur 3 :** un projet qui passe 18 mois à modéliser 100 % des rôles avant de livrer quoi que ce
+soit, et qui est arrêté avant la mise en production.
+
+**Erreur 10 :** une organisation sans procédure écrite pour le cas où le fournisseur d'identité est
+indisponible ou compromis. Le jour venu, personne ne sait comment accéder aux applications.
+:::
+
+Pour appliquer ce chapitre, faites l'exercice
+[Diagnostic d'une architecture](../exercices/diagnostic-architecture.qmd).

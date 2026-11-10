@@ -1,0 +1,5 @@
+# Valeurs reprises dans les pages avec {{< var nom >}}. À modifier ici, une seule fois.
+edition: "2026"
+# Adresse du dépôt GitHub une fois publié (utilisée par les pages du labo).
+depot: "https://github.com/VOTRE-COMPTE/cours-iam"
+keycloak: "26.7"

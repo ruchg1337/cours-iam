@@ -1,0 +1,39 @@
+---
+title: "Sept idées à emporter"
+subtitle: "Ce qu'il faut garder en tête quand le reste est oublié"
+---
+
+::: {.etapes}
+1. **Authentifier et autoriser sont deux décisions distinctes,** souvent prises par deux systèmes
+   différents. [Chapitre 1](01-bases.qmd)
+2. **La valeur d'un dispositif IAM pour la sécurité se mesure au délai de fermeture des accès,**
+   pas au délai d'ouverture. [Chapitre 3](03-cycle-de-vie.qmd)
+3. **Le changement de poste est le maillon faible du cycle de vie.** L'accumulation de droits en
+   est la conséquence directe. [Chapitre 3](03-cycle-de-vie.qmd)
+4. **Aucun modèle d'autorisation ne gagne.** Les architectures matures combinent RBAC, ABAC et
+   ReBAC. [Chapitre 4](04-autorisation.qmd)
+5. **Tous les MFA ne se valent pas.** Le seul critère qui compte : la résistance au relais en
+   temps réel. [Chapitre 5](05-authentification.qmd)
+6. **La fédération sans création automatique des comptes fabrique des comptes orphelins.** Il faut
+   les deux canaux. [Chapitre 7](07-protocoles.qmd)
+7. **Le fournisseur d'identité est devenu l'élément le plus critique du système d'information.**
+   [Chapitre 6](06-sso-federation.qmd)
+:::
+
+Laquelle de ces sept idées change quelque chose dans votre travail dès lundi ?
+
+## Deux questions à rapporter dans votre organisation
+
+- Quel est le délai réel entre un départ et la fermeture des accès ?
+- Qui possède la liste des comptes administrateur permanents ?
+
+## Pour aller plus loin
+
+::: {.callout-tip title="Un conseil"}
+Lisez une spécification complète, une seule fois dans votre carrière. OpenID Connect Core est la
+plus courte et la plus rentable.
+:::
+
+Les normes, les spécifications, les lectures et les cas réels cités dans le cours sont rassemblés
+sur la page [Sources](../sources.qmd). Pour vérifier vos acquis, passez aux
+[exercices](../exercices/index.qmd), puis au [labo](../labo/index.qmd).

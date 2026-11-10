@@ -1,0 +1,187 @@
+---
+title: "Les frontières actuelles"
+subtitle: "Zero Trust, cloud, clients, machines, e-ID"
+categories: ["Chapitre 9"]
+---
+
+::: {.question-du-chapitre}
+Que se passe-t-il quand l'utilisateur n'est plus un employé assis derrière le pare-feu ?
+:::
+
+## Zero Trust : l'identité comme nouvelle frontière
+
+::: {.cartes .deux}
+::: {.carte}
+[1]{.num}
+
+### Ne rien présumer
+Être dans le réseau de l'entreprise ne donne aucun droit. Un poste sur le réseau interne n'est pas
+plus fiable qu'un poste sur Internet.
+:::
+
+::: {.carte}
+[2]{.num}
+
+### Vérifier à chaque fois
+Chaque accès est évalué selon l'identité, l'état de l'appareil, le contexte et le niveau de risque
+de la session.
+:::
+
+::: {.carte}
+[3]{.num}
+
+### Réévaluer en continu
+La décision n'est pas prise une fois pour toutes à la connexion. Un changement de contexte doit
+pouvoir couper une session en cours.
+:::
+
+::: {.carte}
+[4]{.num}
+
+### Limiter les dégâts
+Découper le réseau en petites zones, moindre privilège, droits temporaires : limiter ce qu'une
+intrusion permet d'atteindre.
+:::
+:::
+
+Attention à l'effet marketing : Zero Trust n'est pas un produit. La partie vraiment structurante
+est la réévaluation continue. Une session de huit heures est incompatible avec elle : si la session
+de Marie, ouverte à Lausanne à 9 h, est utilisée depuis un autre pays à 9 h 10, elle doit être
+coupée.
+
+Pour l'IAM, concrètement, l'accès conditionnel devient le point de décision central. Il ne
+fonctionne que si les informations sur l'identité et sur l'appareil sont fiables.
+
+::: {.callout-important title="Le préalable qu'on saute toujours"}
+Sans annuaire d'identités propre et sans inventaire des appareils à jour, il n'y a rien sur quoi
+fonder une décision. Acheter un outil d'accès conditionnel alors que 30 % des appareils ne sont pas
+dans l'inventaire, c'est décider sur des données fausses. Zero Trust s'achète en dernier, pas en
+premier.
+:::
+
+## Contrôler l'usage du cloud : CASB et SSE
+
+### Le problème
+
+- Les données sortent du réseau : SaaS, stockage en ligne, outils d'IA. Le pare-feu ne voit plus
+  rien.
+- Des applications sont utilisées sans l'informatique : partage de fichiers, traduction en ligne,
+  assistants IA.
+- Un compte SaaS compromis donne accès aux données depuis n'importe où, sans passer par le réseau
+  de l'entreprise.
+
+### Les réponses
+
+CASB (*Cloud Access Security Broker*)
+: Un intermédiaire entre les utilisateurs et les services cloud. Il voit qui utilise quoi, applique
+  des règles (bloquer un partage public, interdire un téléchargement sur un appareil non géré) et
+  détecte les anomalies.
+
+SSE (*Security Service Edge*)
+: Regroupe le CASB, le filtrage web et l'accès réseau Zero Trust en un service cloud. Exemples :
+  Netskope, Zscaler, Microsoft Defender for Cloud Apps.
+
+::: {.callout-tip title="Exemple : ce que l'outil découvre"}
+Dans les journaux, 40 services cloud utilisés dont 25 inconnus de l'informatique, y compris un
+convertisseur PDF en ligne où sont envoyés des contrats.
+:::
+
+::: {.callout-important title="À retenir"}
+Ces outils consomment l'identité, ils ne la produisent pas. Sans IAM propre, un CASB ne sait pas à
+qui il parle. Et il ne remplace ni la fédération ni SCIM : il contrôle l'usage des applications, il
+ne gère pas les comptes.
+:::
+
+## CIAM : quand l'utilisateur n'est pas un employé
+
+| Dimension | IAM interne (employés) | CIAM (clients, citoyens) |
+|----------------------|----------------------------------|--------------------------------------------|
+| **Volume** | Des milliers | Des centaines de milliers à des millions, avec des pics |
+| **Création de l'identité** | Par les RH, avec vérification à l'engagement | En libre-service, avec un niveau de vérification à choisir selon le risque |
+| **Moyens de pression** | Formation, directive interne, sanction | Aucun. Trop de contraintes : l'utilisateur abandonne |
+| **Base juridique** | Contrat de travail | Consentement ou intérêt légitime, à documenter et à retirer sur demande |
+| **Enjeu principal** | Gouvernance et preuve d'audit | Conversion, lutte contre la fraude, gestion du consentement |
+| **Risque de conception** | Accumulation de droits | Vol de compte et création de faux comptes en masse |
+
+La différence de fond : on ne peut ni former ni sanctionner un client. Toute mesure de sécurité qui
+complique le parcours se paie en abandons mesurables. Une banque en ligne qui impose une clé
+physique à ses clients verra ses ouvertures de compte chuter. Elle proposera plutôt des passkeys,
+avec un parcours de secours par vidéo-identification.
+
+::: {.callout-important title="À retenir"}
+En CIAM, la procédure de récupération de compte est à la fois la première cause d'appels au support
+et la principale porte d'entrée des attaquants. Elle se conçoit avec autant de soin que
+l'authentification elle-même.
+:::
+
+## Les identités non humaines : le sujet du moment
+
+::: {.cartes}
+::: {.carte}
+[×10 à ×50]{.chiffre}
+rapport couramment observé entre le nombre d'identités machines et le nombre d'identités humaines.
+:::
+
+::: {.carte}
+[≈ 0]{.chiffre}
+nombre de ces identités couvertes par une revue des accès dans la plupart des organisations.
+:::
+
+::: {.carte}
+[∞]{.chiffre}
+durée de vie réelle d'un secret de chaîne de déploiement que personne n'a inventorié.
+:::
+:::
+
+Sont concernés : comptes de service, jetons d'API, clés SSH, certificats, identités des conteneurs,
+et désormais les agents IA.
+
+Le problème : ces identités n'ont ni responsable désigné, ni date de fin, ni procédure de départ.
+Personne ne « quitte l'entreprise » à leur place. Une clé d'API dans un dépôt Git public, un jeton
+de chaîne de déploiement valable sans limite, un certificat client expiré un dimanche qui coupe un
+flux de paiement : ce sont les exemples classiques.
+
+La piste : une identité prouvée par cryptographie et à très courte durée de vie, plutôt qu'un
+secret fixe dans un fichier de configuration. SPIFFE/SPIRE délivre ainsi aux services des identités
+valables quelques heures, renouvelées automatiquement.
+
+::: {.callout-important title="Le cas des agents IA"}
+La question n'est plus « qui est authentifié », mais « au nom de qui cet agent agit-il, et jusqu'où
+va sa délégation ». Un agent qui lit la messagerie d'un utilisateur devrait agir avec un jeton
+limité à cet utilisateur et à cette action, pas avec un compte de service global. Les modèles
+d'autorisation actuels n'y répondent pas encore proprement.
+:::
+
+## Le contexte suisse : l'identité électronique (e-ID)
+
+::: {.etapes}
+1. **7 mars 2021.** Le peuple rejette un premier projet, surtout parce qu'il confiait l'émission à
+   des entreprises privées.
+2. **20 décembre 2024.** Le Parlement adopte la nouvelle loi fédérale sur l'identité électronique
+   (LeID), entièrement gérée par l'État.
+3. **28 septembre 2025.** La loi est acceptée en votation populaire par 50,39 % des voix, après
+   référendum.
+4. **21 avril 2026.** Le Tribunal fédéral rejette les recours contre le scrutin. La votation est
+   validée.
+5. **30 juin 2026.** L'Office fédéral de la justice reporte le lancement, pour des raisons de
+   sécurité face aux *deepfakes*. Aucune nouvelle date n'est fixée.
+:::
+
+::: {.callout-warning title="Un dossier qui bouge"}
+Cette chronologie reflète l'état du dossier pour l'édition {{< var edition >}} du cours. Vérifiez
+la situation actuelle sur [eid.admin.ch](https://www.eid.admin.ch).
+:::
+
+**Pourquoi cela vous concerne.** L'e-ID est un fournisseur d'identité d'un type nouveau : un
+portefeuille numérique détenu par l'utilisateur, qui présente seulement les attestations
+nécessaires. On peut prouver à un site que l'on a plus de 18 ans sans révéler sa date de naissance
+ni son nom. L'identité passe du fournisseur à la personne.
+
+Les questions de ce cours restent entières : quel niveau de vérification à l'émission, et comment
+récupérer son identité quand on perd son téléphone ?
+
+::: {.callout-note title="Références" collapse="true" icon=false}
+NIST SP 800-207, *Zero Trust Architecture* (2020). NIST SP 800-63A-4 pour la vérification
+d'identité à l'inscription. CyberArk, *Identity Security Threat Landscape 2024* pour le rapport
+machines / humains. Loi fédérale sur l'identité électronique (LeID).
+:::

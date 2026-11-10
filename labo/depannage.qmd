@@ -1,0 +1,41 @@
+---
+title: "Si ça coince"
+subtitle: "Les erreurs les plus fréquentes et comment repartir de zéro"
+categories: ["Labo"]
+---
+
+Premier réflexe : les journaux disent presque toujours pourquoi.
+
+```bash
+docker compose logs keycloak
+docker compose logs app
+```
+
+| Message | Cause probable |
+|----------------------------------|------------------------------------------------------------------|
+| `Invalid parameter: redirect_uri` | L'URI de redirection dans Keycloak ne correspond pas exactement à `http://localhost:8000/callback`. |
+| `Invalid client` ou `Invalid client credentials` | Le secret dans `.env` n'est pas celui de l'onglet Credentials, ou l'application n'a pas été redémarrée. |
+| `Missing parameter: code_challenge_method` | PKCE est exigé par Keycloak mais l'application ne l'envoie pas, ou l'inverse. Ici c'est voulu : l'application envoie toujours PKCE. |
+
+## Tout remettre à zéro
+
+```bash
+docker compose down -v
+```
+
+L'option `-v` efface la base de Keycloak.
+
+## Partir du realm déjà configuré
+
+Si vous êtes bloqué, vous pouvez charger le realm `caisse` tout prêt. La partie GitHub n'y est pas,
+elle dépend de votre compte.
+
+```bash
+docker compose -f docker-compose.yml -f solution/docker-compose.solution.yml up --build
+```
+
+Puis, dans `.env` :
+
+```bash
+OIDC_CLIENT_SECRET=secret-du-labo-a-changer
+```

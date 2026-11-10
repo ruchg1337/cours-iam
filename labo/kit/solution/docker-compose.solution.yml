@@ -1,0 +1,8 @@
+# Surcouche : importe le realm "caisse" déjà configuré au démarrage de Keycloak.
+#   docker compose -f docker-compose.yml -f solution/docker-compose.solution.yml up --build
+# L'import n'a lieu que si le realm n'existe pas encore (docker compose down -v pour repartir de zéro).
+services:
+  keycloak:
+    command: ["start-dev", "--import-realm"]
+    volumes:
+      - ./solution/caisse-realm.json:/opt/keycloak/data/import/caisse-realm.json:ro

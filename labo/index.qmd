@@ -1,0 +1,113 @@
+---
+title: "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+subtitle: "Environ 2 heures pour les parties 1 à 3, une heure de plus avec la partie 4"
+---
+
+::: {.question-du-chapitre}
+Vous êtes l'équipe informatique de la Caisse de pension romande. La nouvelle application de gestion
+des prestations ne doit gérer aucun mot de passe.
+:::
+
+L'application délègue l'authentification à un fournisseur d'identité, Keycloak. D'abord avec les
+comptes internes de la caisse (Marie Dupont), puis en acceptant les comptes GitHub par fédération.
+
+En chemin, vous verrez passer tout ce que le cours a décrit : le flux par code d'autorisation,
+PKCE, le jeton d'identité, le jeton d'accès, les rôles, la séparation entre authentification et
+autorisation, la déconnexion globale. Le labo s'appuie sur les chapitres
+[SSO et fédération](../cours/06-sso-federation.qmd) et [Les protocoles](../cours/07-protocoles.qmd).
+
+## Les quatre parties
+
+::: {.cartes .deux}
+::: {.carte}
+[Partie 1 · 45 min]{.num}
+
+### [Un client OIDC](1-client-oidc.qmd)
+L'application s'appuie sur les comptes de Keycloak. Vous créez le realm, Marie et le client, puis
+vous observez le flux.
+:::
+
+::: {.carte}
+[Partie 2 · 30 min]{.num}
+
+### [Fédérer avec GitHub](2-federation-github.qmd)
+Keycloak fait confiance à GitHub et devient un courtier d'identité.
+:::
+
+::: {.carte}
+[Partie 3 · 20 min]{.num}
+
+### [Rôles et autorisation](3-roles.qmd)
+L'autorisation se décide dans l'application, à partir de ce que dit le jeton.
+:::
+
+::: {.carte}
+[Partie 4 · facultative]{.num}
+
+### [Aller plus loin](4-aller-plus-loin.qmd)
+Passkeys, durées de vie, casser pour comprendre, journaux.
+:::
+:::
+
+## Ce qu'il vous faut
+
+- Docker Desktop (ou Docker Engine avec le plugin compose), et 4 Go de mémoire libres.
+- Un navigateur. Les ports 8080 (Keycloak) et 8000 (application) doivent être libres.
+- Pour la partie 2 : un compte GitHub (gratuit).
+- Aucun code à écrire. L'application est fournie, vous la configurez.
+
+::: {.callout-warning title="À faire avant de venir"}
+Le premier démarrage télécharge environ 700 Mo d'images. Faites la partie 0 chez vous, sur une
+bonne connexion.
+:::
+
+## Obtenir le kit
+
+Le kit se trouve dans le dossier `labo/kit` du [dépôt du cours]({{< var depot >}}).
+
+```bash
+git clone {{< var depot >}}.git
+cd cours-iam/labo/kit
+```
+
+Sans Git : sur la page du dépôt, bouton **Code** puis **Download ZIP**.
+
+| Fichier | Contenu |
+|---|---|
+| `docker-compose.yml` | Keycloak {{< var keycloak >}}, PostgreSQL et l'application |
+| `.env.example` | Les variables à copier dans `.env` (identifiant et secret du client OIDC) |
+| `app/` | L'application cliente (Python, Flask et Authlib), environ 150 lignes commentées |
+| `solution/` | Le corrigé : un realm Keycloak prêt à importer |
+
+## Partie 0 : démarrer (10 min) {#partie-0}
+
+```bash
+cp .env.example .env
+docker compose up --build
+```
+
+Attendez la ligne `Keycloak {{< var keycloak >}}.x ... started`. Puis ouvrez :
+
+- la console d'administration de Keycloak : <http://localhost:8080> (`admin` / `admin`) ;
+- l'application : <http://localhost:8000>.
+
+Cliquez sur « Se connecter via Keycloak » dans l'application : vous obtenez une erreur. C'est
+normal, le realm `caisse` n'existe pas encore. Lisez le message d'erreur, il vous dit déjà quelque
+chose.
+
+::: {.question}
+**Question 0.** Dans `docker-compose.yml`, l'application connaît deux adresses pour Keycloak
+(`OIDC_ISSUER` et `OIDC_INTERNAL_BASE`). Pourquoi deux ? Laquelle apparaîtra dans le claim `iss`
+des jetons ?
+:::
+
+Vous êtes prêt pour la [partie 1](1-client-oidc.qmd).
+
+## À rendre {#a-rendre}
+
+Un document de deux pages maximum :
+
+- vos réponses aux questions 0 à 12 ;
+- un schéma des acteurs et des flèches de la partie 2 (utilisateur, application, Keycloak, GitHub),
+  en indiquant sur chaque flèche ce qui circule (code, jeton, mot de passe, preuve signée) et ce
+  qui ne circule jamais.

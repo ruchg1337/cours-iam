@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Caisse de pension : gestion des prestations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bleu: #0099DA; --orange: #F26B43; --gris: #7C7772; --fond: #F3F1EF; }
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; color: #1A1A1A; background: #fff; }
+  header { background: var(--bleu); color: #fff; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  header a { color: #fff; text-decoration: none; margin-left: 16px; }
+  main { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+  h1 { font-size: 24px; } h2 { font-size: 18px; color: var(--bleu); margin-top: 28px; }
+  .carte { background: var(--fond); border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .alerte { background: #FDECE5; border-radius: 8px; padding: 12px 16px; }
+  pre { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: 12px; white-space: pre-wrap; word-break: break-all; }
+  code { font-size: 12px; }
+  .btn { display: inline-block; background: var(--orange); color: #fff; padding: 10px 16px; border-radius: 6px; text-decoration: none; }
+  .btn.bleu { background: var(--bleu); }
+  table { border-collapse: collapse; width: 100%; } td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid #ddd; vertical-align: top; font-size: 14px; }
+  .muted { color: var(--gris); font-size: 13px; }
+  .ok { color: #1a7f37; font-weight: bold; } .ko { color: #b42318; font-weight: bold; }
+</style>
+</head>
+<body>
+<header>
+  <div><strong>Caisse de pension romande</strong> · gestion des prestations</div>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/profil">Mon profil</a>
+    <a href="/rentes">Valider des rentes</a>
+    <a href="/userinfo">userinfo</a>
+    {% if user %}<a href="/logout">Déconnexion ({{ user.preferred_username }})</a>{% else %}<a href="/login">Se connecter</a>{% endif %}
+  </nav>
+</header>
+<main>
+{% block content %}{% endblock %}
+<p class="muted" style="margin-top:40px">Labo IAM. Fournisseur d'identité : <code>{{ issuer }}</code> · client : <code>{{ client_id }}</code></p>
+</main>
+</body>
+</html>

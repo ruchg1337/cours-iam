@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block content %}
+<h1>Valider des rentes</h1>
+<div class="carte">
+  <p class="ok">Accès autorisé : le rôle <code>{{ role_requis }}</code> est présent dans votre jeton d'identité.</p>
+  <p>Rôles reçus : <code>{{ roles | join(", ") }}</code></p>
+  <table>
+    <tr><th>Dossier</th><th>Assuré·e</th><th>Montant</th><th></th></tr>
+    <tr><td>4512</td><td>J. Favre</td><td>2 340 CHF / mois</td><td><a class="btn bleu" href="#">Valider</a></td></tr>
+    <tr><td>4513</td><td>A. Rochat</td><td>1 980 CHF / mois</td><td><a class="btn bleu" href="#">Valider</a></td></tr>
+  </table>
+  <p class="muted">Démonstration : aucune rente n'est réellement validée.</p>
+</div>
+{% endblock %}

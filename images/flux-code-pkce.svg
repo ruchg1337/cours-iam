@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 430" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#17252e">
+  <style>text{paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round} .n{stroke:none}</style>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+  </defs>
+
+  <!-- Acteurs -->
+  <rect x="40" y="10" width="180" height="40" rx="8" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="130" y="35" text-anchor="middle" font-weight="700">Application</text>
+  <rect x="320" y="10" width="200" height="40" rx="8" fill="#0f5964"/>
+  <text x="420" y="35" text-anchor="middle" font-weight="700" fill="#fff" class="n">Serveur d'autorisation</text>
+  <rect x="620" y="10" width="120" height="40" rx="8" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="680" y="35" text-anchor="middle" font-weight="700">API</text>
+
+  <line x1="130" y1="50" x2="130" y2="420" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <line x1="420" y1="50" x2="420" y2="420" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <line x1="680" y1="50" x2="680" y2="420" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+
+  <!-- 1 -->
+  <circle cx="24" cy="98" r="12" fill="#c8651b"/><text x="24" y="103" text-anchor="middle" fill="#fff" font-weight="700" class="n">1</text>
+  <line x1="130" y1="98" x2="414" y2="98" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="275" y="88" text-anchor="middle" font-weight="700">Redirection de l'utilisateur</text>
+  <text x="275" y="116" text-anchor="middle" fill="#5c6b73" font-size="12">avec l'empreinte d'un secret aléatoire (code challenge)</text>
+
+  <!-- 2 -->
+  <circle cx="24" cy="166" r="12" fill="#c8651b"/><text x="24" y="171" text-anchor="middle" fill="#fff" font-weight="700" class="n">2</text>
+  <rect x="310" y="144" width="360" height="44" rx="8" fill="#eef4f3" stroke="#cfe0de"/>
+  <text x="490" y="163" text-anchor="middle" font-weight="700" class="n">Consentement</text>
+  <text x="490" y="179" text-anchor="middle" fill="#5c6b73" font-size="12" class="n">l'utilisateur s'authentifie et accepte les droits demandés</text>
+
+  <!-- 3 -->
+  <circle cx="24" cy="234" r="12" fill="#c8651b"/><text x="24" y="239" text-anchor="middle" fill="#fff" font-weight="700" class="n">3</text>
+  <line x1="420" y1="234" x2="136" y2="234" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="275" y="224" text-anchor="middle" font-weight="700">Code d'autorisation</text>
+  <text x="275" y="252" text-anchor="middle" fill="#5c6b73" font-size="12">à usage unique, envoyé à l'adresse de retour enregistrée</text>
+
+  <!-- 4 -->
+  <circle cx="24" cy="302" r="12" fill="#c8651b"/><text x="24" y="307" text-anchor="middle" fill="#fff" font-weight="700" class="n">4</text>
+  <line x1="130" y1="296" x2="414" y2="296" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <line x1="420" y1="312" x2="136" y2="312" stroke="#17252e" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#f)"/>
+  <text x="275" y="286" text-anchor="middle" font-weight="700">Échange : code + secret en clair</text>
+  <text x="275" y="334" text-anchor="middle" fill="#5c6b73" font-size="12">le serveur compare avec l'empreinte de l'étape 1, puis émet les jetons</text>
+
+  <!-- 5 -->
+  <circle cx="24" cy="388" r="12" fill="#c8651b"/><text x="24" y="393" text-anchor="middle" fill="#fff" font-weight="700" class="n">5</text>
+  <line x1="130" y1="388" x2="674" y2="388" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <rect x="445" y="366" width="210" height="18" fill="#fff"/>
+  <text x="550" y="380" text-anchor="middle" font-weight="700">Appel avec le jeton d'accès</text>
+  <text x="550" y="406" text-anchor="middle" fill="#5c6b73" font-size="12">l'API vérifie le jeton</text>
+</svg>

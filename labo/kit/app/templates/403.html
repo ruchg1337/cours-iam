@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<h1>Accès refusé</h1>
+<div class="alerte">
+  <p>Vous êtes bien <strong>authentifié·e</strong> (Keycloak a répondu à la question « le prouves-tu ? »), mais vous n'êtes pas <strong>autorisé·e</strong> : il manque le rôle <code>{{ role_requis }}</code> dans votre jeton d'identité.</p>
+  <p class="muted">Deux décisions séparées, prises par deux systèmes différents (chapitre 1). Vérifiez sur <a href="/profil">votre profil</a> si le claim <code>realm_access.roles</code> est présent dans le jeton d'identité.</p>
+</div>
+{% endblock %}

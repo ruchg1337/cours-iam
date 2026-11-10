@@ -1,0 +1,193 @@
+---
+title: "Le cycle de vie de l'identité"
+subtitle: "Création, vie, suppression"
+categories: ["Chapitre 3"]
+---
+
+::: {.question-du-chapitre}
+Les comptes de Marie sont créés, elle change de poste, elle part. C'est le chapitre qui a le plus
+d'impact sur la sécurité réelle, et il ne contient aucune cryptographie.
+:::
+
+## Trois moments clés
+
+::: {.etapes}
+1. **Recrutement.** Création dans le logiciel RH. Rien n'existe encore côté informatique.
+2. **Création : l'arrivée** (*joiner*). Ouverture des accès : compte, messagerie, droits du poste.
+   Objectif : être opérationnel dès le premier jour.
+3. **Vie : le changement de poste** (*mover*). Changement de fonction, de service, de site. Le
+   point faible de toutes les organisations.
+4. **Vie : les événements.** Demandes d'accès, congé maternité, suspension, longue absence,
+   changement de nom, retour.
+5. **Suppression : le départ** (*leaver*). Blocage immédiat des accès, puis suppression après le
+   délai de conservation.
+:::
+
+::: {.callout-important title="La règle d'or"}
+Chaque étape doit être déclenchée par un événement dans le système RH, jamais par un e-mail envoyé
+au support.
+:::
+
+::: {.callout-tip title="Pourquoi « jamais par un e-mail »"}
+Un chef de service écrit : « merci de donner à Paul les mêmes accès que Marie ». Paul hérite de
+douze ans d'accumulation de droits en une seule demande. C'est le cas le plus fréquent de tous.
+:::
+
+## Création : l'arrivée de Marie, étape par étape
+
+Le 25 octobre, les RH saisissent le contrat de Marie. L'outil IGA crée l'identité, le compte
+Active Directory, la boîte e-mail et les accès du rôle « gestionnaire de prestations ». Le
+1^er^ novembre, Marie reçoit son mot de passe initial en main propre, le change, et enregistre sa
+passkey sur son téléphone professionnel.
+
+::: {.etapes}
+1. **Saisie par les RH.** Contrat, date de début, fonction, service, responsable. Pour un externe,
+   il n'y a pas de RH : c'est le responsable interne qui saisit, avec une date de fin obligatoire.
+2. **Vérification de l'identité.** Pièce d'identité contrôlée à l'engagement. C'est le seul moment
+   où l'on vérifie le lien entre la personne réelle et son identité numérique (le niveau IAL du
+   [chapitre 8](08-gouvernance.qmd)).
+3. **Calcul des accès.** L'outil IGA crée l'identité et déduit les accès du poste. Une approbation
+   n'est demandée que pour ce qui sort du standard.
+4. **Création des comptes.** Automatique dans les applications connectées (SCIM, connecteurs),
+   ticket contrôlé pour les autres. Identifiant unique, jamais réutilisé après un départ.
+5. **Remise des identifiants.** Mot de passe initial à usage unique, remis en personne ou par un
+   canal séparé, changé à la première connexion. MFA ou passkey enregistré le premier jour, jamais
+   par e-mail.
+6. **Jour 1.** Marie est opérationnelle. Tout est journalisé et rattaché à son identité. Elle
+   reçoit les consignes : phishing, et surtout comment récupérer son accès si elle perd son
+   téléphone.
+:::
+
+Quelques points d'attention :
+
+- **Pour un prestataire externe, la vérification d'identité est souvent sautée.** Personne ne
+  vérifie qui est vraiment derrière `consultant3`. Et si on n'impose pas de date de fin à la
+  saisie, personne ne déclenchera jamais le départ.
+- **Mauvaise pratique très répandue :** le mot de passe initial envoyé par e-mail à l'adresse
+  personnelle, ou le même mot de passe initial pour tous (`Bienvenue2026!`).
+- **Bonne pratique :** un lien d'enrôlement à usage unique valable 24 heures, remis par le
+  responsable, avec enregistrement de la passkey dans la foulée.
+
+::: {.callout-important title="À retenir"}
+Ce que le métier voit : le délai d'ouverture. Ce que la sécurité prépare dès ce jour : la
+suppression. Sans identifiant unique, sans source de référence et sans date de fin, il n'y aura
+pas de départ propre.
+:::
+
+## Vie : demander et approuver un accès
+
+C'est le quotidien d'un outil IGA, et c'est ce que les utilisateurs voient de l'IAM.
+
+::: {.etapes}
+1. **Demande en libre-service.** L'utilisateur ou son responsable choisit dans un catalogue d'accès
+   décrit en langage métier, avec une justification et une durée.
+2. **Approbation.** Le responsable hiérarchique, puis le propriétaire de l'application pour les
+   accès sensibles. Délégation pendant les absences, rappels automatiques.
+3. **Contrôle des conflits.** L'outil vérifie que le nouvel accès ne crée pas une combinaison
+   interdite, comme créer un fournisseur et le payer. Sinon : refus, ou dérogation documentée.
+4. **Attribution automatique.** L'accès est créé dans l'application par le connecteur ou par SCIM.
+   Tout est tracé : qui a demandé, qui a validé, quand.
+5. **Durée et retrait.** Chaque accès a une date de fin ou passe par la revue des accès suivante.
+   Un accès temporaire se retire tout seul.
+:::
+
+Un catalogue lisible dit « Consulter les dossiers clients (lecture seule) » ou « Valider des
+paiements jusqu'à 10 000 CHF ». Un catalogue illisible dit `GRP_FIN_SAP_ZF02_RW`.
+
+::: {.callout-important title="À retenir"}
+Si le catalogue est écrit en langage technique, personne ne sait quoi demander, et le responsable
+approuve « la même chose que Marie ». La qualité du catalogue fait la qualité du processus.
+:::
+
+## Vie : le changement de poste, où les droits s'accumulent
+
+| Année | Poste |
+|---|---|
+| 2014 | Comptabilité |
+| 2017 | Contrôle de gestion |
+| 2020 | Achats |
+| 2023 | Direction financière |
+| 2026 | Cumul de tous les droits, que personne n'a décidé |
+
+Chaque changement de poste ajoute des droits. Presque aucun n'en retire. Un collaborateur qui a
+changé cinq fois de service en douze ans détient les droits des cinq postes réunis. C'est, sans le
+dire, un compte à privilèges.
+
+Ce phénomène porte un nom : l'**accumulation de droits** (*privilege creep*). Elle transforme un
+utilisateur ordinaire en cible de grande valeur.
+
+::: {.callout-tip title="Exemple dans une banque"}
+Une collaboratrice passée de la comptabilité aux achats puis à la direction financière pouvait à
+la fois créer un fournisseur, saisir une facture et valider le paiement. La séparation des tâches
+était respectée sur le papier pour chaque poste, pas pour la personne.
+:::
+
+Qui, dans votre organisation, retire les droits de l'ancien poste lors d'une mutation ? Le silence
+est la réponse habituelle.
+
+## Suppression : le départ de Marie, étape par étape
+
+Dix ans plus tard, Marie part. Son contrat prend fin le 30 juin. À minuit, le fournisseur
+d'identité bloque la connexion et révoque ses sessions. Les comptes SaaS passent en « inactif » par
+SCIM. Le support reçoit la liste des trois applications non connectées. Son responsable reçoit la
+liste de ce qui a été fermé et récupère sa messagerie pour 30 jours.
+
+::: {.etapes}
+1. **L'événement.** Le départ vient du logiciel RH (date de fin) ou de la date de fin du contrat
+   externe. Pour un départ immédiat (licenciement, soupçon), il faut une procédure d'urgence, en
+   heures et non en jours.
+2. **Blocage.** Désactivation de l'authentification au fournisseur d'identité, et révocation des
+   sessions et jetons en cours. Un jeton signé reste valable jusqu'à son expiration
+   ([chapitre 7](07-protocoles.qmd)).
+3. **Comptes.** Désactivation, pas suppression, dans chaque application : SCIM et connecteurs pour
+   les applications connectées, liste contrôlée pour les autres. Badges et matériel récupérés.
+4. **Secrets partagés.** Changement des mots de passe partagés, comptes de service et clés que
+   Marie connaissait. Retrait de ses droits d'administration et de ses délégations.
+5. **Transfert.** Messagerie, fichiers, rôles d'approbateur ou de propriétaire d'application
+   réattribués à son responsable, avec une durée limitée.
+6. **Suppression définitive.** Après le délai de conservation (obligations légales, LPD),
+   suppression des données personnelles. Les journaux d'audit restent, avec un accès restreint.
+:::
+
+- **Le départ immédiat.** Un administrateur est licencié un lundi matin. Si la procédure est « le
+  flux RH tourne la nuit », il garde ses droits toute la journée.
+- **Les secrets partagés sont l'angle mort.** Le mot de passe du compte de service de sauvegarde,
+  connu de toute l'équipe d'exploitation, inchangé depuis 2019, que chaque ancien collaborateur
+  connaît encore.
+- **Désactiver d'abord, supprimer ensuite.** Supprimer immédiatement fait perdre les traces et les
+  données que l'organisation doit conserver. Mais un compte désactivé gardé indéfiniment finit par
+  être réactivé « temporairement » un jour.
+
+::: {.callout-important title="La mesure à suivre"}
+Le délai entre la date de départ et la désactivation effective. Objectif : moins de 24 heures, et
+moins d'une heure pour un départ immédiat.
+:::
+
+## Où en est votre organisation ? Cinq niveaux de maturité
+
+Ces étapes peuvent être faites à la main ou entièrement pilotées par les événements RH. Entre les
+deux, il y a des degrés. L'échelle utilisée ici est celle du CMMI.
+
+| Niveau | Ce que l'on observe | La question pour se situer |
+|----------------|----------------------------------------------|--------------------------------------|
+| **1. Initial** | Comptes créés et fermés à la main, sur ticket ou e-mail. Pas d'inventaire. Le résultat dépend des personnes présentes. | Qui crée un compte, et sur quelle base ? Si la réponse est « ça dépend », vous y êtes. |
+| **2. Géré** | Procédures d'arrivée et de départ écrites, formulaire de demande, responsables identifiés. Encore manuel, peu de traces. | Y a-t-il une procédure écrite, suivie partout ? |
+| **3. Défini** | Source RH de référence, annuaire central, rôles métier, fédération et SCIM pour les applications principales. Revue annuelle. | Le flux RH alimente-t-il automatiquement l'annuaire et les applications principales ? |
+| **4. Mesuré** | Délai de fermeture, taux de retrait, comptes orphelins, couverture MFA et SCIM mesurés chaque mois. PAM en place. | Connaissez-vous votre délai médian de fermeture des accès le mois dernier ? |
+| **5. Optimisé** | Chaque événement RH déclenche création, modification et fermeture. Zéro droit permanent, réévaluation continue. | Un incident ou un audit a-t-il modifié le dispositif dans les douze derniers mois ? |
+
+La plupart des organisations se situent entre 2 et 3. Le passage de 3 à 4 est celui qui change la
+sécurité : on commence à mesurer le délai de fermeture des accès, et plus seulement le délai
+d'ouverture.
+
+::: {.callout-tip title="Le manuel n'est pas gratuit"}
+Il est juste payé par le support informatique plutôt que par le projet. Une organisation de 600
+personnes avec 15 % de rotation, c'est environ 90 arrivées et 90 départs par an, plus les
+mutations. À 20 tickets par personne, cela fait 3 000 à 4 000 tickets manuels par an.
+:::
+
+::: {.callout-note title="Références" collapse="true" icon=false}
+ISO 27001:2022 A.5.16 (gestion des identités), A.5.17 (informations d'authentification), A.5.18
+(droits d'accès) et A.6.5 (responsabilités après la fin du contrat). CMMI Institute, CMMI V3.0
+(2023).
+:::

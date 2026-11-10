@@ -1,0 +1,100 @@
+---
+pagetitle: "Gestion des identités et des accès (IAM)"
+toc: false
+sidebar: false
+---
+
+::: {.hero}
+::: {.surtitre}
+Un cours de Grégory Ruch
+:::
+
+# Gestion des identités et des accès
+
+::: {.accroche}
+On ne force plus la porte des systèmes d'information, on s'y connecte avec une clé volée.
+Ce cours suit une identité, celle de Marie Dupont, de son engagement à son départ, pour comprendre
+comment on donne, contrôle et retire des accès.
+:::
+
+[Commencer le cours](cours/index.qmd){.btn-iam}
+[Faire le labo](labo/index.qmd){.btn-iam .secondaire}
+:::
+
+::: {.cartes}
+::: {.carte}
+### [Le cours](cours/index.qmd)
+Dix chapitres, du vocabulaire de base à la conduite d'un projet : annuaires, cycle de vie,
+autorisation, authentification, fédération, protocoles, gouvernance.
+:::
+
+::: {.carte}
+### [Les exercices](exercices/index.qmd)
+Deux études de cas à traiter en petit groupe, et des questions de révision pour vérifier
+que l'essentiel est acquis.
+:::
+
+::: {.carte}
+### [Le labo](labo/index.qmd)
+Un Keycloak et une application à connecter en OpenID Connect, d'abord avec les comptes
+internes, puis en fédération avec GitHub. Aucun code à écrire.
+:::
+:::
+
+## Ce que vous saurez faire à la fin
+
+::: {.cartes}
+::: {.carte}
+[1]{.num}
+
+### Parler la même langue
+Faire la différence entre une identité, un compte, un identifiant, un attribut, un rôle et un
+droit d'accès. Ne plus confondre authentification et autorisation.
+:::
+
+::: {.carte}
+[2]{.num}
+
+### Lire une architecture
+Reconnaître un échange SAML, OAuth ou OIDC sur un schéma, et savoir ce que contient chaque jeton.
+:::
+
+::: {.carte}
+[3]{.num}
+
+### Choisir un modèle
+Choisir entre RBAC, ABAC et ReBAC selon la situation, et expliquer pourquoi ce choix a des conséquences.
+:::
+
+::: {.carte}
+[4]{.num}
+
+### Juger une authentification
+Classer les moyens d'authentification selon leur vraie résistance au phishing, pas selon
+l'impression de sécurité.
+:::
+
+::: {.carte}
+[5]{.num}
+
+### Gouverner les accès
+Comprendre à quoi servent une revue des accès, la séparation des tâches et un coffre-fort à secrets.
+:::
+
+::: {.carte}
+[6]{.num}
+
+### Connaître le cadre
+Relier vos décisions à NIST SP 800-63-4, ISO 27001 et à la loi suisse sur la protection des données.
+:::
+:::
+
+Le but n'est pas de savoir configurer un produit, mais de savoir lire une architecture et repérer
+ce qui ne va pas. À la fin du cours, face à un schéma où une application mobile utilise OAuth seul
+pour authentifier ses utilisateurs, vous devez voir le problème en dix secondes.
+
+::: {.callout-note title="GIA ou IAM ?" icon=false}
+Gestion des identités et des accès (GIA) et *Identity and Access Management* (IAM) désignent la même
+chose. Le cours utilise IAM parce que c'est le terme des produits, des normes et des offres d'emploi.
+Tous les sigles sont expliqués dans le [glossaire](glossaire.qmd).
+:::

@@ -1,0 +1,52 @@
+---
+title: "Cinq questions de révision"
+subtitle: "Cinq minutes, sans notes"
+categories: ["Révision"]
+---
+
+Ces cinq questions couvrent les chapitres 1 à 5. Répondez de tête, puis ouvrez la réponse.
+
+::: {.question}
+**1.** Quelle est la différence entre authentifier et autoriser ?
+:::
+
+::: {.callout-note title="Réponse" collapse="true"}
+Ce sont deux décisions distinctes, souvent prises par deux systèmes différents.
+[Chapitre 1](../cours/01-bases.qmd)
+:::
+
+::: {.question}
+**2.** Parmi arrivée, changement de poste et départ, lequel est le plus mal géré en pratique, et
+pourquoi ?
+:::
+
+::: {.callout-note title="Réponse" collapse="true"}
+Le changement de poste : chaque mutation ajoute des droits, presque aucune n'en retire.
+[Chapitre 3](../cours/03-cycle-de-vie.qmd)
+:::
+
+::: {.question}
+**3.** Pourquoi l'ABAC, plus souple que le RBAC, ne l'a-t-il pas remplacé ?
+:::
+
+::: {.callout-note title="Réponse" collapse="true"}
+Parce qu'il faut des attributs fiables partout. [Chapitre 4](../cours/04-autorisation.qmd)
+:::
+
+::: {.question}
+**4.** Pourquoi une clé FIDO2 résiste-t-elle au phishing alors qu'un code à usage unique n'y
+résiste pas ?
+:::
+
+::: {.callout-note title="Réponse" collapse="true"}
+Parce que la preuve est liée au nom de domaine du site.
+[Chapitre 5](../cours/05-authentification.qmd)
+:::
+
+::: {.question}
+**5.** Quel indicateur mesure le mieux la valeur d'un projet IAM pour la sécurité ?
+:::
+
+::: {.callout-note title="Réponse" collapse="true"}
+Le délai de fermeture des accès. [Chapitre 3](../cours/03-cycle-de-vie.qmd)
+:::

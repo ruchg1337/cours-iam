@@ -1,0 +1,41 @@
+---
+title: "Les exercices"
+subtitle: "Deux études de cas et des questions de révision"
+---
+
+Les exercices se font sans ordinateur, en groupes de trois ou quatre. Il n'y a pas une seule bonne
+réponse : ce qui compte, c'est la qualité des choix et la capacité à repérer les pièges.
+
+::: {.cartes}
+::: {.carte}
+[Étude de cas · 10 min + discussion]{.num}
+
+### [Concevoir une politique d'authentification](politique-authentification.qmd)
+La caisse de pension de Marie, quatre populations, et une question : quel moyen d'authentification
+pour qui ?
+
+*Après le chapitre 5.*
+:::
+
+::: {.carte}
+[Étude de cas · 10 min + discussion]{.num}
+
+### [Diagnostic d'une architecture](diagnostic-architecture.qmd)
+Une haute école, 90 applications, 17 comptes administrateur. Trouvez les trois risques les plus
+graves.
+
+*Après le chapitre 10.*
+:::
+
+::: {.carte}
+[Révision · 5 min]{.num}
+
+### [Cinq questions de révision](questions-de-revision.qmd)
+À faire sans notes, pour vérifier les acquis des chapitres 1 à 5 avant d'attaquer la suite.
+
+*Après le chapitre 5.*
+:::
+:::
+
+Pour la pratique sur machine, voyez le [labo](../labo/index.qmd), qui est indépendant des
+exercices.

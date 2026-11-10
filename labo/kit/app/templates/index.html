@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% block content %}
+<h1>Bienvenue</h1>
+<div class="carte">
+  <p>Cette application ne gère <strong>aucun mot de passe</strong>. Elle délègue l'authentification à Keycloak (le fournisseur d'identité) et ne reçoit qu'une preuve signée : le jeton d'identité.</p>
+  {% if user %}
+    <p>Vous êtes connecté·e en tant que <strong>{{ user.name or user.preferred_username }}</strong>. <a href="/profil">Voir ce que l'application a reçu</a>.</p>
+  {% else %}
+    <p><a class="btn" href="/login">Se connecter via Keycloak</a></p>
+  {% endif %}
+</div>
+<h2>Ce que vous allez observer</h2>
+<ol>
+  <li>La redirection vers Keycloak (étape 1 du flux par code d'autorisation), avec <code>code_challenge</code> (PKCE), <code>state</code> et <code>nonce</code> dans l'URL.</li>
+  <li>Le retour avec un <code>code</code> à usage unique, échangé côté serveur contre les jetons.</li>
+  <li>Le <strong>jeton d'identité</strong> (qui, émis par qui, pour quelle application, jusqu'à quand, comment authentifié) et le <strong>jeton d'accès</strong> (pour appeler une API).</li>
+  <li>Une page réservée à un rôle : <em>l'autorisation se décide dans l'application</em>, pas chez l'IdP.</li>
+</ol>
+{% endblock %}

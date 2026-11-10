@@ -1,0 +1,40 @@
+---
+title: "Partie 3 : rôles et autorisation"
+subtitle: "L'autorisation se décide dans l'application (20 min)"
+categories: ["Labo"]
+---
+
+La page « Valider des rentes » exige le rôle `gestionnaire-prestations` **dans le jeton
+d'identité**.
+
+::: {.etapes}
+1. **Realm roles → Create role** : `gestionnaire-prestations`.
+2. **Users → mdupont → Role mapping → Assign role** → cochez le rôle (filtrez sur « realm roles »).
+3. Reconnectez-vous avec Marie et regardez Mon profil : la ligne « Rôles » dit toujours « absent du
+   jeton d'identité ». Par défaut, Keycloak met les rôles dans le jeton d'accès, pas dans le jeton
+   d'identité.
+4. **Clients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By
+   configuration → User Realm Role** : Name `roles`, Token Claim Name `realm_access.roles`,
+   Multivalued : On, Add to ID token : On → **Save**.
+5. Déconnexion, reconnexion : « Valider des rentes » s'ouvre. Faites la même chose avec votre
+   compte GitHub, sans le rôle : 403.
+:::
+
+::: {.question}
+**Question 10.** Qui a décidé que Marie peut valider des rentes : Keycloak ou l'application ? Qu'a
+fait chacun exactement ?
+:::
+
+::: {.question}
+**Question 11.** Marie change de service (le changement de poste du
+[chapitre 3](../cours/03-cycle-de-vie.qmd)). Où retire-t-on le rôle ? Combien de temps garde-t-elle
+l'accès après ce retrait, et pourquoi ?
+:::
+
+::: {.question}
+**Question 12.** Pourquoi est-ce une mauvaise idée que l'application lise les rôles dans le **jeton
+d'accès** plutôt que dans le jeton d'identité ? Indice : à qui le jeton d'accès est-il destiné ?
+:::
+
+Vous avez terminé le parcours principal. Rédigez votre [document à rendre](index.qmd#a-rendre), ou
+continuez avec la [partie 4](4-aller-plus-loin.qmd).

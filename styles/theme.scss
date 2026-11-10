@@ -1,0 +1,223 @@
+/*-- scss:defaults --*/
+
+// Palette : encre, sarcelle profonde, une touche d'ambre.
+$encre:      #17252e !default;
+$sarcelle:   #0f5964 !default;
+$ambre:      #c8651b !default;
+$papier:     #fbfaf6 !default;
+$trait:      #e4e0d6 !default;
+
+$body-bg:            $papier !default;
+$body-color:         $encre !default;
+$primary:            $sarcelle !default;
+$link-color:         $sarcelle !default;
+$navbar-bg:          $encre !default;
+$navbar-fg:          #f3efe6 !default;
+$navbar-hl:          #f0b27a !default;
+$footer-bg:          $papier !default;
+$border-color:       $trait !default;
+$code-color:         #8a3b12 !default;
+$code-bg:            #f1ede3 !default;
+
+// Polices du système : aucune requête vers un service externe.
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$headings-font-family:   "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif !default;
+$font-family-monospace:  ui-monospace, "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace !default;
+$font-size-root:         17px !default;
+$line-height-base:       1.65 !default;
+$headings-font-weight:   600 !default;
+$border-radius:          .5rem !default;
+
+$callout-color-note:      $sarcelle !default;
+$callout-color-tip:       #3f7d4e !default;
+$callout-color-important: $ambre !default;
+$callout-color-warning:   #b58a00 !default;
+$callout-color-caution:   #a8402f !default;
+
+/*-- scss:rules --*/
+
+:root {
+  --iam-carte-bg: #ffffff;
+  --iam-carte-trait: #{$trait};
+  --iam-doux: #5c6b73;
+  --iam-accent: #{$ambre};
+  --iam-primaire: #{$sarcelle};
+  --iam-teinte: #eef4f3;
+}
+
+main.content { max-width: 46rem; }
+
+h1, h2, h3 { letter-spacing: -0.01em; }
+h1.title { font-size: 2.3rem; line-height: 1.15; }
+h2 {
+  margin-top: 2.6rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--iam-carte-trait);
+}
+h3 { margin-top: 1.8rem; font-size: 1.2rem; }
+.subtitle, p.subtitle { color: var(--iam-doux); font-size: 1.1rem; }
+
+// Étiquette de chapitre au-dessus du titre : « Chapitre 4 »
+.quarto-title .quarto-categories { margin-bottom: .4rem; }
+.quarto-title .quarto-category {
+  border: 0; padding: 0;
+  color: var(--iam-accent);
+  font-size: .8rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; opacity: 1;
+}
+
+// Barre de navigation et pied de page
+.navbar { box-shadow: none; border-bottom: 3px solid $ambre; }
+.navbar-brand { font-family: $headings-font-family; font-weight: 700; letter-spacing: .04em; }
+.nav-footer { border-top: 1px solid var(--iam-carte-trait); color: var(--iam-doux); font-size: .85rem; }
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar-item .sidebar-link.active { color: var(--iam-accent) !important; font-weight: 600; }
+
+// Tableaux
+table.table, .table {
+  font-size: .93rem;
+  thead th {
+    border-bottom: 2px solid var(--iam-primaire);
+    color: var(--iam-primaire);
+    font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+  }
+  td, th { padding: .6rem .7rem; vertical-align: top; }
+}
+
+// Encadrés
+.callout {
+  border-radius: $border-radius;
+  border-right: 1px solid var(--iam-carte-trait);
+  border-top: 1px solid var(--iam-carte-trait);
+  border-bottom: 1px solid var(--iam-carte-trait);
+  background: var(--iam-carte-bg);
+}
+.callout .callout-title-container { font-weight: 600; }
+
+// Citation d'ouverture : la question à laquelle le chapitre répond
+.question-du-chapitre {
+  margin: 1.2rem 0 2rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--iam-teinte);
+  border-left: 4px solid var(--iam-primaire);
+  border-radius: 0 $border-radius $border-radius 0;
+  font-family: $headings-font-family;
+  font-size: 1.12rem;
+  p:last-child { margin-bottom: 0; }
+}
+
+// Grilles de cartes : ::: {.cartes} puis des ::: {.carte}
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: .9rem;
+  margin: 1.3rem 0 1.6rem;
+}
+.cartes.deux { grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+.carte {
+  background: var(--iam-carte-bg);
+  border: 1px solid var(--iam-carte-trait);
+  border-radius: $border-radius;
+  padding: 1rem 1.1rem;
+  font-size: .94rem;
+  h3, h4 {
+    margin: 0 0 .45rem; padding: 0; border: 0;
+    font-size: 1.05rem; font-weight: 700; color: var(--iam-primaire);
+    a { font-weight: 700; }
+  }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  p:has(> .num) { margin-bottom: .2rem; }
+  ul { padding-left: 1.1rem; }
+}
+a.carte, .carte.lien { text-decoration: none; color: inherit; transition: border-color .15s, transform .15s; }
+.carte:has(> h3 > a):hover { border-color: var(--iam-primaire); transform: translateY(-2px); }
+.carte h3 a { text-decoration: none; }
+.carte .num {
+  display: block;
+  font-family: $headings-font-family;
+  font-size: .8rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--iam-accent);
+}
+
+// Grands chiffres
+.chiffre {
+  display: block;
+  font-family: $headings-font-family;
+  font-size: 2.2rem; font-weight: 700; line-height: 1.1;
+  color: var(--iam-accent);
+  margin-bottom: .3rem;
+}
+
+// Niveaux : [Faible]{.niveau .faible}
+.niveau {
+  display: inline-block; white-space: nowrap;
+  padding: .08rem .55rem; border-radius: 999px;
+  font-size: .78rem; font-weight: 700;
+}
+.niveau.faible    { background: #f6dcd6; color: #8c2f1f; }
+.niveau.moyen     { background: #f6e9c4; color: #7a5a00; }
+.niveau.resistant { background: #d5ead9; color: #24603a; }
+
+// Étapes numérotées : ::: {.etapes} autour d'une liste ordonnée
+.etapes > ol {
+  list-style: none; counter-reset: etape; padding-left: 0; margin: 1.2rem 0 1.6rem;
+  > li {
+    counter-increment: etape;
+    position: relative;
+    padding: 0 0 1rem 3rem;
+    border-left: 2px solid var(--iam-carte-trait);
+    margin-left: 1rem;
+    &:last-child { border-left-color: transparent; padding-bottom: 0; }
+    &::before {
+      content: counter(etape);
+      position: absolute; left: -1rem; top: -.1rem;
+      width: 2rem; height: 2rem; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--iam-primaire); color: #fff;
+      font-weight: 700; font-size: .9rem;
+    }
+    > p:last-child { margin-bottom: 0; }
+  }
+}
+
+// Schémas : toujours sur fond clair, lisibles dans les deux thèmes
+figure.figure img, .schema img {
+  background: #ffffff;
+  border: 1px solid var(--iam-carte-trait);
+  border-radius: $border-radius;
+  padding: .6rem;
+  width: 100%;
+}
+figcaption { color: var(--iam-doux); font-size: .87rem; }
+
+// Questions du labo et des exercices
+.question {
+  margin: 1.1rem 0;
+  padding: .85rem 1.1rem;
+  background: var(--iam-teinte);
+  border-radius: $border-radius;
+  border-left: 4px solid var(--iam-accent);
+  p:last-child { margin-bottom: 0; }
+}
+
+// Page d'accueil
+.hero {
+  margin: .5rem 0 2rem;
+  .surtitre {
+    color: var(--iam-accent); font-size: .8rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; margin-bottom: .5rem;
+  }
+  h1 { font-size: 2.7rem; line-height: 1.08; margin: 0 0 .8rem; border: 0; }
+  .accroche { font-size: 1.18rem; color: var(--iam-doux); max-width: 38rem; }
+}
+.btn-iam {
+  display: inline-block; margin: .3rem .5rem .3rem 0;
+  padding: .55rem 1.1rem; border-radius: 999px;
+  background: var(--iam-primaire); color: #fff !important;
+  font-weight: 600; text-decoration: none;
+  &.secondaire { background: transparent; color: var(--iam-primaire) !important; border: 1.5px solid var(--iam-primaire); }
+  &:hover { filter: brightness(1.1); }
+}
+
+dl dt { font-weight: 700; color: var(--iam-primaire); margin-top: .7rem; }
+dl dd { margin-left: 0; }

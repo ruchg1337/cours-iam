@@ -1,0 +1,329 @@
+---
+title: "Glossaire"
+subtitle: "Les sigles et acronymes du cours"
+---
+
+Le domaine adore les sigles. Les voici tous, par ordre alphabétique. Utilisez aussi la recherche (la loupe en haut à droite).
+
+## A
+
+AAL
+: Authenticator Assurance Level, niveau de confiance dans l'authentification (NIST)
+
+ABAC
+: Attribute-Based Access Control, contrôle d'accès fondé sur les attributs
+
+ACF2
+: Access Control Facility 2, équivalent de RACF édité par Broadcom (ex-CA)
+
+AD
+: Active Directory, annuaire Microsoft installé sur site
+
+ANSSI
+: Agence nationale de la sécurité des systèmes d'information (France)
+
+API
+: Application Programming Interface, interface qu'une application expose à d'autres programmes
+
+ATC
+: Annual Technical Conference (USENIX)
+
+AWS
+: Amazon Web Services, fournisseur cloud d'Amazon
+
+## C
+
+
+CASB
+: Cloud Access Security Broker, intermédiaire de sécurité entre utilisateurs et services cloud
+
+CDI
+: Contrat à durée indéterminée
+
+CHF
+: Franc suisse
+
+CIAM
+: Customer Identity and Access Management, gestion des identités des clients et citoyens
+
+CISA
+: Cybersecurity and Infrastructure Security Agency (États-Unis)
+
+CMMI
+: Capability Maturity Model Integration, modèle de maturité de référence en cinq niveaux (CMMI Institute / ISACA)
+
+CTAP
+: Client to Authenticator Protocol, protocole entre le navigateur et la clé de sécurité ou le téléphone
+
+## D
+
+DAC
+: Discretionary Access Control, contrôle d'accès où le propriétaire décide
+
+DNS
+: Domain Name System, système de noms de domaine
+
+## E
+
+e-ID
+: Identité électronique suisse
+
+## F
+
+FAL
+: Federation Assurance Level, niveau de confiance dans la fédération (NIST)
+
+FIDO
+: Fast IDentity Online, alliance industrielle derrière FIDO2 et les passkeys
+
+FIDO2
+: Fast IDentity Online 2, standard d'authentification par clé publique résistant au phishing (FIDO Alliance)
+
+FINMA
+: Autorité fédérale de surveillance des marchés financiers (Suisse)
+
+## G
+
+GIA
+: Gestion des identités et des accès, traduction française d'IAM
+
+## H
+
+HAL
+: Hyper Articles en Ligne, archive ouverte de publications scientifiques
+
+HAR
+: HTTP Archive, fichier qui enregistre les échanges d'un navigateur, cookies de session compris
+
+
+## I
+
+IA
+: Intelligence artificielle
+
+IAL
+: Identity Assurance Level, niveau de confiance dans la vérification de l'identité (NIST)
+
+IAM
+: Identity and Access Management, gestion des identités et des accès
+
+ID
+: Identifier ; « ID token » = jeton d'identité d'OpenID Connect
+
+IdP
+: Identity Provider, fournisseur d'identité (celui qui authentifie et émet la preuve)
+
+IEC
+: International Electrotechnical Commission, coéditrice des normes ISO/IEC
+
+IETF
+: Internet Engineering Task Force, organisme qui publie les RFC
+
+IGA
+: Identity Governance and Administration, gouvernance et administration des identités (cycle de vie, rôles, revues)
+
+ISO
+: International Organization for Standardization, organisation internationale de normalisation
+
+IT
+: Information Technology, l'informatique
+
+## J
+
+JWT
+: JSON Web Token, jeton signé au format JSON
+
+## L
+
+LDAP
+: Lightweight Directory Access Protocol, protocole d'accès aux annuaires
+
+LeID
+: Loi fédérale sur l'identité électronique (Suisse)
+
+LPD
+: Loi fédérale sur la protection des données (Suisse, révisée, en vigueur depuis le 1er septembre 2023)
+
+## M
+
+MAC
+: Mandatory Access Control, contrôle d'accès imposé par une autorité centrale
+
+MFA
+: Multi-Factor Authentication, authentification à plusieurs facteurs
+
+MSRC
+: Microsoft Security Response Center
+
+## N
+
+NIS2
+: Network and Information Security directive 2, directive européenne sur la cybersécurité (2022)
+
+NIST
+: National Institute of Standards and Technology, agence américaine de normalisation
+
+## O
+
+OASIS
+: Organization for the Advancement of Structured Information Standards, éditeur de SAML et XACML
+
+OAuth
+: Open Authorization, protocole de délégation d'accès aux API (OAuth 2.0, 2012)
+
+OIDC
+: OpenID Connect, couche d'authentification au-dessus d'OAuth 2.0
+
+OPDo
+: Ordonnance sur la protection des données (Suisse)
+
+OpenID
+: OpenID Connect, couche d'authentification au-dessus d'OAuth 2.0 (OpenID Foundation)
+
+OWASP
+: Open Worldwide Application Security Project, communauté de sécurité applicative
+
+## P
+
+PAM
+: Privileged Access Management, gestion des accès à privilèges (comptes administrateur)
+
+PBAC
+: Policy-Based Access Control, contrôle d'accès par règles externalisées
+
+PBKDF2
+: Password-Based Key Derivation Function 2, fonction de hachage lente pour mots de passe
+
+PCI DSS
+: Payment Card Industry Data Security Standard, norme de sécurité des cartes de paiement
+
+PDP
+: Policy Decision Point, point de décision (qui décide d'autoriser)
+
+PEP
+: Policy Enforcement Point, point d'application (qui bloque ou laisse passer)
+
+PFPDT
+: Préposé fédéral à la protection des données et à la transparence (Suisse)
+
+PIN
+: Personal Identification Number, code personnel à chiffres
+
+PIP
+: Policy Information Point, point d'information (qui fournit les attributs)
+
+PKCE
+: Proof Key for Code Exchange, protection du code d'autorisation OAuth par un secret temporaire
+
+## R
+
+RACF
+: Resource Access Control Facility, gestion des identités et des accès sur les mainframes IBM z/OS
+
+RBAC
+: Role-Based Access Control, contrôle d'accès fondé sur les rôles
+
+ReBAC
+: Relationship-Based Access Control, contrôle d'accès fondé sur les relations entre objets
+
+REST
+: Representational State Transfer, style d'API web fondé sur HTTP
+
+RFC
+: Request For Comments, document de normalisation de l'IETF
+
+RGPD
+: Règlement général sur la protection des données (Union européenne)
+
+RH
+: Ressources humaines
+
+ROPC
+: Resource Owner Password Credentials, ancien flux OAuth où l'application manipule le mot de passe (abandonné)
+
+RS
+: Recueil systématique du droit fédéral suisse
+
+RSSI
+: Responsable de la sécurité des systèmes d'information
+
+## S
+
+SaaS
+: Software as a Service, logiciel utilisé en ligne, hébergé par l'éditeur
+
+SAML
+: Security Assertion Markup Language, protocole de fédération fondé sur XML (2005)
+
+SCIM
+: System for Cross-domain Identity Management, API standard pour créer, modifier et désactiver des comptes
+
+SHA-256
+: Secure Hash Algorithm 256 bits, fonction de hachage rapide (inadaptée aux mots de passe)
+
+SIEM
+: Security Information and Event Management, plateforme qui centralise et analyse les journaux de sécurité
+
+SIM
+: Subscriber Identity Module, la carte qui identifie un abonné mobile
+
+SMS
+: Short Message Service, message texte sur téléphone mobile
+
+SP
+: Service Provider, fournisseur de service (l'application qui reçoit la preuve)
+
+SSE
+: Security Service Edge, offre regroupant CASB, filtrage web et accès réseau Zero Trust
+
+SSH
+: Secure Shell, protocole d'administration à distance sécurisé
+
+SSO
+: Single Sign-On, authentification unique
+
+SWG
+: Secure Web Gateway, passerelle de filtrage du trafic web
+
+SWITCH
+: Fondation suisse qui opère le réseau et les services des hautes écoles (SWITCH edu-ID)
+
+## T
+
+TOTP
+: Time-based One-Time Password, code à usage unique basé sur l'heure (applications d'authentification)
+
+## U
+
+UE
+: Union européenne
+
+URI
+: Uniform Resource Identifier, identifiant de ressource (généralise l'URL)
+
+URL
+: Uniform Resource Locator, adresse web
+
+USENIX
+: Association professionnelle d'informatique qui organise des conférences techniques (ATC = Annual Technical Conference)
+
+## W
+
+W3C
+: World Wide Web Consortium, organisme de normalisation du web
+
+WebAuthn
+: Web Authentication, API du W3C qui permet aux sites web d'utiliser FIDO2
+
+## X
+
+XACML
+: EXtensible Access Control Markup Language, langage de règles d'autorisation (OASIS)
+
+XML
+: EXtensible Markup Language, format de données à balises
+
+## Z
+
+ZTNA
+: Zero Trust Network Access, accès aux applications sans VPN, décidé par identité et contexte

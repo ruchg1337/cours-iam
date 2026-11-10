@@ -1,0 +1,60 @@
+---
+title: "Diagnostic d'une architecture"
+subtitle: "10 minutes en groupe, puis 5 à 10 minutes de discussion"
+categories: ["Étude de cas"]
+---
+
+Cet exercice applique le chapitre [Mener un projet IAM](../cours/10-projet.qmd), et mobilise tout
+le cours.
+
+## La situation
+
+Une haute école :
+
+- 4 000 étudiants, 600 collaborateurs, 90 applications.
+- Un Active Directory sur site, un Entra ID synchronisé, une fédération pour 12 applications cloud.
+- Les comptes étudiants sont créés à l'inscription par un script de nuit, et supprimés « quand on
+  y pense ».
+- Les enseignants externes sont saisis à la main par les secrétariats, sans date de fin.
+- Le MFA est activé pour l'administration, facultatif pour les enseignants, absent pour les
+  étudiants.
+- 17 comptes administrateur du domaine. Personne ne sait à qui appartiennent les 4 derniers.
+
+## Votre mission
+
+::: {.question}
+**1.** Identifiez les trois risques les plus graves et classez-les. Justifiez l'ordre.
+:::
+
+::: {.question}
+**2.** Proposez deux actions réalisables en six mois avec un petit budget. Que refusez-vous de
+faire, et pourquoi ?
+:::
+
+::: {.question}
+**3.** Un enseignant externe garde ses accès trois ans après son dernier cours. Où exactement le
+processus a-t-il échoué, et comment le corriger durablement ?
+:::
+
+Si le temps manque, traitez seulement les questions 1 et 3.
+
+::: {.callout-note title="Pistes de réponse (à ouvrir après avoir cherché)" collapse="true"}
+**Les risques**
+
+1. Les 17 comptes administrateur, dont 4 sans propriétaire.
+2. Les enseignants externes sans date de fin.
+3. L'absence de MFA pour les étudiants et les enseignants : phishing, puis rebond vers l'Active
+   Directory.
+
+**Les actions**
+
+- Inventaire et réduction des comptes administrateur, avec des droits accordés pour une durée
+  limitée.
+- Date de fin obligatoire et source de référence pour les externes.
+
+**La question 3**
+
+Le processus a échoué à la saisie (pas de source de référence, pas de date de fin) et à la fin (pas
+d'événement de départ). La correction durable : un système qui fait foi pour les externes, avec une
+date de fin obligatoire et une désactivation automatique.
+:::

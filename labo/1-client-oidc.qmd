@@ -1,0 +1,117 @@
+---
+title: "Partie 1 : un client OIDC"
+subtitle: "L'application s'appuie sur les comptes de Keycloak (45 min)"
+categories: ["Labo"]
+---
+
+Assurez-vous d'avoir fait la [partie 0](index.qmd#partie-0) : Keycloak et l'application tournent.
+
+## 1.1 Créer le realm
+
+Dans la console d'administration, menu déroulant en haut à gauche → **Create realm** → nom
+`caisse` → **Create**.
+
+Un realm est un espace d'identités isolé : ses utilisateurs, ses clients, ses rôles, ses clés de
+signature.
+
+Puis **Realm settings → General → Unmanaged attributes : Enabled** → **Save**. C'est nécessaire
+pour ajouter des attributs libres aux utilisateurs, comme le service ou le numéro RH
+([chapitre 1](../cours/01-bases.qmd)).
+
+## 1.2 Créer Marie
+
+**Users → Add user** :
+
+| Champ | Valeur |
+|---|---|
+| Username | `mdupont` |
+| Email | `marie.dupont@caisse.local` |
+| First name, Last name | Marie, Dupont |
+| Email verified | On |
+
+**Create**. Puis :
+
+- onglet **Attributes** : ajoutez `service` = `Prestations` et `numeroRH` = `4711` ;
+- onglet **Credentials → Set password** : `Marie2026!`, Temporary : **Off**.
+
+::: {.question}
+**Question 1.** Où est le mot de passe de Marie maintenant ? Qui le voit passer lors d'une
+connexion à l'application ?
+:::
+
+## 1.3 Enregistrer l'application comme client OIDC
+
+**Clients → Create client** :
+
+| Écran | Réglage |
+|----------------------|------------------------------------------------------------------------------|
+| General settings | Client type : OpenID Connect. Client ID : `app-prestations` |
+| Capability config | Client authentication : **On** (client confidentiel). Standard flow : **On**. Direct access grants : **Off**. Implicit flow : **Off**. **Require PKCE : On**. **PKCE Method : S256** (ces deux réglages apparaissent sous la liste des flux) |
+| Login settings | Root URL `http://localhost:8000`. Valid redirect URIs `http://localhost:8000/callback`. Valid post logout redirect URIs `http://localhost:8000/*`. Web origins `http://localhost:8000` |
+
+**Save**. Puis onglet **Credentials** (il n'apparaît qu'une fois le client enregistré avec Client
+authentication : On) : copiez le **Client secret**.
+
+::: {.callout-note title="Vous ne trouvez pas le réglage PKCE ?"}
+Dans les versions de Keycloak antérieures à 26.7, il se trouvait dans l'onglet **Advanced**,
+section « Advanced settings », sous le nom « Proof Key for Code Exchange Code Challenge Method ».
+Depuis la version 26.7, il est dans **Settings → Capability config**. Les tutoriels en ligne
+décrivent presque tous l'ancien emplacement.
+:::
+
+::: {.question}
+**Question 2.** Pourquoi « Direct access grants » (le flux où l'application reçoit le mot de passe)
+doit-il rester désactivé ? Que se passerait-il si « Valid redirect URIs » contenait
+`http://localhost:8000/*` ou simplement `*` ?
+:::
+
+## 1.4 Configurer l'application
+
+Éditez le fichier `.env` :
+
+```bash
+OIDC_CLIENT_ID=app-prestations
+OIDC_CLIENT_SECRET=<le secret copié>
+```
+
+Redémarrez l'application seule :
+
+```bash
+docker compose up -d --force-recreate app
+```
+
+## 1.5 Se connecter et observer
+
+::: {.etapes}
+1. Ouvrez <http://localhost:8000> → « Se connecter via Keycloak ». **Avant de taper quoi que ce
+   soit**, regardez l'adresse dans la barre du navigateur : `response_type=code`, `client_id`,
+   `redirect_uri`, `scope`, `state`, `nonce`, `code_challenge`, `code_challenge_method=S256`. C'est
+   l'étape 1 du [flux par code d'autorisation avec PKCE](../cours/07-protocoles.qmd).
+2. Connectez-vous avec `mdupont` / `Marie2026!`.
+3. Vous arrivez sur **Mon profil** : l'application affiche ce qu'elle a reçu. Repérez `iss`, `aud`,
+   `sub`, `exp`, `nonce`. Collez le jeton d'identité brut sur <https://jwt.io> et vérifiez qu'on y
+   lit tout sans aucune clé.
+4. Cliquez sur **Valider des rentes** : accès refusé (403). Vous êtes authentifiée, pas autorisée.
+   On y revient en [partie 3](3-roles.qmd).
+5. Cliquez sur **userinfo** : l'application appelle une API de Keycloak avec le jeton d'accès.
+6. **Déconnexion**, puis revenez sur Mon profil : 401. Ouvrez
+   <http://localhost:8080/realms/caisse/account> : la session Keycloak est-elle fermée aussi ?
+   C'est la déconnexion initiée par l'application.
+:::
+
+::: {.question}
+**Question 3.** Dans le jeton d'identité, que vaut `aud` ? À qui ce jeton est-il destiné ? Et le
+jeton d'accès, à qui est-il destiné ?
+:::
+
+::: {.question}
+**Question 4.** Combien de temps le jeton d'accès est-il valable (`exp` moins `iat`) ? Si on
+désactive Marie dans Keycloak maintenant, l'application la laisse-t-elle encore entrer ? Testez :
+**Users → mdupont → Enabled : Off**, puis rechargez une page de l'application.
+:::
+
+::: {.question}
+**Question 5.** Keycloak n'émet pas le claim `amr` par défaut. Que vaut `acr` ? Que signifie-t-il ?
+:::
+
+Passez à la [partie 2](2-federation-github.qmd).

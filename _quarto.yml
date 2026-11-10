@@ -1,0 +1,87 @@
+project:
+  type: website
+  output-dir: _site
+  # Seuls les .qmd sont publiés : le kit du labo (labo/kit) et les README restent hors du site.
+  render:
+    - "**/*.qmd"
+
+lang: fr
+
+website:
+  title: "Gestion des identités et des accès"
+  description: "Cours IAM de Grégory Ruch : le cours, les exercices et le labo Keycloak."
+  page-navigation: true
+  back-to-top-navigation: true
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    title: "IAM"
+    left:
+      - text: "Cours"
+        href: cours/index.qmd
+      - text: "Exercices"
+        href: exercices/index.qmd
+      - text: "Labo"
+        href: labo/index.qmd
+    right:
+      - text: "Glossaire"
+        href: glossaire.qmd
+      - text: "Sources"
+        href: sources.qmd
+  sidebar:
+    - id: cours
+      title: "Cours"
+      style: floating
+      contents:
+        - cours/index.qmd
+        - section: "Une identité et ses droits"
+          contents:
+            - cours/01-bases.qmd
+            - cours/02-annuaires.qmd
+            - cours/03-cycle-de-vie.qmd
+            - cours/04-autorisation.qmd
+            - cours/05-authentification.qmd
+        - section: "Connecter, fédérer, gouverner"
+          contents:
+            - cours/06-sso-federation.qmd
+            - cours/07-protocoles.qmd
+            - cours/08-gouvernance.qmd
+            - cours/09-frontieres.qmd
+            - cours/10-projet.qmd
+        - cours/a-retenir.qmd
+    - id: exercices
+      title: "Exercices"
+      style: floating
+      contents:
+        - exercices/index.qmd
+        - exercices/politique-authentification.qmd
+        - exercices/diagnostic-architecture.qmd
+        - exercices/questions-de-revision.qmd
+    - id: labo
+      title: "Labo"
+      style: floating
+      contents:
+        - labo/index.qmd
+        - labo/1-client-oidc.qmd
+        - labo/2-federation-github.qmd
+        - labo/3-roles.qmd
+        - labo/4-aller-plus-loin.qmd
+        - labo/depannage.qmd
+  page-footer:
+    left: "Grégory Ruch"
+    right: "Édition {{< var edition >}}"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles/theme.scss]
+      dark: [cosmo, styles/theme.scss, styles/theme-dark.scss]
+    toc: true
+    toc-title: "Sur cette page"
+    number-sections: false
+    link-external-newwindow: true
+    smooth-scroll: true
+    code-copy: true
+    highlight-style: github
+    fig-cap-location: bottom
