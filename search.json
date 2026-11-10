@@ -79,7 +79,7 @@
     "href": "labo/3-roles.html",
     "title": "Partie 3 : rôles et autorisation",
     "section": "",
-    "text": "La page « Valider des rentes » exige le rôle gestionnaire-prestations dans le jeton d’identité.\n\n\nRealm roles → Create role : gestionnaire-prestations.\nUsers → mdupont → Role mapping → Assign role → cochez le rôle (filtrez sur « realm roles »).\nReconnectez-vous avec Marie et regardez Mon profil : la ligne « Rôles » dit toujours « absent du jeton d’identité ». Par défaut, Keycloak met les rôles dans le jeton d’accès, pas dans le jeton d’identité.\nClients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User Realm Role : Name roles, Token Claim Name realm_access.roles, Multivalued : On, Add to ID token : On → Save.\nDéconnexion, reconnexion : « Valider des rentes » s’ouvre. Faites la même chose avec votre compte GitHub, sans le rôle : 403.\n\n\n\nQuestion 10. Qui a décidé que Marie peut valider des rentes : Keycloak ou l’application ? Qu’a fait chacun exactement ?\n\n\nQuestion 11. Marie change de service (le changement de poste du chapitre 3). Où retire-t-on le rôle ? Combien de temps garde-t-elle l’accès après ce retrait, et pourquoi ?\n\n\nQuestion 12. Pourquoi est-ce une mauvaise idée que l’application lise les rôles dans le jeton d’accès plutôt que dans le jeton d’identité ? Indice : à qui le jeton d’accès est-il destiné ?\n\nVous avez terminé le parcours principal. Rédigez votre document à rendre, ou continuez avec la partie 4.\n\n\n\n Retour au sommet",
+    "text": "La page « Valider des rentes » exige le rôle gestionnaire-prestations dans le jeton d’identité.\n\n\nRealm roles → Create role : gestionnaire-prestations.\nUsers → mdupont → Role mapping → Assign role → cochez le rôle (filtrez sur « realm roles »).\nReconnectez-vous avec Marie et regardez Mon profil : la ligne « Rôles » dit toujours « absent du jeton d’identité ». Par défaut, Keycloak met les rôles dans le jeton d’accès, pas dans le jeton d’identité.\nClients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User Realm Role : Name roles, Token Claim Name realm_access.roles, Multivalued : On, Add to ID token : On → Save.\nDéconnexion, reconnexion : « Valider des rentes » s’ouvre. Faites la même chose avec votre compte GitHub, sans le rôle : 403.\n\n\n\nQuestion 10. Qui a décidé que Marie peut valider des rentes : Keycloak ou l’application ? Qu’a fait chacun exactement ?\n\n\nQuestion 11. Marie change de service (le changement de poste du chapitre 3). Où retire-t-on le rôle ? Combien de temps garde-t-elle l’accès après ce retrait, et pourquoi ?\n\n\nQuestion 12. Pourquoi est-ce une mauvaise idée que l’application lise les rôles dans le jeton d’accès plutôt que dans le jeton d’identité ? Indice : à qui le jeton d’accès est-il destiné ?\n\nLe parcours principal s’arrête ici. La synthèse récapitule ce qu’il faut en retenir, et la partie 4 prolonge le labo.\n\n\n\n Retour au sommet",
     "crumbs": [
       "Labo",
       "Partie 3 : rôles et autorisation"
@@ -1184,7 +1184,7 @@
     "href": "exercices/index.html",
     "title": "Les exercices",
     "section": "",
-    "text": "Les exercices se font sans ordinateur, en groupes de trois ou quatre. Il n’y a pas une seule bonne réponse : ce qui compte, c’est la qualité des choix et la capacité à repérer les pièges.\n\n\nÉtude de cas · 10 min + discussion\n\nConcevoir une politique d’authentification\nLa caisse de pension de Marie, quatre populations, et une question : quel moyen d’authentification pour qui ?\nAprès le chapitre 5.\n\n\n\nÉtude de cas · 10 min + discussion\n\nDiagnostic d’une architecture\nUne haute école, 90 applications, 17 comptes administrateur. Trouvez les trois risques les plus graves.\nAprès le chapitre 10.\n\n\n\nRévision · 5 min\n\nCinq questions de révision\nÀ faire sans notes, pour vérifier les acquis des chapitres 1 à 5 avant d’attaquer la suite.\nAprès le chapitre 5.\n\n\n\nPour la pratique sur machine, voyez le labo, qui est indépendant des exercices.\n\n\n\n Retour au sommet",
+    "text": "Les études de cas n’ont pas une seule bonne réponse : ce qui compte, c’est la qualité des choix et la capacité à repérer les pièges.\n\n\nÉtude de cas\n\nConcevoir une politique d’authentification\nLa caisse de pension de Marie, quatre populations, et une question : quel moyen d’authentification pour qui ?\nAprès le chapitre 5.\n\n\n\nÉtude de cas\n\nDiagnostic d’une architecture\nUne haute école, 90 applications, 17 comptes administrateur. Trouvez les trois risques les plus graves.\nAprès le chapitre 10.\n\n\n\nRévision\n\nCinq questions de révision\nPour vérifier les acquis des chapitres 1 à 5 avant d’aborder la suite.\nAprès le chapitre 5.\n\n\n\nPour la pratique sur machine, voyez le labo, qui est indépendant des exercices.\n\n\n\n Retour au sommet",
     "crumbs": [
       "Exercices",
       "Les exercices"
@@ -1195,7 +1195,7 @@
     "href": "exercices/questions-de-revision.html",
     "title": "Cinq questions de révision",
     "section": "",
-    "text": "Ces cinq questions couvrent les chapitres 1 à 5. Répondez de tête, puis ouvrez la réponse.\n\n1. Quelle est la différence entre authentifier et autoriser ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nCe sont deux décisions distinctes, souvent prises par deux systèmes différents. Chapitre 1\n\n\n\n\n2. Parmi arrivée, changement de poste et départ, lequel est le plus mal géré en pratique, et pourquoi ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nLe changement de poste : chaque mutation ajoute des droits, presque aucune n’en retire. Chapitre 3\n\n\n\n\n3. Pourquoi l’ABAC, plus souple que le RBAC, ne l’a-t-il pas remplacé ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nParce qu’il faut des attributs fiables partout. Chapitre 4\n\n\n\n\n4. Pourquoi une clé FIDO2 résiste-t-elle au phishing alors qu’un code à usage unique n’y résiste pas ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nParce que la preuve est liée au nom de domaine du site. Chapitre 5\n\n\n\n\n5. Quel indicateur mesure le mieux la valeur d’un projet IAM pour la sécurité ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nLe délai de fermeture des accès. Chapitre 3\n\n\n\n\n\n\n Retour au sommet",
+    "text": "Ces cinq questions couvrent les chapitres 1 à 5. Chaque réponse est dépliable sous sa question.\n\n1. Quelle est la différence entre authentifier et autoriser ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nCe sont deux décisions distinctes, souvent prises par deux systèmes différents. Chapitre 1\n\n\n\n\n2. Parmi arrivée, changement de poste et départ, lequel est le plus mal géré en pratique, et pourquoi ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nLe changement de poste : chaque mutation ajoute des droits, presque aucune n’en retire. Chapitre 3\n\n\n\n\n3. Pourquoi l’ABAC, plus souple que le RBAC, ne l’a-t-il pas remplacé ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nParce qu’il faut des attributs fiables partout. Chapitre 4\n\n\n\n\n4. Pourquoi une clé FIDO2 résiste-t-elle au phishing alors qu’un code à usage unique n’y résiste pas ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nParce que la preuve est liée au nom de domaine du site. Chapitre 5\n\n\n\n\n5. Quel indicateur mesure le mieux la valeur d’un projet IAM pour la sécurité ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nLe délai de fermeture des accès. Chapitre 3\n\n\n\n\n\n\n Retour au sommet",
     "crumbs": [
       "Exercices",
       "Cinq questions de révision"
@@ -1341,7 +1341,7 @@
     "href": "labo/index.html#ce-quil-vous-faut",
     "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
     "section": "Ce qu’il vous faut",
-    "text": "Ce qu’il vous faut\n\nDocker Desktop (ou Docker Engine avec le plugin compose), et 4 Go de mémoire libres.\nUn navigateur. Les ports 8080 (Keycloak) et 8000 (application) doivent être libres.\nPour la partie 2 : un compte GitHub (gratuit).\nAucun code à écrire. L’application est fournie, vous la configurez.\n\n\n\n\n\n\n\nAvertissementÀ faire avant de venir\n\n\n\nLe premier démarrage télécharge environ 700 Mo d’images. Faites la partie 0 chez vous, sur une bonne connexion.",
+    "text": "Ce qu’il vous faut\n\nDocker Desktop (ou Docker Engine avec le plugin compose), et 4 Go de mémoire libres.\nUn navigateur. Les ports 8080 (Keycloak) et 8000 (application) doivent être libres.\nPour la partie 2 : un compte GitHub (gratuit).\nAucun code à écrire. L’application est fournie, vous la configurez.\n\n\n\n\n\n\n\nNoteTéléchargement\n\n\n\nLe premier démarrage télécharge environ 700 Mo d’images Docker. Une connexion rapide est préférable pour la partie 0.",
     "crumbs": [
       "Labo",
       "Labo : fédérer une application avec Keycloak, puis avec GitHub"
@@ -1370,11 +1370,11 @@
     ]
   },
   {
-    "objectID": "labo/index.html#a-rendre",
-    "href": "labo/index.html#a-rendre",
+    "objectID": "labo/index.html#synthese",
+    "href": "labo/index.html#synthese",
     "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
-    "section": "À rendre",
-    "text": "À rendre\nUn document de deux pages maximum :\n\nvos réponses aux questions 0 à 12 ;\nun schéma des acteurs et des flèches de la partie 2 (utilisateur, application, Keycloak, GitHub), en indiquant sur chaque flèche ce qui circule (code, jeton, mot de passe, preuve signée) et ce qui ne circule jamais.",
+    "section": "Synthèse",
+    "text": "Synthèse\nLes questions 0 à 12 jalonnent le parcours. Le schéma des acteurs de la partie 2 le résume : utilisateur, application, Keycloak et GitHub, avec sur chaque flèche ce qui circule (code, jeton, mot de passe, preuve signée) et ce qui ne circule jamais.",
     "crumbs": [
       "Labo",
       "Labo : fédérer une application avec Keycloak, puis avec GitHub"
