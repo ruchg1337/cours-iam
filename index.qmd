@@ -30,8 +30,8 @@ autorisation, authentification, fédération, protocoles, gouvernance.
 
 ::: {.carte}
 ### [Les exercices](exercices/index.qmd)
-Deux études de cas à traiter en petit groupe, et des questions de révision pour vérifier
-que l'essentiel est acquis.
+Deux études de cas et des questions de révision pour vérifier que l'essentiel est
+acquis.
 :::
 
 ::: {.carte}

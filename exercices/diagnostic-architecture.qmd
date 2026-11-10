@@ -1,6 +1,6 @@
 ---
 title: "Diagnostic d'une architecture"
-subtitle: "10 minutes en groupe, puis 5 à 10 minutes de discussion"
+subtitle: "Mobiliser l’ensemble du cours"
 categories: ["Étude de cas"]
 ---
 

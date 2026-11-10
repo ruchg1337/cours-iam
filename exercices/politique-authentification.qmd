@@ -1,6 +1,6 @@
 ---
 title: "Concevoir une politique d'authentification"
-subtitle: "10 minutes en groupe, puis 5 à 10 minutes de discussion"
+subtitle: "Mettre en pratique le chapitre 5"
 categories: ["Étude de cas"]
 ---
 

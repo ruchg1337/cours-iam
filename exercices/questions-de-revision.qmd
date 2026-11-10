@@ -1,10 +1,10 @@
 ---
 title: "Cinq questions de révision"
-subtitle: "Cinq minutes, sans notes"
+subtitle: "Chapitres 1 à 5"
 categories: ["Révision"]
 ---
 
-Ces cinq questions couvrent les chapitres 1 à 5. Répondez de tête, puis ouvrez la réponse.
+Ces cinq questions couvrent les chapitres 1 à 5. Chaque réponse est dépliable sous sa question.
 
 ::: {.question}
 **1.** Quelle est la différence entre authentifier et autoriser ?

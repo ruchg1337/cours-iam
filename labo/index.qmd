@@ -56,9 +56,9 @@ Passkeys, durées de vie, casser pour comprendre, journaux.
 - Pour la partie 2 : un compte GitHub (gratuit).
 - Aucun code à écrire. L'application est fournie, vous la configurez.
 
-::: {.callout-warning title="À faire avant de venir"}
-Le premier démarrage télécharge environ 700 Mo d'images. Faites la partie 0 chez vous, sur une
-bonne connexion.
+::: {.callout-note title="Téléchargement"}
+Le premier démarrage télécharge environ 700 Mo d'images Docker. Une connexion rapide est
+préférable pour la partie 0.
 :::
 
 ## Obtenir le kit
@@ -103,11 +103,8 @@ des jetons ?
 
 Vous êtes prêt pour la [partie 1](1-client-oidc.qmd).
 
-## À rendre {#a-rendre}
+## Synthèse {#synthese}
 
-Un document de deux pages maximum :
-
-- vos réponses aux questions 0 à 12 ;
-- un schéma des acteurs et des flèches de la partie 2 (utilisateur, application, Keycloak, GitHub),
-  en indiquant sur chaque flèche ce qui circule (code, jeton, mot de passe, preuve signée) et ce
-  qui ne circule jamais.
+Les questions 0 à 12 jalonnent le parcours. Le schéma des acteurs de la partie 2 le résume :
+utilisateur, application, Keycloak et GitHub, avec sur chaque flèche ce qui circule (code, jeton,
+mot de passe, preuve signée) et ce qui ne circule jamais.

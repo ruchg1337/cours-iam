@@ -36,5 +36,5 @@ l'accès après ce retrait, et pourquoi ?
 d'accès** plutôt que dans le jeton d'identité ? Indice : à qui le jeton d'accès est-il destiné ?
 :::
 
-Vous avez terminé le parcours principal. Rédigez votre [document à rendre](index.qmd#a-rendre), ou
-continuez avec la [partie 4](4-aller-plus-loin.qmd).
+Le parcours principal s'arrête ici. La [synthèse](index.qmd#synthese) récapitule ce qu'il faut en
+retenir, et la [partie 4](4-aller-plus-loin.qmd) prolonge le labo.
