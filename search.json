@@ -1,0 +1,1383 @@
+[
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "Les normes NIST et les RFC sont gratuites. ISO 27001 et ISO 24760 sont payantes. Les lois suisses sont sur fedlex.admin.ch."
+  },
+  {
+    "objectID": "sources.html#normes-et-cadre-légal",
+    "href": "sources.html#normes-et-cadre-légal",
+    "title": "Sources",
+    "section": "Normes et cadre légal",
+    "text": "Normes et cadre légal\n\nNIST SP 800-63-4, Digital Identity Guidelines, version finale, juillet 2025, quatre volumes (pages.nist.gov/800-63-4).\nNIST SP 800-207, Zero Trust Architecture, 2020.\nNIST SP 800-162, Guide to Attribute Based Access Control, 2014.\nISO/IEC 27001:2022, annexe A, mesures 5.15 à 5.18.\nISO/IEC 24760-1:2019, vocabulaire de la gestion d’identité.\nANSSI, Recommandations relatives à l’authentification multifacteur et aux mots de passe, 2021 (cyber.gouv.fr).\nCISA, Implementing Phishing-Resistant MFA, fiche d’octobre 2022.\nLPD révisée (RS 235.1), en vigueur depuis le 1er septembre 2023, et son ordonnance (OPDo).\nFINMA, circulaire 2023/1 Risques et résilience opérationnels, en vigueur depuis 2024.\nRGPD (UE) 2016/679 et directive NIS2 (UE) 2022/2555.\nLoi fédérale sur l’identité électronique (LeID), votation du 28 septembre 2025. Informations officielles sur eid.admin.ch."
+  },
+  {
+    "objectID": "sources.html#spécifications-techniques",
+    "href": "sources.html#spécifications-techniques",
+    "title": "Sources",
+    "section": "Spécifications techniques",
+    "text": "Spécifications techniques\n\nOASIS, SAML 2.0 Core et Bindings, 2005.\nRFC 6749 (OAuth 2.0), RFC 7636 (PKCE), RFC 9700 (bonnes pratiques de sécurité OAuth 2.0, janvier 2025), brouillon OAuth 2.1 (draft-ietf-oauth-v2-1).\nRFC 7519 (JWT), RFC 8725 (bonnes pratiques JWT), RFC 7662 (introspection de jeton), RFC 8693 (échange de jeton).\nOpenID Connect Core 1.0 et Discovery 1.0, OpenID Foundation.\nRFC 7642, 7643 et 7644 (SCIM 2.0).\nRFC 4510 à 4519 (LDAP v3).\nW3C, Web Authentication Level 2, 2021. FIDO Alliance, CTAP 2.1 et spécifications passkeys.\nOWASP, Password Storage Cheat Sheet, Authentication Cheat Sheet et SAML Security Cheat Sheet (cheatsheetseries.owasp.org)."
+  },
+  {
+    "objectID": "sources.html#rapports-et-chiffres",
+    "href": "sources.html#rapports-et-chiffres",
+    "title": "Sources",
+    "section": "Rapports et chiffres",
+    "text": "Rapports et chiffres\n\nVerizon, 2025 Data Breach Investigations Report : abus d’identifiants premier vecteur d’entrée (22 %), 88 % des attaques web avec identifiants volés.\nMicrosoft, Digital Defense Report 2025 (octobre 2025) : 97 % des attaques sur l’identité sont des attaques par mot de passe, +32 % au premier semestre 2025.\nGartner, Forecast: Information Security, Worldwide, 2024-2030, 3Q26 (septembre 2026) et Information Security Market Current Outlook 1Q26 (mars 2026) : 247 milliards de dollars de dépenses en 2026, dont 23 milliards en IAM.\nCyberArk, Identity Security Threat Landscape Report 2024 : rapport entre identités machines et humaines.\nOkta, Businesses at Work 2024 : nombre d’applications par organisation.\nOffice fédéral de la justice, communiqués sur l’e-ID (avril et juin 2026)."
+  },
+  {
+    "objectID": "sources.html#lectures-et-cours",
+    "href": "sources.html#lectures-et-cours",
+    "title": "Sources",
+    "section": "Lectures et cours",
+    "text": "Lectures et cours\n\nY. Wilson et A. Hingnikar, Solving Identity Management in Modern Applications, Apress, 2e édition, 2022.\nG. Harry, IAM : concepts et état de l’art, en libre accès sur HAL.\nInCommon / Internet2, webinaires IAM Online, archives publiques.\nPang et al., « Zanzibar: Google’s Consistent, Global Authorization System », USENIX ATC 2019, pour comprendre le ReBAC."
+  },
+  {
+    "objectID": "sources.html#cas-réels",
+    "href": "sources.html#cas-réels",
+    "title": "Sources",
+    "section": "Cas réels",
+    "text": "Cas réels\nPour les cas réels, appuyez-vous sur les rapports publiés par les entreprises elles-mêmes plutôt que sur la presse : ils décrivent précisément la chaîne d’attaque.\n\n\n\n\n\n\n\n\nCas\nCe qui s’est passé\nSource\n\n\n\n\nUber, septembre 2022\nIntrusion par fatigue MFA (notifications répétées)\nRapport public d’Uber\n\n\nMGM Resorts, septembre 2023\nRéinitialisation du MFA obtenue par appel au support\nCommuniqués et presse\n\n\nOkta, octobre 2023\nVol de fichiers de session sur le portail de support\nRapport d’incident d’Okta\n\n\nMicrosoft / Midnight Blizzard, janvier 2024\nCompte de test sans MFA et abus d’une application OAuth\nRapport MSRC"
+  },
+  {
+    "objectID": "labo/depannage.html",
+    "href": "labo/depannage.html",
+    "title": "Si ça coince",
+    "section": "",
+    "text": "Premier réflexe : les journaux disent presque toujours pourquoi.",
+    "crumbs": [
+      "Labo",
+      "Si ça coince"
+    ]
+  },
+  {
+    "objectID": "labo/depannage.html#tout-remettre-à-zéro",
+    "href": "labo/depannage.html#tout-remettre-à-zéro",
+    "title": "Si ça coince",
+    "section": "Tout remettre à zéro",
+    "text": "Tout remettre à zéro\ndocker compose down -v\nL’option -v efface la base de Keycloak.",
+    "crumbs": [
+      "Labo",
+      "Si ça coince"
+    ]
+  },
+  {
+    "objectID": "labo/depannage.html#partir-du-realm-déjà-configuré",
+    "href": "labo/depannage.html#partir-du-realm-déjà-configuré",
+    "title": "Si ça coince",
+    "section": "Partir du realm déjà configuré",
+    "text": "Partir du realm déjà configuré\nSi vous êtes bloqué, vous pouvez charger le realm caisse tout prêt. La partie GitHub n’y est pas, elle dépend de votre compte.\ndocker compose -f docker-compose.yml -f solution/docker-compose.solution.yml up --build\nPuis, dans .env :\nOIDC_CLIENT_SECRET=secret-du-labo-a-changer",
+    "crumbs": [
+      "Labo",
+      "Si ça coince"
+    ]
+  },
+  {
+    "objectID": "labo/3-roles.html",
+    "href": "labo/3-roles.html",
+    "title": "Partie 3 : rôles et autorisation",
+    "section": "",
+    "text": "La page « Valider des rentes » exige le rôle gestionnaire-prestations dans le jeton d’identité.\n\n\nRealm roles → Create role : gestionnaire-prestations.\nUsers → mdupont → Role mapping → Assign role → cochez le rôle (filtrez sur « realm roles »).\nReconnectez-vous avec Marie et regardez Mon profil : la ligne « Rôles » dit toujours « absent du jeton d’identité ». Par défaut, Keycloak met les rôles dans le jeton d’accès, pas dans le jeton d’identité.\nClients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User Realm Role : Name roles, Token Claim Name realm_access.roles, Multivalued : On, Add to ID token : On → Save.\nDéconnexion, reconnexion : « Valider des rentes » s’ouvre. Faites la même chose avec votre compte GitHub, sans le rôle : 403.\n\n\n\nQuestion 10. Qui a décidé que Marie peut valider des rentes : Keycloak ou l’application ? Qu’a fait chacun exactement ?\n\n\nQuestion 11. Marie change de service (le changement de poste du chapitre 3). Où retire-t-on le rôle ? Combien de temps garde-t-elle l’accès après ce retrait, et pourquoi ?\n\n\nQuestion 12. Pourquoi est-ce une mauvaise idée que l’application lise les rôles dans le jeton d’accès plutôt que dans le jeton d’identité ? Indice : à qui le jeton d’accès est-il destiné ?\n\nVous avez terminé le parcours principal. Rédigez votre document à rendre, ou continuez avec la partie 4.\n\n\n\n Retour au sommet",
+    "crumbs": [
+      "Labo",
+      "Partie 3 : rôles et autorisation"
+    ]
+  },
+  {
+    "objectID": "labo/1-client-oidc.html",
+    "href": "labo/1-client-oidc.html",
+    "title": "Partie 1 : un client OIDC",
+    "section": "",
+    "text": "Assurez-vous d’avoir fait la partie 0 : Keycloak et l’application tournent.",
+    "crumbs": [
+      "Labo",
+      "Partie 1 : un client OIDC"
+    ]
+  },
+  {
+    "objectID": "labo/1-client-oidc.html#créer-le-realm",
+    "href": "labo/1-client-oidc.html#créer-le-realm",
+    "title": "Partie 1 : un client OIDC",
+    "section": "1.1 Créer le realm",
+    "text": "1.1 Créer le realm\nDans la console d’administration, menu déroulant en haut à gauche → Create realm → nom caisse → Create.\nUn realm est un espace d’identités isolé : ses utilisateurs, ses clients, ses rôles, ses clés de signature.\nPuis Realm settings → General → Unmanaged attributes : Enabled → Save. C’est nécessaire pour ajouter des attributs libres aux utilisateurs, comme le service ou le numéro RH (chapitre 1).",
+    "crumbs": [
+      "Labo",
+      "Partie 1 : un client OIDC"
+    ]
+  },
+  {
+    "objectID": "labo/1-client-oidc.html#créer-marie",
+    "href": "labo/1-client-oidc.html#créer-marie",
+    "title": "Partie 1 : un client OIDC",
+    "section": "1.2 Créer Marie",
+    "text": "1.2 Créer Marie\nUsers → Add user :\n\n\n\nChamp\nValeur\n\n\n\n\nUsername\nmdupont\n\n\nEmail\nmarie.dupont@caisse.local\n\n\nFirst name, Last name\nMarie, Dupont\n\n\nEmail verified\nOn\n\n\n\nCreate. Puis :\n\nonglet Attributes : ajoutez service = Prestations et numeroRH = 4711 ;\nonglet Credentials → Set password : Marie2026!, Temporary : Off.\n\n\nQuestion 1. Où est le mot de passe de Marie maintenant ? Qui le voit passer lors d’une connexion à l’application ?",
+    "crumbs": [
+      "Labo",
+      "Partie 1 : un client OIDC"
+    ]
+  },
+  {
+    "objectID": "labo/1-client-oidc.html#enregistrer-lapplication-comme-client-oidc",
+    "href": "labo/1-client-oidc.html#enregistrer-lapplication-comme-client-oidc",
+    "title": "Partie 1 : un client OIDC",
+    "section": "1.3 Enregistrer l’application comme client OIDC",
+    "text": "1.3 Enregistrer l’application comme client OIDC\nClients → Create client :\n\n\n\n\n\n\n\nÉcran\nRéglage\n\n\n\n\nGeneral settings\nClient type : OpenID Connect. Client ID : app-prestations\n\n\nCapability config\nClient authentication : On (client confidentiel). Standard flow : On. Direct access grants : Off. Implicit flow : Off. Require PKCE : On. PKCE Method : S256 (ces deux réglages apparaissent sous la liste des flux)\n\n\nLogin settings\nRoot URL http://localhost:8000. Valid redirect URIs http://localhost:8000/callback. Valid post logout redirect URIs http://localhost:8000/*. Web origins http://localhost:8000\n\n\n\nSave. Puis onglet Credentials (il n’apparaît qu’une fois le client enregistré avec Client authentication : On) : copiez le Client secret.\n\n\n\n\n\n\nNoteVous ne trouvez pas le réglage PKCE ?\n\n\n\nDans les versions de Keycloak antérieures à 26.7, il se trouvait dans l’onglet Advanced, section « Advanced settings », sous le nom « Proof Key for Code Exchange Code Challenge Method ». Depuis la version 26.7, il est dans Settings → Capability config. Les tutoriels en ligne décrivent presque tous l’ancien emplacement.\n\n\n\nQuestion 2. Pourquoi « Direct access grants » (le flux où l’application reçoit le mot de passe) doit-il rester désactivé ? Que se passerait-il si « Valid redirect URIs » contenait http://localhost:8000/* ou simplement * ?",
+    "crumbs": [
+      "Labo",
+      "Partie 1 : un client OIDC"
+    ]
+  },
+  {
+    "objectID": "labo/1-client-oidc.html#configurer-lapplication",
+    "href": "labo/1-client-oidc.html#configurer-lapplication",
+    "title": "Partie 1 : un client OIDC",
+    "section": "1.4 Configurer l’application",
+    "text": "1.4 Configurer l’application\nÉditez le fichier .env :\nOIDC_CLIENT_ID=app-prestations\nOIDC_CLIENT_SECRET=&lt;le secret copié&gt;\nRedémarrez l’application seule :\ndocker compose up -d --force-recreate app",
+    "crumbs": [
+      "Labo",
+      "Partie 1 : un client OIDC"
+    ]
+  },
+  {
+    "objectID": "labo/1-client-oidc.html#se-connecter-et-observer",
+    "href": "labo/1-client-oidc.html#se-connecter-et-observer",
+    "title": "Partie 1 : un client OIDC",
+    "section": "1.5 Se connecter et observer",
+    "text": "1.5 Se connecter et observer\n\n\nOuvrez http://localhost:8000 → « Se connecter via Keycloak ». Avant de taper quoi que ce soit, regardez l’adresse dans la barre du navigateur : response_type=code, client_id, redirect_uri, scope, state, nonce, code_challenge, code_challenge_method=S256. C’est l’étape 1 du flux par code d’autorisation avec PKCE.\nConnectez-vous avec mdupont / Marie2026!.\nVous arrivez sur Mon profil : l’application affiche ce qu’elle a reçu. Repérez iss, aud, sub, exp, nonce. Collez le jeton d’identité brut sur https://jwt.io et vérifiez qu’on y lit tout sans aucune clé.\nCliquez sur Valider des rentes : accès refusé (403). Vous êtes authentifiée, pas autorisée. On y revient en partie 3.\nCliquez sur userinfo : l’application appelle une API de Keycloak avec le jeton d’accès.\nDéconnexion, puis revenez sur Mon profil : 401. Ouvrez http://localhost:8080/realms/caisse/account : la session Keycloak est-elle fermée aussi ? C’est la déconnexion initiée par l’application.\n\n\n\nQuestion 3. Dans le jeton d’identité, que vaut aud ? À qui ce jeton est-il destiné ? Et le jeton d’accès, à qui est-il destiné ?\n\n\nQuestion 4. Combien de temps le jeton d’accès est-il valable (exp moins iat) ? Si on désactive Marie dans Keycloak maintenant, l’application la laisse-t-elle encore entrer ? Testez : Users → mdupont → Enabled : Off, puis rechargez une page de l’application.\n\n\nQuestion 5. Keycloak n’émet pas le claim amr par défaut. Que vaut acr ? Que signifie-t-il ?\n\nPassez à la partie 2.",
+    "crumbs": [
+      "Labo",
+      "Partie 1 : un client OIDC"
+    ]
+  },
+  {
+    "objectID": "glossaire.html",
+    "href": "glossaire.html",
+    "title": "Glossaire",
+    "section": "",
+    "text": "Le domaine adore les sigles. Les voici tous, par ordre alphabétique. Utilisez aussi la recherche (la loupe en haut à droite)."
+  },
+  {
+    "objectID": "glossaire.html#a",
+    "href": "glossaire.html#a",
+    "title": "Glossaire",
+    "section": "A",
+    "text": "A\n\nAAL\n\nAuthenticator Assurance Level, niveau de confiance dans l’authentification (NIST)\n\nABAC\n\nAttribute-Based Access Control, contrôle d’accès fondé sur les attributs\n\nACF2\n\nAccess Control Facility 2, équivalent de RACF édité par Broadcom (ex-CA)\n\nAD\n\nActive Directory, annuaire Microsoft installé sur site\n\nANSSI\n\nAgence nationale de la sécurité des systèmes d’information (France)\n\nAPI\n\nApplication Programming Interface, interface qu’une application expose à d’autres programmes\n\nATC\n\nAnnual Technical Conference (USENIX)\n\nAWS\n\nAmazon Web Services, fournisseur cloud d’Amazon"
+  },
+  {
+    "objectID": "glossaire.html#c",
+    "href": "glossaire.html#c",
+    "title": "Glossaire",
+    "section": "C",
+    "text": "C\n\nCASB\n\nCloud Access Security Broker, intermédiaire de sécurité entre utilisateurs et services cloud\n\nCDI\n\nContrat à durée indéterminée\n\nCHF\n\nFranc suisse\n\nCIAM\n\nCustomer Identity and Access Management, gestion des identités des clients et citoyens\n\nCISA\n\nCybersecurity and Infrastructure Security Agency (États-Unis)\n\nCMMI\n\nCapability Maturity Model Integration, modèle de maturité de référence en cinq niveaux (CMMI Institute / ISACA)\n\nCTAP\n\nClient to Authenticator Protocol, protocole entre le navigateur et la clé de sécurité ou le téléphone"
+  },
+  {
+    "objectID": "glossaire.html#d",
+    "href": "glossaire.html#d",
+    "title": "Glossaire",
+    "section": "D",
+    "text": "D\n\nDAC\n\nDiscretionary Access Control, contrôle d’accès où le propriétaire décide\n\nDNS\n\nDomain Name System, système de noms de domaine"
+  },
+  {
+    "objectID": "glossaire.html#e",
+    "href": "glossaire.html#e",
+    "title": "Glossaire",
+    "section": "E",
+    "text": "E\n\ne-ID\n\nIdentité électronique suisse"
+  },
+  {
+    "objectID": "glossaire.html#f",
+    "href": "glossaire.html#f",
+    "title": "Glossaire",
+    "section": "F",
+    "text": "F\n\nFAL\n\nFederation Assurance Level, niveau de confiance dans la fédération (NIST)\n\nFIDO\n\nFast IDentity Online, alliance industrielle derrière FIDO2 et les passkeys\n\nFIDO2\n\nFast IDentity Online 2, standard d’authentification par clé publique résistant au phishing (FIDO Alliance)\n\nFINMA\n\nAutorité fédérale de surveillance des marchés financiers (Suisse)"
+  },
+  {
+    "objectID": "glossaire.html#g",
+    "href": "glossaire.html#g",
+    "title": "Glossaire",
+    "section": "G",
+    "text": "G\n\nGIA\n\nGestion des identités et des accès, traduction française d’IAM"
+  },
+  {
+    "objectID": "glossaire.html#h",
+    "href": "glossaire.html#h",
+    "title": "Glossaire",
+    "section": "H",
+    "text": "H\n\nHAL\n\nHyper Articles en Ligne, archive ouverte de publications scientifiques\n\nHAR\n\nHTTP Archive, fichier qui enregistre les échanges d’un navigateur, cookies de session compris"
+  },
+  {
+    "objectID": "glossaire.html#i",
+    "href": "glossaire.html#i",
+    "title": "Glossaire",
+    "section": "I",
+    "text": "I\n\nIA\n\nIntelligence artificielle\n\nIAL\n\nIdentity Assurance Level, niveau de confiance dans la vérification de l’identité (NIST)\n\nIAM\n\nIdentity and Access Management, gestion des identités et des accès\n\nID\n\nIdentifier ; « ID token » = jeton d’identité d’OpenID Connect\n\nIdP\n\nIdentity Provider, fournisseur d’identité (celui qui authentifie et émet la preuve)\n\nIEC\n\nInternational Electrotechnical Commission, coéditrice des normes ISO/IEC\n\nIETF\n\nInternet Engineering Task Force, organisme qui publie les RFC\n\nIGA\n\nIdentity Governance and Administration, gouvernance et administration des identités (cycle de vie, rôles, revues)\n\nISO\n\nInternational Organization for Standardization, organisation internationale de normalisation\n\nIT\n\nInformation Technology, l’informatique"
+  },
+  {
+    "objectID": "glossaire.html#j",
+    "href": "glossaire.html#j",
+    "title": "Glossaire",
+    "section": "J",
+    "text": "J\n\nJWT\n\nJSON Web Token, jeton signé au format JSON"
+  },
+  {
+    "objectID": "glossaire.html#l",
+    "href": "glossaire.html#l",
+    "title": "Glossaire",
+    "section": "L",
+    "text": "L\n\nLDAP\n\nLightweight Directory Access Protocol, protocole d’accès aux annuaires\n\nLeID\n\nLoi fédérale sur l’identité électronique (Suisse)\n\nLPD\n\nLoi fédérale sur la protection des données (Suisse, révisée, en vigueur depuis le 1er septembre 2023)"
+  },
+  {
+    "objectID": "glossaire.html#m",
+    "href": "glossaire.html#m",
+    "title": "Glossaire",
+    "section": "M",
+    "text": "M\n\nMAC\n\nMandatory Access Control, contrôle d’accès imposé par une autorité centrale\n\nMFA\n\nMulti-Factor Authentication, authentification à plusieurs facteurs\n\nMSRC\n\nMicrosoft Security Response Center"
+  },
+  {
+    "objectID": "glossaire.html#n",
+    "href": "glossaire.html#n",
+    "title": "Glossaire",
+    "section": "N",
+    "text": "N\n\nNIS2\n\nNetwork and Information Security directive 2, directive européenne sur la cybersécurité (2022)\n\nNIST\n\nNational Institute of Standards and Technology, agence américaine de normalisation"
+  },
+  {
+    "objectID": "glossaire.html#o",
+    "href": "glossaire.html#o",
+    "title": "Glossaire",
+    "section": "O",
+    "text": "O\n\nOASIS\n\nOrganization for the Advancement of Structured Information Standards, éditeur de SAML et XACML\n\nOAuth\n\nOpen Authorization, protocole de délégation d’accès aux API (OAuth 2.0, 2012)\n\nOIDC\n\nOpenID Connect, couche d’authentification au-dessus d’OAuth 2.0\n\nOPDo\n\nOrdonnance sur la protection des données (Suisse)\n\nOpenID\n\nOpenID Connect, couche d’authentification au-dessus d’OAuth 2.0 (OpenID Foundation)\n\nOWASP\n\nOpen Worldwide Application Security Project, communauté de sécurité applicative"
+  },
+  {
+    "objectID": "glossaire.html#p",
+    "href": "glossaire.html#p",
+    "title": "Glossaire",
+    "section": "P",
+    "text": "P\n\nPAM\n\nPrivileged Access Management, gestion des accès à privilèges (comptes administrateur)\n\nPBAC\n\nPolicy-Based Access Control, contrôle d’accès par règles externalisées\n\nPBKDF2\n\nPassword-Based Key Derivation Function 2, fonction de hachage lente pour mots de passe\n\nPCI DSS\n\nPayment Card Industry Data Security Standard, norme de sécurité des cartes de paiement\n\nPDP\n\nPolicy Decision Point, point de décision (qui décide d’autoriser)\n\nPEP\n\nPolicy Enforcement Point, point d’application (qui bloque ou laisse passer)\n\nPFPDT\n\nPréposé fédéral à la protection des données et à la transparence (Suisse)\n\nPIN\n\nPersonal Identification Number, code personnel à chiffres\n\nPIP\n\nPolicy Information Point, point d’information (qui fournit les attributs)\n\nPKCE\n\nProof Key for Code Exchange, protection du code d’autorisation OAuth par un secret temporaire"
+  },
+  {
+    "objectID": "glossaire.html#r",
+    "href": "glossaire.html#r",
+    "title": "Glossaire",
+    "section": "R",
+    "text": "R\n\nRACF\n\nResource Access Control Facility, gestion des identités et des accès sur les mainframes IBM z/OS\n\nRBAC\n\nRole-Based Access Control, contrôle d’accès fondé sur les rôles\n\nReBAC\n\nRelationship-Based Access Control, contrôle d’accès fondé sur les relations entre objets\n\nREST\n\nRepresentational State Transfer, style d’API web fondé sur HTTP\n\nRFC\n\nRequest For Comments, document de normalisation de l’IETF\n\nRGPD\n\nRèglement général sur la protection des données (Union européenne)\n\nRH\n\nRessources humaines\n\nROPC\n\nResource Owner Password Credentials, ancien flux OAuth où l’application manipule le mot de passe (abandonné)\n\nRS\n\nRecueil systématique du droit fédéral suisse\n\nRSSI\n\nResponsable de la sécurité des systèmes d’information"
+  },
+  {
+    "objectID": "glossaire.html#s",
+    "href": "glossaire.html#s",
+    "title": "Glossaire",
+    "section": "S",
+    "text": "S\n\nSaaS\n\nSoftware as a Service, logiciel utilisé en ligne, hébergé par l’éditeur\n\nSAML\n\nSecurity Assertion Markup Language, protocole de fédération fondé sur XML (2005)\n\nSCIM\n\nSystem for Cross-domain Identity Management, API standard pour créer, modifier et désactiver des comptes\n\nSHA-256\n\nSecure Hash Algorithm 256 bits, fonction de hachage rapide (inadaptée aux mots de passe)\n\nSIEM\n\nSecurity Information and Event Management, plateforme qui centralise et analyse les journaux de sécurité\n\nSIM\n\nSubscriber Identity Module, la carte qui identifie un abonné mobile\n\nSMS\n\nShort Message Service, message texte sur téléphone mobile\n\nSP\n\nService Provider, fournisseur de service (l’application qui reçoit la preuve)\n\nSSE\n\nSecurity Service Edge, offre regroupant CASB, filtrage web et accès réseau Zero Trust\n\nSSH\n\nSecure Shell, protocole d’administration à distance sécurisé\n\nSSO\n\nSingle Sign-On, authentification unique\n\nSWG\n\nSecure Web Gateway, passerelle de filtrage du trafic web\n\nSWITCH\n\nFondation suisse qui opère le réseau et les services des hautes écoles (SWITCH edu-ID)"
+  },
+  {
+    "objectID": "glossaire.html#t",
+    "href": "glossaire.html#t",
+    "title": "Glossaire",
+    "section": "T",
+    "text": "T\n\nTOTP\n\nTime-based One-Time Password, code à usage unique basé sur l’heure (applications d’authentification)"
+  },
+  {
+    "objectID": "glossaire.html#u",
+    "href": "glossaire.html#u",
+    "title": "Glossaire",
+    "section": "U",
+    "text": "U\n\nUE\n\nUnion européenne\n\nURI\n\nUniform Resource Identifier, identifiant de ressource (généralise l’URL)\n\nURL\n\nUniform Resource Locator, adresse web\n\nUSENIX\n\nAssociation professionnelle d’informatique qui organise des conférences techniques (ATC = Annual Technical Conference)"
+  },
+  {
+    "objectID": "glossaire.html#w",
+    "href": "glossaire.html#w",
+    "title": "Glossaire",
+    "section": "W",
+    "text": "W\n\nW3C\n\nWorld Wide Web Consortium, organisme de normalisation du web\n\nWebAuthn\n\nWeb Authentication, API du W3C qui permet aux sites web d’utiliser FIDO2"
+  },
+  {
+    "objectID": "glossaire.html#x",
+    "href": "glossaire.html#x",
+    "title": "Glossaire",
+    "section": "X",
+    "text": "X\n\nXACML\n\nEXtensible Access Control Markup Language, langage de règles d’autorisation (OASIS)\n\nXML\n\nEXtensible Markup Language, format de données à balises"
+  },
+  {
+    "objectID": "glossaire.html#z",
+    "href": "glossaire.html#z",
+    "title": "Glossaire",
+    "section": "Z",
+    "text": "Z\n\nZTNA\n\nZero Trust Network Access, accès aux applications sans VPN, décidé par identité et contexte"
+  },
+  {
+    "objectID": "exercices/politique-authentification.html",
+    "href": "exercices/politique-authentification.html",
+    "title": "Concevoir une politique d’authentification",
+    "section": "",
+    "text": "Cet exercice met en pratique le chapitre L’authentification.",
+    "crumbs": [
+      "Exercices",
+      "Concevoir une politique d'authentification"
+    ]
+  },
+  {
+    "objectID": "exercices/politique-authentification.html#la-situation",
+    "href": "exercices/politique-authentification.html#la-situation",
+    "title": "Concevoir une politique d’authentification",
+    "section": "La situation",
+    "text": "La situation\nLa caisse de pension de Marie :\n\n180 collaborateurs.\nUn logiciel métier installé sur site, une messagerie dans le cloud.\nUn portail pour les assurés, accessible depuis Internet.\nSix prestataires informatiques externes avec des accès administrateur.\n\nQuatre populations : collaborateurs, administrateurs, prestataires externes, assurés.",
+    "crumbs": [
+      "Exercices",
+      "Concevoir une politique d'authentification"
+    ]
+  },
+  {
+    "objectID": "exercices/politique-authentification.html#votre-mission",
+    "href": "exercices/politique-authentification.html#votre-mission",
+    "title": "Concevoir une politique d’authentification",
+    "section": "Votre mission",
+    "text": "Votre mission\n\n1. Pour chaque population, quel moyen d’authentification imposez-vous ? Pour chaque moyen écarté, citez l’attaque concrète qui le justifie.\n\n\n2. Un utilisateur perd son téléphone ou sa clé : comment récupère-t-il son accès, sans que cette procédure devienne la porte d’entrée des attaquants ?\n\n\n3. Où acceptez-vous de compliquer un peu la vie des utilisateurs, et où refusez-vous de le faire ? Pourquoi ?\n\nSi le temps manque, concentrez-vous sur la question 1.",
+    "crumbs": [
+      "Exercices",
+      "Concevoir une politique d'authentification"
+    ]
+  },
+  {
+    "objectID": "exercices/politique-authentification.html#pour-vous-aider",
+    "href": "exercices/politique-authentification.html#pour-vous-aider",
+    "title": "Concevoir une politique d’authentification",
+    "section": "Pour vous aider",
+    "text": "Pour vous aider\n\nLe classement des moyens MFA par résistance au phishing.\nLes niveaux AAL du chapitre 8.\nLa différence entre employés et clients au chapitre 9.\n\n\n\n\n\n\n\nNotePistes de réponse (à ouvrir après avoir cherché)\n\n\n\n\n\n\nAdministrateurs et prestataires : passkeys ou clés FIDO2 (niveau AAL3).\nCollaborateurs : passkeys, ou application avec code à recopier.\nAssurés : passkeys proposées, avec un parcours de secours soigné et un niveau de vérification adapté au risque (niveau AAL2).\n\nLe piège à repérer : la récupération par SMS ou par e-mail ramène tout le monde au niveau du SMS.\nLe choix des niveaux se fait par une analyse de risque, comme le demande NIST SP 800-63-4.",
+    "crumbs": [
+      "Exercices",
+      "Concevoir une politique d'authentification"
+    ]
+  },
+  {
+    "objectID": "exercices/diagnostic-architecture.html",
+    "href": "exercices/diagnostic-architecture.html",
+    "title": "Diagnostic d’une architecture",
+    "section": "",
+    "text": "Cet exercice applique le chapitre Mener un projet IAM, et mobilise tout le cours.",
+    "crumbs": [
+      "Exercices",
+      "Diagnostic d'une architecture"
+    ]
+  },
+  {
+    "objectID": "exercices/diagnostic-architecture.html#la-situation",
+    "href": "exercices/diagnostic-architecture.html#la-situation",
+    "title": "Diagnostic d’une architecture",
+    "section": "La situation",
+    "text": "La situation\nUne haute école :\n\n4 000 étudiants, 600 collaborateurs, 90 applications.\nUn Active Directory sur site, un Entra ID synchronisé, une fédération pour 12 applications cloud.\nLes comptes étudiants sont créés à l’inscription par un script de nuit, et supprimés « quand on y pense ».\nLes enseignants externes sont saisis à la main par les secrétariats, sans date de fin.\nLe MFA est activé pour l’administration, facultatif pour les enseignants, absent pour les étudiants.\n17 comptes administrateur du domaine. Personne ne sait à qui appartiennent les 4 derniers.",
+    "crumbs": [
+      "Exercices",
+      "Diagnostic d'une architecture"
+    ]
+  },
+  {
+    "objectID": "exercices/diagnostic-architecture.html#votre-mission",
+    "href": "exercices/diagnostic-architecture.html#votre-mission",
+    "title": "Diagnostic d’une architecture",
+    "section": "Votre mission",
+    "text": "Votre mission\n\n1. Identifiez les trois risques les plus graves et classez-les. Justifiez l’ordre.\n\n\n2. Proposez deux actions réalisables en six mois avec un petit budget. Que refusez-vous de faire, et pourquoi ?\n\n\n3. Un enseignant externe garde ses accès trois ans après son dernier cours. Où exactement le processus a-t-il échoué, et comment le corriger durablement ?\n\nSi le temps manque, traitez seulement les questions 1 et 3.\n\n\n\n\n\n\nNotePistes de réponse (à ouvrir après avoir cherché)\n\n\n\n\n\nLes risques\n\nLes 17 comptes administrateur, dont 4 sans propriétaire.\nLes enseignants externes sans date de fin.\nL’absence de MFA pour les étudiants et les enseignants : phishing, puis rebond vers l’Active Directory.\n\nLes actions\n\nInventaire et réduction des comptes administrateur, avec des droits accordés pour une durée limitée.\nDate de fin obligatoire et source de référence pour les externes.\n\nLa question 3\nLe processus a échoué à la saisie (pas de source de référence, pas de date de fin) et à la fin (pas d’événement de départ). La correction durable : un système qui fait foi pour les externes, avec une date de fin obligatoire et une désactivation automatique.",
+    "crumbs": [
+      "Exercices",
+      "Diagnostic d'une architecture"
+    ]
+  },
+  {
+    "objectID": "cours/a-retenir.html",
+    "href": "cours/a-retenir.html",
+    "title": "Sept idées à emporter",
+    "section": "",
+    "text": "Authentifier et autoriser sont deux décisions distinctes, souvent prises par deux systèmes différents. Chapitre 1\nLa valeur d’un dispositif IAM pour la sécurité se mesure au délai de fermeture des accès, pas au délai d’ouverture. Chapitre 3\nLe changement de poste est le maillon faible du cycle de vie. L’accumulation de droits en est la conséquence directe. Chapitre 3\nAucun modèle d’autorisation ne gagne. Les architectures matures combinent RBAC, ABAC et ReBAC. Chapitre 4\nTous les MFA ne se valent pas. Le seul critère qui compte : la résistance au relais en temps réel. Chapitre 5\nLa fédération sans création automatique des comptes fabrique des comptes orphelins. Il faut les deux canaux. Chapitre 7\nLe fournisseur d’identité est devenu l’élément le plus critique du système d’information. Chapitre 6\nLaquelle de ces sept idées change quelque chose dans votre travail dès lundi ?",
+    "crumbs": [
+      "Cours",
+      "Sept idées à emporter"
+    ]
+  },
+  {
+    "objectID": "cours/a-retenir.html#deux-questions-à-rapporter-dans-votre-organisation",
+    "href": "cours/a-retenir.html#deux-questions-à-rapporter-dans-votre-organisation",
+    "title": "Sept idées à emporter",
+    "section": "Deux questions à rapporter dans votre organisation",
+    "text": "Deux questions à rapporter dans votre organisation\n\nQuel est le délai réel entre un départ et la fermeture des accès ?\nQui possède la liste des comptes administrateur permanents ?",
+    "crumbs": [
+      "Cours",
+      "Sept idées à emporter"
+    ]
+  },
+  {
+    "objectID": "cours/a-retenir.html#pour-aller-plus-loin",
+    "href": "cours/a-retenir.html#pour-aller-plus-loin",
+    "title": "Sept idées à emporter",
+    "section": "Pour aller plus loin",
+    "text": "Pour aller plus loin\n\n\n\n\n\n\nAstuceUn conseil\n\n\n\nLisez une spécification complète, une seule fois dans votre carrière. OpenID Connect Core est la plus courte et la plus rentable.\n\n\nLes normes, les spécifications, les lectures et les cas réels cités dans le cours sont rassemblés sur la page Sources. Pour vérifier vos acquis, passez aux exercices, puis au labo.",
+    "crumbs": [
+      "Cours",
+      "Sept idées à emporter"
+    ]
+  },
+  {
+    "objectID": "cours/09-frontieres.html",
+    "href": "cours/09-frontieres.html",
+    "title": "Les frontières actuelles",
+    "section": "",
+    "text": "Que se passe-t-il quand l’utilisateur n’est plus un employé assis derrière le pare-feu ?",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les frontières actuelles"
+    ]
+  },
+  {
+    "objectID": "cours/09-frontieres.html#zero-trust-lidentité-comme-nouvelle-frontière",
+    "href": "cours/09-frontieres.html#zero-trust-lidentité-comme-nouvelle-frontière",
+    "title": "Les frontières actuelles",
+    "section": "Zero Trust : l’identité comme nouvelle frontière",
+    "text": "Zero Trust : l’identité comme nouvelle frontière\n\n\n1\n\nNe rien présumer\nÊtre dans le réseau de l’entreprise ne donne aucun droit. Un poste sur le réseau interne n’est pas plus fiable qu’un poste sur Internet.\n\n\n\n2\n\nVérifier à chaque fois\nChaque accès est évalué selon l’identité, l’état de l’appareil, le contexte et le niveau de risque de la session.\n\n\n\n3\n\nRéévaluer en continu\nLa décision n’est pas prise une fois pour toutes à la connexion. Un changement de contexte doit pouvoir couper une session en cours.\n\n\n\n4\n\nLimiter les dégâts\nDécouper le réseau en petites zones, moindre privilège, droits temporaires : limiter ce qu’une intrusion permet d’atteindre.\n\n\n\nAttention à l’effet marketing : Zero Trust n’est pas un produit. La partie vraiment structurante est la réévaluation continue. Une session de huit heures est incompatible avec elle : si la session de Marie, ouverte à Lausanne à 9 h, est utilisée depuis un autre pays à 9 h 10, elle doit être coupée.\nPour l’IAM, concrètement, l’accès conditionnel devient le point de décision central. Il ne fonctionne que si les informations sur l’identité et sur l’appareil sont fiables.\n\n\n\n\n\n\nImportantLe préalable qu’on saute toujours\n\n\n\nSans annuaire d’identités propre et sans inventaire des appareils à jour, il n’y a rien sur quoi fonder une décision. Acheter un outil d’accès conditionnel alors que 30 % des appareils ne sont pas dans l’inventaire, c’est décider sur des données fausses. Zero Trust s’achète en dernier, pas en premier.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les frontières actuelles"
+    ]
+  },
+  {
+    "objectID": "cours/09-frontieres.html#contrôler-lusage-du-cloud-casb-et-sse",
+    "href": "cours/09-frontieres.html#contrôler-lusage-du-cloud-casb-et-sse",
+    "title": "Les frontières actuelles",
+    "section": "Contrôler l’usage du cloud : CASB et SSE",
+    "text": "Contrôler l’usage du cloud : CASB et SSE\n\nLe problème\n\nLes données sortent du réseau : SaaS, stockage en ligne, outils d’IA. Le pare-feu ne voit plus rien.\nDes applications sont utilisées sans l’informatique : partage de fichiers, traduction en ligne, assistants IA.\nUn compte SaaS compromis donne accès aux données depuis n’importe où, sans passer par le réseau de l’entreprise.\n\n\n\nLes réponses\n\nCASB (Cloud Access Security Broker)\n\nUn intermédiaire entre les utilisateurs et les services cloud. Il voit qui utilise quoi, applique des règles (bloquer un partage public, interdire un téléchargement sur un appareil non géré) et détecte les anomalies.\n\nSSE (Security Service Edge)\n\nRegroupe le CASB, le filtrage web et l’accès réseau Zero Trust en un service cloud. Exemples : Netskope, Zscaler, Microsoft Defender for Cloud Apps.\n\n\n\n\n\n\n\n\nAstuceExemple : ce que l’outil découvre\n\n\n\nDans les journaux, 40 services cloud utilisés dont 25 inconnus de l’informatique, y compris un convertisseur PDF en ligne où sont envoyés des contrats.\n\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nCes outils consomment l’identité, ils ne la produisent pas. Sans IAM propre, un CASB ne sait pas à qui il parle. Et il ne remplace ni la fédération ni SCIM : il contrôle l’usage des applications, il ne gère pas les comptes.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les frontières actuelles"
+    ]
+  },
+  {
+    "objectID": "cours/09-frontieres.html#ciam-quand-lutilisateur-nest-pas-un-employé",
+    "href": "cours/09-frontieres.html#ciam-quand-lutilisateur-nest-pas-un-employé",
+    "title": "Les frontières actuelles",
+    "section": "CIAM : quand l’utilisateur n’est pas un employé",
+    "text": "CIAM : quand l’utilisateur n’est pas un employé\n\n\n\n\n\n\n\n\nDimension\nIAM interne (employés)\nCIAM (clients, citoyens)\n\n\n\n\nVolume\nDes milliers\nDes centaines de milliers à des millions, avec des pics\n\n\nCréation de l’identité\nPar les RH, avec vérification à l’engagement\nEn libre-service, avec un niveau de vérification à choisir selon le risque\n\n\nMoyens de pression\nFormation, directive interne, sanction\nAucun. Trop de contraintes : l’utilisateur abandonne\n\n\nBase juridique\nContrat de travail\nConsentement ou intérêt légitime, à documenter et à retirer sur demande\n\n\nEnjeu principal\nGouvernance et preuve d’audit\nConversion, lutte contre la fraude, gestion du consentement\n\n\nRisque de conception\nAccumulation de droits\nVol de compte et création de faux comptes en masse\n\n\n\nLa différence de fond : on ne peut ni former ni sanctionner un client. Toute mesure de sécurité qui complique le parcours se paie en abandons mesurables. Une banque en ligne qui impose une clé physique à ses clients verra ses ouvertures de compte chuter. Elle proposera plutôt des passkeys, avec un parcours de secours par vidéo-identification.\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nEn CIAM, la procédure de récupération de compte est à la fois la première cause d’appels au support et la principale porte d’entrée des attaquants. Elle se conçoit avec autant de soin que l’authentification elle-même.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les frontières actuelles"
+    ]
+  },
+  {
+    "objectID": "cours/09-frontieres.html#les-identités-non-humaines-le-sujet-du-moment",
+    "href": "cours/09-frontieres.html#les-identités-non-humaines-le-sujet-du-moment",
+    "title": "Les frontières actuelles",
+    "section": "Les identités non humaines : le sujet du moment",
+    "text": "Les identités non humaines : le sujet du moment\n\n\n×10 à ×50 rapport couramment observé entre le nombre d’identités machines et le nombre d’identités humaines.\n\n\n≈ 0 nombre de ces identités couvertes par une revue des accès dans la plupart des organisations.\n\n\n∞ durée de vie réelle d’un secret de chaîne de déploiement que personne n’a inventorié.\n\n\nSont concernés : comptes de service, jetons d’API, clés SSH, certificats, identités des conteneurs, et désormais les agents IA.\nLe problème : ces identités n’ont ni responsable désigné, ni date de fin, ni procédure de départ. Personne ne « quitte l’entreprise » à leur place. Une clé d’API dans un dépôt Git public, un jeton de chaîne de déploiement valable sans limite, un certificat client expiré un dimanche qui coupe un flux de paiement : ce sont les exemples classiques.\nLa piste : une identité prouvée par cryptographie et à très courte durée de vie, plutôt qu’un secret fixe dans un fichier de configuration. SPIFFE/SPIRE délivre ainsi aux services des identités valables quelques heures, renouvelées automatiquement.\n\n\n\n\n\n\nImportantLe cas des agents IA\n\n\n\nLa question n’est plus « qui est authentifié », mais « au nom de qui cet agent agit-il, et jusqu’où va sa délégation ». Un agent qui lit la messagerie d’un utilisateur devrait agir avec un jeton limité à cet utilisateur et à cette action, pas avec un compte de service global. Les modèles d’autorisation actuels n’y répondent pas encore proprement.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les frontières actuelles"
+    ]
+  },
+  {
+    "objectID": "cours/09-frontieres.html#le-contexte-suisse-lidentité-électronique-e-id",
+    "href": "cours/09-frontieres.html#le-contexte-suisse-lidentité-électronique-e-id",
+    "title": "Les frontières actuelles",
+    "section": "Le contexte suisse : l’identité électronique (e-ID)",
+    "text": "Le contexte suisse : l’identité électronique (e-ID)\n\n\n7 mars 2021. Le peuple rejette un premier projet, surtout parce qu’il confiait l’émission à des entreprises privées.\n20 décembre 2024. Le Parlement adopte la nouvelle loi fédérale sur l’identité électronique (LeID), entièrement gérée par l’État.\n28 septembre 2025. La loi est acceptée en votation populaire par 50,39 % des voix, après référendum.\n21 avril 2026. Le Tribunal fédéral rejette les recours contre le scrutin. La votation est validée.\n30 juin 2026. L’Office fédéral de la justice reporte le lancement, pour des raisons de sécurité face aux deepfakes. Aucune nouvelle date n’est fixée.\n\n\n\n\n\n\n\n\nAvertissementUn dossier qui bouge\n\n\n\nCette chronologie reflète l’état du dossier pour l’édition 2026 du cours. Vérifiez la situation actuelle sur eid.admin.ch.\n\n\nPourquoi cela vous concerne. L’e-ID est un fournisseur d’identité d’un type nouveau : un portefeuille numérique détenu par l’utilisateur, qui présente seulement les attestations nécessaires. On peut prouver à un site que l’on a plus de 18 ans sans révéler sa date de naissance ni son nom. L’identité passe du fournisseur à la personne.\nLes questions de ce cours restent entières : quel niveau de vérification à l’émission, et comment récupérer son identité quand on perd son téléphone ?\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nNIST SP 800-207, Zero Trust Architecture (2020). NIST SP 800-63A-4 pour la vérification d’identité à l’inscription. CyberArk, Identity Security Threat Landscape 2024 pour le rapport machines / humains. Loi fédérale sur l’identité électronique (LeID).",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les frontières actuelles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html",
+    "href": "cours/07-protocoles.html",
+    "title": "Les protocoles",
+    "section": "",
+    "text": "Comment les applications font-elles confiance au fournisseur d’identité, comment délèguent-elles un accès, et comment les comptes de Marie y arrivent-ils ?\nC’est le chapitre le plus technique du cours. Nous le traitons par les schémas d’échange plutôt que par les spécifications. Si vous êtes pressé, commencez par le tableau de décision.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html#saml-2.0-léchange-étape-par-étape",
+    "href": "cours/07-protocoles.html#saml-2.0-léchange-étape-par-étape",
+    "title": "Les protocoles",
+    "section": "SAML 2.0 : l’échange, étape par étape",
+    "text": "SAML 2.0 : l’échange, étape par étape\nSAML date de 2005. Il est verbeux, fondé sur XML, et absolument partout dans les applications d’entreprise. Il n’est pas dépassé.\n\n\nL’utilisateur demande une page à l’application (le fournisseur de service). Marie ouvre Salesforce.\nL’application voit qu’il n’a pas de session et le renvoie vers le fournisseur d’identité avec une demande d’authentification. Salesforce la renvoie vers login.caisse.ch.\nLe fournisseur d’identité authentifie l’utilisateur : mot de passe, MFA, ou session déjà ouverte. Elle s’authentifie avec sa passkey.\nIl produit une « assertion » : un document XML signé qui contient l’identifiant et les attributs demandés.\nLe navigateur transmet l’assertion à l’application, en général via un formulaire envoyé automatiquement.\nL’application vérifie la signature, ouvre une session locale et applique ses propres règles d’autorisation.\n\n\nVariante : l’échange démarre depuis le portail d’entreprise. C’est plus pratique, mais l’étape 2 disparaît, et avec elle le lien entre la demande et la réponse. C’est une surface d’attaque en plus.\n\nCe qu’il faut vérifier\n\n\n\nCe que contient l’assertion\n\nIssuer : qui l’a émise.\nSubject : de qui il s’agit.\nConditions : période de validité et destinataire attendu.\nAuthnStatement : comment l’utilisateur a été authentifié, et quand.\nAttributeStatement : les attributs transmis.\nSignature : la garantie que rien n’a été modifié et que l’émetteur est le bon.\n\n\n\nErreurs classiques d’intégration\n\nSignature non vérifiée, ou vérifiée sur le message et non sur l’assertion.\nDestinataire non contrôlé : on peut réutiliser une assertion sur une autre application.\nPas de protection contre le rejeu de la même assertion.\nCertificat de signature expiré, renouvelé dans l’urgence un vendredi soir.\nDéconnexion globale jamais mise en place.\n\n\n\n\n\n\n\n\n\nImportantLa date à mettre dans un agenda\n\n\n\nLe certificat de signature du fournisseur d’identité a une date d’expiration. Le jour où il expire, toutes les applications fédérées tombent en même temps. Cette date doit être dans un agenda, pas seulement dans un fichier de configuration.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html#oauth-2.0-le-malentendu-de-départ",
+    "href": "cours/07-protocoles.html#oauth-2.0-le-malentendu-de-départ",
+    "title": "Les protocoles",
+    "section": "OAuth 2.0 : le malentendu de départ",
+    "text": "OAuth 2.0 : le malentendu de départ\n\n\nCe qu’OAuth 2.0 fait\n\nIl délègue un droit d’accès à une ressource.\nCas d’usage d’origine : permettre à une application de lire mon agenda sans lui donner mon mot de passe.\nIl produit un jeton d’accès (access token) destiné à une API.\nCe jeton dit ce que son porteur peut faire, dans quelles limites (les scopes), et jusqu’à quand.\n\n\n\nCe qu’OAuth 2.0 ne fait pas\n\nIl ne dit pas qui est l’utilisateur, ni comment il a été authentifié, ni même s’il l’a été.\nLe jeton d’accès n’est pas destiné à l’application cliente mais à l’API. L’application ne doit pas le lire pour identifier l’utilisateur.\nUtiliser OAuth 2.0 seul pour authentifier est une erreur de conception connue depuis plus de dix ans, et toujours très répandue.\n\n\n\n\n\n\n\n\n\nImportantLa formule à retenir\n\n\n\nOAuth donne un ticket de consigne, pas une carte d’identité. Le ticket permet de récupérer un sac, il ne dit pas qui vous êtes. C’est exactement le vide que comble OpenID Connect.\n\n\n\n\n\n\n\n\nAstuceLa mauvaise pratique, concrètement\n\n\n\nUne application reçoit un jeton d’accès Google, appelle l’API de profil, lit l’adresse e-mail, et considère l’utilisateur comme authentifié. Un jeton d’accès émis pour une autre application (un jeu mobile, par exemple) permettrait de se connecter avec la même adresse e-mail.\n\n\n\nLe flux à retenir : code d’autorisation + PKCE\n\n\n\nLe flux par code d’autorisation avec PKCE.\n\n\n\n\nRedirection. L’application envoie l’utilisateur vers le serveur d’autorisation, avec l’empreinte d’un secret qu’elle vient de tirer au hasard (le code challenge).\nConsentement. L’utilisateur s’authentifie auprès du serveur d’autorisation et accepte les droits demandés.\nCode. Le serveur renvoie un code d’autorisation à usage unique, valable très peu de temps, à l’adresse de retour enregistrée à l’avance.\nÉchange. L’application échange le code contre un jeton, en présentant cette fois le secret en clair. Le serveur vérifie qu’il correspond à l’empreinte de l’étape 1.\nAppel. L’application appelle l’API avec le jeton d’accès. L’API le vérifie.\n\n\nCe que PKCE empêche : un attaquant qui intercepte le code ne peut rien en faire, car il ne connaît pas le secret d’origine. PKCE était réservé au mobile. Il est aujourd’hui recommandé pour tous les clients, y compris ceux qui peuvent garder un secret.\n\n\nCe qui a été abandonné : vers OAuth 2.1\nOAuth 2.1 est encore un projet à l’IETF. Il ne crée rien : il retire les mauvaises options et rend obligatoires les bonnes pratiques déjà connues. Son intérêt : il liste noir sur blanc ce qu’il faut retirer d’une intégration existante.\n\n\n\n\n\n\n\n\nÉlément\nStatut\nRaison\n\n\n\n\nFlux implicite\nÀ ne plus utiliser\nLe jeton passe dans l’URL : historique, journaux du serveur mandataire.\n\n\nMot de passe via l’application (ROPC)\nÀ ne plus utiliser\nL’application manipule le mot de passe : plus aucun intérêt.\n\n\nJeton dans l’URL\nInterdit\nMême problème que le flux implicite : fuite invisible.\n\n\nPKCE\nObligatoire\nPour tous les clients, plus seulement le mobile.\n\n\nAdresse de retour\nComparaison exacte\nAvec un joker, le code part chez l’attaquant.\n\n\nJeton de rafraîchissement (client public)\nRotation obligatoire\nUn jeton longue durée volé donne un accès durable et discret.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html#openid-connect-la-couche-dauthentification",
+    "href": "cours/07-protocoles.html#openid-connect-la-couche-dauthentification",
+    "title": "Les protocoles",
+    "section": "OpenID Connect : la couche d’authentification",
+    "text": "OpenID Connect : la couche d’authentification\nOpenID Connect (OIDC) est une couche au-dessus d’OAuth 2.0. Trois ajouts seulement, mais ils changent tout.\n\n\n1\n\nLe jeton d’identité\nUn JWT signé qui décrit l’authentification : qui (sub), émis par qui (iss), pour quelle application (aud), quand (iat), jusqu’à quand (exp), comment (amr, acr), et avec quel code aléatoire (nonce).\nC’est ce jeton, et lui seul, que l’application doit vérifier pour identifier l’utilisateur.\n\n\n\n2\n\nLe point d’information\nUn service standard (userinfo) qui renvoie les attributs de l’utilisateur, regroupés par familles : profil, e-mail, adresse, téléphone.\nFini les correspondances d’attributs à réinventer pour chaque application.\n\n\n\n3\n\nDécouverte et clés publiques\nUn document publié à une adresse convenue décrit tous les points d’accès du fournisseur. Un second expose ses clés publiques de signature.\nL’intégration devient automatisable.\n\n\n\n\n\n\n\n\n\nImportantLa règle\n\n\n\nLe jeton d’identité authentifie l’utilisateur auprès de l’application. Le jeton d’accès autorise l’application auprès d’une API. Ne confondez jamais les deux usages.\n\n\n\nLes trois jetons et comment les vérifier\n\n\n\n\n\n\n\n\n\nJeton\nDestinataire\nRôle\nDurée de vie\n\n\n\n\nJeton d’identité (ID token)\nL’application cliente\nProuver qu’une authentification a eu lieu, et dans quel contexte\nTrès courte, usage unique à la connexion\n\n\nJeton d’accès (access token)\nL’API\nAutoriser des appels d’API dans les limites des droits accordés\nQuelques minutes à une heure\n\n\nJeton de rafraîchissement (refresh token)\nLe serveur d’autorisation\nObtenir un nouveau jeton d’accès sans se réauthentifier\nLongue, d’où la nécessité de le renouveler\n\n\n\n\nUn JWT est signé et encodé, pas chiffré. N’importe qui peut lire son contenu : n’y mettez jamais de donnée sensible ni de secret. Collez-en un sur jwt.io, tout se lit sans aucune clé.\nVérification minimale côté serveur : la signature (avec la clé publique du fournisseur), puis l’émetteur, le destinataire, la date d’expiration et, pour un jeton d’identité, le nonce.\nNe vous fiez jamais à l’en-tête du jeton pour choisir l’algorithme. C’est l’origine de la faille classique où l’algorithme est mis à « aucun » : l’attaquant forge n’importe quelle identité.\nUn jeton signé ne se révoque pas : il reste valable jusqu’à son expiration. Un collaborateur licencié à 10 h garde un jeton d’accès valable jusqu’à 11 h. D’où des durées courtes, et une vérification côté serveur quand il faut révoquer immédiatement.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html#scim-créer-et-fermer-les-comptes-en-standard",
+    "href": "cours/07-protocoles.html#scim-créer-et-fermer-les-comptes-en-standard",
+    "title": "Les protocoles",
+    "section": "SCIM : créer et fermer les comptes en standard",
+    "text": "SCIM : créer et fermer les comptes en standard\nSAML et OIDC ne répondent pas à une question : comment créer, mettre à jour et désactiver le compte dans l’application cible ?\nSCIM est une API standard, avec deux objets principaux (Utilisateur et Groupe) et un schéma d’attributs commun. Sans SCIM, il reste deux mauvaises solutions : le fichier déposé chaque nuit, ou la création automatique du compte à la première connexion. Cette création à la volée est confortable et dangereuse : elle sait ouvrir un compte, jamais le fermer.\n\n\n\n\n\n\nImportantLa règle des deux canaux\n\n\n\n\nSAML ou OIDC : le canal d’authentification, à chaque connexion.\nSCIM : le canal du cycle de vie, à chaque événement RH.\n\nLes deux sont nécessaires. Une intégration qui n’a que le premier fabrique des comptes orphelins.\n\n\n\n\n\n\n\n\nAstuceExemple\n\n\n\nUne organisation fédère 40 applications SaaS en SAML et se félicite. Deux ans plus tard, l’audit trouve 300 comptes d’anciens collaborateurs dans ces applications. La fédération les empêche de se connecter, mais les comptes, leurs données et parfois leurs licences payantes existent toujours.\n\n\nLa prise en charge de SCIM par les éditeurs est très inégale. À vérifier dans tout contrat SaaS : le fournisseur propose-t-il SCIM, et sa version gère-t-elle vraiment la désactivation ? Testez-le avant de signer.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html#quel-protocole",
+    "href": "cours/07-protocoles.html#quel-protocole",
+    "title": "Les protocoles",
+    "section": "Quel protocole pour quel usage",
+    "text": "Quel protocole pour quel usage\n\n\n\n\n\n\n\n\nBesoin\nProtocole\nRemarque\n\n\n\n\nConnecter un logiciel d’entreprise au fournisseur d’identité\nSAML 2.0\nLe plus largement pris en charge par les applications installées en entreprise\n\n\nAuthentifier sur une application web ou mobile\nOpenID Connect\nPlus léger, adapté au mobile et aux applications web modernes\n\n\nAutoriser l’appel d’une API\nOAuth 2.0 / 2.1\nCode d’autorisation avec PKCE. Jamais le flux implicite\n\n\nCréer, modifier et désactiver des comptes\nSCIM 2.0\nIndispensable en complément de la fédération, jamais à sa place\n\n\nAuthentifier une machine, sans utilisateur\nOAuth client credentials\nAvec un certificat plutôt qu’un secret partagé\n\n\nSSO dans un domaine Windows\nKerberos\nAncien, efficace, limité au réseau interne et aux machines du domaine\n\n\nRésister au phishing à la connexion\nFIDO2 / WebAuthn\nS’ajoute aux précédents : c’est le facteur, pas le protocole de fédération",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/07-protocoles.html#quatre-attaques-sur-les-protocoles-de-fédération",
+    "href": "cours/07-protocoles.html#quatre-attaques-sur-les-protocoles-de-fédération",
+    "title": "Les protocoles",
+    "section": "Quatre attaques sur les protocoles de fédération",
+    "text": "Quatre attaques sur les protocoles de fédération\n\n\n1\n\nDétournement de l’adresse de retour\nUne adresse de retour comparée approximativement livre le code d’autorisation à un domaine de l’attaquant.\nParade : comparaison exacte, sans joker.\n\n\n\n2\n\nL’intermédiaire trompé\nUn service de confiance utilise ses propres droits pour le compte d’un tiers, sans vérifier au nom de qui il agit (confused deputy).\nParade : un jeton au nom de l’utilisateur, pas l’identité du service.\n\n\n\n3\n\nPhishing au consentement\nUne application malveillante obtient le droit de lire les e-mails. Aucun mot de passe volé, et l’accès survit à son changement.\nParade : liste blanche d’applications, validation des droits sensibles.\n\n\n\n4\n\nRejeu de jeton et de session\nUn jeton ou un cookie volé est réutilisé depuis un autre appareil. L’authentification forte a déjà eu lieu.\nParade : jeton lié au client, durées courtes, réévaluation du contexte.\n\n\n\n\n\n\n\n\n\nImportantLe point commun aux quatre\n\n\n\nL’authentification était correcte. La faille est dans la délégation, c’est-à-dire dans l’autorisation. C’est ce qui la rend si difficile à détecter.\n\n\nL’intermédiaire trompé revient dans tous les systèmes délégués, y compris les agents IA : un assistant interne qui a lui-même le droit de lire tous les documents, et qui répond à n’importe quel utilisateur avec ces droits. Il devrait agir avec un jeton obtenu au nom de l’utilisateur.\nPour voir ces échanges en vrai, faites le labo.\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nOASIS SAML 2.0 et OWASP SAML Security Cheat Sheet. RFC 6749 (OAuth 2.0), RFC 7636 (PKCE), RFC 9700 (bonnes pratiques de sécurité OAuth, janvier 2025), RFC 8693 (échange de jeton). OpenID Connect Core 1.0. RFC 8725 (bonnes pratiques JWT), RFC 7662 (introspection). RFC 7643 et 7644 (SCIM).",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Les protocoles"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html",
+    "href": "cours/05-authentification.html",
+    "title": "L’authentification",
+    "section": "",
+    "text": "Marie se connecte le premier jour. Comment prouve-t-elle que c’est elle, et qu’est-ce qui résiste vraiment au phishing ? C’est le chapitre où les idées reçues sont les plus tenaces.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#les-trois-facteurs-dauthentification",
+    "href": "cours/05-authentification.html#les-trois-facteurs-dauthentification",
+    "title": "L’authentification",
+    "section": "Les trois facteurs d’authentification",
+    "text": "Les trois facteurs d’authentification\n\n\nCe que je sais\nMot de passe, code PIN, question de récupération.\nSe copie sans laisser de trace et se transmet par phishing. C’est le seul facteur qu’un utilisateur peut donner à un attaquant sans s’en rendre compte.\n\n\nCe que je possède\nTéléphone, clé de sécurité, carte à puce, certificat.\nExige d’avoir l’objet. Qualité très variable : un code reçu par SMS et une clé FIDO2 sont dans la même catégorie et ne protègent pas du tout pareil.\n\n\nCe que je suis\nEmpreinte, visage, iris, voix.\nNe se change pas en cas de vol. En pratique, sert presque toujours à déverrouiller localement un objet (le téléphone), pas à s’authentifier à distance.\n\n\nLe mot important est catégorie. Le multifacteur (MFA) combine deux catégories différentes, pas deux secrets.\n\n\n\n\n\n\n\nCombinaison\nVerdict\n\n\n\n\nMot de passe + passkey\nMFA\n\n\nMot de passe + question secrète\nPas du MFA deux fois « je sais »\n\n\nMot de passe + code envoyé à une adresse e-mail protégée par le même mot de passe\nPas du MFA\n\n\n\nLa biométrie ne prouve rien à distance. Face ID ne dit rien au serveur : il déverrouille la clé privée stockée dans le téléphone, et c’est cette clé qui s’authentifie. Le facteur « je suis » sert donc presque toujours à protéger localement un facteur « je possède ».",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#mots-de-passe-les-règles-ont-changé",
+    "href": "cours/05-authentification.html#mots-de-passe-les-règles-ont-changé",
+    "title": "L’authentification",
+    "section": "Mots de passe : les règles ont changé",
+    "text": "Mots de passe : les règles ont changé\n\n\nCe que recommande le NIST\n\nLa longueur d’abord : viser 15 caractères ou plus, autoriser jusqu’à 64, accepter tous les caractères (espaces, accents).\nComparer chaque nouveau mot de passe à une liste de mots de passe déjà volés.\nPas de règles de composition imposées (majuscule, chiffre, caractère spécial).\nPas de changement périodique : changer seulement si le mot de passe a été volé.\nSupprimer les questions secrètes : facteur faible et souvent public.\n\n\n\nCe qu’on trouve encore en entreprise\n\n8 caractères minimum, avec les quatre familles de caractères obligatoires.\nChangement obligatoire tous les 90 jours.\nInterdiction du copier-coller, ce qui empêche d’utiliser un gestionnaire de mots de passe.\nRésultat : Été2026! puis Automne2026! puis Hiver2026!. La règle a produit exactement le comportement qu’elle voulait empêcher.\n\n\n\nLa référence est NIST SP 800-63-4, version finale du 31 juillet 2025. Le point qui surprend le plus : la fin du changement obligatoire tous les 90 jours. Pour comparer aux mots de passe déjà volés, le service Have I Been Pwned propose une interface interrogeable sans transmettre le mot de passe complet.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#stocker-un-mot-de-passe-correctement",
+    "href": "cours/05-authentification.html#stocker-un-mot-de-passe-correctement",
+    "title": "L’authentification",
+    "section": "Stocker un mot de passe correctement",
+    "text": "Stocker un mot de passe correctement\n\nUn mot de passe ne se chiffre pas, il se hache. Le chiffrement est réversible : si vous pouvez déchiffrer, un attaquant qui obtient la clé le peut aussi.\nLa fonction de hachage doit être lente et réglable. SHA-256 est excellent pour vérifier l’intégrité d’un fichier, mais inadapté ici : il est trop rapide.\nFonctions adaptées : Argon2id en premier choix, scrypt, bcrypt, PBKDF2 quand une norme l’impose.\nUn sel unique par utilisateur : deux mots de passe identiques donnent deux empreintes différentes, et les tables précalculées deviennent inutiles.\nUn poivre, en option : un secret global stocké hors de la base, idéalement dans un boîtier matériel. Il protège encore si seule la base fuit.\nRéviser les réglages régulièrement : ce qui coûtait une seconde de calcul en 2018 n’en coûte qu’une fraction aujourd’hui.\n\n\n\n\n\n\n\nAstuceExemple : la fuite LinkedIn de 2012\n\n\n\nLes empreintes étaient calculées en SHA-1 sans sel. La grande majorité des 6,5 millions d’empreintes ont été cassées en quelques jours. Avec bcrypt ou Argon2id et un sel par utilisateur, chaque compte aurait coûté des heures.\n\n\n\n\n\n\n\n\nImportantQuestion d’examen classique\n\n\n\nQue se passe-t-il si la base fuit ? Avec Argon2id bien réglé et un sel par utilisateur, l’attaquant doit attaquer chaque compte séparément, à un coût prohibitif.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#mfa-classement",
+    "href": "cours/05-authentification.html#mfa-classement",
+    "title": "L’authentification",
+    "section": "Tous les MFA ne se valent pas",
+    "text": "Tous les MFA ne se valent pas\nC’est le tableau le plus important du chapitre. Le classement se fait par résistance au phishing en temps réel, pas par confort.\n\n\n\n\n\n\n\n\nMoyen\nCe qu’un attaquant peut en faire\nNiveau\n\n\n\n\nSMS et appel vocal\nInterception par vol de numéro (SIM swap) ou détournement réseau. Le code se transmet par phishing.\nFaible\n\n\nCode à usage unique (TOTP)\nMieux que le SMS, mais l’utilisateur peut toujours taper son code sur un faux site.\nFaible\n\n\nNotification « Approuver ? »\nFatigue MFA : l’attaquant répète les demandes jusqu’à ce que l’utilisateur accepte pour avoir la paix.\nFaible\n\n\nNotification avec code à recopier\nL’utilisateur recopie un nombre affiché par le service. Bloque la fatigue MFA, pas le relais en temps réel.\nMoyen\n\n\nFIDO2, passkeys, carte à puce\nLa preuve est liée cryptographiquement au nom de domaine du site. Un faux site n’obtient rien d’utilisable.\nRésistant\n\n\n\n\n\n\n\n\n\nImportantLe bon critère\n\n\n\nCe n’est pas « combien de facteurs », mais « que peut faire un attaquant qui se place entre l’utilisateur et le site, en temps réel ? ». C’est pour cela que ce cours ne parle jamais de « MFA » sans préciser lequel.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#comment-on-contourne-un-mfa-en-2026",
+    "href": "cours/05-authentification.html#comment-on-contourne-un-mfa-en-2026",
+    "title": "L’authentification",
+    "section": "Comment on contourne un MFA en 2026",
+    "text": "Comment on contourne un MFA en 2026\n\n\n1\n\nRelais en temps réel\nUn faux site s’intercale entre l’utilisateur et le vrai service, relaie mot de passe et code, puis vole le cookie de session. Le MFA a marché.\n\n\n\n2\n\nFatigue MFA\nL’attaquant a déjà le mot de passe. Il déclenche des dizaines de notifications jusqu’à ce que l’utilisateur accepte, souvent la nuit.\n\n\n\n3\n\nVol de session\nLe cookie ou le jeton est volé sur le poste par un logiciel espion, puis réutilisé ailleurs, sans nouvelle authentification.\n\n\n\n4\n\nAppel au support\nL’attaquant se fait passer pour un collaborateur en difficulté et fait réinitialiser le MFA. L’humain reste le maillon le plus rentable.\n\n\n\n5\n\nPhishing au consentement\nAucun mot de passe tapé : l’utilisateur autorise une application malveillante à lire ses données. L’accès survit au changement de mot de passe.\n\n\n\n6\n\nVol de numéro (SIM swap)\nPrise de contrôle du numéro auprès de l’opérateur : tous les codes SMS sont captés, y compris ceux de récupération de compte.\n\n\n\n\n\n\n\n\n\n\nCas réel\nCe qui s’est passé\n\n\n\n\nUber, 2022\nFatigue MFA : le prestataire a fini par accepter après des dizaines de notifications nocturnes.\n\n\nMGM Resorts, 2023\nAppel au support : réinitialisation du MFA obtenue en une dizaine de minutes, casinos à l’arrêt plusieurs jours.\n\n\nOkta, 2023\nVol de session : des fichiers de session déposés sur le portail de support ont été dérobés.\n\n\nMidnight Blizzard contre Microsoft, 2024\nUn compte de test sans MFA, puis l’abus d’une application OAuth dotée de droits élevés.\n\n\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nQuatre de ces six attaques échouent face à FIDO2 ou aux passkeys. C’est la mesure d’authentification au meilleur rapport coût / efficacité. Le MFA n’est pas une case à cocher, c’est un choix technique.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#fido2-webauthn-passkeys-comment-ça-marche",
+    "href": "cours/05-authentification.html#fido2-webauthn-passkeys-comment-ça-marche",
+    "title": "L’authentification",
+    "section": "FIDO2, WebAuthn, passkeys : comment ça marche",
+    "text": "FIDO2, WebAuthn, passkeys : comment ça marche\n\n\nEnregistrement. L’appareil (téléphone, clé) crée une paire de clés propre au site. La clé privée ne quitte jamais l’appareil.\nClé publique. Seule la clé publique est envoyée au service et stockée. Si la base fuit, elle ne contient aucun secret.\nDéfi. À la connexion, le service envoie un nombre aléatoire à signer.\nSignature liée au site. L’appareil signe le défi avec le vrai nom de domaine du site. Un faux site obtient une signature invalide.\n\n\n\n\n\n\n\n\nAstuceExemple : Marie et le faux site\n\n\n\nMarie enregistre sa clé sur login.caisse.ch. Un attaquant l’attire sur login-caisse.ch. Le navigateur fait signer un défi pour login-caisse.ch, qui ne correspond à aucune clé enregistrée : la clé refuse, ou la signature est inutilisable. Marie n’a rien eu à vérifier elle-même.\n\n\n\nCe que ça règle\n\nLe phishing de mots de passe, le rejeu, les bases de mots de passe volées, la réutilisation entre sites.\n\nCe que ça ne règle pas\n\nLe vol de session après connexion, un poste déjà infecté, et surtout la procédure de récupération de compte.\n\nPoint de vigilance\n\nUne passkey synchronisée suit le compte personnel (Apple, Google). En entreprise, il faut choisir : synchronisée, ou liée à l’appareil ?\n\n\nCe n’est pas de la magie : c’est une signature cryptographique liée au nom de domaine. Il n’y a aucun secret partagé à voler côté serveur.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/05-authentification.html#récupérer-son-accès-le-maillon-faible",
+    "href": "cours/05-authentification.html#récupérer-son-accès-le-maillon-faible",
+    "title": "L’authentification",
+    "section": "Récupérer son accès : le maillon faible",
+    "text": "Récupérer son accès : le maillon faible\n\n\n\n\n\n\n\n\nMoyen de récupération\nCe qu’un attaquant en fait\nNiveau\n\n\n\n\nLien par e-mail ou code SMS\nRamène tout au niveau de la boîte e-mail ou du SMS : c’est la porte que l’attaquant choisira à la place de la passkey.\nFaible\n\n\nQuestions secrètes\nRéponses publiques ou devinables (réseaux sociaux, fuites de données).\nFaible\n\n\nAppel au support sans vérification\nIngénierie sociale : le support veut aider (MGM Resorts, 2023).\nFaible\n\n\nCodes de secours, seconde passkey\nEnregistrés à l’avance. Il faut voler l’objet. À conserver hors du téléphone, à régénérer après usage.\nRésistant\n\n\nValidation du responsable, remise en main propre\nLe responsable valide dans l’outil IGA, le support remet un lien d’enrôlement en personne ou après vidéo-identification. Coûteux, mais aussi fort que l’enrôlement du premier jour.\nRésistant\n\n\n\n\n\n\n\n\n\nAstuceUne récupération bien conçue, et une mal conçue\n\n\n\nBien conçue : chaque utilisateur enregistre deux passkeys (son téléphone et une clé physique rangée au bureau). S’il perd les deux, son responsable valide la demande et le support remet un lien d’enrôlement à usage unique en main propre.\nMal conçue : passkey obligatoire, mais « mot de passe oublié » envoie un lien sur l’adresse e-mail personnelle. L’attaquant cible l’adresse personnelle, qui n’a pas de MFA.\n\n\n\n\n\n\n\n\nImportantLa règle\n\n\n\nLa récupération doit être au moins aussi forte que l’authentification qu’elle remplace. Sinon l’attaquant ne force pas la porte blindée, il passe par la porte de secours.\n\n\nPour mettre ce chapitre en pratique, faites l’exercice Concevoir une politique d’authentification.\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nNIST SP 800-63B-4 (types d’authentificateurs, mots de passe, récupération). CISA, Implementing Phishing-Resistant MFA (2022). ANSSI, recommandations relatives à l’authentification multifacteur et aux mots de passe (2021). OWASP Password Storage Cheat Sheet et RFC 9106 (Argon2). W3C WebAuthn Level 2.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'authentification"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html",
+    "href": "cours/03-cycle-de-vie.html",
+    "title": "Le cycle de vie de l’identité",
+    "section": "",
+    "text": "Les comptes de Marie sont créés, elle change de poste, elle part. C’est le chapitre qui a le plus d’impact sur la sécurité réelle, et il ne contient aucune cryptographie.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html#trois-moments-clés",
+    "href": "cours/03-cycle-de-vie.html#trois-moments-clés",
+    "title": "Le cycle de vie de l’identité",
+    "section": "Trois moments clés",
+    "text": "Trois moments clés\n\n\nRecrutement. Création dans le logiciel RH. Rien n’existe encore côté informatique.\nCréation : l’arrivée (joiner). Ouverture des accès : compte, messagerie, droits du poste. Objectif : être opérationnel dès le premier jour.\nVie : le changement de poste (mover). Changement de fonction, de service, de site. Le point faible de toutes les organisations.\nVie : les événements. Demandes d’accès, congé maternité, suspension, longue absence, changement de nom, retour.\nSuppression : le départ (leaver). Blocage immédiat des accès, puis suppression après le délai de conservation.\n\n\n\n\n\n\n\n\nImportantLa règle d’or\n\n\n\nChaque étape doit être déclenchée par un événement dans le système RH, jamais par un e-mail envoyé au support.\n\n\n\n\n\n\n\n\nAstucePourquoi « jamais par un e-mail »\n\n\n\nUn chef de service écrit : « merci de donner à Paul les mêmes accès que Marie ». Paul hérite de douze ans d’accumulation de droits en une seule demande. C’est le cas le plus fréquent de tous.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html#création-larrivée-de-marie-étape-par-étape",
+    "href": "cours/03-cycle-de-vie.html#création-larrivée-de-marie-étape-par-étape",
+    "title": "Le cycle de vie de l’identité",
+    "section": "Création : l’arrivée de Marie, étape par étape",
+    "text": "Création : l’arrivée de Marie, étape par étape\nLe 25 octobre, les RH saisissent le contrat de Marie. L’outil IGA crée l’identité, le compte Active Directory, la boîte e-mail et les accès du rôle « gestionnaire de prestations ». Le 1er novembre, Marie reçoit son mot de passe initial en main propre, le change, et enregistre sa passkey sur son téléphone professionnel.\n\n\nSaisie par les RH. Contrat, date de début, fonction, service, responsable. Pour un externe, il n’y a pas de RH : c’est le responsable interne qui saisit, avec une date de fin obligatoire.\nVérification de l’identité. Pièce d’identité contrôlée à l’engagement. C’est le seul moment où l’on vérifie le lien entre la personne réelle et son identité numérique (le niveau IAL du chapitre 8).\nCalcul des accès. L’outil IGA crée l’identité et déduit les accès du poste. Une approbation n’est demandée que pour ce qui sort du standard.\nCréation des comptes. Automatique dans les applications connectées (SCIM, connecteurs), ticket contrôlé pour les autres. Identifiant unique, jamais réutilisé après un départ.\nRemise des identifiants. Mot de passe initial à usage unique, remis en personne ou par un canal séparé, changé à la première connexion. MFA ou passkey enregistré le premier jour, jamais par e-mail.\nJour 1. Marie est opérationnelle. Tout est journalisé et rattaché à son identité. Elle reçoit les consignes : phishing, et surtout comment récupérer son accès si elle perd son téléphone.\n\n\nQuelques points d’attention :\n\nPour un prestataire externe, la vérification d’identité est souvent sautée. Personne ne vérifie qui est vraiment derrière consultant3. Et si on n’impose pas de date de fin à la saisie, personne ne déclenchera jamais le départ.\nMauvaise pratique très répandue : le mot de passe initial envoyé par e-mail à l’adresse personnelle, ou le même mot de passe initial pour tous (Bienvenue2026!).\nBonne pratique : un lien d’enrôlement à usage unique valable 24 heures, remis par le responsable, avec enregistrement de la passkey dans la foulée.\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nCe que le métier voit : le délai d’ouverture. Ce que la sécurité prépare dès ce jour : la suppression. Sans identifiant unique, sans source de référence et sans date de fin, il n’y aura pas de départ propre.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html#vie-demander-et-approuver-un-accès",
+    "href": "cours/03-cycle-de-vie.html#vie-demander-et-approuver-un-accès",
+    "title": "Le cycle de vie de l’identité",
+    "section": "Vie : demander et approuver un accès",
+    "text": "Vie : demander et approuver un accès\nC’est le quotidien d’un outil IGA, et c’est ce que les utilisateurs voient de l’IAM.\n\n\nDemande en libre-service. L’utilisateur ou son responsable choisit dans un catalogue d’accès décrit en langage métier, avec une justification et une durée.\nApprobation. Le responsable hiérarchique, puis le propriétaire de l’application pour les accès sensibles. Délégation pendant les absences, rappels automatiques.\nContrôle des conflits. L’outil vérifie que le nouvel accès ne crée pas une combinaison interdite, comme créer un fournisseur et le payer. Sinon : refus, ou dérogation documentée.\nAttribution automatique. L’accès est créé dans l’application par le connecteur ou par SCIM. Tout est tracé : qui a demandé, qui a validé, quand.\nDurée et retrait. Chaque accès a une date de fin ou passe par la revue des accès suivante. Un accès temporaire se retire tout seul.\n\n\nUn catalogue lisible dit « Consulter les dossiers clients (lecture seule) » ou « Valider des paiements jusqu’à 10 000 CHF ». Un catalogue illisible dit GRP_FIN_SAP_ZF02_RW.\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nSi le catalogue est écrit en langage technique, personne ne sait quoi demander, et le responsable approuve « la même chose que Marie ». La qualité du catalogue fait la qualité du processus.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html#vie-le-changement-de-poste-où-les-droits-saccumulent",
+    "href": "cours/03-cycle-de-vie.html#vie-le-changement-de-poste-où-les-droits-saccumulent",
+    "title": "Le cycle de vie de l’identité",
+    "section": "Vie : le changement de poste, où les droits s’accumulent",
+    "text": "Vie : le changement de poste, où les droits s’accumulent\n\n\n\nAnnée\nPoste\n\n\n\n\n2014\nComptabilité\n\n\n2017\nContrôle de gestion\n\n\n2020\nAchats\n\n\n2023\nDirection financière\n\n\n2026\nCumul de tous les droits, que personne n’a décidé\n\n\n\nChaque changement de poste ajoute des droits. Presque aucun n’en retire. Un collaborateur qui a changé cinq fois de service en douze ans détient les droits des cinq postes réunis. C’est, sans le dire, un compte à privilèges.\nCe phénomène porte un nom : l’accumulation de droits (privilege creep). Elle transforme un utilisateur ordinaire en cible de grande valeur.\n\n\n\n\n\n\nAstuceExemple dans une banque\n\n\n\nUne collaboratrice passée de la comptabilité aux achats puis à la direction financière pouvait à la fois créer un fournisseur, saisir une facture et valider le paiement. La séparation des tâches était respectée sur le papier pour chaque poste, pas pour la personne.\n\n\nQui, dans votre organisation, retire les droits de l’ancien poste lors d’une mutation ? Le silence est la réponse habituelle.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html#suppression-le-départ-de-marie-étape-par-étape",
+    "href": "cours/03-cycle-de-vie.html#suppression-le-départ-de-marie-étape-par-étape",
+    "title": "Le cycle de vie de l’identité",
+    "section": "Suppression : le départ de Marie, étape par étape",
+    "text": "Suppression : le départ de Marie, étape par étape\nDix ans plus tard, Marie part. Son contrat prend fin le 30 juin. À minuit, le fournisseur d’identité bloque la connexion et révoque ses sessions. Les comptes SaaS passent en « inactif » par SCIM. Le support reçoit la liste des trois applications non connectées. Son responsable reçoit la liste de ce qui a été fermé et récupère sa messagerie pour 30 jours.\n\n\nL’événement. Le départ vient du logiciel RH (date de fin) ou de la date de fin du contrat externe. Pour un départ immédiat (licenciement, soupçon), il faut une procédure d’urgence, en heures et non en jours.\nBlocage. Désactivation de l’authentification au fournisseur d’identité, et révocation des sessions et jetons en cours. Un jeton signé reste valable jusqu’à son expiration (chapitre 7).\nComptes. Désactivation, pas suppression, dans chaque application : SCIM et connecteurs pour les applications connectées, liste contrôlée pour les autres. Badges et matériel récupérés.\nSecrets partagés. Changement des mots de passe partagés, comptes de service et clés que Marie connaissait. Retrait de ses droits d’administration et de ses délégations.\nTransfert. Messagerie, fichiers, rôles d’approbateur ou de propriétaire d’application réattribués à son responsable, avec une durée limitée.\nSuppression définitive. Après le délai de conservation (obligations légales, LPD), suppression des données personnelles. Les journaux d’audit restent, avec un accès restreint.\n\n\n\nLe départ immédiat. Un administrateur est licencié un lundi matin. Si la procédure est « le flux RH tourne la nuit », il garde ses droits toute la journée.\nLes secrets partagés sont l’angle mort. Le mot de passe du compte de service de sauvegarde, connu de toute l’équipe d’exploitation, inchangé depuis 2019, que chaque ancien collaborateur connaît encore.\nDésactiver d’abord, supprimer ensuite. Supprimer immédiatement fait perdre les traces et les données que l’organisation doit conserver. Mais un compte désactivé gardé indéfiniment finit par être réactivé « temporairement » un jour.\n\n\n\n\n\n\n\nImportantLa mesure à suivre\n\n\n\nLe délai entre la date de départ et la désactivation effective. Objectif : moins de 24 heures, et moins d’une heure pour un départ immédiat.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/03-cycle-de-vie.html#où-en-est-votre-organisation-cinq-niveaux-de-maturité",
+    "href": "cours/03-cycle-de-vie.html#où-en-est-votre-organisation-cinq-niveaux-de-maturité",
+    "title": "Le cycle de vie de l’identité",
+    "section": "Où en est votre organisation ? Cinq niveaux de maturité",
+    "text": "Où en est votre organisation ? Cinq niveaux de maturité\nCes étapes peuvent être faites à la main ou entièrement pilotées par les événements RH. Entre les deux, il y a des degrés. L’échelle utilisée ici est celle du CMMI.\n\n\n\n\n\n\n\n\nNiveau\nCe que l’on observe\nLa question pour se situer\n\n\n\n\n1. Initial\nComptes créés et fermés à la main, sur ticket ou e-mail. Pas d’inventaire. Le résultat dépend des personnes présentes.\nQui crée un compte, et sur quelle base ? Si la réponse est « ça dépend », vous y êtes.\n\n\n2. Géré\nProcédures d’arrivée et de départ écrites, formulaire de demande, responsables identifiés. Encore manuel, peu de traces.\nY a-t-il une procédure écrite, suivie partout ?\n\n\n3. Défini\nSource RH de référence, annuaire central, rôles métier, fédération et SCIM pour les applications principales. Revue annuelle.\nLe flux RH alimente-t-il automatiquement l’annuaire et les applications principales ?\n\n\n4. Mesuré\nDélai de fermeture, taux de retrait, comptes orphelins, couverture MFA et SCIM mesurés chaque mois. PAM en place.\nConnaissez-vous votre délai médian de fermeture des accès le mois dernier ?\n\n\n5. Optimisé\nChaque événement RH déclenche création, modification et fermeture. Zéro droit permanent, réévaluation continue.\nUn incident ou un audit a-t-il modifié le dispositif dans les douze derniers mois ?\n\n\n\nLa plupart des organisations se situent entre 2 et 3. Le passage de 3 à 4 est celui qui change la sécurité : on commence à mesurer le délai de fermeture des accès, et plus seulement le délai d’ouverture.\n\n\n\n\n\n\nAstuceLe manuel n’est pas gratuit\n\n\n\nIl est juste payé par le support informatique plutôt que par le projet. Une organisation de 600 personnes avec 15 % de rotation, c’est environ 90 arrivées et 90 départs par an, plus les mutations. À 20 tickets par personne, cela fait 3 000 à 4 000 tickets manuels par an.\n\n\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nISO 27001:2022 A.5.16 (gestion des identités), A.5.17 (informations d’authentification), A.5.18 (droits d’accès) et A.6.5 (responsabilités après la fin du contrat). CMMI Institute, CMMI V3.0 (2023).",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Le cycle de vie de l'identité"
+    ]
+  },
+  {
+    "objectID": "cours/01-bases.html",
+    "href": "cours/01-bases.html",
+    "title": "Les bases",
+    "section": "",
+    "text": "Avant de suivre Marie, il faut se mettre d’accord sur les mots. La majorité des malentendus dans les projets IAM viennent de là.\nDans un comité de projet, « supprimer le compte de Marie » peut vouloir dire désactiver son accès, supprimer son identité dans le logiciel RH, ou effacer ses données. Ce sont trois actions différentes, menées par trois équipes différentes.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Les bases"
+    ]
+  },
+  {
+    "objectID": "cours/01-bases.html#identité-compte-identifiant-attribut",
+    "href": "cours/01-bases.html#identité-compte-identifiant-attribut",
+    "title": "Les bases",
+    "section": "Identité, compte, identifiant, attribut",
+    "text": "Identité, compte, identifiant, attribut\n\n\n\nDe la personne à ses comptes : trois niveaux qu’il ne faut pas confondre.\n\n\n\nLa personne\n\nL’être humain réel. Elle n’existe pas dans le système informatique. On vérifie qui elle est une fois, à l’engagement.\n\nL’identité numérique\n\nSa représentation dans l’organisation, avec ses attributs. Une personne peut en avoir plusieurs : Marie est employée de la caisse, et peut aussi en être assurée.\n\nLes comptes\n\nLes objets techniques qui agissent dans chaque système. Une identité en a plusieurs : un compte Active Directory, une boîte de messagerie, un compte dans l’application métier.\n\nLes attributs\n\nLes informations que portent l’identité et les comptes. Les attributs d’identité (numéro RH, nom, service, fonction, responsable, date de fin) viennent des RH et sont les mêmes dans tous les systèmes. Les attributs de compte (login, état, groupes, dernier accès) sont propres à chaque système et n’ont pas de sens en dehors.\n\nL’identifiant\n\nL’attribut qui sert de clé : le numéro RH pour l’identité, le login pour le compte. C’est une étiquette, pas un objet : il ne porte ni secret ni droit.\n\n\nCes notions ne sont pas de même rang, et c’est ce qui crée les confusions. L’identité et le compte sont des objets, des conteneurs. Les attributs sont les informations qu’ils portent. L’identifiant est un attribut particulier, comme la clé primaire est une colonne parmi d’autres dans une table.\n\n\n\n\n\n\nAstuceUne analogie : le compte bancaire et l’IBAN\n\n\n\nLe compte est le compte bancaire, l’identifiant est l’IBAN. L’IBAN permet de trouver le compte, mais ce n’est pas lui qui contient l’argent. De même, mdupont permet de trouver le compte Active Directory, mais c’est le compte qui porte le mot de passe, les groupes et l’état.\n\n\nTrois conséquences pratiques :\n\nUn compte peut avoir plusieurs identifiants (login, adresse e-mail, identifiant technique Windows). Changer le login de Marie si elle change de nom ne crée pas un nouveau compte.\nUn identifiant peut exister avant le compte. Le numéro RH 4711 existe le 25 octobre, le compte Active Directory est créé le 1er novembre.\nUn identifiant ne doit jamais être réutilisé après un départ. Sinon les journaux attribuent à la nouvelle personne les actions de l’ancienne.\n\nLe travail d’un outil de gouvernance des identités (IGA) consiste à projeter les attributs d’identité dans les attributs de compte : le service RH devient un groupe, la date de fin devient l’état « désactivé ». Il détecte aussi les écarts : un compte actif dont l’identité a une date de fin passée est un compte orphelin.\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nUne personne ≠ une identité ≠ un compte.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Les bases"
+    ]
+  },
+  {
+    "objectID": "cours/01-bases.html#les-quatre-questions-auxquelles-liam-répond",
+    "href": "cours/01-bases.html#les-quatre-questions-auxquelles-liam-répond",
+    "title": "Les bases",
+    "section": "Les quatre questions auxquelles l’IAM répond",
+    "text": "Les quatre questions auxquelles l’IAM répond\n\n\nQui es-tu ? L’identification\nJe déclare une identité. Étape non sécurisée : n’importe qui peut prétendre s’appeler Marie.\n\n\nLe prouves-tu ? L’authentification\nJe fournis une preuve : mot de passe, clé de sécurité, certificat.\n\n\nAs-tu le droit ? L’autorisation\nLe système décide. Étape séparée : être authentifié ne donne aucun droit en soi.\n\n\nQui a fait quoi ? La traçabilité\nOn enregistre ce qui se passe. Sans identité fiable au départ, les journaux ne prouvent rien.\n\n\nPensez à un immeuble : vous montrez votre carte (identification), le lecteur vérifie la puce (authentification), la porte du troisième étage s’ouvre mais pas celle du cinquième (autorisation), le journal enregistre votre passage (traçabilité).\n\n\n\n\n\n\nImportantL’erreur classique\n\n\n\nCroire que l’autorisation découle automatiquement de l’authentification. Ce sont deux décisions séparées, souvent prises par deux systèmes différents.\nExemple réel : une application web qui, après une connexion réussie auprès du fournisseur d’identité, donne accès à toutes ses fonctions parce que « s’il l’a laissé passer, c’est qu’il a le droit ». Le fournisseur d’identité n’a répondu qu’à la deuxième question.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Les bases"
+    ]
+  },
+  {
+    "objectID": "cours/01-bases.html#ce-que-couvre-liam-cinq-domaines",
+    "href": "cours/01-bases.html#ce-que-couvre-liam-cinq-domaines",
+    "title": "Les bases",
+    "section": "Ce que couvre l’IAM : cinq domaines",
+    "text": "Ce que couvre l’IAM : cinq domaines\n\n\nA\n\nGestion des accès\nAuthentification, SSO, fédération, MFA. Tout ce qui se passe au moment de la connexion (chapitres 5 à 7).\nEntra ID, Okta, Keycloak\n\n\n\nB\n\nGouvernance des identités (IGA)\nCycle de vie, création automatique des comptes, rôles, revues des accès, séparation des tâches (chapitres 3, 4 et 8).\nSailPoint, Saviynt, Omada\n\n\n\nC\n\nComptes à privilèges (PAM)\nComptes administrateurs : changement automatique des mots de passe, droits accordés juste le temps nécessaire, enregistrement des sessions (chapitre 8).\nCyberArk, BeyondTrust, Delinea\n\n\n\nD\n\nIdentités clients (CIAM)\nClients et citoyens : inscription en libre-service, consentement, grands volumes, confort d’utilisation (chapitre 9).\nAuth0, Ping, Keycloak\n\n\n\nE\n\nIdentités non humaines\nServices, machines, conteneurs, programmes automatiques. Aujourd’hui plus nombreux que les humains (chapitre 9).\nHashiCorp Vault, SPIFFE/SPIRE\n\n\n\nCes cinq domaines correspondent aux cinq familles de produits du marché. Quand vous arrivez sur un projet, sachez dans quelle case vous vous trouvez, sinon vous comparerez des produits qui ne font pas la même chose.\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nAucun éditeur ne couvre bien les cinq domaines : une architecture IAM est presque toujours un assemblage de plusieurs produits.\n\n\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nISO/IEC 24760-1:2019 pour les définitions (identité, attribut, identifiant). NIST SP 800-63-4, qui traite séparément l’authentification (volume B) et la fédération (volume C).",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Les bases"
+    ]
+  },
+  {
+    "objectID": "cours/02-annuaires.html",
+    "href": "cours/02-annuaires.html",
+    "title": "Où vivent les identités",
+    "section": "",
+    "text": "Marie vient d’être engagée : sa première trace est une fiche dans le logiciel RH. Où les identités sont-elles stockées, et quel système fait foi quand deux ne disent pas la même chose ?",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Où vivent les identités"
+    ]
+  },
+  {
+    "objectID": "cours/02-annuaires.html#six-familles-de-référentiels",
+    "href": "cours/02-annuaires.html#six-familles-de-référentiels",
+    "title": "Où vivent les identités",
+    "section": "Six familles de référentiels",
+    "text": "Six familles de référentiels\nUne organisation réelle les a presque toutes en même temps. C’est pour cela qu’il faut une source de référence et une consolidation.\n\n\n1\n\nAnnuaires LDAP\nLe standard ouvert (RFC 4511), organisé en arbre, fait pour beaucoup de lectures. OpenLDAP, 389 DS, Red Hat et Oracle Directory, eDirectory.\n\n\n\n2\n\nActive Directory\nL’annuaire Microsoft sur site : LDAP, Kerberos, DNS et stratégies de groupe. Le cœur de l’identité de la plupart des organisations, donc la cible préférée des attaquants.\n\n\n\n3\n\nAnnuaires et IdP cloud\nModèle plat, API, fédération native. Entra ID, Okta, Google Cloud Identity, Ping, JumpCloud. Keycloak en open source.\n\n\n\n4\n\nMainframe et Unix\nRACF, ACF2, Top Secret sur IBM z/OS, IBM i, comptes Unix locaux. Encore le cœur des banques et des assurances. Pas de standard : il faut des connecteurs spécifiques.\n\n\n\n5\n\nComptes applicatifs\nChaque application qui gère ses comptes dans son coin : SAP, Salesforce, bases de données, logiciels métier. Le silo à intégrer ou, à défaut, à alimenter.\n\n\n\n6\n\nLe logiciel RH\nWorkday, SuccessFactors, Abacus, Sage : là où l’identité de Marie naît et fait foi. Ce n’est pas un annuaire, c’est la source.\n\n\n\nQuelques précisions utiles :\n\nLDAP est un protocole, pas un produit. Active Directory le parle aussi. Les hautes écoles et les administrations ont souvent un annuaire LDAP central, distinct de l’Active Directory, consulté par les applications web.\nActive Directory et Entra ID sont deux mondes différents, malgré le nom. Entra ID n’a ni Kerberos ni stratégies de groupe, et se pilote par une API.\nLes systèmes mainframe n’exposent ni LDAP ni SCIM. Dans les banques et assurances suisses, c’est encore là que vivent les comptes des applications cœur de métier, et c’est là que les revues des accès sont les plus difficiles à rendre lisibles.\n\n\nTrois questions pour chaque système\n\nFait-il foi pour certaines informations ? C’est une source.\nDélègue-t-il l’authentification à un fournisseur d’identité ? Il est intégré.\nReçoit-il seulement des comptes créés ailleurs ? Il est alimenté.\n\nIntégré et alimenté ne se remplacent pas. Une application SaaS connectée en SAML est intégrée : elle délègue l’authentification. Un vieux logiciel de paie qui reçoit un fichier chaque nuit est seulement alimenté. Au départ de Marie, elle disparaît de la première immédiatement, et du second à la prochaine nuit, si le script fonctionne. Une application peut aussi être intégrée sans être alimentée : la fédération laisse entrer, mais ne ferme jamais le compte (voir SCIM au chapitre 7).\n\n\n\n\n\n\nAstuceExemple : le compte de service oublié\n\n\n\nUne application qui « supporte LDAP » se connecte à l’Active Directory avec un compte dont le mot de passe n’a pas changé depuis des années. C’est un compte à privilèges caché.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Où vivent les identités"
+    ]
+  },
+  {
+    "objectID": "cours/02-annuaires.html#source-de-référence-et-comptes-orphelins",
+    "href": "cours/02-annuaires.html#source-de-référence-et-comptes-orphelins",
+    "title": "Où vivent les identités",
+    "section": "Source de référence et comptes orphelins",
+    "text": "Source de référence et comptes orphelins\n\nSource de référence\n\nLe système qui fait foi pour une information donnée. Le logiciel RH fait foi pour le nom et la date de départ.\n\nUne information, une seule source\n\nDès que deux systèmes prétendent avoir raison sur le même champ, la donnée se dégrade sans que personne ne s’en rende compte.\n\nRegroupement\n\nConstruire une identité unique en rapprochant des fiches venues de plusieurs sources (RH, prestataires, étudiants).\n\nRapprochement\n\nComparer régulièrement l’annuaire central avec ce qui existe vraiment dans les applications. C’est ainsi qu’on trouve les comptes orphelins.\n\nCompte orphelin\n\nUn compte actif dans une application qui ne correspond à aucune identité connue. Le cadeau le plus fréquent laissé à un attaquant.\n\n\nSans source de référence, on ne sait pas qui a raison quand deux systèmes ne disent pas la même chose. Le logiciel RH dit que Marie est partie le 30 juin, l’Active Directory dit qu’elle est active, l’application métier dit qu’elle est en congé. Lequel croit-on ? Si la réponse n’est pas écrite quelque part, c’est le support qui tranche au cas par cas.\n\n\n\n\n\n\nAstuceExemple trouvé en audit\n\n\n\nUn compte admin_temp créé pour un prestataire en 2019, toujours actif, avec un mot de passe partagé par e-mail.\n\n\n\n\n\n\n\n\nImportantLa question à se poser\n\n\n\nDans votre organisation, quel système fait foi pour la date de départ d’un prestataire externe ? Le plus souvent, aucun.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Où vivent les identités"
+    ]
+  },
+  {
+    "objectID": "cours/02-annuaires.html#rassembler-plusieurs-sources-didentités",
+    "href": "cours/02-annuaires.html#rassembler-plusieurs-sources-didentités",
+    "title": "Où vivent les identités",
+    "section": "Rassembler plusieurs sources d’identités",
+    "text": "Rassembler plusieurs sources d’identités\n\nLes approches historiques\nVous les trouverez encore dans les cahiers des charges.\n\nLe méta-annuaire\n\nUn logiciel copie et synchronise les données de plusieurs sources (RH, Active Directory, bases) dans un annuaire central unique. Atout : des données nettoyées et consolidées. Limite : une copie de plus à maintenir.\n\nL’annuaire virtuel\n\nPas de copie. Une couche présente plusieurs sources comme un seul arbre LDAP, en temps réel. Atout : des données toujours à jour. Limite : il dépend de la disponibilité de chaque source.\n\nAnnuaire ou base de données ?\n\nL’annuaire est fait pour beaucoup de lectures et peu d’écritures, avec un modèle standard compris de toutes les applications. Il répond à des millions de recherches « quel est le groupe de X ? » par jour, mais ne gère pas les transactions : on n’y met pas une comptabilité.\n\n\n\n\nAujourd’hui\n\nL’outil IGA joue le rôle du méta-annuaire. Il regroupe les identités, applique la règle « une information, une source » et alimente les applications.\nLe fournisseur d’identité (Entra ID, Okta, Keycloak) est l’annuaire auquel les applications se connectent par fédération. Il est alimenté par l’IGA ou par une synchronisation.\nLes applications SaaS sont alimentées par SCIM, les anciennes par des connecteurs ou des fichiers.\n\n\n\n\n\n\n\nImportantLa question à poser sur tout schéma d’architecture\n\n\n\nOù est la copie de référence des identités, et qui l’alimente ?\n\n\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nRFC 4510 à 4519 (LDAP v3). ISO 27001 A.5.16 (gestion des identités), qui exige un cycle de vie complet, y compris la suppression.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "Où vivent les identités"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html",
+    "href": "cours/04-autorisation.html",
+    "title": "L’autorisation",
+    "section": "",
+    "text": "Marie a maintenant un compte. Qu’a-t-elle le droit de faire, selon quel modèle, et qui l’a décidé ?\nC’est le chapitre le plus conceptuel de la première moitié du cours. Le tableau de synthèse résume tout.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#les-deux-modèles-historiques-dac-et-mac",
+    "href": "cours/04-autorisation.html#les-deux-modèles-historiques-dac-et-mac",
+    "title": "L’autorisation",
+    "section": "Les deux modèles historiques : DAC et MAC",
+    "text": "Les deux modèles historiques : DAC et MAC\nVous connaissez les deux sans les nommer.\n\n\nDAC : le propriétaire décide\n\nLe propriétaire d’un fichier ou d’un dossier choisit qui y accède.\nC’est le modèle des partages de fichiers classiques et du cloud (Drive, SharePoint).\nSouple, immédiat, compris de tous.\nFaiblesse : la politique de sécurité est éparpillée chez des milliers d’utilisateurs. Personne n’a de vue d’ensemble.\n\n\n\nMAC : une autorité centrale décide\n\nUne autorité centrale fixe les règles. Le propriétaire ne peut pas y déroger.\nFondé sur des niveaux de classification (confidentiel, secret) et des habilitations.\nModèle militaire, repris par SELinux et AppArmor.\nTrès fort pour la confidentialité, très lourd au quotidien.\n\n\n\nLe DAC, c’est ainsi que naissent les dossiers partagés accessibles à toute l’entreprise : un dossier SharePoint partagé « à toute l’organisation » par commodité en 2021 contient aujourd’hui les contrats des collaborateurs. Le MAC, c’est un serveur où même l’administrateur ne peut pas faire lire par le serveur web un fichier étiqueté pour la base de données. Il est peu utilisé tel quel en entreprise, mais ses idées reviennent dans la classification des données.\nAucun des deux n’est « le bon » : ils répondent à des menaces différentes.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#rbac-le-modèle-le-plus-utilisé-en-entreprise",
+    "href": "cours/04-autorisation.html#rbac-le-modèle-le-plus-utilisé-en-entreprise",
+    "title": "L’autorisation",
+    "section": "RBAC : le modèle le plus utilisé en entreprise",
+    "text": "RBAC : le modèle le plus utilisé en entreprise\n\n\n\n\n\n\n\n\n\nUtilisateur\nRôle\nPermission\nRessource\n\n\n\n\nMarie Dupont\nGestionnaire de prestations\nValider une rente &lt; 50 000 CHF\nApplication de gestion des prestations\n\n\n\n\nLe principe\n\nL’utilisateur reçoit des rôles, le rôle porte les permissions. Aucun droit n’est jamais donné directement à une personne. C’est cette indirection qui rend le modèle lisible et auditable.\n\nRôle métier et rôle technique\n\nLe rôle métier décrit ce qu’un poste fait (« gestionnaire de prestations »). Le rôle technique décrit ce qu’une application autorise (PREST_VALIDER). Un rôle métier regroupe plusieurs rôles techniques : cette traduction coûte cher à maintenir.\n\nCe que ça apporte\n\nRépondre à la question d’audit « qui peut valider une rente ? » sans ouvrir chaque application. Donner les bons accès dès le premier jour. Retirer d’un coup tous les droits d’un poste lors d’un changement.\n\n\n\nLa limite : l’explosion du nombre de rôles\nChaque exception demandée par le métier crée un nouveau rôle : « gestionnaire de prestations, site de Lausanne, hors rentes d’invalidité ». Le nombre de rôles se multiplie avec chaque critère : fonction × site × type de client × niveau de délégation.\n\n\n2 400 rôles pour 2 000 collaborateurs. À ce stade, chaque rôle décrit une personne. Le modèle a été respecté à la lettre et vidé de son sens.\n\n\nLes signaux d’alarme\n\nIl y a presque autant de rôles que d’utilisateurs.\nPlus personne ne sait ce que contient un rôle, donc les revues des accès sont validées les yeux fermés.\nTest rapide : parmi les 20 rôles les plus récents, combien ont un seul membre ?\n\n\n\nLes solutions : une hiérarchie de rôles, une séparation stricte entre rôles métier et rôles techniques, et surtout accepter que le RBAC ne couvre pas tout.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#abac-décider-à-partir-dattributs",
+    "href": "cours/04-autorisation.html#abac-décider-à-partir-dattributs",
+    "title": "L’autorisation",
+    "section": "ABAC : décider à partir d’attributs",
+    "text": "ABAC : décider à partir d’attributs\n\n\n\n\n\n\n\n\n\nAttributs de la personne\nAttributs de la ressource\nAttributs de l’action\nAttributs du contexte\n\n\n\n\nService, fonction, niveau d’habilitation, ancienneté, appareil conforme\nClassification, propriétaire, service rattaché, montant, statut du dossier\nLecture, écriture, export, suppression, validation\nHeure, adresse réseau, pays, niveau de risque de la session, moyen d’authentification utilisé\n\n\n\n\nExemple de règle. Marie peut lire un dossier d’assuré SI son service = service du dossier ET son appareil est conforme ET il est entre 7 h et 20 h.\n\n\n\nCe que l’ABAC apporte\n\nSouplesse : une règle remplace des centaines de rôles.\nDécision selon le contexte : le même utilisateur n’a pas les mêmes droits selon l’appareil ou l’heure.\n\n\n\nCe qu’il coûte\n\nIl faut des attributs fiables et à jour, partout. C’est le vrai obstacle.\nRépondre à « qui peut faire quoi ? » redevient difficile : il faut calculer les règles, pas les lire.\n\n\n\n« Appareil conforme » suppose un inventaire des appareils à jour et un agent installé partout. « Service de la personne » suppose que les RH mettent à jour les mutations le jour même. Un exemple d’ABAC que tout le monde utilise : l’accès conditionnel d’Entra ID, qui autorise la connexion si l’appareil est géré, le pays attendu et le risque faible.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#rebac-et-pbac-sortir-lautorisation-du-code",
+    "href": "cours/04-autorisation.html#rebac-et-pbac-sortir-lautorisation-du-code",
+    "title": "L’autorisation",
+    "section": "ReBAC et PBAC : sortir l’autorisation du code",
+    "text": "ReBAC et PBAC : sortir l’autorisation du code\nLes deux modèles ont le même but, mais ne répondent pas à la même question. ReBAC : qui est lié à quoi ? PBAC : quelle règle s’applique ?\n\nReBAC : le droit vient d’une relation\nComme le partage dans Google Drive : on ne donne pas un rôle, on relie des objets, et les droits suivent les liens.\n\nMarie est membre de l’équipe Prestations, qui est propriétaire du dossier Sinistres, qui contient le document D.\n\nMarie peut-elle lire le document D ? Oui : trois liens, une décision. Un nouveau document dans le dossier est aussitôt lisible par toute l’équipe, sans toucher à aucun rôle. En RBAC, il faudrait un rôle par dossier, puis par sous-dossier.\nGoogle a décrit ce modèle en 2019 (Zanzibar, le service d’autorisation derrière Drive, YouTube et Calendar). OpenFGA et SpiceDB en sont des reprises libres, très utilisées dans les SaaS récents. Le prix à payer : il faut tenir à jour le graphe des relations.\n\n\nPBAC : la règle sort du code\nL’application ne contient plus de « si… alors » cachés. À chaque action, elle pose la question à un moteur de règles, qui répond oui ou non.\n\n\nL’application (point d’application, PEP) demande : « Marie peut-elle valider la rente 4512 ? »\nLe moteur de règles (point de décision, PDP) lit les attributs nécessaires auprès des sources (point d’information, PIP) : RH, annuaire, dossier.\nIl applique la règle, écrite une seule fois : AUTORISER si rôle = gestionnaire ET dossier.service = utilisateur.service ET montant &lt; 50 000.\nIl répond « oui » ou « non ». L’application applique la décision.\n\n\nCe que ça change : une règle pour toutes les applications, modifiable sans redéployer, testée et auditée comme du code. Pour répondre à « qui peut valider une rente de plus de 50 000 CHF ? », on lit la règle au lieu de fouiller dix applications. Ce que ça coûte : les attributs doivent être fiables, et une règle fausse se propage à toutes les applications d’un coup, d’où les tests. Produits : Open Policy Agent, Cedar (AWS), XACML (l’ancêtre, encore présent dans les banques).\n\n\n\n\n\n\nImportantLe point commun\n\n\n\nLa décision sort du code applicatif. Un « si » caché dans une application n’est ni auditable, ni modifiable, ni testable.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#synthese-modeles",
+    "href": "cours/04-autorisation.html#synthese-modeles",
+    "title": "L’autorisation",
+    "section": "Choisir un modèle : il n’y a pas de gagnant",
+    "text": "Choisir un modèle : il n’y a pas de gagnant\n\n\n\n\n\n\n\n\n\n\nModèle\nDécide selon\nPoint fort\nPoint faible\nContexte typique\n\n\n\n\nDAC\nLe choix du propriétaire\nSimple, autonome\nAucune vue d’ensemble\nPartages de fichiers, outils collaboratifs\n\n\nMAC\nUne classification imposée\nConfidentialité forte\nTrès rigide au quotidien\nDéfense, systèmes durcis\n\n\nRBAC\nLe rôle de l’utilisateur\nAuditable, compris du métier\nExplosion du nombre de rôles\nEntreprise, applications métier\n\n\nABAC\nDes attributs et le contexte\nSouple, règles très précises\nDépend d’attributs fiables\nAccès conditionnel, données sensibles\n\n\nReBAC\nLes relations entre objets\nPartage et héritage naturels\nOutils encore jeunes, complexe à raisonner\nSaaS multi-clients, collaboratif\n\n\n\n\n\n\n\n\n\nImportantEn pratique, on combine\n\n\n\nLes architectures matures utilisent le RBAC pour la base et la preuve d’audit (qui a quoi), l’ABAC pour les conditions d’accès (quand et depuis où), et le ReBAC pour le partage entre utilisateurs, document par document.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#deux-principes-qui-structurent-tout-le-reste",
+    "href": "cours/04-autorisation.html#deux-principes-qui-structurent-tout-le-reste",
+    "title": "L’autorisation",
+    "section": "Deux principes qui structurent tout le reste",
+    "text": "Deux principes qui structurent tout le reste\n\n\n1. Le moindre privilège\nChacun n’a que les droits strictement nécessaires à son travail, et seulement pendant la durée où il en a besoin.\nLa dimension du temps est celle qu’on oublie : un droit justifié en janvier ne l’est plus en septembre. Un droit devrait avoir une date de fin par défaut, pas une durée illimitée par défaut.\n\n\n2. La séparation des tâches\nPersonne ne doit pouvoir réaliser seul une opération sensible de bout en bout : créer un fournisseur et valider son paiement, créer un compte administrateur et effacer les journaux, développer et mettre en production.\nElle se traduit par des règles de conflit dans l’outil IGA.\n\n\nCes deux principes sont exigés par ISO 27001 et par presque toutes les normes sectorielles. Ce sont aussi les deux premiers abandonnés sous la pression du quotidien. La séparation des tâches est plus facile à faire accepter, car elle protège aussi le collaborateur : si une seule personne peut créer un fournisseur et payer, elle sera la première suspectée en cas de fraude, même innocente.",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/04-autorisation.html#construire-un-modèle-de-rôles",
+    "href": "cours/04-autorisation.html#construire-un-modèle-de-rôles",
+    "title": "L’autorisation",
+    "section": "Construire un modèle de rôles",
+    "text": "Construire un modèle de rôles\n\n\nDepuis le métier (descendant)\n\nPartir de l’organisation : fonctions, processus, postes de travail.\nDéfinir ce qu’un poste devrait pouvoir faire, sans regarder l’existant.\nDonne un modèle propre, défendable devant un auditeur.\nLimite : ne colle jamais tout à fait à la réalité, et tous les écarts remontent au moment du déploiement.\n\n\n\nDepuis l’existant (ascendant)\n\nExtraire les droits réellement donnés, puis chercher les regroupements qui reviennent.\nFait apparaître des rôles implicites que personne n’avait écrits.\nLimite majeure : reproduit fidèlement le désordre accumulé, y compris les droits obtenus par erreur.\nÀ utiliser comme diagnostic, jamais comme modèle cible.\n\n\n\n\n\n\n\n\n\nAstuceExemple d’analyse ascendante\n\n\n\n80 % des personnes du service « sinistres » ont les mêmes 9 groupes : voilà un rôle implicite. Mais 3 personnes ont aussi un accès à la paie. Erreur ou exception légitime ? À trancher avec le responsable, pas à copier dans le modèle.\n\n\n\n\n\n\n\n\nImportantLa méthode qui marche\n\n\n\nLe descendant pour définir la cible, l’ascendant pour mesurer l’écart, puis décider chaque écart avec le responsable métier concerné. Commencez par un département pilote de taille moyenne, pas par la direction ni par l’informatique.\n\n\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nSandhu et al. (1996) et ANSI/INCITS 359-2004 pour le RBAC. NIST SP 800-162 pour l’ABAC et le découpage PEP / PDP / PIP. Pang et al., « Zanzibar: Google’s Consistent, Global Authorization System », USENIX ATC 2019. ISO 27001:2022 A.5.3 (séparation des tâches) et A.8.2 (droits d’accès privilégiés).",
+    "crumbs": [
+      "Cours",
+      "Une identité et ses droits",
+      "L'autorisation"
+    ]
+  },
+  {
+    "objectID": "cours/06-sso-federation.html",
+    "href": "cours/06-sso-federation.html",
+    "title": "SSO et fédération",
+    "section": "",
+    "text": "Marie utilise une quarantaine d’applications. Comment une seule authentification peut-elle servir à toutes, sans que chacune voie son mot de passe ?",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "SSO et fédération"
+    ]
+  },
+  {
+    "objectID": "cours/06-sso-federation.html#le-problème-que-la-fédération-résout",
+    "href": "cours/06-sso-federation.html#le-problème-que-la-fédération-résout",
+    "title": "SSO et fédération",
+    "section": "Le problème que la fédération résout",
+    "text": "Le problème que la fédération résout\n\n\nSans fédération\n\nChaque application gère ses propres comptes : autant de bases de mots de passe, autant de fuites possibles, autant de comptes à fermer au départ d’un collaborateur.\nL’utilisateur réagit logiquement : il réutilise le même mot de passe partout. Une seule fuite compromet tout.\nImpossible de répondre à « à quoi Marie a-t-elle encore accès ? ».\nFermer les accès devient un inventaire manuel, fait dans l’urgence, donc incomplet.\nImposer le MFA suppose de le déployer trente fois, dans trente produits différents.\n\n\n\nL’idée de la fédération\n\nUn seul système authentifie l’utilisateur.\nToutes les applications lui font confiance et acceptent sa preuve signée, sans jamais voir le mot de passe.\nL’authentification devient un service central. La politique de sécurité s’applique en un seul endroit.\n\n\n\nLe rapport Okta Businesses at Work 2024 compte en moyenne plus de 90 applications par organisation. Sans fédération, cela fait 90 bases de comptes à fermer au départ de chaque collaborateur. Avec, imposer les passkeys à toute l’organisation est une modification dans le fournisseur d’identité, pas 90 projets.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "SSO et fédération"
+    ]
+  },
+  {
+    "objectID": "cours/06-sso-federation.html#trois-choses-souvent-confondues",
+    "href": "cours/06-sso-federation.html#trois-choses-souvent-confondues",
+    "title": "SSO et fédération",
+    "section": "Trois choses souvent confondues",
+    "text": "Trois choses souvent confondues\n\n\n1\n\nAuthentification unique (SSO)\nUne seule authentification donne accès à plusieurs applications à l’intérieur d’une même organisation.\nExemple : Kerberos dans un domaine Active Directory. L’utilisateur ouvre sa session le matin et n’a plus rien à taper.\n\n\n\n2\n\nFédération d’identité\nLe SSO franchit la frontière de l’organisation. Deux entités distinctes établissent une confiance explicite.\nExemple : se connecter à un service SaaS avec le compte de son employeur, ou SWITCH edu-ID entre hautes écoles suisses.\n\n\n\n3\n\nGestionnaire de mots de passe\nL’outil connaît le mot de passe de chaque application et le tape à la place de l’utilisateur.\nCe n’est pas de la fédération : les comptes locaux existent toujours et devront être fermés un par un.\n\n\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nLe gestionnaire de mots de passe règle un problème de confort. Seule la fédération règle le problème de gouvernance, parce qu’elle supprime les comptes locaux au lieu de les cacher.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "SSO et fédération"
+    ]
+  },
+  {
+    "objectID": "cours/06-sso-federation.html#les-trois-rôles-de-toute-fédération",
+    "href": "cours/06-sso-federation.html#les-trois-rôles-de-toute-fédération",
+    "title": "SSO et fédération",
+    "section": "Les trois rôles de toute fédération",
+    "text": "Les trois rôles de toute fédération\n\n\n\nMarie ne s’authentifie qu’à un seul endroit. L’application reçoit une preuve signée, jamais le mot de passe.\n\n\n\nL’utilisateur\n\nLa personne qui veut accéder à l’application. Elle ne s’authentifie qu’à un seul endroit : le fournisseur d’identité.\n\nLe fournisseur d’identité (IdP)\n\nIl authentifie l’utilisateur et émet une preuve signée (assertion SAML, jeton OIDC). Il devient l’élément le plus critique du système d’information.\n\nLe fournisseur de service (SP)\n\nL’application. Elle reçoit la preuve, vérifie la signature, l’émetteur, le destinataire et la validité, puis ouvre une session et applique ses propres règles d’autorisation.\n\n\nCe vocabulaire est le même dans tous les protocoles, seuls les noms changent. L’apprendre ici évite de le réapprendre trois fois.\nLa relation de confiance s’établit une fois, à la mise en place, pas à chaque connexion. L’administrateur importe le fichier de métadonnées du fournisseur d’identité (avec son certificat de signature) dans l’application, et l’adresse de l’application dans le fournisseur d’identité. À partir de là, l’application croit tout ce que signe le fournisseur d’identité, et seulement cela.\nLa fédération répond à « qui est-ce ? », pas à « que peut-il faire ? ». L’application décide elle-même de l’autorisation. Ce sont les quatre questions du chapitre 1.\n\n\n\n\n\n\nImportantLe revers\n\n\n\nLe fournisseur d’identité devient le point unique de panne, et de compromission, de tout le système d’information. En 2023, l’intrusion chez Okta a inquiété des milliers de clients d’un coup. Si Entra ID tombe, Teams, Outlook et toutes les applications fédérées tombent ensemble.\nConséquence : il se protège comme un contrôleur de domaine. Comptes d’administration séparés, MFA résistant au phishing obligatoire, journalisation, plan de secours.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "SSO et fédération"
+    ]
+  },
+  {
+    "objectID": "cours/06-sso-federation.html#sous-le-capot-du-sso-web-sessions-et-cookies",
+    "href": "cours/06-sso-federation.html#sous-le-capot-du-sso-web-sessions-et-cookies",
+    "title": "SSO et fédération",
+    "section": "Sous le capot du SSO web : sessions et cookies",
+    "text": "Sous le capot du SSO web : sessions et cookies\n\n\nL’utilisateur demande une page. Un composant placé devant l’application (agent, serveur mandataire ou bibliothèque) intercepte la demande.\nPas de cookie de session valide : ce composant renvoie l’utilisateur vers le fournisseur d’identité.\nL’utilisateur s’authentifie une seule fois. Le fournisseur d’identité crée sa propre session, matérialisée par un cookie sur son domaine.\nRetour à l’application avec une preuve (assertion SAML ou jeton OIDC). L’application crée sa propre session locale : un second cookie.\nPour la deuxième application, le fournisseur d’identité a déjà une session : la preuve est émise sans rien demander. C’est cela, l’authentification unique.\nDéconnexion : il faut fermer la session du fournisseur d’identité et toutes les sessions locales (déconnexion globale), sinon l’utilisateur reste connecté à certaines applications.\n\n\n\n\n\n\n\n\nAstuceLe piège de la déconnexion\n\n\n\nUn utilisateur clique sur « déconnexion » dans l’application A, puis ouvre l’application B dans le même navigateur : il est toujours connecté, parce que la session du fournisseur d’identité n’a pas été fermée. Sur un poste partagé (guichet, salle de classe), c’est un vrai problème.\n\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nIl existe toujours au moins deux sessions : celle du fournisseur d’identité et celle de l’application. Durées de vie, révocation et déconnexion doivent être pensées pour les deux.\n\n\nVous verrez ces deux sessions de vos propres yeux dans le labo.\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nNIST SP 800-63C-4 pour la définition de la fédération. OpenID Connect RP-Initiated Logout 1.0 et SAML 2.0 Single Logout pour la déconnexion.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "SSO et fédération"
+    ]
+  },
+  {
+    "objectID": "cours/08-gouvernance.html",
+    "href": "cours/08-gouvernance.html",
+    "title": "Gouvernance et conformité",
+    "section": "",
+    "text": "Marie restera dix ans. Comment garder le contrôle dans la durée, et comment le prouver à un auditeur ?\nOn quitte la technique. C’est le chapitre le plus utile si vous devenez chef de projet ou responsable de la sécurité.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Gouvernance et conformité"
+    ]
+  },
+  {
+    "objectID": "cours/08-gouvernance.html#la-revue-des-accès",
+    "href": "cours/08-gouvernance.html#la-revue-des-accès",
+    "title": "Gouvernance et conformité",
+    "section": "La revue des accès",
+    "text": "La revue des accès\n\nLe principe\n\nÀ intervalle régulier, le responsable de chaque équipe confirme ou retire les accès de ses collaborateurs.\n\nLa fréquence habituelle\n\nUne fois par an pour les accès ordinaires, tous les six ou trois mois pour les accès sensibles et administrateurs.\n\nL’obligation\n\nExigée par ISO 27001 et la plupart des normes sectorielles, y compris la circulaire FINMA sur les risques opérationnels pour les banques et assurances.\n\n\n\n\nUne mauvaise revue\nUn fichier Excel de 400 lignes avec des noms de groupes comme GRP_APP_FIN_RW_L2, envoyé le vendredi, à retourner le lundi. Le responsable valide tout.\nTaux de retrait : 0 %.\n\n\nUne bonne revue\nL’outil n’affiche que les 12 accès qui ont changé depuis la dernière campagne, traduits en « peut valider des paiements », avec un bouton « retirer » aussi visible que « confirmer ».\nTaux de retrait : 5 à 10 %.\n\n\nCe qui fonctionne : ne montrer que les écarts, traduire les rôles techniques en langage métier, et rendre le retrait aussi facile que la validation. L’indicateur d’honnêteté est le taux de retrait : une campagne qui retire 0 % des accès n’a rien mesuré.\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nUne revue des accès n’est pas un contrôle de conformité, c’est un outil de correction. Si elle ne corrige rien, elle ne sert à rien.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Gouvernance et conformité"
+    ]
+  },
+  {
+    "objectID": "cours/08-gouvernance.html#traçabilité-savoir-qui-a-fait-quoi",
+    "href": "cours/08-gouvernance.html#traçabilité-savoir-qui-a-fait-quoi",
+    "title": "Gouvernance et conformité",
+    "section": "Traçabilité : savoir qui a fait quoi",
+    "text": "Traçabilité : savoir qui a fait quoi\nC’est la quatrième question du chapitre 1.\n\n\n1\n\nQuoi journaliser\nConnexions réussies et échouées, MFA, élévations de privilèges, création, modification et suppression de comptes et de droits, approbations, changements de configuration du fournisseur d’identité.\n\n\n\n2\n\nOù\nJournaux du fournisseur d’identité, de l’IGA, du PAM et des applications, centralisés dans un SIEM, avec des horloges synchronisées et un format commun.\n\n\n\n3\n\nÀ quoi ça sert\nDétection, investigation après incident, preuve pour l’audit : qui a approuvé quel accès, et quand.\n\n\n\n4\n\nCombien de temps, et qui y accède\nDurée définie (6 à 12 mois en pratique, plus si la loi l’exige), accès restreint, journaux protégés en écriture : un administrateur ne doit pas pouvoir effacer ses propres traces.\n\n\n\n\nDétection. Le fournisseur d’identité voit une connexion de Marie depuis Lausanne à 9 h 00, puis depuis un autre continent à 9 h 10. La session est coupée et une réauthentification forte est exigée.\nDétection encore. 500 échecs de connexion sur 500 comptes différents avec le même mot de passe (une « pluie de mots de passe ») ne se voient que si les échecs sont journalisés et centralisés.\nPreuve d’audit. L’auditeur demande qui a approuvé l’accès de Marie à la validation des paiements, et quand. La réponse doit sortir de l’outil en une minute, avec le nom de l’approbateur et la justification.\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nUn journal ne vaut que ce que vaut l’identité en amont. Si trois administrateurs partagent le compte admin, le journal dit « admin a effacé la base », et l’enquête s’arrête là.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Gouvernance et conformité"
+    ]
+  },
+  {
+    "objectID": "cours/08-gouvernance.html#pam-les-comptes-à-privilèges",
+    "href": "cours/08-gouvernance.html#pam-les-comptes-à-privilèges",
+    "title": "Gouvernance et conformité",
+    "section": "PAM : les comptes à privilèges",
+    "text": "PAM : les comptes à privilèges\n\nCe qui est concerné\n\nAdministrateurs de domaine et de systèmes, comptes de service des applications, comptes d’urgence, accès des prestataires, clés d’API, secrets des chaînes de déploiement. Les comptes de service sont les plus dangereux : personne ne les surveille et leur mot de passe ne change jamais.\n\nLes mécanismes\n\nCoffre-fort qui prête et reprend le secret, changement automatique des mots de passe, droits administrateur accordés pour une durée limitée, enregistrement des sessions d’administration, passage par un serveur bastion. Le but n’est pas d’empêcher l’administration, mais de la rendre traçable et temporaire.\n\nL’objectif à atteindre\n\nZéro droit administrateur permanent. En temps normal, plus aucun compte n’a de droits d’administration. Le droit est demandé, approuvé, accordé pour une fenêtre limitée, puis retiré automatiquement. Un vol d’identifiants devient alors une tentative détectable plutôt qu’un piratage silencieux.\n\n\n\n\n\n\n\n\nAstuceExemples\n\n\n\nZéro droit permanent : l’administrateur demande le rôle d’administrateur général pour 2 heures, un collègue approuve, le droit tombe automatiquement à l’échéance. En dehors de ces fenêtres, voler ses identifiants ne donne aucun droit d’administration.\nCompte d’urgence : un compte hors MFA, dont le mot de passe est dans un coffre physique, et dont chaque utilisation déclenche une alerte.\n\n\n\n\n\n\n\n\nImportantLa question à poser dans n’importe quelle organisation\n\n\n\nCombien de comptes ont des droits administrateur permanents, et qui les a validés ? Presque personne ne sait répondre.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Gouvernance et conformité"
+    ]
+  },
+  {
+    "objectID": "cours/08-gouvernance.html#le-cadre-de-référence-nist-sp-800-63-4",
+    "href": "cours/08-gouvernance.html#le-cadre-de-référence-nist-sp-800-63-4",
+    "title": "Gouvernance et conformité",
+    "section": "Le cadre de référence : NIST SP 800-63-4",
+    "text": "Le cadre de référence : NIST SP 800-63-4\nVersion finale publiée le 31 juillet 2025. Son vocabulaire est devenu la référence internationale de fait, y compris hors des États-Unis.\n\n\n\n\n\n\n\n\n\n\nIAL : l’identité\nAAL : l’authentification\nFAL : la fédération\n\n\n\n\nLa question\nQuelle confiance dans le lien entre l’identité numérique et une vraie personne ?\nQuelle confiance dans le fait que c’est bien le titulaire qui se connecte ?\nQuelle confiance dans la preuve transmise entre fournisseur d’identité et application ?\n\n\nNiveau 1\nInformations déclarées, non vérifiées\nUn seul facteur accepté\nPreuve signée\n\n\nNiveau 2\nVérification de documents d’identité, à distance ou en personne\nDeux facteurs de catégories différentes\nPreuve chiffrée pour son destinataire\n\n\nNiveau 3\nVérification en personne, par quelqu’un de formé\nObjet matériel résistant au phishing et impossible à copier\nPreuve supplémentaire que l’utilisateur possède une clé\n\n\nExemples\nCompte sur un site de recettes (1), compte bancaire en ligne avec pièce d’identité et selfie (2)\nMot de passe seul (1), mot de passe + application avec code (2), clé FIDO2 (3)\n\n\n\n\nLes trois axes sont indépendants. Une caisse de pension peut exiger IAL2 et AAL2 pour ses assurés, et AAL3 pour ses seuls administrateurs. Nouveauté de la version 4 : le niveau se choisit par une analyse de risque documentée, pas en cochant une case.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Gouvernance et conformité"
+    ]
+  },
+  {
+    "objectID": "cours/08-gouvernance.html#iso-27001-et-le-droit-suisse",
+    "href": "cours/08-gouvernance.html#iso-27001-et-le-droit-suisse",
+    "title": "Gouvernance et conformité",
+    "section": "ISO 27001 et le droit suisse",
+    "text": "ISO 27001 et le droit suisse\n\n\n\n\n\n\n\nRéférence\nCe qu’elle exige en matière d’accès\n\n\n\n\nISO/IEC 27001:2022, annexe A\nA.5.15 contrôle d’accès, A.5.16 gestion des identités, A.5.17 informations d’authentification, A.5.18 droits d’accès. Ces quatre mesures rendent la revue des accès obligatoire de fait.\n\n\nISO/IEC 24760\nCadre et vocabulaire de la gestion d’identité. Utile pour fixer les définitions dans un projet où chacun emploie les mots différemment.\n\n\nLPD révisée (Suisse)\nEn vigueur depuis le 1er septembre 2023. Sécurité des données par défaut, registre des traitements, annonce des violations au PFPDT. Les sanctions pénales visent les personnes physiques responsables, pas l’entreprise.\n\n\nRGPD (personnes dans l’UE)\nMinimisation, finalité, droit d’accès et d’effacement. Impose de savoir quelles données une identité permet d’atteindre.\n\n\nFINMA, circulaire 2023/1\nRisques opérationnels, pour les banques et assurances suisses : gestion des accès à privilèges, séparation des tâches, contrôle des accès des tiers.\n\n\nNIS2 (Union européenne)\nNe s’applique pas directement en Suisse, mais arrive par la chaîne de sous-traitance : un client européen l’imposera dans le contrat.\n\n\n\n\n\n\n\n\n\nAstuceCe que la LPD change dans les discussions\n\n\n\nLa LPD révisée ne prévoit pas d’amendes contre l’entreprise, mais des amendes pénales (jusqu’à 250 000 CHF) contre les personnes physiques responsables. Cela change les discussions en comité de direction.\n\n\n\n\n\n\n\n\nNoteRéférences\n\n\n\n\n\nISO 27001:2022 A.5.18, A.8.2 (droits d’accès privilégiés), A.8.15 (journalisation) et A.8.16 (surveillance). NIST SP 800-92 (gestion des journaux). NIST SP 800-63-4, volumes A, B et C. LPD (RS 235.1) et son ordonnance. FINMA, circulaire 2023/1. Directive (UE) 2022/2555.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Gouvernance et conformité"
+    ]
+  },
+  {
+    "objectID": "cours/10-projet.html",
+    "href": "cours/10-projet.html",
+    "title": "Mener un projet IAM",
+    "section": "",
+    "text": "Du constat au programme : par où commencer dans votre organisation ?",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Mener un projet IAM"
+    ]
+  },
+  {
+    "objectID": "cours/10-projet.html#ce-quun-projet-iam-rapporte",
+    "href": "cours/10-projet.html#ce-quun-projet-iam-rapporte",
+    "title": "Mener un projet IAM",
+    "section": "Ce qu’un projet IAM rapporte",
+    "text": "Ce qu’un projet IAM rapporte\nC’est la réponse à la question que posera tout comité de direction : pourquoi dépenser pour ça ?\n\n\n1\n\nConformité\nProuver aux auditeurs que les accès sont donnés, revus et retirés comme prévu. Exigé par ISO 27001, la FINMA, la LPD, le RGPD et PCI DSS pour les cartes de paiement.\n\n\n\n2\n\nMoins de risques\nFermer vite les accès au départ, supprimer les comptes orphelins, limiter les comptes administrateur, imposer une authentification forte. Moins de portes ouvertes pour un attaquant.\n\n\n\n3\n\nMoins de coûts\nMoins de tickets au support, moins de saisies à la main, revues des accès préparées automatiquement. Le travail reste, mais il est fait une fois, pas 90 fois.\n\n\n\n4\n\nService au métier\nAccès prêts le premier jour, demandes en libre-service, collaboration plus simple avec partenaires et prestataires, nouvelles applications intégrées plus vite.\n\n\n\n\n\n\n\n\n\nAstuceOrdres de grandeur\n\n\n\nLors d’un audit ISO 27001, l’auditeur demande la liste des personnes ayant accès à la paie et la preuve de la dernière revue. Sans outil, cela prend des jours. Avec, quelques minutes.\nChaque réinitialisation de mot de passe par le support coûte entre 15 et 30 CHF en temps de travail. Le libre-service la ramène à zéro.\nSur la durée, une gestion manuelle coûte 2 à 4 fois plus cher qu’une solution automatisée (modèle Forrester, 3 300 utilisateurs, 100 applications). Les chiffres du modèle datent, le rapport reste observé.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Mener un projet IAM"
+    ]
+  },
+  {
+    "objectID": "cours/10-projet.html#un-projet-iam-nest-pas-un-projet-informatique",
+    "href": "cours/10-projet.html#un-projet-iam-nest-pas-un-projet-informatique",
+    "title": "Mener un projet IAM",
+    "section": "Un projet IAM n’est pas un projet informatique",
+    "text": "Un projet IAM n’est pas un projet informatique\n\n\n\n\n\n\n\n\nActeur\nCe qu’il apporte\nCe qui se passe quand il manque\n\n\n\n\nRessources humaines\nLa liste de référence des personnes : arrivées, changements de poste, départs, dates de fin de contrat\nTout le cycle de vie est manuel et faux\n\n\nResponsables métier\nLa définition de ce qu’un poste doit pouvoir faire, et la validation des demandes\nL’informatique invente les rôles et personne n’en est responsable\n\n\nÉquipe informatique\nLa connexion technique des applications, les connecteurs, l’exploitation\nLes applications restent gérées à la main, hors du système central\n\n\nSécurité\nLa politique, les règles de séparation des tâches, le niveau de risque accepté\nLe projet devient un outil de confort sans effet sur le risque\n\n\nAudit et conformité\nL’exigence de preuve : qui a validé quoi, quand, sur quelle base\nLes revues des accès deviennent un rituel qui ne prouve rien\n\n\nUtilisateurs\nL’adoption. Une demande d’accès trop lourde sera contournée\nLes accès s’obtiennent hors processus\n\n\n\nLa première cause d’échec n’est pas technique : c’est l’absence de responsable métier pour les rôles. Faites signer dès le début une liste de propriétaires de rôles par département.\n\n\n\n\n\n\nAstuceExemple\n\n\n\nUn projet où les RH refusent de livrer la date de fin de contrat des externes « parce que ce n’est pas dans leur système ». Résultat : tous les prestataires ont des comptes sans date de fin, et le projet se retrouve à gérer à la main ce qu’il devait automatiser.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Mener un projet IAM"
+    ]
+  },
+  {
+    "objectID": "cours/10-projet.html#par-étapes-pas-en-une-seule-fois",
+    "href": "cours/10-projet.html#par-étapes-pas-en-une-seule-fois",
+    "title": "Mener un projet IAM",
+    "section": "Par étapes, pas en une seule fois",
+    "text": "Par étapes, pas en une seule fois\nLes projets IAM échouent quand ils veulent tout faire d’un coup. L’ordre proposé va du plus simple et du plus rentable (les départs automatiques) au plus long (les rôles).\n\n\nInventaire. Identités, sources, applications, comptes administrateur, comptes de service. Comptez les comptes orphelins trouvés : c’est l’argument pour le budget.\nSource de référence. Obtenir des RH un flux fiable, avec date de fin, y compris pour les externes. Sans cette étape, le reste ne tient pas.\nDéparts automatiques d’abord. Brancher le flux RH sur la désactivation au fournisseur d’identité. Premier gain de sécurité mesurable en quelques semaines.\nFédération et MFA des applications principales. SSO et authentification résistante au phishing là où sont les données sensibles.\nRôles et demandes d’accès. Commencer par un département pilote, livrer, corriger, étendre. Itérations de 2 à 3 mois, pas un modèle complet avant la première livraison.\nRevues et comptes à privilèges. PAM, zéro droit permanent, revues des accès lisibles par le métier.\nMesurer et répéter. Délai de fermeture des accès, taux de retrait en revue, nombre de comptes administrateur permanents.\n\n\n\n\n\n\n\n\nAstuceUn inventaire qui débloque un budget\n\n\n\n1 200 comptes actifs pour 800 collaborateurs, 17 administrateurs du domaine, 60 comptes de service sans propriétaire. Présenté au comité de direction, ce constat vaut tous les discours.\n\n\n\n\n\n\n\n\nImportantLes facteurs de succès\n\n\n\nTraiter les risques tôt, livrer de la valeur à chaque itération, limiter les développements sur mesure, et une seule équipe réunissant métier, informatique, sécurité et audit.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Mener un projet IAM"
+    ]
+  },
+  {
+    "objectID": "cours/10-projet.html#dix-erreurs-qui-font-échouer-un-projet-iam",
+    "href": "cours/10-projet.html#dix-erreurs-qui-font-échouer-un-projet-iam",
+    "title": "Mener un projet IAM",
+    "section": "Dix erreurs qui font échouer un projet IAM",
+    "text": "Dix erreurs qui font échouer un projet IAM\n\nTraiter l’IAM comme un projet informatique alors que c’est un projet d’organisation.\nDémarrer sans liste de référence fiable des personnes, surtout pour les externes.\nVouloir un modèle de rôles complet avant de livrer quoi que ce soit.\nAutomatiser l’ouverture des accès avant leur fermeture, parce que c’est ce que le métier réclame.\nNégliger les prestataires et les enseignants ou intervenants externes, qui concentrent le plus de comptes sans date de fin.\nLaisser les comptes de service hors du périmètre, faute de responsable identifié.\nConfondre installation d’un outil et mise en place d’une gouvernance.\nFaire valider des revues des accès illisibles, et se contenter du taux de réponse.\nSous-estimer la procédure de récupération de compte, qui devient le maillon faible de tout le dispositif.\nOublier que le fournisseur d’identité est un point unique de panne, et ne pas prévoir sa panne.\n\n\n\n\n\n\n\nImportantÀ retenir\n\n\n\nUne seule de ces dix erreurs est technique. Les neuf autres relèvent du processus et de la gouvernance.\n\n\n\n\n\n\n\n\nAstuceDeux de ces erreurs, en vrai\n\n\n\nErreur 3 : un projet qui passe 18 mois à modéliser 100 % des rôles avant de livrer quoi que ce soit, et qui est arrêté avant la mise en production.\nErreur 10 : une organisation sans procédure écrite pour le cas où le fournisseur d’identité est indisponible ou compromis. Le jour venu, personne ne sait comment accéder aux applications.\n\n\nPour appliquer ce chapitre, faites l’exercice Diagnostic d’une architecture.",
+    "crumbs": [
+      "Cours",
+      "Connecter, fédérer, gouverner",
+      "Mener un projet IAM"
+    ]
+  },
+  {
+    "objectID": "cours/index.html",
+    "href": "cours/index.html",
+    "title": "Le cours",
+    "section": "",
+    "text": "N° 1 des vecteurs d’entrée des intrusions : l’abus d’identifiants (22 % des cas), devant les failles exploitées. 88 % des attaques sur les applications web utilisent des identifiants volés.\nVerizon, DBIR 2025\n\n\n97 % des attaques contre l’identité sont des attaques par mot de passe. Les attaques sur l’identité ont augmenté de 32 % au premier semestre 2025.\nMicrosoft, Digital Defense Report 2025\n\n\n23 Mrd $ dépensés en gestion des identités et des accès en 2026, sur 247 milliards de dépenses en sécurité, soit près d’un dollar sur dix.\nGartner, 2026\n\n\nOn n’entre plus par effraction dans les systèmes, on s’y connecte avec des identifiants valides. L’intrusion chez Uber en 2022 n’a exploité aucune faille logicielle : un mot de passe acheté et une série de notifications envoyées jusqu’à ce que la victime accepte ont suffi. Le contrôle des accès est devenu la nouvelle frontière.\n\n\n\n\n\n\nAstuceÀ propos du « 80 % » que l’on cite souvent\n\n\n\nLe chiffre « plus de 80 % des intrusions impliquent des identifiants volés » vient des éditions 2020 et 2021 du rapport Verizon. Il ne faut plus le citer tel quel : l’édition 2025 parle de 22 % des intrusions comme vecteur d’accès initial, et de 88 % dans la catégorie des attaques simples contre les applications web.",
+    "crumbs": [
+      "Cours",
+      "Le cours"
+    ]
+  },
+  {
+    "objectID": "cours/index.html#lidentité-première-porte-dentrée-des-attaquants",
+    "href": "cours/index.html#lidentité-première-porte-dentrée-des-attaquants",
+    "title": "Le cours",
+    "section": "",
+    "text": "N° 1 des vecteurs d’entrée des intrusions : l’abus d’identifiants (22 % des cas), devant les failles exploitées. 88 % des attaques sur les applications web utilisent des identifiants volés.\nVerizon, DBIR 2025\n\n\n97 % des attaques contre l’identité sont des attaques par mot de passe. Les attaques sur l’identité ont augmenté de 32 % au premier semestre 2025.\nMicrosoft, Digital Defense Report 2025\n\n\n23 Mrd $ dépensés en gestion des identités et des accès en 2026, sur 247 milliards de dépenses en sécurité, soit près d’un dollar sur dix.\nGartner, 2026\n\n\nOn n’entre plus par effraction dans les systèmes, on s’y connecte avec des identifiants valides. L’intrusion chez Uber en 2022 n’a exploité aucune faille logicielle : un mot de passe acheté et une série de notifications envoyées jusqu’à ce que la victime accepte ont suffi. Le contrôle des accès est devenu la nouvelle frontière.\n\n\n\n\n\n\nAstuceÀ propos du « 80 % » que l’on cite souvent\n\n\n\nLe chiffre « plus de 80 % des intrusions impliquent des identifiants volés » vient des éditions 2020 et 2021 du rapport Verizon. Il ne faut plus le citer tel quel : l’édition 2025 parle de 22 % des intrusions comme vecteur d’accès initial, et de 88 % dans la catégorie des attaques simples contre les applications web.",
+    "crumbs": [
+      "Cours",
+      "Le cours"
+    ]
+  },
+  {
+    "objectID": "cours/index.html#le-fil-rouge-marie-dupont",
+    "href": "cours/index.html#le-fil-rouge-marie-dupont",
+    "title": "Le cours",
+    "section": "Le fil rouge : Marie Dupont",
+    "text": "Le fil rouge : Marie Dupont\nMarie est engagée le 1er novembre comme gestionnaire de prestations à la Caisse de pension romande, une organisation fictive : 180 collaborateurs, un logiciel métier installé sur site, une messagerie dans le cloud, un portail pour les assurés et six prestataires informatiques externes.\nNous la suivons de son engagement à son départ. Chaque chapitre répond à une question que son parcours pose. Une caisse de pension a tout ce qu’il faut pour cela : des données sensibles, des assurés externes, des prestataires avec des droits d’administration et un régulateur.",
+    "crumbs": [
+      "Cours",
+      "Le cours"
+    ]
+  },
+  {
+    "objectID": "cours/index.html#les-dix-chapitres",
+    "href": "cours/index.html#les-dix-chapitres",
+    "title": "Le cours",
+    "section": "Les dix chapitres",
+    "text": "Les dix chapitres\n\nUne identité et ses droits\n\n\n01\n\nLes bases\nAvant de suivre Marie, se mettre d’accord sur les mots, les quatre questions et la carte du domaine.\n\n\n\n02\n\nOù vivent les identités\nSa fiche est créée dans le logiciel RH, qui fait foi.\n\n\n\n03\n\nLe cycle de vie\nSes comptes sont créés, elle change de poste, elle part.\n\n\n\n04\n\nL’autorisation\nCe qu’elle a le droit de faire : rôles, attributs, relations.\n\n\n\n05\n\nL’authentification\nComment elle prouve que c’est elle, et ce qui résiste au phishing.\n\n\n\n\n\nConnecter, fédérer, gouverner\n\n\n06\n\nSSO et fédération\nUne seule connexion pour ses quarante applications.\n\n\n\n07\n\nLes protocoles\nSAML, OAuth, OpenID Connect, SCIM : comment ça circule.\n\n\n\n08\n\nGouvernance et conformité\nRevues, journaux, comptes à privilèges, normes et lois.\n\n\n\n09\n\nLes frontières actuelles\nZero Trust, cloud, clients, machines, e-ID suisse.\n\n\n\n10\n\nMener un projet IAM\nEnjeux, acteurs, étapes, erreurs à éviter.\n\n\n\nLa première moitié suit l’identité de Marie de sa création à sa suppression, puis ce qu’elle a le droit de faire et comment elle prouve qui elle est. La seconde élargit : plusieurs applications, le contrôle dans la durée, ce qui dépasse l’employé (clients, machines, e-ID), et enfin le projet. Pour finir, sept idées à emporter.",
+    "crumbs": [
+      "Cours",
+      "Le cours"
+    ]
+  },
+  {
+    "objectID": "exercices/index.html",
+    "href": "exercices/index.html",
+    "title": "Les exercices",
+    "section": "",
+    "text": "Les exercices se font sans ordinateur, en groupes de trois ou quatre. Il n’y a pas une seule bonne réponse : ce qui compte, c’est la qualité des choix et la capacité à repérer les pièges.\n\n\nÉtude de cas · 10 min + discussion\n\nConcevoir une politique d’authentification\nLa caisse de pension de Marie, quatre populations, et une question : quel moyen d’authentification pour qui ?\nAprès le chapitre 5.\n\n\n\nÉtude de cas · 10 min + discussion\n\nDiagnostic d’une architecture\nUne haute école, 90 applications, 17 comptes administrateur. Trouvez les trois risques les plus graves.\nAprès le chapitre 10.\n\n\n\nRévision · 5 min\n\nCinq questions de révision\nÀ faire sans notes, pour vérifier les acquis des chapitres 1 à 5 avant d’attaquer la suite.\nAprès le chapitre 5.\n\n\n\nPour la pratique sur machine, voyez le labo, qui est indépendant des exercices.\n\n\n\n Retour au sommet",
+    "crumbs": [
+      "Exercices",
+      "Les exercices"
+    ]
+  },
+  {
+    "objectID": "exercices/questions-de-revision.html",
+    "href": "exercices/questions-de-revision.html",
+    "title": "Cinq questions de révision",
+    "section": "",
+    "text": "Ces cinq questions couvrent les chapitres 1 à 5. Répondez de tête, puis ouvrez la réponse.\n\n1. Quelle est la différence entre authentifier et autoriser ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nCe sont deux décisions distinctes, souvent prises par deux systèmes différents. Chapitre 1\n\n\n\n\n2. Parmi arrivée, changement de poste et départ, lequel est le plus mal géré en pratique, et pourquoi ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nLe changement de poste : chaque mutation ajoute des droits, presque aucune n’en retire. Chapitre 3\n\n\n\n\n3. Pourquoi l’ABAC, plus souple que le RBAC, ne l’a-t-il pas remplacé ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nParce qu’il faut des attributs fiables partout. Chapitre 4\n\n\n\n\n4. Pourquoi une clé FIDO2 résiste-t-elle au phishing alors qu’un code à usage unique n’y résiste pas ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nParce que la preuve est liée au nom de domaine du site. Chapitre 5\n\n\n\n\n5. Quel indicateur mesure le mieux la valeur d’un projet IAM pour la sécurité ?\n\n\n\n\n\n\n\nNoteRéponse\n\n\n\n\n\nLe délai de fermeture des accès. Chapitre 3\n\n\n\n\n\n\n Retour au sommet",
+    "crumbs": [
+      "Exercices",
+      "Cinq questions de révision"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gestion des identités et des accès",
+    "section": "",
+    "text": "Un cours de Grégory Ruch\n\n\n\n\nOn ne force plus la porte des systèmes d’information, on s’y connecte avec une clé volée. Ce cours suit une identité, celle de Marie Dupont, de son engagement à son départ, pour comprendre comment on donne, contrôle et retire des accès.\n\nCommencer le cours Faire le labo"
+  },
+  {
+    "objectID": "index.html#ce-que-vous-saurez-faire-à-la-fin",
+    "href": "index.html#ce-que-vous-saurez-faire-à-la-fin",
+    "title": "Gestion des identités et des accès",
+    "section": "Ce que vous saurez faire à la fin",
+    "text": "Ce que vous saurez faire à la fin\n\n\n1\n\nParler la même langue\nFaire la différence entre une identité, un compte, un identifiant, un attribut, un rôle et un droit d’accès. Ne plus confondre authentification et autorisation.\n\n\n\n2\n\nLire une architecture\nReconnaître un échange SAML, OAuth ou OIDC sur un schéma, et savoir ce que contient chaque jeton.\n\n\n\n3\n\nChoisir un modèle\nChoisir entre RBAC, ABAC et ReBAC selon la situation, et expliquer pourquoi ce choix a des conséquences.\n\n\n\n4\n\nJuger une authentification\nClasser les moyens d’authentification selon leur vraie résistance au phishing, pas selon l’impression de sécurité.\n\n\n\n5\n\nGouverner les accès\nComprendre à quoi servent une revue des accès, la séparation des tâches et un coffre-fort à secrets.\n\n\n\n6\n\nConnaître le cadre\nRelier vos décisions à NIST SP 800-63-4, ISO 27001 et à la loi suisse sur la protection des données.\n\n\n\nLe but n’est pas de savoir configurer un produit, mais de savoir lire une architecture et repérer ce qui ne va pas. À la fin du cours, face à un schéma où une application mobile utilise OAuth seul pour authentifier ses utilisateurs, vous devez voir le problème en dix secondes.\n\n\n\n\n\n\nNoteGIA ou IAM ?\n\n\n\nGestion des identités et des accès (GIA) et Identity and Access Management (IAM) désignent la même chose. Le cours utilise IAM parce que c’est le terme des produits, des normes et des offres d’emploi. Tous les sigles sont expliqués dans le glossaire."
+  },
+  {
+    "objectID": "labo/2-federation-github.html",
+    "href": "labo/2-federation-github.html",
+    "title": "Partie 2 : fédérer avec GitHub",
+    "section": "",
+    "text": "Marie a désormais un compte interne. La caisse fait aussi appel à des développeurs externes qui ont déjà un compte GitHub. Plutôt que de leur créer un mot de passe de plus, Keycloak va faire confiance à GitHub.\nKeycloak devient ici le courtier d’identité : pour l’application, il reste le fournisseur d’identité, et pour GitHub, il est un client OAuth.",
+    "crumbs": [
+      "Labo",
+      "Partie 2 : fédérer avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/2-federation-github.html#déclarer-keycloak-auprès-de-github",
+    "href": "labo/2-federation-github.html#déclarer-keycloak-auprès-de-github",
+    "title": "Partie 2 : fédérer avec GitHub",
+    "section": "2.1 Déclarer Keycloak auprès de GitHub",
+    "text": "2.1 Déclarer Keycloak auprès de GitHub\nSur GitHub : votre avatar → Settings → Developer settings → OAuth Apps → New OAuth App.\n\n\n\n\n\n\n\nChamp\nValeur\n\n\n\n\nApplication name\nKeycloak labo IAM\n\n\nHomepage URL\nhttp://localhost:8080\n\n\nAuthorization callback URL\nhttp://localhost:8080/realms/caisse/broker/github/endpoint\n\n\n\nRegister, puis Generate a new client secret. Notez le Client ID et le Client secret.\n\nQuestion 6. Cette adresse de retour, c’est l’équivalent de quoi dans la partie 1 ? Qui est le client OAuth ici, et qui est le serveur d’autorisation ?",
+    "crumbs": [
+      "Labo",
+      "Partie 2 : fédérer avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/2-federation-github.html#déclarer-github-dans-keycloak",
+    "href": "labo/2-federation-github.html#déclarer-github-dans-keycloak",
+    "title": "Partie 2 : fédérer avec GitHub",
+    "section": "2.2 Déclarer GitHub dans Keycloak",
+    "text": "2.2 Déclarer GitHub dans Keycloak\nDans la console Keycloak, realm caisse → Identity providers → GitHub : saisissez le Client ID et le Client secret de l’étape 2.1 → Add.\nMarquer l’origine des comptes. Onglet Mappers → Add mapper :\n\n\n\nChamp\nValeur\n\n\n\n\nName\nsource = github\n\n\nSync mode override\nInherit\n\n\nMapper type\nHardcoded attribute\n\n\nUser attribute\nsource\n\n\nUser attribute value\ngithub\n\n\n\nSave. Ce mapper marque chaque compte créé par GitHub. Pour comparer, donnez à Marie l’attribut source = keycloak (Users → mdupont → Attributes).\nTransmettre cet attribut à l’application. Il faut un mapper côté client : Clients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User Attribute :\n\n\n\nChamp\nValeur\n\n\n\n\nName\nsource\n\n\nUser Attribute\nsource\n\n\nToken Claim Name\nsource\n\n\nAdd to ID token\nOn\n\n\n\nSave.",
+    "crumbs": [
+      "Labo",
+      "Partie 2 : fédérer avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/2-federation-github.html#se-connecter-avec-github",
+    "href": "labo/2-federation-github.html#se-connecter-avec-github",
+    "title": "Partie 2 : fédérer avec GitHub",
+    "section": "2.3 Se connecter avec GitHub",
+    "text": "2.3 Se connecter avec GitHub\nDéconnectez-vous de l’application, puis cliquez sur « Se connecter via Keycloak » : un bouton GitHub est apparu.\nSuivez le parcours. GitHub vous demande votre mot de passe (et votre MFA), puis si vous autorisez « Keycloak labo IAM » à lire votre profil. Keycloak vous demande ensuite de compléter votre profil. Sur Mon profil, la ligne « Par quel fournisseur d’identité ? » doit dire github.\nDans la console Keycloak, Users : un nouvel utilisateur existe, avec un onglet Identity provider links.\n\nQuestion 7. GitHub a-t-il transmis votre mot de passe à Keycloak ? Keycloak l’a-t-il transmis à l’application ? Dessinez les trois (quatre ?) acteurs et les flèches.\n\n\nQuestion 8. Ce compte créé par GitHub : qui le fermera le jour où le développeur externe ne travaille plus pour la caisse ? Quel chapitre du cours parle de ce problème ?\n\n\nQuestion 9. Dans Identity providers → GitHub, l’option « Trust email » est à Off. Que se passerait-il à On si un utilisateur GitHub déclarait l’adresse marie.dupont@caisse.local ?\n\nPassez à la partie 3.",
+    "crumbs": [
+      "Labo",
+      "Partie 2 : fédérer avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/4-aller-plus-loin.html",
+    "href": "labo/4-aller-plus-loin.html",
+    "title": "Partie 4 : aller plus loin",
+    "section": "",
+    "text": "Quatre pistes indépendantes. Choisissez celle qui vous intéresse.",
+    "crumbs": [
+      "Labo",
+      "Partie 4 : aller plus loin"
+    ]
+  },
+  {
+    "objectID": "labo/4-aller-plus-loin.html#passkeys",
+    "href": "labo/4-aller-plus-loin.html#passkeys",
+    "title": "Partie 4 : aller plus loin",
+    "section": "Passkeys",
+    "text": "Passkeys\n\nRealm caisse → Authentication → Policies → WebAuthn Passwordless Policy : laissez les valeurs par défaut.\nAuthentication → Flows : dupliquez « browser », remplacez l’étape « Username Password Form » par « WebAuthn Passwordless Authenticator » (Required), et liez ce flux au realm (Action → Bind flow → Browser flow).\nUsers → mdupont → Required actions → « Webauthn Register Passwordless ».\n\nÀ la prochaine connexion, Marie enregistre une passkey (localhost compte comme contexte sécurisé). Comparez l’adresse d’autorisation et acr avant et après. Voir FIDO2, WebAuthn, passkeys.",
+    "crumbs": [
+      "Labo",
+      "Partie 4 : aller plus loin"
+    ]
+  },
+  {
+    "objectID": "labo/4-aller-plus-loin.html#durée-de-vie-et-révocation",
+    "href": "labo/4-aller-plus-loin.html#durée-de-vie-et-révocation",
+    "title": "Partie 4 : aller plus loin",
+    "section": "Durée de vie et révocation",
+    "text": "Durée de vie et révocation\nRealm settings → Sessions et → Tokens : passez le jeton d’accès à 1 minute et la session SSO à 5 minutes. Observez quand l’application vous redemande de vous connecter. Retrouvez les trois jetons dans le cours.",
+    "crumbs": [
+      "Labo",
+      "Partie 4 : aller plus loin"
+    ]
+  },
+  {
+    "objectID": "labo/4-aller-plus-loin.html#casser-pour-comprendre",
+    "href": "labo/4-aller-plus-loin.html#casser-pour-comprendre",
+    "title": "Partie 4 : aller plus loin",
+    "section": "Casser pour comprendre",
+    "text": "Casser pour comprendre\n\nDans .env, mettez un mauvais secret.\nDans Keycloak, changez l’URI de redirection.\nPassez « Require PKCE » à Off, puis essayez une requête d’autorisation sans code_challenge : copiez l’adresse de l’étape 1 et retirez les deux paramètres PKCE.\n\nÀ chaque fois : qui refuse, à quelle étape, avec quel message ?",
+    "crumbs": [
+      "Labo",
+      "Partie 4 : aller plus loin"
+    ]
+  },
+  {
+    "objectID": "labo/4-aller-plus-loin.html#les-traces",
+    "href": "labo/4-aller-plus-loin.html#les-traces",
+    "title": "Partie 4 : aller plus loin",
+    "section": "Les traces",
+    "text": "Les traces\nRealm settings → Events → User events settings : Save events : On. Rejouez une connexion réussie, une connexion ratée, une déconnexion, puis lisez Events.\nC’est la quatrième question du chapitre 1 : qui a fait quoi ?",
+    "crumbs": [
+      "Labo",
+      "Partie 4 : aller plus loin"
+    ]
+  },
+  {
+    "objectID": "labo/index.html",
+    "href": "labo/index.html",
+    "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
+    "section": "",
+    "text": "Vous êtes l’équipe informatique de la Caisse de pension romande. La nouvelle application de gestion des prestations ne doit gérer aucun mot de passe.\nL’application délègue l’authentification à un fournisseur d’identité, Keycloak. D’abord avec les comptes internes de la caisse (Marie Dupont), puis en acceptant les comptes GitHub par fédération.\nEn chemin, vous verrez passer tout ce que le cours a décrit : le flux par code d’autorisation, PKCE, le jeton d’identité, le jeton d’accès, les rôles, la séparation entre authentification et autorisation, la déconnexion globale. Le labo s’appuie sur les chapitres SSO et fédération et Les protocoles.",
+    "crumbs": [
+      "Labo",
+      "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/index.html#les-quatre-parties",
+    "href": "labo/index.html#les-quatre-parties",
+    "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
+    "section": "Les quatre parties",
+    "text": "Les quatre parties\n\n\nPartie 1 · 45 min\n\nUn client OIDC\nL’application s’appuie sur les comptes de Keycloak. Vous créez le realm, Marie et le client, puis vous observez le flux.\n\n\n\nPartie 2 · 30 min\n\nFédérer avec GitHub\nKeycloak fait confiance à GitHub et devient un courtier d’identité.\n\n\n\nPartie 3 · 20 min\n\nRôles et autorisation\nL’autorisation se décide dans l’application, à partir de ce que dit le jeton.\n\n\n\nPartie 4 · facultative\n\nAller plus loin\nPasskeys, durées de vie, casser pour comprendre, journaux.",
+    "crumbs": [
+      "Labo",
+      "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/index.html#ce-quil-vous-faut",
+    "href": "labo/index.html#ce-quil-vous-faut",
+    "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
+    "section": "Ce qu’il vous faut",
+    "text": "Ce qu’il vous faut\n\nDocker Desktop (ou Docker Engine avec le plugin compose), et 4 Go de mémoire libres.\nUn navigateur. Les ports 8080 (Keycloak) et 8000 (application) doivent être libres.\nPour la partie 2 : un compte GitHub (gratuit).\nAucun code à écrire. L’application est fournie, vous la configurez.\n\n\n\n\n\n\n\nAvertissementÀ faire avant de venir\n\n\n\nLe premier démarrage télécharge environ 700 Mo d’images. Faites la partie 0 chez vous, sur une bonne connexion.",
+    "crumbs": [
+      "Labo",
+      "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/index.html#obtenir-le-kit",
+    "href": "labo/index.html#obtenir-le-kit",
+    "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
+    "section": "Obtenir le kit",
+    "text": "Obtenir le kit\nLe kit se trouve dans le dossier labo/kit du dépôt du cours.\ngit clone https://github.com/VOTRE-COMPTE/cours-iam.git\ncd cours-iam/labo/kit\nSans Git : sur la page du dépôt, bouton Code puis Download ZIP.\n\n\n\n\n\n\n\nFichier\nContenu\n\n\n\n\ndocker-compose.yml\nKeycloak 26.7, PostgreSQL et l’application\n\n\n.env.example\nLes variables à copier dans .env (identifiant et secret du client OIDC)\n\n\napp/\nL’application cliente (Python, Flask et Authlib), environ 150 lignes commentées\n\n\nsolution/\nLe corrigé : un realm Keycloak prêt à importer",
+    "crumbs": [
+      "Labo",
+      "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/index.html#partie-0",
+    "href": "labo/index.html#partie-0",
+    "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
+    "section": "Partie 0 : démarrer (10 min)",
+    "text": "Partie 0 : démarrer (10 min)\ncp .env.example .env\ndocker compose up --build\nAttendez la ligne Keycloak 26.7.x ... started. Puis ouvrez :\n\nla console d’administration de Keycloak : http://localhost:8080 (admin / admin) ;\nl’application : http://localhost:8000.\n\nCliquez sur « Se connecter via Keycloak » dans l’application : vous obtenez une erreur. C’est normal, le realm caisse n’existe pas encore. Lisez le message d’erreur, il vous dit déjà quelque chose.\n\nQuestion 0. Dans docker-compose.yml, l’application connaît deux adresses pour Keycloak (OIDC_ISSUER et OIDC_INTERNAL_BASE). Pourquoi deux ? Laquelle apparaîtra dans le claim iss des jetons ?\n\nVous êtes prêt pour la partie 1.",
+    "crumbs": [
+      "Labo",
+      "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+    ]
+  },
+  {
+    "objectID": "labo/index.html#a-rendre",
+    "href": "labo/index.html#a-rendre",
+    "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
+    "section": "À rendre",
+    "text": "À rendre\nUn document de deux pages maximum :\n\nvos réponses aux questions 0 à 12 ;\nun schéma des acteurs et des flèches de la partie 2 (utilisateur, application, Keycloak, GitHub), en indiquant sur chaque flèche ce qui circule (code, jeton, mot de passe, preuve signée) et ce qui ne circule jamais.",
+    "crumbs": [
+      "Labo",
+      "Labo : fédérer une application avec Keycloak, puis avec GitHub"
+    ]
+  }
+]

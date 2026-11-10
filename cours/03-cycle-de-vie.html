@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Le cycle de vie de l’identité – Gestion des identités et des accès</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../cours/04-autorisation.html" rel="next">
+<link href="../cours/02-annuaires.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b81725c46a3aea20bed2a29e772cf43d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9ad465e2216e0f8be883a5fadc388cc7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b81725c46a3aea20bed2a29e772cf43d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2e387fdfcc7181d3ccba04b408976c9d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-1ceed9f3b2dbe81a9f10767909848bd9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-2e387fdfcc7181d3ccba04b408976c9d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Aller au contenu principal</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site web">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">IAM</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Basculer la navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../cours/index.html" aria-current="page"> 
+<span class="menu-text">Cours</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../exercices/index.html"> 
+<span class="menu-text">Exercices</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../labo/index.html"> 
+<span class="menu-text">Labo</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../glossaire.html"> 
+<span class="menu-text">Glossaire</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sources.html"> 
+<span class="menu-text">Sources</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre" aria-label="Basculer le mode sombre"><i class="bi"></i></button>
+</div>
+            <div id="quarto-search" class="" title="Recherche"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Barre d'outils">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Fil d'Ariane"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cours/01-bases.html">Une identité et ses droits</a></li><li class="breadcrumb-item"><a href="../cours/03-cycle-de-vie.html">Le cycle de vie de l’identité</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Section">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le cours</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Une identité et ses droits</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/01-bases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Les bases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/02-annuaires.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Où vivent les identités</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/03-cycle-de-vie.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Le cycle de vie de l’identité</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/04-autorisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L’autorisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/05-authentification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L’authentification</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Connecter, fédérer, gouverner</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/06-sso-federation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSO et fédération</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/07-protocoles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Les protocoles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/08-gouvernance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gouvernance et conformité</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/09-frontieres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Les frontières actuelles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/10-projet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mener un projet IAM</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cours/a-retenir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sept idées à emporter</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Sur cette page</h2>
+   
+  <ul>
+  <li><a href="#trois-moments-clés" id="toc-trois-moments-clés" class="nav-link active" data-scroll-target="#trois-moments-clés">Trois moments clés</a></li>
+  <li><a href="#création-larrivée-de-marie-étape-par-étape" id="toc-création-larrivée-de-marie-étape-par-étape" class="nav-link" data-scroll-target="#création-larrivée-de-marie-étape-par-étape">Création : l’arrivée de Marie, étape par étape</a></li>
+  <li><a href="#vie-demander-et-approuver-un-accès" id="toc-vie-demander-et-approuver-un-accès" class="nav-link" data-scroll-target="#vie-demander-et-approuver-un-accès">Vie : demander et approuver un accès</a></li>
+  <li><a href="#vie-le-changement-de-poste-où-les-droits-saccumulent" id="toc-vie-le-changement-de-poste-où-les-droits-saccumulent" class="nav-link" data-scroll-target="#vie-le-changement-de-poste-où-les-droits-saccumulent">Vie : le changement de poste, où les droits s’accumulent</a></li>
+  <li><a href="#suppression-le-départ-de-marie-étape-par-étape" id="toc-suppression-le-départ-de-marie-étape-par-étape" class="nav-link" data-scroll-target="#suppression-le-départ-de-marie-étape-par-étape">Suppression : le départ de Marie, étape par étape</a></li>
+  <li><a href="#où-en-est-votre-organisation-cinq-niveaux-de-maturité" id="toc-où-en-est-votre-organisation-cinq-niveaux-de-maturité" class="nav-link" data-scroll-target="#où-en-est-votre-organisation-cinq-niveaux-de-maturité">Où en est votre organisation ? Cinq niveaux de maturité</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Fil d'Ariane"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../cours/01-bases.html">Une identité et ses droits</a></li><li class="breadcrumb-item"><a href="../cours/03-cycle-de-vie.html">Le cycle de vie de l’identité</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Le cycle de vie de l’identité</h1>
+<p class="subtitle lead">Création, vie, suppression</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Chapitre 3</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="question-du-chapitre">
+<p>Les comptes de Marie sont créés, elle change de poste, elle part. C’est le chapitre qui a le plus d’impact sur la sécurité réelle, et il ne contient aucune cryptographie.</p>
+</div>
+<section id="trois-moments-clés" class="level2">
+<h2 class="anchored" data-anchor-id="trois-moments-clés">Trois moments clés</h2>
+<div class="etapes">
+<ol type="1">
+<li><strong>Recrutement.</strong> Création dans le logiciel RH. Rien n’existe encore côté informatique.</li>
+<li><strong>Création : l’arrivée</strong> (<em>joiner</em>). Ouverture des accès : compte, messagerie, droits du poste. Objectif : être opérationnel dès le premier jour.</li>
+<li><strong>Vie : le changement de poste</strong> (<em>mover</em>). Changement de fonction, de service, de site. Le point faible de toutes les organisations.</li>
+<li><strong>Vie : les événements.</strong> Demandes d’accès, congé maternité, suspension, longue absence, changement de nom, retour.</li>
+<li><strong>Suppression : le départ</strong> (<em>leaver</em>). Blocage immédiat des accès, puis suppression après le délai de conservation.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>La règle d’or
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Chaque étape doit être déclenchée par un événement dans le système RH, jamais par un e-mail envoyé au support.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Pourquoi « jamais par un e-mail »
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un chef de service écrit : « merci de donner à Paul les mêmes accès que Marie ». Paul hérite de douze ans d’accumulation de droits en une seule demande. C’est le cas le plus fréquent de tous.</p>
+</div>
+</div>
+</section>
+<section id="création-larrivée-de-marie-étape-par-étape" class="level2">
+<h2 class="anchored" data-anchor-id="création-larrivée-de-marie-étape-par-étape">Création : l’arrivée de Marie, étape par étape</h2>
+<p>Le 25 octobre, les RH saisissent le contrat de Marie. L’outil IGA crée l’identité, le compte Active Directory, la boîte e-mail et les accès du rôle « gestionnaire de prestations ». Le 1<sup>er</sup> novembre, Marie reçoit son mot de passe initial en main propre, le change, et enregistre sa passkey sur son téléphone professionnel.</p>
+<div class="etapes">
+<ol type="1">
+<li><strong>Saisie par les RH.</strong> Contrat, date de début, fonction, service, responsable. Pour un externe, il n’y a pas de RH : c’est le responsable interne qui saisit, avec une date de fin obligatoire.</li>
+<li><strong>Vérification de l’identité.</strong> Pièce d’identité contrôlée à l’engagement. C’est le seul moment où l’on vérifie le lien entre la personne réelle et son identité numérique (le niveau IAL du <a href="../cours/08-gouvernance.html">chapitre 8</a>).</li>
+<li><strong>Calcul des accès.</strong> L’outil IGA crée l’identité et déduit les accès du poste. Une approbation n’est demandée que pour ce qui sort du standard.</li>
+<li><strong>Création des comptes.</strong> Automatique dans les applications connectées (SCIM, connecteurs), ticket contrôlé pour les autres. Identifiant unique, jamais réutilisé après un départ.</li>
+<li><strong>Remise des identifiants.</strong> Mot de passe initial à usage unique, remis en personne ou par un canal séparé, changé à la première connexion. MFA ou passkey enregistré le premier jour, jamais par e-mail.</li>
+<li><strong>Jour 1.</strong> Marie est opérationnelle. Tout est journalisé et rattaché à son identité. Elle reçoit les consignes : phishing, et surtout comment récupérer son accès si elle perd son téléphone.</li>
+</ol>
+</div>
+<p>Quelques points d’attention :</p>
+<ul>
+<li><strong>Pour un prestataire externe, la vérification d’identité est souvent sautée.</strong> Personne ne vérifie qui est vraiment derrière <code>consultant3</code>. Et si on n’impose pas de date de fin à la saisie, personne ne déclenchera jamais le départ.</li>
+<li><strong>Mauvaise pratique très répandue :</strong> le mot de passe initial envoyé par e-mail à l’adresse personnelle, ou le même mot de passe initial pour tous (<code>Bienvenue2026!</code>).</li>
+<li><strong>Bonne pratique :</strong> un lien d’enrôlement à usage unique valable 24 heures, remis par le responsable, avec enregistrement de la passkey dans la foulée.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>À retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ce que le métier voit : le délai d’ouverture. Ce que la sécurité prépare dès ce jour : la suppression. Sans identifiant unique, sans source de référence et sans date de fin, il n’y aura pas de départ propre.</p>
+</div>
+</div>
+</section>
+<section id="vie-demander-et-approuver-un-accès" class="level2">
+<h2 class="anchored" data-anchor-id="vie-demander-et-approuver-un-accès">Vie : demander et approuver un accès</h2>
+<p>C’est le quotidien d’un outil IGA, et c’est ce que les utilisateurs voient de l’IAM.</p>
+<div class="etapes">
+<ol type="1">
+<li><strong>Demande en libre-service.</strong> L’utilisateur ou son responsable choisit dans un catalogue d’accès décrit en langage métier, avec une justification et une durée.</li>
+<li><strong>Approbation.</strong> Le responsable hiérarchique, puis le propriétaire de l’application pour les accès sensibles. Délégation pendant les absences, rappels automatiques.</li>
+<li><strong>Contrôle des conflits.</strong> L’outil vérifie que le nouvel accès ne crée pas une combinaison interdite, comme créer un fournisseur et le payer. Sinon : refus, ou dérogation documentée.</li>
+<li><strong>Attribution automatique.</strong> L’accès est créé dans l’application par le connecteur ou par SCIM. Tout est tracé : qui a demandé, qui a validé, quand.</li>
+<li><strong>Durée et retrait.</strong> Chaque accès a une date de fin ou passe par la revue des accès suivante. Un accès temporaire se retire tout seul.</li>
+</ol>
+</div>
+<p>Un catalogue lisible dit « Consulter les dossiers clients (lecture seule) » ou « Valider des paiements jusqu’à 10 000 CHF ». Un catalogue illisible dit <code>GRP_FIN_SAP_ZF02_RW</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>À retenir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si le catalogue est écrit en langage technique, personne ne sait quoi demander, et le responsable approuve « la même chose que Marie ». La qualité du catalogue fait la qualité du processus.</p>
+</div>
+</div>
+</section>
+<section id="vie-le-changement-de-poste-où-les-droits-saccumulent" class="level2">
+<h2 class="anchored" data-anchor-id="vie-le-changement-de-poste-où-les-droits-saccumulent">Vie : le changement de poste, où les droits s’accumulent</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Année</th>
+<th>Poste</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2014</td>
+<td>Comptabilité</td>
+</tr>
+<tr class="even">
+<td>2017</td>
+<td>Contrôle de gestion</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>Achats</td>
+</tr>
+<tr class="even">
+<td>2023</td>
+<td>Direction financière</td>
+</tr>
+<tr class="odd">
+<td>2026</td>
+<td>Cumul de tous les droits, que personne n’a décidé</td>
+</tr>
+</tbody>
+</table>
+<p>Chaque changement de poste ajoute des droits. Presque aucun n’en retire. Un collaborateur qui a changé cinq fois de service en douze ans détient les droits des cinq postes réunis. C’est, sans le dire, un compte à privilèges.</p>
+<p>Ce phénomène porte un nom : l’<strong>accumulation de droits</strong> (<em>privilege creep</em>). Elle transforme un utilisateur ordinaire en cible de grande valeur.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Exemple dans une banque
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une collaboratrice passée de la comptabilité aux achats puis à la direction financière pouvait à la fois créer un fournisseur, saisir une facture et valider le paiement. La séparation des tâches était respectée sur le papier pour chaque poste, pas pour la personne.</p>
+</div>
+</div>
+<p>Qui, dans votre organisation, retire les droits de l’ancien poste lors d’une mutation ? Le silence est la réponse habituelle.</p>
+</section>
+<section id="suppression-le-départ-de-marie-étape-par-étape" class="level2">
+<h2 class="anchored" data-anchor-id="suppression-le-départ-de-marie-étape-par-étape">Suppression : le départ de Marie, étape par étape</h2>
+<p>Dix ans plus tard, Marie part. Son contrat prend fin le 30 juin. À minuit, le fournisseur d’identité bloque la connexion et révoque ses sessions. Les comptes SaaS passent en « inactif » par SCIM. Le support reçoit la liste des trois applications non connectées. Son responsable reçoit la liste de ce qui a été fermé et récupère sa messagerie pour 30 jours.</p>
+<div class="etapes">
+<ol type="1">
+<li><strong>L’événement.</strong> Le départ vient du logiciel RH (date de fin) ou de la date de fin du contrat externe. Pour un départ immédiat (licenciement, soupçon), il faut une procédure d’urgence, en heures et non en jours.</li>
+<li><strong>Blocage.</strong> Désactivation de l’authentification au fournisseur d’identité, et révocation des sessions et jetons en cours. Un jeton signé reste valable jusqu’à son expiration (<a href="../cours/07-protocoles.html">chapitre 7</a>).</li>
+<li><strong>Comptes.</strong> Désactivation, pas suppression, dans chaque application : SCIM et connecteurs pour les applications connectées, liste contrôlée pour les autres. Badges et matériel récupérés.</li>
+<li><strong>Secrets partagés.</strong> Changement des mots de passe partagés, comptes de service et clés que Marie connaissait. Retrait de ses droits d’administration et de ses délégations.</li>
+<li><strong>Transfert.</strong> Messagerie, fichiers, rôles d’approbateur ou de propriétaire d’application réattribués à son responsable, avec une durée limitée.</li>
+<li><strong>Suppression définitive.</strong> Après le délai de conservation (obligations légales, LPD), suppression des données personnelles. Les journaux d’audit restent, avec un accès restreint.</li>
+</ol>
+</div>
+<ul>
+<li><strong>Le départ immédiat.</strong> Un administrateur est licencié un lundi matin. Si la procédure est « le flux RH tourne la nuit », il garde ses droits toute la journée.</li>
+<li><strong>Les secrets partagés sont l’angle mort.</strong> Le mot de passe du compte de service de sauvegarde, connu de toute l’équipe d’exploitation, inchangé depuis 2019, que chaque ancien collaborateur connaît encore.</li>
+<li><strong>Désactiver d’abord, supprimer ensuite.</strong> Supprimer immédiatement fait perdre les traces et les données que l’organisation doit conserver. Mais un compte désactivé gardé indéfiniment finit par être réactivé « temporairement » un jour.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>La mesure à suivre
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le délai entre la date de départ et la désactivation effective. Objectif : moins de 24 heures, et moins d’une heure pour un départ immédiat.</p>
+</div>
+</div>
+</section>
+<section id="où-en-est-votre-organisation-cinq-niveaux-de-maturité" class="level2">
+<h2 class="anchored" data-anchor-id="où-en-est-votre-organisation-cinq-niveaux-de-maturité">Où en est votre organisation ? Cinq niveaux de maturité</h2>
+<p>Ces étapes peuvent être faites à la main ou entièrement pilotées par les événements RH. Entre les deux, il y a des degrés. L’échelle utilisée ici est celle du CMMI.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 46%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Niveau</th>
+<th>Ce que l’on observe</th>
+<th>La question pour se situer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Initial</strong></td>
+<td>Comptes créés et fermés à la main, sur ticket ou e-mail. Pas d’inventaire. Le résultat dépend des personnes présentes.</td>
+<td>Qui crée un compte, et sur quelle base ? Si la réponse est « ça dépend », vous y êtes.</td>
+</tr>
+<tr class="even">
+<td><strong>2. Géré</strong></td>
+<td>Procédures d’arrivée et de départ écrites, formulaire de demande, responsables identifiés. Encore manuel, peu de traces.</td>
+<td>Y a-t-il une procédure écrite, suivie partout ?</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Défini</strong></td>
+<td>Source RH de référence, annuaire central, rôles métier, fédération et SCIM pour les applications principales. Revue annuelle.</td>
+<td>Le flux RH alimente-t-il automatiquement l’annuaire et les applications principales ?</td>
+</tr>
+<tr class="even">
+<td><strong>4. Mesuré</strong></td>
+<td>Délai de fermeture, taux de retrait, comptes orphelins, couverture MFA et SCIM mesurés chaque mois. PAM en place.</td>
+<td>Connaissez-vous votre délai médian de fermeture des accès le mois dernier ?</td>
+</tr>
+<tr class="odd">
+<td><strong>5. Optimisé</strong></td>
+<td>Chaque événement RH déclenche création, modification et fermeture. Zéro droit permanent, réévaluation continue.</td>
+<td>Un incident ou un audit a-t-il modifié le dispositif dans les douze derniers mois ?</td>
+</tr>
+</tbody>
+</table>
+<p>La plupart des organisations se situent entre 2 et 3. Le passage de 3 à 4 est celui qui change la sécurité : on commence à mesurer le délai de fermeture des accès, et plus seulement le délai d’ouverture.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Le manuel n’est pas gratuit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Il est juste payé par le support informatique plutôt que par le projet. Une organisation de 600 personnes avec 15 % de rotation, c’est environ 90 arrivées et 90 départs par an, plus les mutations. À 20 tickets par personne, cela fait 3 000 à 4 000 tickets manuels par an.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Références
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>ISO 27001:2022 A.5.16 (gestion des identités), A.5.17 (informations d’authentification), A.5.18 (droits d’accès) et A.6.5 (responsabilités après la fin du contrat). CMMI Institute, CMMI V3.0 (2023).</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Retour au sommet</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Basculer le mode sombre");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Basculer le mode sombre");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ruchg1337\.github\.io\/cours-iam\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Code défilable","output":"Sortie défilable"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
+  <div class="nav-page nav-page-previous">
+      <a href="../cours/02-annuaires.html" class="pagination-link" aria-label="Où vivent les identités">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Où vivent les identités</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../cours/04-autorisation.html" class="pagination-link" aria-label="L'autorisation">
+        <span class="nav-page-text">L’autorisation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Grégory Ruch</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Édition 2026</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
