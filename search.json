@@ -1352,7 +1352,7 @@
     "href": "labo/index.html#obtenir-le-kit",
     "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
     "section": "Obtenir le kit",
-    "text": "Obtenir le kit\nLe kit se trouve dans le dossier labo/kit du dépôt du cours.\ngit clone https://github.com/VOTRE-COMPTE/cours-iam.git\ncd cours-iam/labo/kit\nSans Git : sur la page du dépôt, bouton Code puis Download ZIP.\n\n\n\n\n\n\n\nFichier\nContenu\n\n\n\n\ndocker-compose.yml\nKeycloak 26.7, PostgreSQL et l’application\n\n\n.env.example\nLes variables à copier dans .env (identifiant et secret du client OIDC)\n\n\napp/\nL’application cliente (Python, Flask et Authlib), environ 150 lignes commentées\n\n\nsolution/\nLe corrigé : un realm Keycloak prêt à importer",
+    "text": "Obtenir le kit\nLe kit se trouve dans le dossier labo/kit du dépôt du cours.\ngit clone https://github.com/ruchg1337/cours-iam.git\ncd cours-iam/labo/kit\nSans Git : sur la page du dépôt, bouton Code puis Download ZIP.\n\n\n\n\n\n\n\nFichier\nContenu\n\n\n\n\ndocker-compose.yml\nKeycloak 26.7, PostgreSQL et l’application\n\n\n.env.example\nLes variables à copier dans .env (identifiant et secret du client OIDC)\n\n\napp/\nL’application cliente (Python, Flask et Authlib), environ 150 lignes commentées\n\n\nsolution/\nLe corrigé : un realm Keycloak prêt à importer",
     "crumbs": [
       "Labo",
       "Labo : fédérer une application avec Keycloak, puis avec GitHub"
