@@ -1,6 +1,6 @@
 ---
 title: "Labo : fédérer une application avec Keycloak, puis avec GitHub"
-subtitle: "Environ 2 heures pour les parties 1 à 3, une heure de plus avec la partie 4"
+subtitle: "Environ une heure pour les parties 0 à 3, une demi-heure de plus avec la partie 4"
 ---
 
 ::: {.question-du-chapitre}
@@ -20,7 +20,7 @@ autorisation, la déconnexion globale. Le labo s'appuie sur les chapitres
 
 ::: {.cartes .deux}
 ::: {.carte}
-[Partie 1 · 45 min]{.num}
+[Partie 1 · 25 min]{.num}
 
 ### [Un client OIDC](1-client-oidc.qmd)
 L'application s'appuie sur les comptes de Keycloak. Vous créez le realm, Marie et le client, puis
@@ -28,14 +28,14 @@ vous observez le flux.
 :::
 
 ::: {.carte}
-[Partie 2 · 30 min]{.num}
+[Partie 2 · 15 min]{.num}
 
 ### [Fédérer avec GitHub](2-federation-github.qmd)
 Keycloak fait confiance à GitHub et devient un courtier d'identité.
 :::
 
 ::: {.carte}
-[Partie 3 · 20 min]{.num}
+[Partie 3 · 15 min]{.num}
 
 ### [Rôles et autorisation](3-roles.qmd)
 L'autorisation se décide dans l'application, à partir de ce que dit le jeton.
@@ -76,10 +76,10 @@ Sans Git : sur la page du dépôt, bouton **Code** puis **Download ZIP**.
 |---|---|
 | `docker-compose.yml` | Keycloak {{< var keycloak >}}, PostgreSQL et l'application |
 | `.env.example` | Les variables à copier dans `.env` (identifiant et secret du client OIDC) |
-| `app/` | L'application cliente (Python, Flask et Authlib), environ 150 lignes commentées |
+| `app/` | L'application cliente (Python, Flask et Authlib, dépendances gérées par uv), environ 150 lignes commentées |
 | `solution/` | Le corrigé : un realm Keycloak prêt à importer |
 
-## Partie 0 : démarrer (10 min) {#partie-0}
+## Partie 0 : démarrer (5 min) {#partie-0}
 
 ```bash
 cp .env.example .env

@@ -1,6 +1,6 @@
 ---
 title: "Partie 1 : un client OIDC"
-subtitle: "L'application s'appuie sur les comptes de Keycloak (45 min)"
+subtitle: "L'application s'appuie sur les comptes de Keycloak (25 min)"
 categories: ["Labo"]
 ---
 

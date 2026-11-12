@@ -4,10 +4,10 @@
 
 | Partie | Durée | Mode |
 |---|---|---|
-| 0 : démarrage | 10 min | individuel, à faire avant la séance si possible (téléchargement des images) |
-| 1 : client OIDC avec les comptes Keycloak | 45 min | binômes |
-| 2 : fédération GitHub | 30 min | binômes (un compte GitHub par binôme suffit) |
-| 3 : rôles et autorisation | 20 min | binômes |
+| 0 : démarrage | 5 min | individuel, à faire avant la séance si possible (téléchargement des images) |
+| 1 : client OIDC avec les comptes Keycloak | 25 min | binômes |
+| 2 : fédération GitHub | 15 min | binômes (un compte GitHub par binôme suffit) |
+| 3 : rôles et autorisation | 15 min | binômes |
 | 4 : facultatif | à la maison | individuel |
 
 Le realm complet (sans les secrets GitHub) est dans `caisse-realm.json`. Comptes : `mdupont` / `Marie2026!`

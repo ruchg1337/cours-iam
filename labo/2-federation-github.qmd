@@ -1,6 +1,6 @@
 ---
 title: "Partie 2 : fédérer avec GitHub"
-subtitle: "Keycloak fait confiance à GitHub (30 min)"
+subtitle: "Keycloak fait confiance à GitHub (15 min)"
 categories: ["Labo"]
 ---
 

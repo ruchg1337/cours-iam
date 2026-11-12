@@ -1,6 +1,6 @@
 ---
 title: "Partie 3 : rôles et autorisation"
-subtitle: "L'autorisation se décide dans l'application (20 min)"
+subtitle: "L'autorisation se décide dans l'application (15 min)"
 categories: ["Labo"]
 ---
 
