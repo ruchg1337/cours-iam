@@ -400,7 +400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#les-quatre-parties" id="toc-les-quatre-parties" class="nav-link active" data-scroll-target="#les-quatre-parties">Les quatre parties</a></li>
   <li><a href="#ce-quil-vous-faut" id="toc-ce-quil-vous-faut" class="nav-link" data-scroll-target="#ce-quil-vous-faut">Ce qu’il vous faut</a></li>
   <li><a href="#obtenir-le-kit" id="toc-obtenir-le-kit" class="nav-link" data-scroll-target="#obtenir-le-kit">Obtenir le kit</a></li>
-  <li><a href="#partie-0" id="toc-partie-0" class="nav-link" data-scroll-target="#partie-0">Partie 0 : démarrer (10 min)</a></li>
+  <li><a href="#partie-0" id="toc-partie-0" class="nav-link" data-scroll-target="#partie-0">Partie 0 : démarrer (5 min)</a></li>
   <li><a href="#synthese" id="toc-synthese" class="nav-link" data-scroll-target="#synthese">Synthèse</a></li>
   </ul>
 </nav>
@@ -412,7 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Labo : fédérer une application avec Keycloak, puis avec GitHub</h1>
-<p class="subtitle lead">Environ 2 heures pour les parties 1 à 3, une heure de plus avec la partie 4</p>
+<p class="subtitle lead">Environ une heure pour les parties 0 à 3, une demi-heure de plus avec la partie 4</p>
 </div>
 
 
@@ -438,21 +438,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="les-quatre-parties">Les quatre parties</h2>
 <div class="cartes deux">
 <div class="carte">
-<p><span class="num">Partie 1 · 45 min</span></p>
+<p><span class="num">Partie 1 · 25 min</span></p>
 <section id="un-client-oidc" class="level3">
 <h3 class="anchored" data-anchor-id="un-client-oidc"><a href="../labo/1-client-oidc.html">Un client OIDC</a></h3>
 <p>L’application s’appuie sur les comptes de Keycloak. Vous créez le realm, Marie et le client, puis vous observez le flux.</p>
 </section>
 </div>
 <div class="carte">
-<p><span class="num">Partie 2 · 30 min</span></p>
+<p><span class="num">Partie 2 · 15 min</span></p>
 <section id="fédérer-avec-github" class="level3">
 <h3 class="anchored" data-anchor-id="fédérer-avec-github"><a href="../labo/2-federation-github.html">Fédérer avec GitHub</a></h3>
 <p>Keycloak fait confiance à GitHub et devient un courtier d’identité.</p>
 </section>
 </div>
 <div class="carte">
-<p><span class="num">Partie 3 · 20 min</span></p>
+<p><span class="num">Partie 3 · 15 min</span></p>
 <section id="rôles-et-autorisation" class="level3">
 <h3 class="anchored" data-anchor-id="rôles-et-autorisation"><a href="../labo/3-roles.html">Rôles et autorisation</a></h3>
 <p>L’autorisation se décide dans l’application, à partir de ce que dit le jeton.</p>
@@ -517,7 +517,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="odd">
 <td><code>app/</code></td>
-<td>L’application cliente (Python, Flask et Authlib), environ 150 lignes commentées</td>
+<td>L’application cliente (Python, Flask et Authlib, dépendances gérées par uv), environ 150 lignes commentées</td>
 </tr>
 <tr class="even">
 <td><code>solution/</code></td>
@@ -527,7 +527,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </section>
 <section id="partie-0" class="level2">
-<h2 class="anchored" data-anchor-id="partie-0">Partie 0 : démarrer (10 min)</h2>
+<h2 class="anchored" data-anchor-id="partie-0">Partie 0 : démarrer (5 min)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> .env.example .env</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">--build</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Attendez la ligne <code>Keycloak 26.7.x ... started</code>. Puis ouvrez :</p>

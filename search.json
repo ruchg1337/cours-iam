@@ -1330,7 +1330,7 @@
     "href": "labo/index.html#les-quatre-parties",
     "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
     "section": "Les quatre parties",
-    "text": "Les quatre parties\n\n\nPartie 1 · 45 min\n\nUn client OIDC\nL’application s’appuie sur les comptes de Keycloak. Vous créez le realm, Marie et le client, puis vous observez le flux.\n\n\n\nPartie 2 · 30 min\n\nFédérer avec GitHub\nKeycloak fait confiance à GitHub et devient un courtier d’identité.\n\n\n\nPartie 3 · 20 min\n\nRôles et autorisation\nL’autorisation se décide dans l’application, à partir de ce que dit le jeton.\n\n\n\nPartie 4 · facultative\n\nAller plus loin\nPasskeys, durées de vie, casser pour comprendre, journaux.",
+    "text": "Les quatre parties\n\n\nPartie 1 · 25 min\n\nUn client OIDC\nL’application s’appuie sur les comptes de Keycloak. Vous créez le realm, Marie et le client, puis vous observez le flux.\n\n\n\nPartie 2 · 15 min\n\nFédérer avec GitHub\nKeycloak fait confiance à GitHub et devient un courtier d’identité.\n\n\n\nPartie 3 · 15 min\n\nRôles et autorisation\nL’autorisation se décide dans l’application, à partir de ce que dit le jeton.\n\n\n\nPartie 4 · facultative\n\nAller plus loin\nPasskeys, durées de vie, casser pour comprendre, journaux.",
     "crumbs": [
       "Labo",
       "Labo : fédérer une application avec Keycloak, puis avec GitHub"
@@ -1352,7 +1352,7 @@
     "href": "labo/index.html#obtenir-le-kit",
     "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
     "section": "Obtenir le kit",
-    "text": "Obtenir le kit\nLe kit se trouve dans le dossier labo/kit du dépôt du cours.\ngit clone https://github.com/ruchg1337/cours-iam.git\ncd cours-iam/labo/kit\nSans Git : sur la page du dépôt, bouton Code puis Download ZIP.\n\n\n\n\n\n\n\nFichier\nContenu\n\n\n\n\ndocker-compose.yml\nKeycloak 26.7, PostgreSQL et l’application\n\n\n.env.example\nLes variables à copier dans .env (identifiant et secret du client OIDC)\n\n\napp/\nL’application cliente (Python, Flask et Authlib), environ 150 lignes commentées\n\n\nsolution/\nLe corrigé : un realm Keycloak prêt à importer",
+    "text": "Obtenir le kit\nLe kit se trouve dans le dossier labo/kit du dépôt du cours.\ngit clone https://github.com/ruchg1337/cours-iam.git\ncd cours-iam/labo/kit\nSans Git : sur la page du dépôt, bouton Code puis Download ZIP.\n\n\n\n\n\n\n\nFichier\nContenu\n\n\n\n\ndocker-compose.yml\nKeycloak 26.7, PostgreSQL et l’application\n\n\n.env.example\nLes variables à copier dans .env (identifiant et secret du client OIDC)\n\n\napp/\nL’application cliente (Python, Flask et Authlib, dépendances gérées par uv), environ 150 lignes commentées\n\n\nsolution/\nLe corrigé : un realm Keycloak prêt à importer",
     "crumbs": [
       "Labo",
       "Labo : fédérer une application avec Keycloak, puis avec GitHub"
@@ -1362,8 +1362,8 @@
     "objectID": "labo/index.html#partie-0",
     "href": "labo/index.html#partie-0",
     "title": "Labo : fédérer une application avec Keycloak, puis avec GitHub",
-    "section": "Partie 0 : démarrer (10 min)",
-    "text": "Partie 0 : démarrer (10 min)\ncp .env.example .env\ndocker compose up --build\nAttendez la ligne Keycloak 26.7.x ... started. Puis ouvrez :\n\nla console d’administration de Keycloak : http://localhost:8080 (admin / admin) ;\nl’application : http://localhost:8000.\n\nCliquez sur « Se connecter via Keycloak » dans l’application : vous obtenez une erreur. C’est normal, le realm caisse n’existe pas encore. Lisez le message d’erreur, il vous dit déjà quelque chose.\n\nQuestion 0. Dans docker-compose.yml, l’application connaît deux adresses pour Keycloak (OIDC_ISSUER et OIDC_INTERNAL_BASE). Pourquoi deux ? Laquelle apparaîtra dans le claim iss des jetons ?\n\nVous êtes prêt pour la partie 1.",
+    "section": "Partie 0 : démarrer (5 min)",
+    "text": "Partie 0 : démarrer (5 min)\ncp .env.example .env\ndocker compose up --build\nAttendez la ligne Keycloak 26.7.x ... started. Puis ouvrez :\n\nla console d’administration de Keycloak : http://localhost:8080 (admin / admin) ;\nl’application : http://localhost:8000.\n\nCliquez sur « Se connecter via Keycloak » dans l’application : vous obtenez une erreur. C’est normal, le realm caisse n’existe pas encore. Lisez le message d’erreur, il vous dit déjà quelque chose.\n\nQuestion 0. Dans docker-compose.yml, l’application connaît deux adresses pour Keycloak (OIDC_ISSUER et OIDC_INTERNAL_BASE). Pourquoi deux ? Laquelle apparaîtra dans le claim iss des jetons ?\n\nVous êtes prêt pour la partie 1.",
     "crumbs": [
       "Labo",
       "Labo : fédérer une application avec Keycloak, puis avec GitHub"
