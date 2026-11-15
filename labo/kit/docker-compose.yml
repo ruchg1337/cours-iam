@@ -42,6 +42,9 @@ services:
       # les URL de "backchannel" (token, jwks) sont alors résolues dynamiquement.
       KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
       KC_HTTP_ENABLED: "true"
+      # Ouvre /health/ready sur le port de gestion 9000 : sans lui, le healthcheck ci-dessous
+      # échoue toujours et l'application (qui attend Keycloak "healthy") ne démarre jamais.
+      KC_HEALTH_ENABLED: "true"
     ports:
       - "8080:8080"
     depends_on:
