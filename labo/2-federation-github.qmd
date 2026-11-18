@@ -47,7 +47,7 @@ et le Client secret de l'étape 2.1 → **Add**.
 `source` = `keycloak` (**Users → mdupont → Attributes**).
 
 **Transmettre cet attribut à l'application.** Il faut un mapper côté client : **Clients →
-app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User
+app-prestations → Client scopes → app-prestations-dedicated → Configure a new mapper → User
 Attribute** :
 
 | Champ | Valeur |

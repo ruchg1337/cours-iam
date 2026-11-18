@@ -8,7 +8,7 @@ Assurez-vous d'avoir fait la [partie 0](index.qmd#partie-0) : Keycloak et l'appl
 
 ## 1.1 Créer le realm
 
-Dans la console d'administration, menu déroulant en haut à gauche → **Create realm** → nom
+Dans la console d'administration, menu de gauche → **Manage realms** → **Create realm** → nom
 `caisse` → **Create**.
 
 Un realm est un espace d'identités isolé : ses utilisateurs, ses clients, ses rôles, ses clés de

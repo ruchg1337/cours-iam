@@ -14,7 +14,8 @@ d'identité**.
    jeton d'identité ». Par défaut, Keycloak met les rôles dans le jeton d'accès, pas dans le jeton
    d'identité.
 4. **Clients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By
-   configuration → User Realm Role** : Name `roles`, Token Claim Name `realm_access.roles`,
+   configuration → User Realm Role** (si la liste des mappers est vide, le bouton s'appelle
+   **Configure a new mapper**) : Name `roles`, Token Claim Name `realm_access.roles`,
    Multivalued : On, Add to ID token : On → **Save**.
 5. Déconnexion, reconnexion : « Valider des rentes » s'ouvre. Faites la même chose avec votre
    compte GitHub, sans le rôle : 403.
