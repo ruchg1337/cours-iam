@@ -394,7 +394,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Realm roles → Create role</strong> : <code>gestionnaire-prestations</code>.</li>
 <li><strong>Users → mdupont → Role mapping → Assign role</strong> → cochez le rôle (filtrez sur « realm roles »).</li>
 <li>Reconnectez-vous avec Marie et regardez Mon profil : la ligne « Rôles » dit toujours « absent du jeton d’identité ». Par défaut, Keycloak met les rôles dans le jeton d’accès, pas dans le jeton d’identité.</li>
-<li><strong>Clients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User Realm Role</strong> : Name <code>roles</code>, Token Claim Name <code>realm_access.roles</code>, Multivalued : On, Add to ID token : On → <strong>Save</strong>.</li>
+<li><strong>Clients → app-prestations → Client scopes → app-prestations-dedicated → Add mapper → By configuration → User Realm Role</strong> (si la liste des mappers est vide, le bouton s’appelle <strong>Configure a new mapper</strong>) : Name <code>roles</code>, Token Claim Name <code>realm_access.roles</code>, Multivalued : On, Add to ID token : On → <strong>Save</strong>.</li>
 <li>Déconnexion, reconnexion : « Valider des rentes » s’ouvre. Faites la même chose avec votre compte GitHub, sans le rôle : 403.</li>
 </ol>
 </div>
