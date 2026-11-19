@@ -1,0 +1,203 @@
+/*-- scss:defaults --*/
+
+// Même palette et mêmes polices que le site (styles/theme.scss).
+$encre:      #17252e;
+$sarcelle:   #0f5964;
+$ambre:      #c8651b;
+$papier:     #fbfaf6;
+$trait:      #e4e0d6;
+$doux:       #5c6b73;
+
+// Teintes de fond des slides, une par rôle du PowerPoint d'origine :
+// carte neutre (gris), carte mise en avant (bleu clair), bandeau (pêche).
+$fond-carte:   #f0ece3;
+$fond-avant:   #e4efed;
+$fond-bandeau: #f8e6d7;
+$fleche:       #b3aca0;
+
+$body-bg:    $papier;
+$body-color: $encre;
+$link-color: $sarcelle;
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$presentation-heading-font: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+$presentation-heading-color: $encre;
+$presentation-heading-font-weight: 700;
+$presentation-font-size-root: 21px;
+$presentation-line-height: 1.35;
+$presentation-h2-font-size: 46px;
+$presentation-h3-font-size: 21px;
+
+/*-- scss:rules --*/
+
+// Grille reprise du PowerPoint (1280 × 720) : marges de 128 px, surtitre à 60 px,
+// titre à 92 px, contenu de 182 px à 636 px, pied de page sous 660 px.
+.reveal .slides > section,
+.reveal .slides > section > section {
+  box-sizing: border-box;
+  height: 720px;
+  padding: 0;
+}
+
+// Fine barre de couleur en haut de chaque slide, comme dans l'original.
+.reveal .slides > section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: $sarcelle;
+}
+
+.reveal .surtitre {
+  position: absolute;
+  top: 70px; left: 128px; right: 128px;
+  margin: 0;
+  color: $doux;
+  font-size: 14px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+}
+
+.reveal .slides section h2 {
+  position: absolute;
+  top: 104px; left: 128px; right: 128px;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.reveal .cadre {
+  position: absolute;
+  top: 182px; left: 128px; right: 128px;
+  height: 454px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 21px;
+}
+.reveal .cadre > * { margin: 0; }
+.reveal .cadre p { margin: 0; }
+
+// Bandeau du bas : la phrase à retenir.
+.reveal .bandeau {
+  margin-top: auto;
+  min-height: 79px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: $fond-bandeau;
+  border-radius: 10px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+.reveal .bandeau p { margin: 0; }
+.reveal .cadre .bandeau { font-size: 19.6px; }
+
+// Grilles de cartes
+.reveal .grille {
+  display: grid;
+  gap: 26px;
+  flex: 1;
+  min-height: 0;
+}
+.reveal .grille.c2 { grid-template-columns: repeat(2, 1fr); }
+.reveal .grille.c3 { grid-template-columns: repeat(3, 1fr); }
+
+.reveal .carte {
+  background: $fond-carte;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  min-height: 0;
+}
+.reveal .carte.avant { background: $fond-avant; }
+// En-tête de carte : pastille éventuelle et titre, sur une ligne.
+.reveal .carte .tete {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 21.3px;
+  line-height: 1.2;
+}
+.reveal .carte p:has(> .tete) { margin-bottom: 12px; }
+.reveal .carte p { margin: 0 0 .5em; font-size: 18.7px; line-height: 1.35; }
+.reveal .carte p:last-child { margin-bottom: 0; }
+.reveal .carte.retenir .tete { color: $sarcelle; }
+.reveal .carte.retenir p { color: $ambre; font-weight: 700; }
+
+// Pastille ronde (lettre, chiffre ou symbole) en tête de carte.
+.reveal .pastille {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: $sarcelle;
+  color: #fff;
+  font-family: $font-family-sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+// Schémas SVG : ils occupent la largeur du cadre.
+.reveal .cadre .quarto-figure, .reveal .cadre figure, .reveal .cadre p:has(> img.schema) { margin: 0; }
+.reveal img.schema { display: block; width: 100%; height: auto; margin: 0; max-width: none; max-height: none; }
+
+// Slides de séparation (partie, chapitre)
+.reveal .slides section.separateur h2 {
+  top: 352px;
+  font-size: 50px;
+}
+.reveal .separateur .numero {
+  position: absolute;
+  top: 218px; left: 128px;
+  margin: 0;
+  color: $sarcelle;
+  font-family: $presentation-heading-font;
+  font-weight: 700;
+  font-size: 117px;
+  line-height: 1;
+}
+.reveal .separateur.partie .numero { font-size: 78px; top: 232px; }
+.reveal .separateur .sous-titre {
+  position: absolute;
+  top: 444px; left: 128px; right: 128px;
+  margin: 0;
+  color: $doux;
+  font-size: 25px;
+}
+.reveal .separateur .bandeau {
+  position: absolute;
+  top: 494px; left: 128px; right: 128px;
+  min-height: 64px;
+  font-size: 22px;
+}
+.reveal .fil-rouge { color: $ambre; font-weight: 700; font-style: normal; }
+.reveal .separateur .bandeau em { font-style: italic; }
+
+// Pied de page : titre du chapitre (lien vers le chapitre du cours) et numéro de slide.
+// Le pied de page et le numéro sont placés par rapport à la fenêtre (pas à la slide) :
+// les marges en vw reprennent les 10 % de marge latérale du PowerPoint.
+.reveal .footer {
+  box-sizing: border-box;
+  padding-left: 10vw;
+  text-align: left !important;
+  font-size: 16px;
+  color: $doux;
+}
+.reveal .footer a { color: $doux; text-decoration: none; }
+.reveal .footer a:hover { color: $sarcelle; text-decoration: underline; }
+.reveal .slide-number {
+  right: 10vw !important;
+  left: auto !important;
+  bottom: 18px !important;
+  background: transparent;
+  color: $doux;
+  font-size: 16px;
+}
+.reveal .controls { color: $sarcelle; }
+.reveal .progress { color: $ambre; height: 4px; }

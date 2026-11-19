@@ -1,0 +1,19 @@
+---
+title: "Les slides"
+subtitle: "Un deck par chapitre, à projeter ou à suivre depuis son écran"
+---
+
+Chaque deck s'ouvre dans le navigateur. La flèche droite avance d'une slide, `F` passe en plein
+écran, `Échap` affiche la vue d'ensemble. Le pied de page de chaque slide renvoie au chapitre
+correspondant du cours.
+
+## Partie 1 : une identité et ses droits
+
+::: {.cartes}
+::: {.carte}
+[01]{.num}
+
+### [Les bases](slides/01-bases.qmd)
+Vocabulaire, les quatre questions, la carte du domaine.
+:::
+:::

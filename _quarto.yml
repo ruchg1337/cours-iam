@@ -24,6 +24,8 @@ website:
         href: exercices/index.qmd
       - text: "Labo"
         href: labo/index.qmd
+      - text: "Slides"
+        href: slides.qmd
     right:
       - text: "Glossaire"
         href: glossaire.qmd
@@ -68,6 +70,15 @@ website:
         - labo/3-roles.qmd
         - labo/4-aller-plus-loin.qmd
         - labo/depannage.qmd
+    - id: slides
+      title: "Slides"
+      style: floating
+      contents:
+        - slides.qmd
+        - section: "Une identité et ses droits"
+          contents:
+            - text: "01 · Les bases"
+              href: slides/01-bases.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"

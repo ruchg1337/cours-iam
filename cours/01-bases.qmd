@@ -2,6 +2,10 @@
 title: "Les bases"
 subtitle: "Vocabulaire, les quatre questions, la carte du domaine"
 categories: ["Chapitre 1"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/01-bases.html
 ---
 
 ::: {.question-du-chapitre}

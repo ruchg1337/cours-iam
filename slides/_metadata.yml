@@ -1,0 +1,22 @@
+# Configuration commune à tous les decks du dossier slides/.
+# Chaque deck ne déclare que son titre de page et son pied de page.
+format:
+  revealjs:
+    theme: [default, ../styles/slides.scss]
+    width: 1280
+    height: 720
+    margin: 0
+    center: false
+    navigation-mode: linear
+    controls: true
+    controls-layout: bottom-right
+    progress: true
+    slide-number: c/t
+    show-slide-number: all
+    hash: true
+    transition: none
+    background-transition: none
+    menu: false
+    preview-links: false
+    link-external-newwindow: true
+    lang: fr
