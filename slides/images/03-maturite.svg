@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="128 181 1024 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" fill="#17252e">
+  <title>Cinq niveaux de maturité (CMMI) en escalier : initial, géré, défini, mesuré, optimisé</title>
+
+  <!-- 1. Initial -->
+  <rect x="128" y="290" width="192" height="108" rx="10" fill="#e4efed"/>
+  <circle cx="162" cy="322" r="19" fill="#0f5964"/>
+  <text x="162" y="328.4" text-anchor="middle" font-size="17.8" font-weight="700" fill="#fff">1</text>
+  <text x="189" y="328.7" font-size="18.7" font-weight="700">Initial</text>
+  <text x="143" y="375" font-size="16" font-style="italic">Au cas par cas</text>
+  <text font-size="16">
+    <tspan x="128" y="430">Comptes créés et fermés</tspan>
+    <tspan x="128" y="449">à la main, sur ticket ou</tspan>
+    <tspan x="128" y="468">e-mail. Pas d'inventaire.</tspan>
+    <tspan x="128" y="487">Le résultat dépend des</tspan>
+    <tspan x="128" y="506">personnes présentes.</tspan>
+  </text>
+
+  <!-- 2. Géré -->
+  <rect x="335" y="263" width="192" height="136" rx="10" fill="#e4efed"/>
+  <circle cx="370" cy="295" r="19" fill="#0f5964"/>
+  <text x="370" y="301.4" text-anchor="middle" font-size="17.8" font-weight="700" fill="#fff">2</text>
+  <text x="397" y="301.7" font-size="18.7" font-weight="700">Géré</text>
+  <text x="351" y="348" font-size="16" font-style="italic">Processus répétables</text>
+  <text font-size="15.1">
+    <tspan x="335" y="430">Procédures d'arrivée et de</tspan>
+    <tspan x="335" y="448">départ écrites, formulaire</tspan>
+    <tspan x="335" y="466">de demande, responsables</tspan>
+    <tspan x="335" y="484">identifiés. Encore manuel,</tspan>
+    <tspan x="335" y="502">peu de traces.</tspan>
+  </text>
+
+  <!-- 3. Défini -->
+  <rect x="543" y="236" width="192" height="163" rx="10" fill="#e4efed"/>
+  <circle cx="578" cy="267" r="19" fill="#0f5964"/>
+  <text x="578" y="273.4" text-anchor="middle" font-size="17.8" font-weight="700" fill="#fff">3</text>
+  <text x="605" y="273.7" font-size="18.7" font-weight="700">Défini</text>
+  <text x="559" y="321" font-size="16" font-style="italic">Standardisé et outillé</text>
+  <text font-size="15.1">
+    <tspan x="543" y="430">Source RH de référence,</tspan>
+    <tspan x="543" y="448">annuaire central, rôles</tspan>
+    <tspan x="543" y="466">métier, fédération et SCIM</tspan>
+    <tspan x="543" y="484">pour les applications</tspan>
+    <tspan x="543" y="502">principales. Revue</tspan>
+    <tspan x="543" y="520">annuelle.</tspan>
+  </text>
+
+  <!-- 4. Mesuré -->
+  <rect x="751" y="208" width="192" height="190" rx="10" fill="#e4efed"/>
+  <circle cx="785" cy="240" r="19" fill="#0f5964"/>
+  <text x="785" y="246.4" text-anchor="middle" font-size="17.8" font-weight="700" fill="#fff">4</text>
+  <text x="813" y="246.7" font-size="18.7" font-weight="700">Mesuré</text>
+  <text font-size="16" font-style="italic">
+    <tspan x="766" y="294">Piloté par les</tspan>
+    <tspan x="766" y="314">indicateurs</tspan>
+  </text>
+  <text font-size="16">
+    <tspan x="751" y="430">Délai de fermeture, taux</tspan>
+    <tspan x="751" y="449">de retrait, comptes</tspan>
+    <tspan x="751" y="468">orphelins, couverture</tspan>
+    <tspan x="751" y="487">MFA et SCIM mesurés</tspan>
+    <tspan x="751" y="506">chaque mois. PAM en</tspan>
+    <tspan x="751" y="525">place.</tspan>
+  </text>
+
+  <!-- 5. Optimisé (mis en avant) -->
+  <rect x="959" y="181" width="192" height="217" rx="10" fill="#0f5964"/>
+  <circle cx="993" cy="213" r="19" fill="#fff"/>
+  <text x="993" y="219.4" text-anchor="middle" font-size="17.8" font-weight="700" fill="#0f5964">5</text>
+  <text x="1020" y="219.7" font-size="18.7" font-weight="700" fill="#fff">Optimisé</text>
+  <text x="974" y="267" font-size="16" font-style="italic" fill="#fff">Amélioration continue</text>
+  <text font-size="15.1">
+    <tspan x="959" y="430">Chaque événement RH</tspan>
+    <tspan x="959" y="448">déclenche création,</tspan>
+    <tspan x="959" y="466">modification et fermeture.</tspan>
+    <tspan x="959" y="484">Zéro droit permanent,</tspan>
+    <tspan x="959" y="502">réévaluation continue.</tspan>
+    <tspan x="959" y="520">Amélioration à chaque</tspan>
+    <tspan x="959" y="538">audit.</tspan>
+  </text>
+</svg>

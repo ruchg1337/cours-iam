@@ -199,6 +199,7 @@ $presentation-h3-font-size: 21px;
 .reveal .cadre .etapes li {
   position: relative;
   min-height: var(--pastille);
+  margin: 0;
   padding-left: calc(var(--pastille) + 16px);
   font-size: var(--corps);
   line-height: 1.32;

@@ -2,6 +2,10 @@
 title: "Le cycle de vie de l'identité"
 subtitle: "Création, vie, suppression"
 categories: ["Chapitre 3"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/03-cycle-de-vie.html
 ---
 
 ::: {.question-du-chapitre}

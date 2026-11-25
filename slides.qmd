@@ -23,4 +23,11 @@ Vocabulaire, les quatre questions, la carte du domaine.
 ### [Où vivent les identités](slides/02-annuaires.qmd)
 Annuaires, source de référence, consolidation.
 :::
+
+::: {.carte}
+[03]{.num}
+
+### [Le cycle de vie de l'identité](slides/03-cycle-de-vie.qmd)
+Création, vie, suppression.
+:::
 :::

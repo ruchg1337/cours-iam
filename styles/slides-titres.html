@@ -1,9 +1,9 @@
 <script>
-// Titres de slide : 46 px par défaut, réduits jusqu'à 34 px pour tenir sur une ligne
+// Titres de slide : 46 px par défaut, réduits jusqu’à 30 px pour tenir sur une ligne
 // dans la largeur du contenu (1024 px). La mesure se fait sur un canvas, ce qui marche
 // aussi pour les slides qui ne sont pas affichées.
 (function () {
-  var LARGEUR = 1024, MAX = 46, MIN = 34;
+  var LARGEUR = 1024, MAX = 46, MIN = 30;
   function ajuster() {
     var ctx = document.createElement("canvas").getContext("2d");
     document.querySelectorAll(".reveal .slides section:not(.separateur):not(.titre-cours):not(.questions) > h2").forEach(function (h) {
