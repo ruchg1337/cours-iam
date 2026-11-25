@@ -16,4 +16,11 @@ correspondant du cours.
 ### [Les bases](slides/01-bases.qmd)
 Vocabulaire, les quatre questions, la carte du domaine.
 :::
+
+::: {.carte}
+[02]{.num}
+
+### [Où vivent les identités](slides/02-annuaires.qmd)
+Annuaires, source de référence, consolidation.
+:::
 :::

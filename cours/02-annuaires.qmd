@@ -2,6 +2,10 @@
 title: "Où vivent les identités"
 subtitle: "Annuaires, source de référence, consolidation"
 categories: ["Chapitre 2"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/02-annuaires.html
 ---
 
 ::: {.question-du-chapitre}
