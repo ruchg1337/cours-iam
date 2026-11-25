@@ -75,6 +75,8 @@ website:
       style: floating
       contents:
         - slides.qmd
+        - text: "Introduction"
+          href: slides/00-introduction.qmd
         - section: "Une identité et ses droits"
           contents:
             - text: "01 · Les bases"

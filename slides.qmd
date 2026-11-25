@@ -7,6 +7,17 @@ Chaque deck s'ouvre dans le navigateur. La flèche droite avance d'une slide, `F
 écran, `Échap` affiche la vue d'ensemble. Le pied de page de chaque slide renvoie au chapitre
 correspondant du cours.
 
+## Introduction
+
+::: {.cartes}
+::: {.carte}
+[00]{.num}
+
+### [Introduction](slides/00-introduction.qmd)
+Objectifs, déroulé des deux parties, mise en contexte, le fil rouge.
+:::
+:::
+
 ## Partie 1 : une identité et ses droits
 
 ::: {.cartes}

@@ -311,6 +311,9 @@ $presentation-h3-font-size: 21px;
   font-weight: 700;
 }
 
+// Slide « Qui je suis » : le nom, en grand.
+.reveal .cadre > .nom { margin: auto 0 !important; color: $sarcelle; font-size: 60px; font-weight: 700; text-align: center; }
+
 // Emplacement réservé au QR code du sondage de départ.
 .reveal .emplacement-qr {
   width: 360px; height: 360px;
