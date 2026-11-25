@@ -55,4 +55,11 @@ Facteurs, mots de passe, MFA, passkeys, récupération de compte.
 ### [SSO et fédération](slides/06-sso-federation.qmd)
 Une seule authentification pour toutes les applications.
 :::
+
+::: {.carte}
+[07]{.num}
+
+### [Les protocoles](slides/07-protocoles.qmd)
+SAML 2.0, OAuth 2.0, OpenID Connect, SCIM.
+:::
 :::

@@ -2,6 +2,10 @@
 title: "Les protocoles"
 subtitle: "SAML 2.0, OAuth 2.0, OpenID Connect, SCIM"
 categories: ["Chapitre 7"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/07-protocoles.html
 ---
 
 ::: {.question-du-chapitre}

@@ -91,6 +91,8 @@ website:
           contents:
             - text: "06 · SSO et fédération"
               href: slides/06-sso-federation.qmd
+            - text: "07 · Les protocoles"
+              href: slides/07-protocoles.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"
