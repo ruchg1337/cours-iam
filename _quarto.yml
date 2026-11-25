@@ -85,6 +85,8 @@ website:
               href: slides/03-cycle-de-vie.qmd
             - text: "04 · L'autorisation"
               href: slides/04-autorisation.qmd
+            - text: "05 · L'authentification"
+              href: slides/05-authentification.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"

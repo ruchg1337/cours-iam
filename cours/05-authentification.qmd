@@ -2,6 +2,10 @@
 title: "L'authentification"
 subtitle: "Facteurs, mots de passe, MFA, passkeys, récupération de compte"
 categories: ["Chapitre 5"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/05-authentification.html
 ---
 
 ::: {.question-du-chapitre}

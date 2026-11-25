@@ -37,4 +37,11 @@ Création, vie, suppression.
 ### [L'autorisation](slides/04-autorisation.qmd)
 DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles.
 :::
+
+::: {.carte}
+[05]{.num}
+
+### [L'authentification](slides/05-authentification.qmd)
+Facteurs, mots de passe, MFA, passkeys, récupération de compte.
+:::
 :::
