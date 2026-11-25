@@ -65,7 +65,7 @@ Question d'examen classique : que se passe-t-il si la base fuit ? Avec Argon2id 
 :::
 :::
 
-## Tous les MFA ne se valent pas {style="--corps: 16.9px; --pad-cellule: 9px;"}
+## Tous les MFA ne se valent pas {style="--corps: 16.9px; --pad-cellule: 5px; --espace-lignes: 5px;"}
 
 [Authentification]{.surtitre}
 
@@ -187,7 +187,7 @@ Ce n'est pas de la magie : une signature cryptographique liée au nom de domaine
 :::
 :::
 
-## Récupérer son accès : le maillon faible {style="--corps: 16.9px; --pad-cellule: 8px;"}
+## Récupérer son accès : le maillon faible {style="--corps: 16.9px; --pad-cellule: 4px; --espace-lignes: 4px;"}
 
 [Authentification]{.surtitre}
 

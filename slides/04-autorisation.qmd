@@ -157,7 +157,7 @@ Point commun : la décision sort du code applicatif. ReBAC répond à « qui est
 :::
 :::
 
-## Choisir un modèle : il n'y a pas de gagnant {style="--corps: 16.9px; --pad-cellule: 9px;"}
+## Choisir un modèle : il n'y a pas de gagnant {style="--corps: 16.9px; --pad-cellule: 6px; --espace-lignes: 5px;"}
 
 [Synthèse]{.surtitre}
 

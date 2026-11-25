@@ -118,7 +118,7 @@ Ce que PKCE empêche : un attaquant qui intercepte le code ne peut rien en faire
 :::
 :::
 
-## Ce qui a été abandonné : vers OAuth 2.1 {style="--corps: 16.9px; --pad-cellule: 8px;"}
+## Ce qui a été abandonné : vers OAuth 2.1 {style="--corps: 16.9px; --pad-cellule: 6px; --espace-lignes: 5px;"}
 
 [Protocoles]{.surtitre}
 
@@ -235,7 +235,7 @@ Règle : le jeton d'identité authentifie l'utilisateur auprès de l'application
 | Résister au phishing à la connexion          | FIDO2 / WebAuthn            | S'ajoute aux précédents : c'est le facteur, pas le protocole de fédération    |
 :::
 
-## Quatre attaques sur les protocoles de fédération {style="--corps: 16px; --tete: 19.6px; --pastille: 43px;"}
+## Quatre attaques sur les protocoles de fédération {style="--corps: 16px; --tete: 19.6px; --pastille: 43px; --lh: 1.24; --tete-marge: 8px;"}
 
 [Protocoles]{.surtitre}
 

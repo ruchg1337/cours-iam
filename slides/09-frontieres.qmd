@@ -71,7 +71,7 @@ Sans annuaire d'identités propre et sans inventaire des appareils à jour, il n
 - Un compte SaaS compromis donne accès aux données depuis n'importe où, sans passer par le réseau de l'entreprise.
 :::
 
-::: {.carte .panneau .avant style="--interligne: .35em;"}
+::: {.carte .panneau .avant style="--interligne: .35em; --corps: 16.9px;"}
 [Les réponses]{.tete}
 
 - **CASB (Cloud Access Security Broker) :** un intermédiaire entre les utilisateurs et les services cloud. Il voit qui utilise quoi, applique des règles (bloquer un partage public, interdire un téléchargement sur un appareil non géré) et détecte les anomalies.
@@ -85,7 +85,7 @@ Le CASB ne remplace ni la fédération ni SCIM : il contrôle l'usage des applic
 :::
 :::
 
-## CIAM : quand l'utilisateur n'est pas un employé {style="--corps: 16.9px; --pad-cellule: 7px;"}
+## CIAM : quand l'utilisateur n'est pas un employé {style="--corps: 16.9px; --pad-cellule: 5px; --espace-lignes: 4px;"}
 
 [Frontières actuelles]{.surtitre}
 

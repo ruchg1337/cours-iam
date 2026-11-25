@@ -23,7 +23,7 @@ footer: "[01 · Les bases](../cours/01-bases.html)"
 
 [Vocabulaire]{.surtitre}
 
-::: {.cadre}
+::: {.cadre style="gap: 14px;"}
 ![](images/01-personne-identite-comptes.svg){.schema fig-alt="La personne (Marie Dupont), son identité numérique (numéro RH 4711, nom, service, fonction, responsable, fin de contrat) et ses trois comptes (Active Directory mdupont, messagerie m.dupont@caisse.ch, application métier MDUPONT)."}
 
 ::: {.bandeau}

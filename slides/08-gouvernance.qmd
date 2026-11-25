@@ -30,7 +30,7 @@ Une revue des accès n'est pas un contrôle de conformité, c'est un outil de co
 :::
 :::
 
-## Traçabilité : savoir qui a fait quoi {style="--corps: 16.9px; --tete: 19.6px; --pastille: 43px;"}
+## Traçabilité : savoir qui a fait quoi {style="--corps: 16.9px; --tete: 19.6px; --pastille: 43px; --lh: 1.25; --tete-marge: 9px;"}
 
 [Gouvernance]{.surtitre}
 

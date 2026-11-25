@@ -9,13 +9,13 @@ footer: "[06 · SSO et fédération](../cours/06-sso-federation.html)"
 
 [SSO et fédération, protocoles, gouvernance, frontières actuelles, projet]{.sous-titre}
 
-## Où en est Marie ? Le programme de la partie 2 {style="--corps: 16.9px; --tete-etape: 18.7px; --pastille: 40px; --rangs: 5;"}
+## Où en est Marie ? Le programme de la partie 2 {style="--corps: 15.1px; --tete-etape: 17.8px; --pastille: 40px; --rangs: 5; --ecart: 4px;"}
 
 [Fil rouge]{.surtitre}
 
 ::: {.cadre}
 ::: {.grille style="grid-template-columns: 371px 1fr; gap: 32px;"}
-::: {.carte .chaude style="--corps: 18.7px;"}
+::: {.carte .chaude style="--corps: 17.8px; --interligne: .4em; --carte-pad: 14px 20px;"}
 [Acquis de la partie 1]{.tete}
 
 - Marie a une identité dans le logiciel RH, des comptes créés automatiquement, des rôles qui portent ses droits.

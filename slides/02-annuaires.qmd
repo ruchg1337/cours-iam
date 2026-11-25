@@ -9,12 +9,12 @@ footer: "[02 · Où vivent les identités](../cours/02-annuaires.html)"
 
 [Annuaires, source de référence, consolidation]{.sous-titre}
 
-## Où vivent les identités : annuaires et référentiels {style="--corps: 16px; --pastille: 43px;"}
+## Où vivent les identités : annuaires et référentiels {style="--corps: 16px; --pastille: 43px; --lh: 1.24; --tete-marge: 8px; --carte-pad: 12px 20px;"}
 
 [Socle technique]{.surtitre}
 
 ::: {.cadre}
-::: {.grille .c3 style="grid-template-rows: 164fr 184fr; gap: 27px 25px;"}
+::: {.grille .c3 style="grid-template-rows: 1fr 1fr; gap: 27px 25px;"}
 ::: {.carte}
 [[1]{.pastille} Annuaires LDAP]{.tete}
 

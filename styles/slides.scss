@@ -112,7 +112,7 @@ $presentation-h3-font-size: 21px;
 .reveal .carte {
   background: $fond-carte;
   border-radius: 10px;
-  padding: 16px 20px;
+  padding: var(--carte-pad, 16px 20px);
   box-sizing: border-box;
   min-height: 0;
 }
@@ -122,13 +122,13 @@ $presentation-h3-font-size: 21px;
   display: flex;
   align-items: center;
   gap: 14px;
-  margin: 0 0 12px;
+  margin: 0 0 var(--tete-marge, 12px);
   font-weight: 700;
   font-size: var(--tete);
   line-height: 1.2;
 }
-.reveal .carte p:has(> .tete) { margin-bottom: 12px; }
-.reveal .carte p { margin: 0 0 .5em; font-size: var(--corps); line-height: 1.3; }
+.reveal .carte p:has(> .tete) { margin-bottom: var(--tete-marge, 12px); }
+.reveal .carte p { margin: 0 0 .5em; font-size: var(--corps); line-height: var(--lh, 1.3); }
 .reveal .carte > :last-child { margin-bottom: 0; }
 .reveal .carte.retenir .tete { color: $sarcelle; }
 .reveal .carte.retenir p { color: $ambre; font-weight: 700; }
