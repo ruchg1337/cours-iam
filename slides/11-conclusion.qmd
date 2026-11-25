@@ -1,0 +1,198 @@
+---
+pagetitle: "Conclusion"
+footer: "[Conclusion](../cours/a-retenir.html)"
+---
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[1]{.pastille}
+
+Authentifier et autoriser sont deux décisions distinctes, souvent prises par deux systèmes différents.
+:::
+:::
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[2]{.pastille}
+
+La valeur d'un dispositif IAM pour la sécurité se mesure au délai de fermeture des accès, pas au délai d'ouverture.
+:::
+:::
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[3]{.pastille}
+
+Le changement de poste est le maillon faible du cycle de vie ; l'accumulation de droits en est la conséquence directe.
+:::
+:::
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[4]{.pastille}
+
+Aucun modèle d'autorisation ne gagne : les architectures matures combinent RBAC, ABAC et ReBAC.
+:::
+:::
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[5]{.pastille}
+
+Tous les MFA ne se valent pas. Le seul critère qui compte : la résistance au relais en temps réel.
+:::
+:::
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[6]{.pastille}
+
+La fédération sans création automatique des comptes fabrique des comptes orphelins. Il faut les deux canaux.
+:::
+:::
+
+## Sept idées à emporter
+
+[Synthèse]{.surtitre}
+
+::: {.cadre}
+::: {.idee}
+[7]{.pastille}
+
+Le fournisseur d'identité est devenu l'élément le plus critique du système d'information.
+:::
+:::
+
+## Pour aller plus loin {style="--corps: 17.8px; --tete: 19.6px; --pastille: 43px;"}
+
+[Ressources]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3}
+::: {.carte}
+[[1]{.pastille} Normes et référentiels]{.tete}
+
+NIST SP 800-63-4, Digital Identity Guidelines (2025), gratuit, quatre volumes.\
+ISO/IEC 27001:2022, annexe A, mesures 5.15 à 5.18.\
+ISO/IEC 24760, vocabulaire de la gestion d'identité.\
+Guides de l'ANSSI sur l'authentification multifacteur et les mots de passe.
+:::
+
+::: {.carte}
+[[2]{.pastille} Spécifications techniques]{.tete}
+
+SAML 2.0, OASIS.\
+OAuth 2.0 (RFC 6749), PKCE (RFC 7636), bonnes pratiques de sécurité (RFC 9700).\
+OpenID Connect Core, OpenID Foundation.\
+SCIM 2.0 (RFC 7642, 7643, 7644).\
+WebAuthn niveau 2, W3C.
+:::
+
+::: {.carte}
+[[3]{.pastille} Lectures et cours]{.tete}
+
+Wilson et Hingnikar, Solving Identity Management in Modern Applications, Apress, 2e édition.\
+G. Harry, IAM : concepts et état de l'art, en libre accès sur HAL.\
+Webinaires IAM Online d'InCommon (Internet2), archives publiques.\
+Article Zanzibar de Google, pour comprendre le ReBAC.
+:::
+:::
+
+::: {.bandeau}
+Conseil : lisez une spécification complète, une seule fois dans votre carrière. OpenID Connect Core est la plus courte et la plus rentable des trois.
+:::
+:::
+
+## Questions {.questions}
+
+[Merci de votre attention. Gestion des identités et des accès]{.sous-titre}
+
+## Sources (1/2) : normes, droit, rapports {style="--corps: 14.6px; --tete: 23.1px; --interligne: .4em;"}
+
+[Sources]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c2 style="gap: 32px;"}
+::: {.carte .panneau}
+[Normes et cadre légal]{.tete}
+
+- NIST SP 800-63-4, Digital Identity Guidelines, version finale, juillet 2025 (pages.nist.gov/800-63-4).
+- NIST SP 800-207, Zero Trust Architecture, 2020.
+- ISO/IEC 27001:2022, annexe A (5.15 à 5.18) ; ISO/IEC 24760-1:2019, vocabulaire de la gestion d'identité.
+- ANSSI, Recommandations relatives à l'authentification multifacteur et aux mots de passe, 2021 (cyber.gouv.fr).
+- CISA, Implementing Phishing-Resistant MFA, fiche d'octobre 2022.
+- LPD révisée (RS 235.1), en vigueur depuis le 1er septembre 2023, et OPDo (fedlex.admin.ch).
+- FINMA, circulaire 2023/1 Risques et résilience opérationnels, en vigueur depuis 2024.
+- RGPD (UE) 2016/679 ; directive NIS2 (UE) 2022/2555.
+- Loi fédérale sur l'identité électronique (LeID), votation du 28 septembre 2025 ; informations officielles sur eid.admin.ch.
+:::
+
+::: {.carte .panneau .avant}
+[Rapports et chiffres]{.tete}
+
+- Verizon, 2025 Data Breach Investigations Report : abus d'identifiants premier vecteur d'entrée (22 %), 88 % des attaques web avec identifiants volés.
+- Microsoft, Digital Defense Report 2025 (octobre 2025) : 97 % des attaques sur l'identité sont des attaques par mot de passe, +32 % au premier semestre 2025.
+- Gartner, Forecast: Information Security, Worldwide, 2024-2030, 3Q26 (septembre 2026) et Information Security Market Current Outlook 1Q26 (mars 2026) : 247 Mrd \$ de dépenses en 2026, dont 23 Mrd \$ en IAM.
+- Google, Zanzibar: Google's Consistent, Global Authorization System, USENIX ATC 2019 (ReBAC).
+- CyberArk, Identity Security Threat Landscape Report 2024 : ratio identités machines / humaines.
+- Okta, Businesses at Work 2024 : nombre d'applications par organisation.
+- Office fédéral de la justice, communiqués sur l'e-ID (avril et juin 2026).
+:::
+:::
+:::
+
+## Sources (2/2) : spécifications, lectures, cas réels {style="--corps: 15.1px; --tete: 23.1px; --interligne: .4em;"}
+
+[Sources]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c2 style="gap: 32px;"}
+::: {.carte .panneau}
+[Spécifications techniques]{.tete}
+
+- OASIS, SAML 2.0 Core et Bindings, 2005.
+- RFC 6749 (OAuth 2.0), RFC 7636 (PKCE), RFC 9700 (OAuth 2.0 Security Best Current Practice, janvier 2025), brouillon OAuth 2.1 (draft-ietf-oauth-v2-1).
+- RFC 7519 (JWT), RFC 8725 (JWT Best Current Practices), RFC 7662 (introspection de jeton).
+- OpenID Connect Core 1.0 et Discovery 1.0, OpenID Foundation.
+- RFC 7642, 7643, 7644 (SCIM 2.0).
+- W3C, Web Authentication Level 2, 2021 ; FIDO Alliance, CTAP 2.1 et spécifications passkeys.
+- OWASP, Password Storage Cheat Sheet et Authentication Cheat Sheet (cheatsheetseries.owasp.org).
+:::
+
+::: {.carte .panneau .avant}
+[Lectures et cas réels]{.tete}
+
+- Y. Wilson et A. Hingnikar, Solving Identity Management in Modern Applications, Apress, 2e édition, 2022.
+- G. Harry, IAM : concepts et état de l'art, en libre accès sur HAL.
+- InCommon / Internet2, webinaires IAM Online, archives publiques.
+- Uber, septembre 2022 : intrusion par fatigue MFA (notifications répétées), rapport public d'Uber.
+- MGM Resorts, septembre 2023 : réinitialisation du MFA obtenue par appel au support, communiqués et presse.
+- Okta, octobre 2023 : vol de fichiers de session (HAR) sur le portail de support, rapport d'incident d'Okta.
+- Microsoft / Midnight Blizzard, janvier 2024 : compte de test sans MFA et abus d'application OAuth, rapport MSRC.
+:::
+:::
+:::

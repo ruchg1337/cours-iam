@@ -95,3 +95,14 @@ Zero Trust, cloud, clients, machines, e-ID.
 Enjeux, acteurs, étapes, erreurs à éviter.
 :::
 :::
+
+## Conclusion
+
+::: {.cartes}
+::: {.carte}
+[11]{.num}
+
+### [Conclusion](slides/11-conclusion.qmd)
+Sept idées à emporter, pour aller plus loin, sources.
+:::
+:::

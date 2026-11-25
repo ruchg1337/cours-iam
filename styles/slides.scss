@@ -343,13 +343,12 @@ $presentation-h3-font-size: 21px;
 .reveal .consigne a { color: $sarcelle; text-decoration: underline; }
 
 // Slide « Questions » de la fin.
-.reveal .slides section.questions h2 { top: 300px; font-size: 60px; text-align: center; }
 .reveal .questions .sous-titre {
   position: absolute;
-  top: 400px; left: 128px; right: 128px;
+  top: 560px; left: 128px; right: 128px;
   margin: 0;
   color: $doux;
-  font-size: 25px;
+  font-size: 21.3px;
   text-align: center;
 }
 

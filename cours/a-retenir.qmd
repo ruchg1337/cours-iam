@@ -1,6 +1,10 @@
 ---
 title: "Sept idées à emporter"
 subtitle: "Ce qu'il faut garder en tête quand le reste est oublié"
+other-links:
+  - text: "Slides de la conclusion"
+    icon: easel
+    href: ../slides/11-conclusion.html
 ---
 
 ::: {.etapes}

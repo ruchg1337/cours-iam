@@ -101,6 +101,8 @@ website:
               href: slides/09-frontieres.qmd
             - text: "10 · Mener un projet IAM"
               href: slides/10-projet.qmd
+        - text: "Conclusion"
+          href: slides/11-conclusion.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"
