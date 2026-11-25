@@ -45,3 +45,14 @@ DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles.
 Facteurs, mots de passe, MFA, passkeys, récupération de compte.
 :::
 :::
+
+## Partie 2 : connecter, fédérer, gouverner
+
+::: {.cartes}
+::: {.carte}
+[06]{.num}
+
+### [SSO et fédération](slides/06-sso-federation.qmd)
+Une seule authentification pour toutes les applications.
+:::
+:::

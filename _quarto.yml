@@ -87,6 +87,10 @@ website:
               href: slides/04-autorisation.qmd
             - text: "05 · L'authentification"
               href: slides/05-authentification.qmd
+        - section: "Connecter, fédérer, gouverner"
+          contents:
+            - text: "06 · SSO et fédération"
+              href: slides/06-sso-federation.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"

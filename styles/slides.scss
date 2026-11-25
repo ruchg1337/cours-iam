@@ -136,7 +136,8 @@ $presentation-h3-font-size: 21px;
 .reveal .carte.panneau .tete { color: $sarcelle; }
 // Carte chaude (fond pêche, titre ambre) : « Qui est Marie ? », « Acquis ».
 .reveal .carte.chaude { background: $fond-bandeau; }
-.reveal .carte.chaude .tete { color: $ambre; }
+.reveal .carte.chaude .tete,
+.reveal .cadre .carte.chaude ul li::before { color: $ambre; }
 // Carte « chiffre clé » : un grand nombre, puis son explication.
 .reveal .carte.chiffre { background: $fond-avant; text-align: center; display: flex; flex-direction: column; justify-content: center; }
 .reveal .carte.chiffre.gauche { text-align: left; justify-content: flex-start; }
@@ -220,6 +221,8 @@ $presentation-h3-font-size: 21px;
   font-size: calc(var(--pastille) * .4);
 }
 .reveal .cadre .etapes li strong:first-child { font-size: var(--tete-etape, var(--corps)); }
+// Étapes réparties sur toute la hauteur du cadre (programme du cours).
+.reveal .cadre .etapes.reparties ol { height: 100%; grid-template-rows: repeat(var(--rangs, 5), 1fr); }
 // Étapes en boîtes grises (questions de reprise, sept idées).
 .reveal .cadre .etapes.boites li {
   display: flex;

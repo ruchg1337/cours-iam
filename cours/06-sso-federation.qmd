@@ -2,6 +2,10 @@
 title: "SSO et fédération"
 subtitle: "Une seule authentification pour toutes les applications"
 categories: ["Chapitre 6"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/06-sso-federation.html
 ---
 
 ::: {.question-du-chapitre}
