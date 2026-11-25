@@ -93,6 +93,8 @@ website:
               href: slides/06-sso-federation.qmd
             - text: "07 · Les protocoles"
               href: slides/07-protocoles.qmd
+            - text: "08 · Gouvernance et conformité"
+              href: slides/08-gouvernance.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"

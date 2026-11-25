@@ -62,4 +62,11 @@ Une seule authentification pour toutes les applications.
 ### [Les protocoles](slides/07-protocoles.qmd)
 SAML 2.0, OAuth 2.0, OpenID Connect, SCIM.
 :::
+
+::: {.carte}
+[08]{.num}
+
+### [Gouvernance et conformité](slides/08-gouvernance.qmd)
+Revues des accès, traçabilité, comptes à privilèges, normes et lois.
+:::
 :::
