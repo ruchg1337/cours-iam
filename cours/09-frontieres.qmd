@@ -2,6 +2,10 @@
 title: "Les frontières actuelles"
 subtitle: "Zero Trust, cloud, clients, machines, e-ID"
 categories: ["Chapitre 9"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/09-frontieres.html
 ---
 
 ::: {.question-du-chapitre}

@@ -69,4 +69,11 @@ SAML 2.0, OAuth 2.0, OpenID Connect, SCIM.
 ### [Gouvernance et conformité](slides/08-gouvernance.qmd)
 Revues des accès, traçabilité, comptes à privilèges, normes et lois.
 :::
+
+::: {.carte}
+[09]{.num}
+
+### [Les frontières actuelles](slides/09-frontieres.qmd)
+Zero Trust, cloud, clients, machines, e-ID.
+:::
 :::

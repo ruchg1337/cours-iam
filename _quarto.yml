@@ -95,6 +95,8 @@ website:
               href: slides/07-protocoles.qmd
             - text: "08 · Gouvernance et conformité"
               href: slides/08-gouvernance.qmd
+            - text: "09 · Les frontières actuelles"
+              href: slides/09-frontieres.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"
