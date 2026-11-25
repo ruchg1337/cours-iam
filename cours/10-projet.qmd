@@ -2,6 +2,10 @@
 title: "Mener un projet IAM"
 subtitle: "Enjeux, acteurs, étapes, erreurs à éviter"
 categories: ["Chapitre 10"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/10-projet.html
 ---
 
 ::: {.question-du-chapitre}

@@ -97,6 +97,8 @@ website:
               href: slides/08-gouvernance.qmd
             - text: "09 · Les frontières actuelles"
               href: slides/09-frontieres.qmd
+            - text: "10 · Mener un projet IAM"
+              href: slides/10-projet.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"

@@ -76,4 +76,11 @@ Revues des accès, traçabilité, comptes à privilèges, normes et lois.
 ### [Les frontières actuelles](slides/09-frontieres.qmd)
 Zero Trust, cloud, clients, machines, e-ID.
 :::
+
+::: {.carte}
+[10]{.num}
+
+### [Mener un projet IAM](slides/10-projet.qmd)
+Enjeux, acteurs, étapes, erreurs à éviter.
+:::
 :::
