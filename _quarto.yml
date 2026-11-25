@@ -83,6 +83,8 @@ website:
               href: slides/02-annuaires.qmd
             - text: "03 · Le cycle de vie de l'identité"
               href: slides/03-cycle-de-vie.qmd
+            - text: "04 · L'autorisation"
+              href: slides/04-autorisation.qmd
   page-footer:
     left: "Grégory Ruch"
     right: "Édition {{< var edition >}}"

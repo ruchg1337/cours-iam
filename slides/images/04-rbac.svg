@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="128 181 1024 121" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" fill="#17252e">
+<title>Chaîne RBAC : utilisateur Marie Dupont, rôle gestionnaire de prestations, permission valider une rente inférieure à 50 000 CHF, ressource application de gestion des prestations</title>
+<rect x="128" y="181" width="215" height="121" rx="10" fill="#e4efed"/>
+<text x="140" y="213" font-size="14.2" font-weight="700" fill="#0f5964" letter-spacing=".04em">UTILISATEUR</text>
+<text text-anchor="start" font-size="19.6" font-weight="700"><tspan x="140" y="268.0">Marie Dupont</tspan></text>
+<rect x="397" y="181" width="215" height="121" rx="10" fill="#e4efed"/>
+<text x="409" y="213" font-size="14.2" font-weight="700" fill="#0f5964" letter-spacing=".04em">RÔLE</text>
+<text text-anchor="start" font-size="19.6" font-weight="700"><tspan x="409" y="256.2">Gestionnaire de</tspan><tspan x="409" y="279.8">prestations</tspan></text>
+<rect x="666" y="181" width="215" height="121" rx="10" fill="#e4efed"/>
+<text x="678" y="213" font-size="14.2" font-weight="700" fill="#0f5964" letter-spacing=".04em">PERMISSION</text>
+<text text-anchor="start" font-size="19.6" font-weight="700"><tspan x="678" y="256.2">Valider une rente &lt;</tspan><tspan x="678" y="279.8">50 000 CHF</tspan></text>
+<rect x="936" y="181" width="215" height="121" rx="10" fill="#e4efed"/>
+<text x="948" y="213" font-size="14.2" font-weight="700" fill="#0f5964" letter-spacing=".04em">RESSOURCE</text>
+<text text-anchor="start" font-size="19.6" font-weight="700"><tspan x="948" y="244.5">Application de</tspan><tspan x="948" y="268.0">gestion des</tspan><tspan x="948" y="291.5">prestations</tspan></text>
+<polygon points="351.0,232.8 371.5,232.8 371.5,224.0 389.0,241.5 371.5,259.0 371.5,250.2 351.0,250.2" fill="#b3aca0"/>
+<polygon points="620.0,232.8 640.5,232.8 640.5,224.0 658.0,241.5 640.5,259.0 640.5,250.2 620.0,250.2" fill="#b3aca0"/>
+<polygon points="890.0,232.8 910.5,232.8 910.5,224.0 928.0,241.5 910.5,259.0 910.5,250.2 890.0,250.2" fill="#b3aca0"/>
+</svg>

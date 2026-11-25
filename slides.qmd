@@ -30,4 +30,11 @@ Annuaires, source de référence, consolidation.
 ### [Le cycle de vie de l'identité](slides/03-cycle-de-vie.qmd)
 Création, vie, suppression.
 :::
+
+::: {.carte}
+[04]{.num}
+
+### [L'autorisation](slides/04-autorisation.qmd)
+DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles.
+:::
 :::
