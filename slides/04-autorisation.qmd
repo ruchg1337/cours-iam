@@ -163,7 +163,7 @@ Point commun : la décision sort du code applicatif. ReBAC répond à « qui est
 
 ::: {.cadre}
 | Modèle | Décide selon                | Point fort                   | Point faible                              | Contexte typique                          |
-|--------|-----------------------------|------------------------------|-------------------------------------------|-------------------------------------------|
+|-----------|---------------------|---------------------|----------------------|-------------------------|
 | DAC    | Le choix du propriétaire    | Simple, autonome             | Aucune vue d'ensemble                     | Partages de fichiers, outils collaboratifs |
 | MAC    | Une classification imposée  | Confidentialité forte        | Très rigide au quotidien                  | Défense, systèmes durcis                  |
 | RBAC   | Le rôle de l'utilisateur    | Auditable, compris du métier | Explosion du nombre de rôles              | Entreprise, applications métier           |
