@@ -7,14 +7,6 @@ footer: "[Introduction](../cours/index.html)"
 
 [Grégory Ruch]{.auteur}
 
-## Qui je suis
-
-::: {.cadre}
-::: {.nom}
-Grégory Ruch
-:::
-:::
-
 ## Sondage de départ
 
 ::: {.cadre}
@@ -66,32 +58,26 @@ Relier vos décisions à NIST SP 800-63-4, ISO 27001 et à la loi suisse sur la 
 :::
 :::
 
-## Déroulé des deux parties {style="--corps: 19.6px; --tete: 23.1px; --interligne: .5em;"}
+## Déroulé du cours {style="--corps: 19.6px; --interligne: .5em;"}
 
 [Programme]{.surtitre}
 
 ::: {.cadre}
 ::: {.grille .c2 style="gap: 32px;"}
 ::: {.carte .panneau}
-[Partie 1 : une identité et ses droits]{.tete}
-
 - 1\. Les bases : vocabulaire, les quatre questions, la carte du domaine
 - 2\. Où vivent les identités : annuaires, source de référence
 - 3\. Le cycle de vie : création, vie, suppression
 - 4\. L'autorisation : DAC, MAC, RBAC, ABAC, ReBAC, modèle de rôles
 - 5\. L'authentification : facteurs, mots de passe, MFA, passkeys, récupération
-- [**Exercice 1 : politique d'authentification (10 min + 5 à 10 min de discussion)**]{.ambre}
 :::
 
-::: {.carte .panneau .avant}
-[Partie 2 : connecter, fédérer, gouverner]{.tete}
-
+::: {.carte .panneau}
 - 6\. SSO et fédération : IdP, SP, relation de confiance, sessions
 - 7\. Les protocoles : SAML 2.0, OAuth 2.0, OIDC, SCIM
 - 8\. Gouvernance et conformité : revues, traçabilité, PAM, NIST, ISO, LPD
 - 9\. Les frontières actuelles : Zero Trust, cloud, CIAM, machines, e-ID
 - 10\. Mener un projet IAM : enjeux, acteurs, étapes, erreurs
-- [**Exercice 2 : étude de cas (10 min + 5 à 10 min de discussion)**]{.ambre}
 :::
 :::
 :::

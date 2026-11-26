@@ -3,12 +3,6 @@ pagetitle: "01 · Les bases"
 footer: "[01 · Les bases](../cours/01-bases.html)"
 ---
 
-## Une identité et ses droits {.separateur .partie}
-
-[Partie 1]{.numero}
-
-[Les bases, les annuaires, le cycle de vie, l'autorisation, l'authentification]{.sous-titre}
-
 ## Les bases {.separateur}
 
 [01]{.numero}

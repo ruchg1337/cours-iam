@@ -16,8 +16,9 @@ format:
     hash: true
     transition: none
     background-transition: none
-    menu: false
+    menu: true
     preview-links: false
     link-external-newwindow: true
     lang: fr
+    include-before-body: ../styles/slides-menu.html
     include-after-body: ../styles/slides-titres.html

@@ -14,11 +14,11 @@ correspondant du cours.
 [00]{.num}
 
 ### [Introduction](slides/00-introduction.qmd)
-Objectifs, déroulé des deux parties, mise en contexte, le fil rouge.
+Objectifs, déroulé du cours, mise en contexte, le fil rouge.
 :::
 :::
 
-## Partie 1 : une identité et ses droits
+## Chapitres
 
 ::: {.cartes}
 ::: {.carte}
@@ -55,11 +55,7 @@ DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles.
 ### [L'authentification](slides/05-authentification.qmd)
 Facteurs, mots de passe, MFA, passkeys, récupération de compte.
 :::
-:::
 
-## Partie 2 : connecter, fédérer, gouverner
-
-::: {.cartes}
 ::: {.carte}
 [06]{.num}
 

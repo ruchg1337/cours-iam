@@ -3,24 +3,18 @@ pagetitle: "06 · SSO et fédération"
 footer: "[06 · SSO et fédération](../cours/06-sso-federation.html)"
 ---
 
-## Connecter, fédérer, gouverner {.separateur .partie}
-
-[Partie 2]{.numero}
-
-[SSO et fédération, protocoles, gouvernance, frontières actuelles, projet]{.sous-titre}
-
-## Où en est Marie ? Le programme de la partie 2 {style="--corps: 15.1px; --tete-etape: 17.8px; --pastille: 40px; --rangs: 5; --ecart: 4px;"}
+## Où en est Marie ? {style="--corps: 15.1px; --tete-etape: 17.8px; --pastille: 40px; --rangs: 5; --ecart: 4px;"}
 
 [Fil rouge]{.surtitre}
 
 ::: {.cadre}
 ::: {.grille style="grid-template-columns: 371px 1fr; gap: 32px;"}
 ::: {.carte .chaude style="--corps: 17.8px; --interligne: .4em; --carte-pad: 14px 20px;"}
-[Acquis de la partie 1]{.tete}
+[Acquis des chapitres 1 à 5]{.tete}
 
 - Marie a une identité dans le logiciel RH, des comptes créés automatiquement, des rôles qui portent ses droits.
 - Elle s'authentifie avec une passkey, et nous savons pourquoi un code SMS ne suffit pas.
-- Ce soir : comment ses 40 applications lui font confiance sans voir son mot de passe, comment garder le contrôle dans la durée, et comment mener le projet.
+- La suite : comment ses 40 applications lui font confiance sans voir son mot de passe, comment garder le contrôle dans la durée, et comment mener le projet.
 :::
 
 ::: {.etapes .c2 .reparties .vus5}
@@ -50,7 +44,7 @@ footer: "[06 · SSO et fédération](../cours/06-sso-federation.html)"
 
 ## Reprise : cinq questions en cinq minutes
 
-[Partie 2]{.surtitre}
+[Révision]{.surtitre}
 
 ::: {.cadre .consigne}
 ::: {.carte}

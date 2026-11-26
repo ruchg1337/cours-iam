@@ -25,7 +25,34 @@ website:
       - text: "Labo"
         href: labo/index.qmd
       - text: "Slides"
-        href: slides.qmd
+        menu:
+          - text: "Toutes les slides"
+            href: slides.qmd
+          - text: "---"
+          - text: "Introduction"
+            href: slides/00-introduction.qmd
+          - text: "01 · Les bases"
+            href: slides/01-bases.qmd
+          - text: "02 · Où vivent les identités"
+            href: slides/02-annuaires.qmd
+          - text: "03 · Le cycle de vie de l'identité"
+            href: slides/03-cycle-de-vie.qmd
+          - text: "04 · L'autorisation"
+            href: slides/04-autorisation.qmd
+          - text: "05 · L'authentification"
+            href: slides/05-authentification.qmd
+          - text: "06 · SSO et fédération"
+            href: slides/06-sso-federation.qmd
+          - text: "07 · Les protocoles"
+            href: slides/07-protocoles.qmd
+          - text: "08 · Gouvernance et conformité"
+            href: slides/08-gouvernance.qmd
+          - text: "09 · Les frontières actuelles"
+            href: slides/09-frontieres.qmd
+          - text: "10 · Mener un projet IAM"
+            href: slides/10-projet.qmd
+          - text: "Conclusion"
+            href: slides/11-conclusion.qmd
     right:
       - text: "Glossaire"
         href: glossaire.qmd
@@ -37,20 +64,16 @@ website:
       style: floating
       contents:
         - cours/index.qmd
-        - section: "Une identité et ses droits"
-          contents:
-            - cours/01-bases.qmd
-            - cours/02-annuaires.qmd
-            - cours/03-cycle-de-vie.qmd
-            - cours/04-autorisation.qmd
-            - cours/05-authentification.qmd
-        - section: "Connecter, fédérer, gouverner"
-          contents:
-            - cours/06-sso-federation.qmd
-            - cours/07-protocoles.qmd
-            - cours/08-gouvernance.qmd
-            - cours/09-frontieres.qmd
-            - cours/10-projet.qmd
+        - cours/01-bases.qmd
+        - cours/02-annuaires.qmd
+        - cours/03-cycle-de-vie.qmd
+        - cours/04-autorisation.qmd
+        - cours/05-authentification.qmd
+        - cours/06-sso-federation.qmd
+        - cours/07-protocoles.qmd
+        - cours/08-gouvernance.qmd
+        - cours/09-frontieres.qmd
+        - cours/10-projet.qmd
         - cours/a-retenir.qmd
     - id: exercices
       title: "Exercices"
@@ -77,30 +100,26 @@ website:
         - slides.qmd
         - text: "Introduction"
           href: slides/00-introduction.qmd
-        - section: "Une identité et ses droits"
-          contents:
-            - text: "01 · Les bases"
-              href: slides/01-bases.qmd
-            - text: "02 · Où vivent les identités"
-              href: slides/02-annuaires.qmd
-            - text: "03 · Le cycle de vie de l'identité"
-              href: slides/03-cycle-de-vie.qmd
-            - text: "04 · L'autorisation"
-              href: slides/04-autorisation.qmd
-            - text: "05 · L'authentification"
-              href: slides/05-authentification.qmd
-        - section: "Connecter, fédérer, gouverner"
-          contents:
-            - text: "06 · SSO et fédération"
-              href: slides/06-sso-federation.qmd
-            - text: "07 · Les protocoles"
-              href: slides/07-protocoles.qmd
-            - text: "08 · Gouvernance et conformité"
-              href: slides/08-gouvernance.qmd
-            - text: "09 · Les frontières actuelles"
-              href: slides/09-frontieres.qmd
-            - text: "10 · Mener un projet IAM"
-              href: slides/10-projet.qmd
+        - text: "01 · Les bases"
+          href: slides/01-bases.qmd
+        - text: "02 · Où vivent les identités"
+          href: slides/02-annuaires.qmd
+        - text: "03 · Le cycle de vie de l'identité"
+          href: slides/03-cycle-de-vie.qmd
+        - text: "04 · L'autorisation"
+          href: slides/04-autorisation.qmd
+        - text: "05 · L'authentification"
+          href: slides/05-authentification.qmd
+        - text: "06 · SSO et fédération"
+          href: slides/06-sso-federation.qmd
+        - text: "07 · Les protocoles"
+          href: slides/07-protocoles.qmd
+        - text: "08 · Gouvernance et conformité"
+          href: slides/08-gouvernance.qmd
+        - text: "09 · Les frontières actuelles"
+          href: slides/09-frontieres.qmd
+        - text: "10 · Mener un projet IAM"
+          href: slides/10-projet.qmd
         - text: "Conclusion"
           href: slides/11-conclusion.qmd
   page-footer:
