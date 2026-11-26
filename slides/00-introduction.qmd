@@ -1,0 +1,152 @@
+---
+pagetitle: "Introduction"
+footer: "[Introduction](../cours/index.html)"
+---
+
+## Gestion des identités et des accès (GIA)<br>Identity and Access Management (IAM) {.titre-cours}
+
+[Grégory Ruch]{.auteur}
+
+## Sondage de départ
+
+::: {.cadre}
+::: {.emplacement-qr}
+:::
+:::
+
+## Ce que vous saurez faire à la fin
+
+[Objectifs pédagogiques]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3 style="grid-template-rows: 221fr 207fr; gap: 26px 25px;"}
+::: {.carte}
+[[1]{.pastille} Parler la même langue]{.tete}
+
+Faire la différence entre une identité, un compte, un identifiant, un attribut, un rôle et un droit d'accès. Ne plus confondre authentification et autorisation.
+:::
+
+::: {.carte}
+[[2]{.pastille} Lire une architecture]{.tete}
+
+Reconnaître un échange SAML, OAuth ou OIDC sur un schéma, et savoir ce que contient chaque jeton.
+:::
+
+::: {.carte}
+[[3]{.pastille} Choisir un modèle]{.tete}
+
+Choisir entre RBAC, ABAC et ReBAC selon la situation, et expliquer pourquoi ce choix a des conséquences.
+:::
+
+::: {.carte}
+[[4]{.pastille} Juger une authentification]{.tete}
+
+Classer les moyens d'authentification selon leur vraie résistance au phishing, pas selon l'impression de sécurité.
+:::
+
+::: {.carte}
+[[5]{.pastille} Gouverner les accès]{.tete}
+
+Comprendre à quoi servent une revue des accès, la séparation des tâches et un coffre-fort à secrets.
+:::
+
+::: {.carte}
+[[6]{.pastille} Connaître le cadre]{.tete}
+
+Relier vos décisions à NIST SP 800-63-4, ISO 27001 et à la loi suisse sur la protection des données.
+:::
+:::
+:::
+
+## Déroulé du cours {style="--corps: 19.6px; --interligne: .5em;"}
+
+[Programme]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c2 style="gap: 32px;"}
+::: {.carte .panneau}
+- 1\. Les bases : vocabulaire, les quatre questions, la carte du domaine
+- 2\. Où vivent les identités : annuaires, source de référence
+- 3\. Le cycle de vie : création, vie, suppression
+- 4\. L'autorisation : DAC, MAC, RBAC, ABAC, ReBAC, modèle de rôles
+- 5\. L'authentification : facteurs, mots de passe, MFA, passkeys, récupération
+:::
+
+::: {.carte .panneau}
+- 6\. SSO et fédération : IdP, SP, relation de confiance, sessions
+- 7\. Les protocoles : SAML 2.0, OAuth 2.0, OIDC, SCIM
+- 8\. Gouvernance et conformité : revues, traçabilité, PAM, NIST, ISO, LPD
+- 9\. Les frontières actuelles : Zero Trust, cloud, CIAM, machines, e-ID
+- 10\. Mener un projet IAM : enjeux, acteurs, étapes, erreurs
+:::
+:::
+:::
+
+## L'identité : première porte d'entrée des attaquants {style="--corps: 19.6px; --grand: 64px;"}
+
+[Mise en contexte]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3 style="gap: 32px; margin-bottom: 18px;"}
+::: {.carte .chiffre style="justify-content: flex-start; padding-top: 28px;"}
+[1er]{.grand}
+
+vecteur d'entrée des intrusions : l'abus d'identifiants (22 % des cas), devant les failles exploitées. 88 % des attaques sur les applications web utilisent des identifiants volés (Verizon DBIR 2025)
+:::
+
+::: {.carte .chiffre style="justify-content: flex-start; padding-top: 28px;"}
+[97 %]{.grand}
+
+des attaques contre l'identité sont des attaques par mot de passe ; +32 % d'attaques sur l'identité au premier semestre 2025 (Microsoft Digital Defense Report 2025)
+:::
+
+::: {.carte .chiffre style="justify-content: flex-start; padding-top: 28px;"}
+[23 Mrd \$]{.grand style="font-size: 49.8px; line-height: 1.45;"}
+
+dépensés en gestion des identités et des accès en 2026, sur 247 Mrd \$ de dépenses en sécurité, soit près de 1 dollar sur 10 (Gartner, 2026)
+:::
+:::
+
+::: {.bandeau}
+Conséquence : on ne force plus la porte, on se connecte avec une clé volée. Le contrôle des accès est devenu la nouvelle frontière.
+:::
+:::
+
+## Le fil rouge du cours : Marie Dupont {style="--corps: 15.1px; --tete-etape: 17.8px; --pastille: 40px; --rangs: 5; --ecart: 4px;"}
+
+[Fil rouge]{.surtitre}
+
+::: {.cadre}
+::: {.grille style="grid-template-columns: 371px 1fr; gap: 32px;"}
+::: {.carte .chaude style="--corps: 17.8px; --interligne: .45em; --carte-pad: 14px 20px;"}
+[Qui est Marie ?]{.tete}
+
+- Engagée le 1er novembre comme gestionnaire de prestations à la Caisse de pension romande (organisation fictive).
+- 180 collaborateurs, un logiciel métier installé sur site, une messagerie dans le cloud, un portail pour les assurés, six prestataires informatiques externes.
+- Nous la suivrons de son engagement à son départ : chaque chapitre répond à une question que son parcours pose.
+:::
+
+::: {.etapes .c2 .reparties}
+1. **1. Les bases**\
+   Les mots, les quatre questions, la carte du domaine
+2. **2. Où vivent les identités**\
+   Sa fiche est créée dans le logiciel RH, qui fait foi
+3. **3. Le cycle de vie**\
+   Ses comptes sont créés ; elle change de poste ; elle part
+4. **4. L'autorisation**\
+   Ce qu'elle a le droit de faire : rôles, attributs, relations
+5. **5. L'authentification**\
+   Comment elle prouve que c'est elle, et ce qui résiste au phishing
+6. **6. SSO et fédération**\
+   Une seule connexion pour ses 40 applications
+7. **7. Les protocoles**\
+   SAML, OAuth, OpenID Connect, SCIM : comment ça circule
+8. **8. Gouvernance et conformité**\
+   Revues, journaux, comptes à privilèges, normes et lois
+9. **9. Les frontières actuelles**\
+   Zero Trust, cloud, clients, machines, e-ID suisse
+10. **10. Mener un projet IAM**\
+    Enjeux, acteurs, étapes, erreurs à éviter
+:::
+:::
+:::

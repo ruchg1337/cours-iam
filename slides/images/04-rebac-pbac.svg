@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="128 181 1024 359" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" fill="#17252e">
+<title>ReBAC : Marie est membre de l'équipe Prestations, propriétaire du dossier Sinistres, qui contient le document D. PBAC : l'application (point d'application) demande au moteur de règles (point de décision) si Marie peut valider la rente 4512, et reçoit oui ou non.</title>
+<rect x="128" y="181" width="496" height="359" rx="10" fill="#f0ece3"/>
+<text x="147" y="218" font-size="21.3" font-weight="700" fill="#0f5964">ReBAC : le droit vient d'une relation</text>
+<text text-anchor="start" font-size="16.9" font-style="italic" fill="#5c6b73"><tspan x="147" y="252.0">Comme le partage dans Google Drive : on ne donne pas un</tspan><tspan x="147" y="272.5">rôle, on relie des objets, et les droits suivent les liens.</tspan></text>
+<rect x="137" y="316" width="99" height="51" rx="8" fill="#c8651b"/>
+<text text-anchor="middle" font-size="14.2" font-weight="700" fill="#fff"><tspan x="186.5" y="346.5">Marie</tspan></text>
+<rect x="264.5" y="316.5" width="98" height="50" rx="8" fill="#fff" stroke="#b3aca0"/>
+<text text-anchor="middle" font-size="14.2" font-weight="700" fill="#17252e"><tspan x="313.5" y="338.0">Équipe</tspan><tspan x="313.5" y="355.0">Prestations</tspan></text>
+<rect x="391.5" y="316.5" width="98" height="50" rx="8" fill="#fff" stroke="#b3aca0"/>
+<text text-anchor="middle" font-size="14.2" font-weight="700" fill="#17252e"><tspan x="440.5" y="338.0">Dossier</tspan><tspan x="440.5" y="355.0">Sinistres</tspan></text>
+<rect x="518.5" y="316.5" width="98" height="50" rx="8" fill="#fff" stroke="#b3aca0"/>
+<text text-anchor="middle" font-size="14.2" font-weight="700" fill="#17252e"><tspan x="567.5" y="346.5">Document D</tspan></text>
+<polygon points="240.0,336.2 252.5,336.2 252.5,332.0 261.0,340.5 252.5,349.0 252.5,344.8 240.0,344.8" fill="#0f5964"/>
+<text x="250.5" y="306" text-anchor="middle" font-size="12.4" font-style="italic" fill="#0f5964">membre de</text>
+<polygon points="367.0,336.2 379.5,336.2 379.5,332.0 388.0,340.5 379.5,349.0 379.5,344.8 367.0,344.8" fill="#0f5964"/>
+<text x="377.5" y="306" text-anchor="middle" font-size="12.4" font-style="italic" fill="#0f5964">propriétaire de</text>
+<polygon points="493.0,336.2 505.5,336.2 505.5,332.0 514.0,340.5 505.5,349.0 505.5,344.8 493.0,344.8" fill="#0f5964"/>
+<text x="503.5" y="306" text-anchor="middle" font-size="12.4" font-style="italic" fill="#0f5964">contient</text>
+<text x="147" y="399.0" font-size="15.1" xml:space="preserve"><tspan font-weight="700">Marie peut-elle lire le document D ?</tspan><tspan> Oui : elle est membre de</tspan></text>
+<text x="147" y="417.6" font-size="15.1" xml:space="preserve"><tspan>l'équipe, qui possède le dossier, qui contient D. Trois liens, une</tspan></text>
+<text x="147" y="436.2" font-size="15.1" xml:space="preserve"><tspan>décision.</tspan></text>
+<text x="147" y="461.8" font-size="15.1" xml:space="preserve"><tspan font-weight="700">Pourquoi c'est utile :</tspan><tspan> un nouveau document dans le dossier est</tspan></text>
+<text x="147" y="480.4" font-size="15.1" xml:space="preserve"><tspan>aussitôt lisible par toute l'équipe, sans toucher à aucun rôle. En</tspan></text>
+<text x="147" y="499.0" font-size="15.1" xml:space="preserve"><tspan>RBAC, il faudrait un rôle par dossier.</tspan></text>
+<text x="147" y="524.6" font-size="15.1" xml:space="preserve"><tspan font-weight="700">Produits :</tspan><tspan> Google Zanzibar (Drive, YouTube), OpenFGA, SpiceDB.</tspan></text>
+<rect x="656" y="181" width="496" height="359" rx="10" fill="#e4efed"/>
+<text x="675" y="218" font-size="21.3" font-weight="700" fill="#0f5964">PBAC : la règle sort du code</text>
+<text text-anchor="start" font-size="16.9" font-style="italic" fill="#5c6b73"><tspan x="675" y="252.0">L'application pose la question à un moteur de règles, qui</tspan><tspan x="675" y="272.5">répond oui ou non.</tspan></text>
+<rect x="675.5" y="303.5" width="165" height="52" rx="8" fill="#fff" stroke="#b3aca0"/>
+<text x="758" y="327" text-anchor="middle" font-size="15.1" font-weight="700">Application</text>
+<text x="758" y="344" text-anchor="middle" font-size="12.4" fill="#5c6b73">point d'application (PEP)</text>
+<polygon points="851.0,325.0 943.0,325.0 943.0,320.0 953.0,330.0 943.0,340.0 943.0,335.0 851.0,335.0" fill="#0f5964"/>
+<text text-anchor="middle" font-size="12.4" font-style="italic" fill="#0f5964"><tspan x="903" y="279.0">« Marie peut-elle valider la</tspan><tspan x="903" y="294.0">rente 4512 ? »</tspan></text>
+<text x="904.5" y="374" text-anchor="middle" font-size="12.4" font-style="italic" fill="#0f5964">« oui » ou « non »</text>
+<rect x="964" y="303" width="166" height="53" rx="8" fill="#0f5964"/>
+<text x="1047" y="327" text-anchor="middle" font-size="15.1" font-weight="700" fill="#fff">Moteur de règles</text>
+<text x="1047" y="344" text-anchor="middle" font-size="12.4" fill="#fff">point de décision (PDP)</text>
+<text text-anchor="middle" font-size="12.4" font-style="italic" fill="#5c6b73"><tspan x="1047" y="373.0">lit les attributs (PIP) : RH,</tspan><tspan x="1047" y="388.0">annuaire, dossier</tspan></text>
+<rect x="675.5" y="400.5" width="456" height="57" rx="8" fill="#fff" stroke="#b3aca0"/>
+<text x="688" y="424" font-size="14.6" xml:space="preserve"><tspan fill="#5c6b73">La règle, écrite une fois : </tspan><tspan font-weight="700">AUTORISER si rôle = gestionnaire</tspan></text>
+<text x="688" y="443" font-size="14.6" font-weight="700">ET dossier.service = utilisateur.service ET montant &lt; 50 000</text>
+<text x="675" y="483.0" font-size="14.2" xml:space="preserve"><tspan font-weight="700">Ce que ça change :</tspan><tspan> une règle pour toutes les applications,</tspan></text>
+<text x="675" y="500.5" font-size="14.2" xml:space="preserve"><tspan>modifiable sans redéployer, testée et auditée comme du code.</tspan></text>
+<text x="675" y="523.0" font-size="14.2" xml:space="preserve"><tspan font-weight="700">Produits :</tspan><tspan> Open Policy Agent (Rego), Cedar (AWS), XACML (ancien).</tspan></text>
+</svg>

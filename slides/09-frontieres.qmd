@@ -1,0 +1,160 @@
+---
+pagetitle: "09 · Les frontières actuelles"
+footer: "[09 · Les frontières actuelles](../cours/09-frontieres.html)"
+---
+
+## Les frontières actuelles {.separateur}
+
+[09]{.numero}
+
+[Zero Trust, cloud, clients, machines, e-ID]{.sous-titre}
+
+::: {.bandeau}
+[Fil rouge :]{.fil-rouge} *Quand l'utilisateur n'est plus un employé assis derrière le pare-feu.*
+:::
+
+## Zero Trust : l'identité comme nouvelle frontière {style="--corps: 17.8px; --tete: 21.3px; --pastille: 43px;"}
+
+[Frontières actuelles]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3 style="grid-template-rows: 210fr 218fr; gap: 26px 25px;"}
+::: {.carte}
+[[1]{.pastille} Ne rien présumer]{.tete}
+
+Être dans le réseau de l'entreprise ne donne aucun droit. Un poste sur le réseau interne n'est pas plus fiable qu'un poste sur Internet.
+:::
+
+::: {.carte}
+[[2]{.pastille} Vérifier à chaque fois]{.tete}
+
+Chaque accès est évalué selon l'identité, l'état de l'appareil, le contexte et le niveau de risque de la session.
+:::
+
+::: {.carte}
+[[3]{.pastille} Réévaluer en continu]{.tete}
+
+La décision n'est pas prise une fois pour toutes à la connexion. Un changement de contexte doit pouvoir couper une session en cours.
+:::
+
+::: {.carte}
+[[4]{.pastille} Limiter les dégâts]{.tete}
+
+Découper le réseau en petites zones, moindre privilège, droits temporaires : limiter ce qu'une intrusion permet d'atteindre.
+:::
+
+::: {.carte .panneau}
+[Pour l'IAM, concrètement]{.tete}
+
+L'accès conditionnel devient le point de décision central. Il ne fonctionne que si les informations sur l'identité et sur l'appareil sont fiables.
+:::
+
+::: {.carte .retenir}
+[Le préalable qu'on saute toujours]{.tete}
+
+Sans annuaire d'identités propre et sans inventaire des appareils à jour, il n'y a rien sur quoi fonder une décision. Zero Trust s'achète en dernier, pas en premier.
+:::
+:::
+:::
+
+## Contrôler l'usage du cloud : CASB et SSE {style="--corps: 17.8px; --tete: 23.1px;"}
+
+[Frontières actuelles]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c2}
+::: {.carte .panneau}
+[Le problème]{.tete}
+
+- Les données sortent du réseau : SaaS, stockage en ligne, outils d'IA. Le pare-feu ne voit plus rien.
+- Applications utilisées sans l'informatique (shadow IT) : partage de fichiers, traduction en ligne, assistants IA.
+- Un compte SaaS compromis donne accès aux données depuis n'importe où, sans passer par le réseau de l'entreprise.
+:::
+
+::: {.carte .panneau .avant style="--interligne: .35em; --corps: 16.9px;"}
+[Les réponses]{.tete}
+
+- **CASB (Cloud Access Security Broker) :** un intermédiaire entre les utilisateurs et les services cloud. Il voit qui utilise quoi, applique des règles (bloquer un partage public, interdire un téléchargement sur un appareil non géré) et détecte les anomalies.
+- **SSE (Security Service Edge) :** regroupe CASB, filtrage web (SWG) et accès réseau Zero Trust (ZTNA) en un service cloud. Exemples : Netskope, Zscaler, Microsoft Defender for Cloud Apps.
+- **Lien avec l'IAM :** ces outils décident à partir de l'identité et de l'état de l'appareil fournis par l'IdP. Sans IAM propre, un CASB ne sait pas à qui il parle.
+:::
+:::
+
+::: {.bandeau}
+Le CASB ne remplace ni la fédération ni SCIM : il contrôle l'usage des applications, il ne gère pas les comptes.
+:::
+:::
+
+## CIAM : quand l'utilisateur n'est pas un employé {style="--corps: 16.9px; --pad-cellule: 5px; --espace-lignes: 4px;"}
+
+[Frontières actuelles]{.surtitre}
+
+::: {.cadre}
+| Dimension | IAM interne (employés) | CIAM (clients, citoyens) |
+|-------------------|------------------------------|---------------------------------------------------|
+| Volume | Des milliers | Des centaines de milliers à des millions, avec des pics |
+| Création de l'identité | Par les RH, avec vérification à l'engagement | En libre-service, avec un niveau de vérification à choisir selon le risque |
+| Moyens de pression | Formation, directive interne, sanction | Aucun. Trop de contraintes = l'utilisateur abandonne |
+| Base juridique | Contrat de travail | Consentement ou intérêt légitime, à documenter et à retirer sur demande |
+| Enjeu principal | Gouvernance et preuve d'audit | Conversion, lutte contre la fraude, gestion du consentement |
+| Risque de conception | Accumulation de droits | Vol de compte et création de faux comptes en masse |
+
+::: {.bandeau}
+En CIAM, la procédure de récupération de compte est à la fois la première cause d'appels au support et la principale porte d'entrée des attaquants. Elle se conçoit avec autant de soin que l'authentification elle-même.
+:::
+:::
+
+## Les identités non humaines : le sujet du moment {style="--corps: 19.6px; --grand: 49.8px;"}
+
+[Frontières actuelles]{.surtitre}
+
+::: {.cadre style="gap: 12px;"}
+::: {.grille .c3 style="flex: 0 0 256px; gap: 32px;"}
+::: {.carte .chiffre}
+[×10 à ×50]{.grand}
+
+rapport couramment observé entre le nombre d'identités machines et le nombre d'identités humaines
+:::
+
+::: {.carte .chiffre}
+[≈ 0]{.grand}
+
+nombre de ces identités couvertes par une revue des accès dans la plupart des organisations
+:::
+
+::: {.carte .chiffre}
+[∞]{.grand}
+
+durée de vie réelle d'un secret de chaîne de déploiement que personne n'a inventorié
+:::
+:::
+
+[**Concerné :** comptes de service, jetons d'API, clés SSH, certificats, identités des conteneurs, et désormais les agents IA. **Le problème :** ces identités n'ont ni responsable désigné, ni date de fin, ni procédure de départ. Personne ne « quitte l'entreprise » à leur place. **Piste :** une identité prouvée par cryptographie et à très courte durée de vie, plutôt qu'un secret fixe dans un fichier de configuration.]{style="display: block; font-size: 17.8px; line-height: 1.3;"}
+
+::: {.bandeau}
+Cas des agents automatiques (IA) : la question n'est plus « qui est authentifié » mais « au nom de qui cet agent agit-il, et jusqu'où va sa délégation ». Les modèles d'autorisation actuels n'y répondent pas encore proprement.
+:::
+:::
+
+## Le contexte suisse : l'identité électronique (e-ID) {style="--corps: 18.7px; --tete-etape: 19.6px; --pastille: 43px; --rangs: 5;"}
+
+[Frontières actuelles]{.surtitre}
+
+::: {.cadre}
+::: {.etapes .reparties}
+1. **7 mars 2021**\
+   Le peuple rejette un premier projet, surtout parce qu'il confiait l'émission à des entreprises privées.
+2. **20 décembre 2024**\
+   Le Parlement adopte la nouvelle loi fédérale sur l'identité électronique (LeID), entièrement gérée par l'État.
+3. **28 septembre 2025**\
+   La loi est acceptée en votation populaire par 50,39 % des voix, après référendum.
+4. **21 avril 2026**\
+   Le Tribunal fédéral rejette les recours contre le scrutin. La votation est validée.
+5. **30 juin 2026**\
+   L'Office fédéral de la justice reporte le lancement (sécurité face aux deepfakes). Aucune nouvelle date fixée.
+:::
+
+::: {.bandeau}
+Pourquoi cela vous concerne : un portefeuille numérique détenu par l'utilisateur, qui présente seulement les attestations nécessaires. L'identité passe du fournisseur à la personne.
+:::
+:::

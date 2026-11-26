@@ -2,6 +2,10 @@
 title: "Gouvernance et conformité"
 subtitle: "Revues des accès, traçabilité, comptes à privilèges, normes et lois"
 categories: ["Chapitre 8"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/08-gouvernance.html
 ---
 
 ::: {.question-du-chapitre}

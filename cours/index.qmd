@@ -1,6 +1,10 @@
 ---
 title: "Le cours"
 subtitle: "Dix chapitres, une histoire : celle de Marie Dupont"
+other-links:
+  - text: "Slides de l'introduction"
+    icon: easel
+    href: ../slides/00-introduction.html
 ---
 
 ## L'identité, première porte d'entrée des attaquants

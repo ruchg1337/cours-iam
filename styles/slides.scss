@@ -1,0 +1,411 @@
+/*-- scss:defaults --*/
+
+// Même palette et mêmes polices que le site (styles/theme.scss).
+$encre:      #17252e;
+$sarcelle:   #0f5964;
+$ambre:      #c8651b;
+$papier:     #fbfaf6;
+$trait:      #e4e0d6;
+$doux:       #5c6b73;
+
+// Teintes de fond des slides, une par rôle du PowerPoint d'origine :
+// carte neutre (gris), carte mise en avant (bleu clair), bandeau (pêche).
+$fond-carte:   #f0ece3;
+$fond-avant:   #e4efed;
+$fond-bandeau: #f8e6d7;
+$fleche:       #b3aca0;
+
+$body-bg:    $papier;
+$body-color: $encre;
+$link-color: $sarcelle;
+
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$presentation-heading-font: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+$presentation-heading-color: $encre;
+$presentation-heading-font-weight: 700;
+$presentation-font-size-root: 21px;
+$presentation-line-height: 1.35;
+$presentation-h2-font-size: 46px;
+$presentation-h3-font-size: 21px;
+
+/*-- scss:rules --*/
+
+// Grille reprise du PowerPoint (1280 × 720) : marges de 128 px, surtitre à 60 px,
+// titre à 92 px, contenu de 182 px à 636 px, pied de page sous 660 px.
+.reveal .slides > section,
+.reveal .slides > section > section {
+  box-sizing: border-box;
+  height: 720px;
+  padding: 0;
+  // Tailles reprises de l'original (1 pt du PowerPoint = 1,78 px), réglables par slide :
+  // ## Titre {style="--corps: 16px"}
+  --corps: 18.7px;
+  --tete: 21.3px;
+  --pastille: 44px;
+}
+
+// Fine barre de couleur en haut de chaque slide, comme dans l'original.
+.reveal .slides > section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: $sarcelle;
+}
+
+.reveal .surtitre {
+  position: absolute;
+  top: 70px; left: 128px; right: 128px;
+  margin: 0;
+  color: $doux;
+  font-size: 14px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+}
+
+.reveal .slides section h2 {
+  position: absolute;
+  top: 104px; left: 128px; right: 128px;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.reveal .cadre {
+  position: absolute;
+  top: 182px; left: 128px; right: 128px;
+  height: 454px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 21px;
+}
+.reveal .cadre > * { margin: 0; }
+.reveal .cadre p { margin: 0; }
+
+// Bandeau du bas : la phrase à retenir.
+.reveal .bandeau {
+  margin-top: auto;
+  min-height: 79px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: $fond-bandeau;
+  border-radius: 10px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+.reveal .bandeau p { margin: 0; }
+.reveal .cadre .bandeau { font-size: 19.6px; }
+
+// Grilles de cartes
+.reveal .grille {
+  display: grid;
+  gap: 26px;
+  flex: 1;
+  min-height: 0;
+}
+.reveal .grille.c2 { grid-template-columns: repeat(2, 1fr); }
+.reveal .grille.c3 { grid-template-columns: repeat(3, 1fr); }
+
+.reveal .carte {
+  background: $fond-carte;
+  border-radius: 10px;
+  padding: var(--carte-pad, 16px 20px);
+  box-sizing: border-box;
+  min-height: 0;
+}
+.reveal .carte.avant { background: $fond-avant; }
+// En-tête de carte : pastille éventuelle et titre, sur une ligne.
+.reveal .carte .tete {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 var(--tete-marge, 12px);
+  font-weight: 700;
+  font-size: var(--tete);
+  line-height: 1.2;
+}
+.reveal .carte p:has(> .tete) { margin-bottom: var(--tete-marge, 12px); }
+.reveal .carte p { margin: 0 0 .5em; font-size: var(--corps); line-height: var(--lh, 1.3); }
+.reveal .carte > :last-child { margin-bottom: 0; }
+.reveal .carte.retenir .tete { color: $sarcelle; }
+.reveal .carte.retenir p { color: $ambre; font-weight: 700; }
+// Panneau : carte à titre de couleur, souvent avec une liste à puces.
+.reveal .carte.panneau .tete { color: $sarcelle; }
+// Carte chaude (fond pêche, titre ambre) : « Qui est Marie ? », « Acquis ».
+.reveal .carte.chaude { background: $fond-bandeau; }
+.reveal .carte.chaude .tete,
+.reveal .cadre .carte.chaude ul li::before { color: $ambre; }
+// Carte « chiffre clé » : un grand nombre, puis son explication.
+.reveal .carte.chiffre { background: $fond-avant; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+.reveal .carte.chiffre.gauche { text-align: left; justify-content: flex-start; }
+.reveal .grand {
+  display: block;
+  margin: 0 0 14px;
+  color: $sarcelle;
+  font-weight: 700;
+  font-size: var(--grand, 50px);
+  line-height: 1.1;
+}
+.reveal .etiquette { display: block; color: $doux; font-size: 14.2px; font-weight: 700; margin-bottom: 18px; }
+
+// Listes à puces du contenu : puce sarcelle, texte à la taille du corps.
+.reveal .cadre ul {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 1.15em;
+  list-style: none;
+}
+.reveal .cadre ul li {
+  position: relative;
+  margin: 0 0 var(--interligne, .55em);
+  font-size: var(--corps);
+  line-height: 1.32;
+}
+.reveal .cadre ul li:last-child { margin-bottom: 0; }
+.reveal .cadre ul li::before {
+  content: "•";
+  position: absolute;
+  left: -1.05em;
+  color: $sarcelle;
+  font-weight: 700;
+}
+.reveal .cadre li p { margin: 0; }
+.reveal .ambre, .reveal .cadre .ambre { color: $ambre; }
+.reveal .sarcelle { color: $sarcelle; }
+.reveal .doux { color: $doux; }
+
+// Étapes numérotées : liste ordonnée, chaque numéro dans une pastille.
+// .c2 range les étapes en deux colonnes, de haut en bas (--rangs étapes par colonne).
+.reveal .cadre .etapes { flex: 1; min-height: 0; }
+.reveal .cadre .etapes ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ecart, 14px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: etape;
+}
+.reveal .cadre .etapes.c2 ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--rangs, 3), auto);
+  column-gap: 40px;
+  align-content: start;
+}
+.reveal .cadre .etapes li {
+  position: relative;
+  min-height: var(--pastille);
+  margin: 0;
+  padding-left: calc(var(--pastille) + 16px);
+  font-size: var(--corps);
+  line-height: 1.32;
+  counter-increment: etape;
+}
+.reveal .cadre .etapes li::before {
+  content: counter(etape);
+  position: absolute;
+  left: 0; top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pastille); height: var(--pastille);
+  border-radius: 50%;
+  background: $sarcelle;
+  color: #fff;
+  font-weight: 700;
+  font-size: calc(var(--pastille) * .4);
+}
+.reveal .cadre .etapes li strong:first-child { font-size: var(--tete-etape, var(--corps)); }
+// Étapes réparties sur toute la hauteur du cadre (programme du cours).
+.reveal .cadre .etapes.reparties ol { height: 100%; grid-template-rows: repeat(var(--rangs, 5), 1fr); }
+// Étapes en boîtes grises (questions de reprise, sept idées).
+.reveal .cadre .etapes.boites li {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px 10px calc(var(--pastille) + 30px);
+  background: $fond-carte;
+  border-radius: 10px;
+}
+.reveal .cadre .etapes.boites li::before { left: 14px; top: 50%; transform: translateY(-50%); }
+// Étapes déjà vues (le programme de la partie 2) : en gris.
+.reveal .cadre .etapes.vus5 li:nth-child(-n+5) { color: $doux; }
+.reveal .cadre .etapes.vus5 li:nth-child(-n+5)::before { background: $fleche; }
+
+// Tableaux : en-têtes sarcelle, lignes alternées grises et blanches.
+.reveal .cadre table {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0 var(--espace-lignes, 6px);
+  font-size: var(--corps);
+  line-height: 1.28;
+}
+.reveal .cadre table th {
+  padding: 0 14px 0;
+  border: none;
+  color: $sarcelle;
+  font-size: 14.2px;
+  font-weight: 700;
+  text-align: left;
+  vertical-align: bottom;
+}
+.reveal .cadre table td {
+  padding: var(--pad-cellule, 7px) 14px;
+  border: none;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  vertical-align: middle;
+  text-align: left;
+}
+.reveal .cadre table td:first-child { font-weight: 700; border-left: 1px solid transparent; border-radius: 8px 0 0 8px; }
+.reveal .cadre table td:last-child { border-right: 1px solid transparent; border-radius: 0 8px 8px 0; }
+.reveal .cadre table tbody tr:nth-child(odd) td { background: $fond-carte; }
+.reveal .cadre table tbody tr:nth-child(even) td { background: #fff; border-color: $trait; }
+.reveal .cadre table thead tr { background: none; }
+.reveal .cadre table tbody tr { background: none; }
+
+// Pastilles de niveau dans les tableaux.
+.reveal .niveau {
+  display: inline-block;
+  min-width: 104px;
+  padding: 4px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 15.1px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+.reveal .niveau.faible { background: $ambre; }
+.reveal .niveau.moyen { background: $doux; }
+.reveal .niveau.fort { background: $sarcelle; }
+
+// Pastille ronde (lettre, chiffre ou symbole) en tête de carte.
+.reveal .pastille {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pastille); height: var(--pastille);
+  border-radius: 50%;
+  background: $sarcelle;
+  color: #fff;
+  font-family: $font-family-sans-serif;
+  font-size: calc(var(--pastille) * .41);
+  font-weight: 700;
+}
+
+// Slide de titre du cours (deck d'introduction).
+.reveal .slides section.titre-cours h2 { top: 214px; font-size: 50px; line-height: 1.2; }
+.reveal .titre-cours .auteur {
+  position: absolute;
+  top: 470px; left: 128px; right: 128px;
+  margin: 0;
+  text-align: right;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+// Slide « Qui je suis » : le nom, en grand.
+.reveal .cadre > .nom { margin: auto 0 !important; color: $sarcelle; font-size: 60px; font-weight: 700; text-align: center; }
+
+// Emplacement réservé au QR code du sondage de départ.
+.reveal .emplacement-qr {
+  width: 360px; height: 360px;
+  margin: 20px auto 0;
+  border: 2px dashed $fleche;
+  border-radius: 12px;
+}
+
+// Une idée à emporter par slide.
+.reveal .idee {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: auto 0;
+  padding: 48px 56px;
+  background: $fond-carte;
+  border-radius: 14px;
+  font-size: 36px;
+  line-height: 1.3;
+  --pastille: 96px;
+}
+.reveal .idee p { margin: 0; }
+
+// Slide de consigne d'un exercice.
+.reveal .consigne { font-size: 28px; line-height: 1.4; }
+.reveal .consigne p { font-size: 28px; margin: 0 0 18px; }
+.reveal .consigne a { color: $sarcelle; text-decoration: underline; }
+
+// Slide « Questions » de la fin.
+.reveal .questions .sous-titre {
+  position: absolute;
+  top: 560px; left: 128px; right: 128px;
+  margin: 0;
+  color: $doux;
+  font-size: 21.3px;
+  text-align: center;
+}
+
+// Schémas SVG : ils occupent la largeur du cadre.
+.reveal .cadre .quarto-figure, .reveal .cadre figure, .reveal .cadre p:has(> img.schema) { margin: 0; }
+.reveal img.schema { display: block; width: 100%; height: auto; margin: 0; max-width: none; max-height: none; }
+
+// Slides de séparation (partie, chapitre)
+.reveal .slides section.separateur h2 {
+  top: 352px;
+  font-size: 50px;
+}
+.reveal .separateur .numero {
+  position: absolute;
+  top: 218px; left: 128px;
+  margin: 0;
+  color: $sarcelle;
+  font-family: $presentation-heading-font;
+  font-weight: 700;
+  font-size: 117px;
+  line-height: 1;
+}
+.reveal .separateur .sous-titre {
+  position: absolute;
+  top: 444px; left: 128px; right: 128px;
+  margin: 0;
+  color: $doux;
+  font-size: 25px;
+}
+.reveal .separateur .bandeau {
+  position: absolute;
+  top: 494px; left: 128px; right: 128px;
+  min-height: 64px;
+  font-size: 22px;
+}
+.reveal .fil-rouge { color: $ambre; font-weight: 700; font-style: normal; }
+.reveal .separateur .bandeau em { font-style: italic; }
+
+// Pied de page : titre du chapitre (lien vers le chapitre du cours) et numéro de slide.
+// Le pied de page et le numéro sont placés par rapport à la fenêtre (pas à la slide) :
+// les marges en vw reprennent les 10 % de marge latérale du PowerPoint.
+.reveal .footer {
+  box-sizing: border-box;
+  padding-left: 10vw;
+  text-align: left !important;
+  font-size: 16px;
+  color: $doux;
+}
+.reveal .footer a { color: $doux; text-decoration: none; }
+.reveal .footer a:hover { color: $sarcelle; text-decoration: underline; }
+.reveal .slide-number {
+  right: 10vw !important;
+  left: auto !important;
+  bottom: 18px !important;
+  background: transparent;
+  color: $doux;
+  font-size: 16px;
+}
+.reveal .controls { color: $sarcelle; }
+.reveal .progress { color: $ambre; height: 4px; }

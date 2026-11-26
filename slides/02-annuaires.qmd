@@ -1,0 +1,102 @@
+---
+pagetitle: "02 · Où vivent les identités"
+footer: "[02 · Où vivent les identités](../cours/02-annuaires.html)"
+---
+
+## Où vivent les identités {.separateur}
+
+[02]{.numero}
+
+[Annuaires, source de référence, consolidation]{.sous-titre}
+
+## Où vivent les identités : annuaires et référentiels {style="--corps: 16px; --pastille: 43px; --lh: 1.24; --tete-marge: 8px; --carte-pad: 12px 20px;"}
+
+[Socle technique]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3 style="grid-template-rows: 1fr 1fr; gap: 27px 25px;"}
+::: {.carte}
+[[1]{.pastille} Annuaires LDAP]{.tete}
+
+Le standard ouvert (RFC 4511), en arbre, fait pour beaucoup de lectures. OpenLDAP, 389 DS, Red Hat et Oracle Directory, eDirectory.
+:::
+
+::: {.carte}
+[[2]{.pastille} Active Directory]{.tete}
+
+L'annuaire Microsoft sur site : LDAP + Kerberos + DNS + stratégies de groupe. Le cœur de l'identité de la plupart des organisations, donc la cible préférée.
+:::
+
+::: {.carte}
+[[3]{.pastille} Annuaires et IdP cloud]{.tete}
+
+Modèle plat, API, fédération native. Entra ID, Okta Universal Directory, Google Cloud Identity, Ping, JumpCloud ; Keycloak en open source.
+:::
+
+::: {.carte}
+[[4]{.pastille} Mainframe et Unix]{.tete}
+
+RACF, ACF2, Top Secret sur IBM z/OS ; IBM i ; comptes Unix locaux. Encore le cœur des banques et assurances. Pas de standard : connecteurs IGA.
+:::
+
+::: {.carte}
+[[5]{.pastille} Comptes applicatifs]{.tete}
+
+Chaque application qui gère ses comptes dans son coin : SAP, Salesforce, bases de données, logiciels métier. Le silo à intégrer ou, à défaut, à alimenter.
+:::
+
+::: {.carte}
+[[6]{.pastille} Le logiciel RH]{.tete}
+
+Workday, SuccessFactors, Abacus, Sage : là où l'identité de Marie naît et fait foi. Pas un annuaire : la source (slide suivante).
+:::
+:::
+
+::: {.bandeau}
+Trois questions pour chaque système : fait-il foi (source) ? délègue-t-il l'authentification (intégré) ? reçoit-il seulement des comptes (alimenté) ? Intégré et alimenté ne se remplacent pas.
+:::
+:::
+
+## Source de référence et comptes orphelins {style="--corps: 21.3px; --interligne: .7em;"}
+
+[Socle technique]{.surtitre}
+
+::: {.cadre}
+- **Source de référence :** le système qui fait foi pour une information donnée. Le logiciel RH fait foi pour le nom et la date de départ.
+- **Une information, une seule source.** Dès que deux systèmes prétendent avoir raison sur le même champ, la donnée se dégrade sans que personne ne s'en rende compte.
+- **Regroupement :** construire une identité unique en rapprochant des fiches venues de plusieurs sources (RH, prestataires, étudiants).
+- **Rapprochement :** comparer régulièrement l'annuaire central avec ce qui existe vraiment dans les applications. C'est ainsi qu'on trouve les comptes orphelins.
+- **Compte orphelin :** un compte actif dans une application qui ne correspond à aucune identité connue. Le cadeau le plus fréquent laissé à un attaquant.
+
+::: {.bandeau}
+Question à se poser : dans votre organisation, quel système fait foi pour la date de départ d'un prestataire externe ? Le plus souvent, aucun.
+:::
+:::
+
+## Rassembler plusieurs sources d'identités {style="--corps: 17.8px; --tete: 23.1px;"}
+
+[Socle technique]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c2}
+::: {.carte .panneau}
+[Les approches historiques]{.tete}
+
+- **Méta-annuaire :** un logiciel copie et synchronise les données de plusieurs sources (RH, AD, bases) dans un annuaire central unique. Atout : données nettoyées et consolidées. Limite : une copie de plus à maintenir.
+- **Annuaire virtuel :** pas de copie ; une couche qui présente plusieurs sources comme un seul arbre LDAP, en temps réel. Atout : données toujours à jour. Limite : dépend de la disponibilité de chaque source.
+- **Annuaire ou base de données ?** L'annuaire est fait pour beaucoup de lectures et peu d'écritures, avec un modèle standard (LDAP) compris de toutes les applications.
+:::
+
+::: {.carte .panneau .avant}
+[Aujourd'hui]{.tete}
+
+- **L'outil IGA** joue le rôle du méta-annuaire : il regroupe les identités, applique la règle « une information, une source » et alimente les applications.
+- **L'IdP** (Entra ID, Okta, Keycloak) est l'annuaire auquel les applications se connectent par fédération. Il est alimenté par l'IGA ou par une synchronisation (par ex. Entra Connect depuis l'AD).
+- **Les applications** SaaS sont alimentées par SCIM, les anciennes par des connecteurs ou des fichiers.
+:::
+:::
+
+::: {.bandeau}
+Question à poser sur tout schéma d'architecture : où est la copie de référence des identités, et qui l'alimente ?
+:::
+:::

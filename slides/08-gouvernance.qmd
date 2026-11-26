@@ -1,0 +1,157 @@
+---
+pagetitle: "08 · Gouvernance et conformité"
+footer: "[08 · Gouvernance et conformité](../cours/08-gouvernance.html)"
+---
+
+## Gouvernance et conformité {.separateur}
+
+[08]{.numero}
+
+[Revues des accès, traçabilité, comptes à privilèges, normes et lois]{.sous-titre}
+
+::: {.bandeau}
+[Fil rouge :]{.fil-rouge} *Garder le contrôle dans la durée, et pouvoir le prouver à un auditeur.*
+:::
+
+## La revue des accès {style="--corps: 20.4px; --interligne: .6em;"}
+
+[Gouvernance]{.surtitre}
+
+::: {.cadre}
+- **Principe :** à intervalle régulier, le responsable de chaque équipe confirme ou retire les accès de ses collaborateurs.
+- **Fréquence habituelle :** une fois par an pour les accès ordinaires, tous les six ou trois mois pour les accès sensibles et administrateurs.
+- **Exigée par** ISO 27001 et la plupart des normes sectorielles, y compris la circulaire FINMA sur les risques opérationnels pour les banques et assurances.
+- **Le piège :** présenter à un responsable 400 lignes de rôles techniques dont il ne comprend pas le nom. Il validera tout, et la revue ne prouvera rien.
+- **Ce qui fonctionne :** ne montrer que les écarts, traduire les rôles techniques en langage métier, et rendre le retrait aussi facile que la validation.
+- **Indicateur d'honnêteté :** le taux de retrait. Une campagne qui retire 0 % des accès n'a rien mesuré.
+
+::: {.bandeau}
+Une revue des accès n'est pas un contrôle de conformité, c'est un outil de correction. Si elle ne corrige rien, elle ne sert à rien.
+:::
+:::
+
+## Traçabilité : savoir qui a fait quoi {style="--corps: 16.9px; --tete: 19.6px; --pastille: 43px; --lh: 1.25; --tete-marge: 9px;"}
+
+[Gouvernance]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c2 style="grid-template-rows: 176fr 156fr; gap: 27px 25px;"}
+::: {.carte}
+[[1]{.pastille} Quoi journaliser]{.tete}
+
+Connexions réussies et échouées, MFA, élévations de privilèges, création, modification et suppression de comptes et de droits, approbations, changements de configuration de l'IdP.
+:::
+
+::: {.carte}
+[[2]{.pastille} Où]{.tete}
+
+Journaux de l'IdP, de l'IGA, du PAM et des applications, centralisés dans un SIEM, avec des horloges synchronisées et un format commun.
+:::
+
+::: {.carte}
+[[3]{.pastille} À quoi ça sert]{.tete}
+
+Détection (connexion depuis deux pays en dix minutes, pluie de mots de passe), investigation après incident, preuve pour l'audit : qui a approuvé quel accès, et quand.
+:::
+
+::: {.carte}
+[[4]{.pastille} Combien de temps, et qui y accède]{.tete}
+
+Durée définie (6 à 12 mois en pratique, plus si la loi l'exige), accès restreint, journaux protégés en écriture : un administrateur ne doit pas pouvoir effacer ses propres traces.
+:::
+:::
+
+::: {.bandeau}
+Un journal ne vaut que ce que vaut l'identité en amont : un compte partagé « admin » rend toute trace anonyme. C'est la quatrième question du chapitre 1 : qui a fait quoi ?
+:::
+:::
+
+## PAM : les comptes à privilèges {style="--corps: 17.8px; --tete: 19.6px; --pastille: 43px;"}
+
+[Gouvernance]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3}
+::: {.carte}
+[[1]{.pastille} Ce qui est concerné]{.tete}
+
+Administrateurs de domaine et de systèmes, comptes de service des applications, comptes d'urgence, accès des prestataires, clés d'API, secrets des chaînes de déploiement.
+
+Les comptes de service sont les plus dangereux : personne ne les surveille et leur mot de passe ne change jamais.
+:::
+
+::: {.carte}
+[[2]{.pastille} Les mécanismes]{.tete}
+
+Coffre-fort qui prête et reprend le secret, changement automatique des mots de passe, droits administrateur accordés pour une durée limitée, enregistrement des sessions d'administration, passage par un serveur bastion.
+
+Le but n'est pas d'empêcher l'administration, mais de la rendre traçable et temporaire.
+:::
+
+::: {.carte}
+[[3]{.pastille} L'objectif à atteindre]{.tete}
+
+Zéro droit administrateur permanent : en temps normal, plus aucun compte n'a de droits d'administration. Le droit est demandé, approuvé, accordé pour une fenêtre limitée, puis retiré automatiquement.
+
+Un vol d'identifiants devient alors une tentative détectable plutôt qu'un piratage silencieux.
+:::
+:::
+
+::: {.bandeau}
+Question à poser dans n'importe quelle organisation : combien de comptes ont des droits administrateur permanents, et qui les a validés ? Presque personne ne sait répondre.
+:::
+:::
+
+## Le cadre de référence : NIST SP 800-63-4 {style="--corps: 17.8px; --tete: 19.6px; --pastille: 43px;"}
+
+[Gouvernance : cadre normatif]{.surtitre}
+
+::: {.cadre}
+::: {.grille .c3}
+::: {.carte}
+[[IAL]{.pastille style="font-size: 13.3px;"} Niveau de confiance dans l'identité]{.tete}
+
+Quelle confiance dans le lien entre l'identité numérique et une vraie personne ?\
+IAL1 : informations déclarées, non vérifiées.\
+IAL2 : vérification de documents d'identité, à distance ou en personne.\
+IAL3 : vérification en personne, par quelqu'un de formé.
+:::
+
+::: {.carte}
+[[AAL]{.pastille style="font-size: 13.3px;"} Niveau de confiance dans l'authentification]{.tete}
+
+Quelle confiance dans le fait que c'est bien le titulaire qui se connecte ?\
+AAL1 : un seul facteur accepté.\
+AAL2 : deux facteurs de catégories différentes.\
+AAL3 : objet matériel résistant au phishing et impossible à copier.
+:::
+
+::: {.carte}
+[[FAL]{.pastille style="font-size: 13.3px;"} Niveau de confiance dans la fédération]{.tete}
+
+Quelle confiance dans la preuve transmise entre fournisseur d'identité et application ?\
+FAL1 : preuve signée.\
+FAL2 : preuve chiffrée pour son destinataire.\
+FAL3 : preuve supplémentaire que l'utilisateur possède une clé.
+:::
+:::
+
+::: {.bandeau}
+Les trois axes sont indépendants. Une caisse de pension peut exiger IAL2 et AAL2 pour ses assurés, et AAL3 pour ses seuls administrateurs. Nouveauté de la version 4 : le niveau se choisit par une analyse de risque documentée, pas en cochant une case.
+:::
+:::
+
+## ISO 27001 et le droit suisse {style="--corps: 16.9px; --pad-cellule: 8px;"}
+
+[Gouvernance : cadre normatif]{.surtitre}
+
+::: {.cadre}
+| Référence | Ce qu'elle exige en matière d'accès |
+|--------------------------|--------------------------------------------------------------------------|
+| ISO/IEC 27001:2022, annexe A | A.5.15 contrôle d'accès, A.5.16 gestion des identités, A.5.17 informations d'authentification, A.5.18 droits d'accès. Ces quatre mesures rendent la revue des accès obligatoire de fait. |
+| ISO/IEC 24760 | Cadre et vocabulaire de la gestion d'identité. Utile pour fixer les définitions dans un projet où chacun emploie les mots différemment. |
+| LPD révisée (Suisse, 2023) | En vigueur depuis le 1er septembre 2023. Sécurité des données par défaut, registre des traitements, annonce des violations au PFPDT. Les sanctions pénales visent les personnes physiques responsables, pas l'entreprise. |
+| RGPD (personnes dans l'UE) | Minimisation, finalité, droit d'accès et d'effacement. Impose de savoir quelles données une identité permet d'atteindre. |
+| FINMA, circulaire 2023/1 | Risques opérationnels, pour les banques et assurances suisses : gestion des accès à privilèges, séparation des tâches, contrôle des accès des tiers. |
+| NIS2 (Union européenne) | Ne s'applique pas directement en Suisse, mais arrive par la chaîne de sous-traitance : un client européen l'imposera dans le contrat. |
+:::

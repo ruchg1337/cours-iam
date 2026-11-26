@@ -2,6 +2,10 @@
 title: "L'autorisation"
 subtitle: "DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles"
 categories: ["Chapitre 4"]
+other-links:
+  - text: "Slides du chapitre"
+    icon: easel
+    href: ../slides/04-autorisation.html
 ---
 
 ::: {.question-du-chapitre}

@@ -1,0 +1,35 @@
+<script>
+// Menu des slides (touche M ou bouton en bas à gauche) : ajoute un panneau « Chapitres »
+// qui renvoie aux autres decks et au site. Quarto ne transmet pas l’option menu.custom,
+// d’où l’ajout ici, avant le chargement de reveal.js.
+(function () {
+  var decks = [["00-introduction", "Introduction"], ["01-bases", "01 · Les bases"], ["02-annuaires", "02 · Où vivent les identités"], ["03-cycle-de-vie", "03 · Le cycle de vie de l’identité"], ["04-autorisation", "04 · L’autorisation"], ["05-authentification", "05 · L’authentification"], ["06-sso-federation", "06 · SSO et fédération"], ["07-protocoles", "07 · Les protocoles"], ["08-gouvernance", "08 · Gouvernance et conformité"], ["09-frontieres", "09 · Les frontières actuelles"], ["10-projet", "10 · Mener un projet IAM"], ["11-conclusion", "Conclusion"]];
+  var ici = location.pathname.split("/").pop().replace(/\.html$/, "");
+  var li = function (href, texte, actif) {
+    return '<li class="slide-menu-item' + (actif ? ' active' : '') + '"><a href="' + href + '" style="display:block">' + texte + '</a></li>';
+  };
+  var html = '<ul class="slide-menu-items">' +
+    li("../slides.html", "Toutes les slides") + li("../index.html", "Site du cours") +
+    decks.map(function (d) { return li(d[0] + ".html", d[1], d[0] === ici); }).join("") + "</ul>";
+  var ajouter = function (config) {
+    if (config && config.menu) {
+      config.menu.custom = [{ title: "Chapitres", icon: '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>', content: html }]
+        .concat(config.menu.custom || []);
+    }
+  };
+  // reveal.js s’installe dans window.Reveal : on enveloppe initialize au passage.
+  var reveal;
+  Object.defineProperty(window, "Reveal", {
+    configurable: true,
+    get: function () { return reveal; },
+    set: function (r) {
+      reveal = r;
+      if (r && r.initialize && !r.initialize.chapitres) {
+        var init = r.initialize;
+        r.initialize = function (config) { ajouter(config); return init.apply(this, arguments); };
+        r.initialize.chapitres = true;
+      }
+    }
+  });
+})();
+</script>

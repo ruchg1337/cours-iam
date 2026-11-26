@@ -1,0 +1,104 @@
+---
+title: "Les slides"
+subtitle: "Un deck par chapitre, à projeter ou à suivre depuis son écran"
+---
+
+Chaque deck s'ouvre dans le navigateur. La flèche droite avance d'une slide, `F` passe en plein
+écran, `Échap` affiche la vue d'ensemble. Le pied de page de chaque slide renvoie au chapitre
+correspondant du cours.
+
+## Introduction
+
+::: {.cartes}
+::: {.carte}
+[00]{.num}
+
+### [Introduction](slides/00-introduction.qmd)
+Objectifs, déroulé du cours, mise en contexte, le fil rouge.
+:::
+:::
+
+## Chapitres
+
+::: {.cartes}
+::: {.carte}
+[01]{.num}
+
+### [Les bases](slides/01-bases.qmd)
+Vocabulaire, les quatre questions, la carte du domaine.
+:::
+
+::: {.carte}
+[02]{.num}
+
+### [Où vivent les identités](slides/02-annuaires.qmd)
+Annuaires, source de référence, consolidation.
+:::
+
+::: {.carte}
+[03]{.num}
+
+### [Le cycle de vie de l'identité](slides/03-cycle-de-vie.qmd)
+Création, vie, suppression.
+:::
+
+::: {.carte}
+[04]{.num}
+
+### [L'autorisation](slides/04-autorisation.qmd)
+DAC, MAC, RBAC, ABAC, ReBAC, principes, modèle de rôles.
+:::
+
+::: {.carte}
+[05]{.num}
+
+### [L'authentification](slides/05-authentification.qmd)
+Facteurs, mots de passe, MFA, passkeys, récupération de compte.
+:::
+
+::: {.carte}
+[06]{.num}
+
+### [SSO et fédération](slides/06-sso-federation.qmd)
+Une seule authentification pour toutes les applications.
+:::
+
+::: {.carte}
+[07]{.num}
+
+### [Les protocoles](slides/07-protocoles.qmd)
+SAML 2.0, OAuth 2.0, OpenID Connect, SCIM.
+:::
+
+::: {.carte}
+[08]{.num}
+
+### [Gouvernance et conformité](slides/08-gouvernance.qmd)
+Revues des accès, traçabilité, comptes à privilèges, normes et lois.
+:::
+
+::: {.carte}
+[09]{.num}
+
+### [Les frontières actuelles](slides/09-frontieres.qmd)
+Zero Trust, cloud, clients, machines, e-ID.
+:::
+
+::: {.carte}
+[10]{.num}
+
+### [Mener un projet IAM](slides/10-projet.qmd)
+Enjeux, acteurs, étapes, erreurs à éviter.
+:::
+:::
+
+## Conclusion
+
+::: {.cartes}
+::: {.carte}
+[11]{.num}
+
+### [Conclusion](slides/11-conclusion.qmd)
+Sept idées à emporter, pour aller plus loin, sources.
+:::
+:::
