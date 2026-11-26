@@ -1199,7 +1199,7 @@
     "href": "cours/07-protocoles.html#saml-2.0-léchange-étape-par-étape",
     "title": "Les protocoles",
     "section": "SAML 2.0 : l’échange, étape par étape",
-    "text": "SAML 2.0 : l’échange, étape par étape\nSAML date de 2005. Il est verbeux, fondé sur XML, et absolument partout dans les applications d’entreprise. Il n’est pas dépassé.\n\n\nL’utilisateur demande une page à l’application (le fournisseur de service). Marie ouvre Salesforce.\nL’application voit qu’il n’a pas de session et le renvoie vers le fournisseur d’identité avec une demande d’authentification. Salesforce la renvoie vers login.caisse.ch.\nLe fournisseur d’identité authentifie l’utilisateur : mot de passe, MFA, ou session déjà ouverte. Elle s’authentifie avec sa passkey.\nIl produit une « assertion » : un document XML signé qui contient l’identifiant et les attributs demandés.\nLe navigateur transmet l’assertion à l’application, en général via un formulaire envoyé automatiquement.\nL’application vérifie la signature, ouvre une session locale et applique ses propres règles d’autorisation.\n\n\nVariante : l’échange démarre depuis le portail d’entreprise. C’est plus pratique, mais l’étape 2 disparaît, et avec elle le lien entre la demande et la réponse. C’est une surface d’attaque en plus.\n\nCe qu’il faut vérifier\n\n\n\nCe que contient l’assertion\n\nIssuer : qui l’a émise.\nSubject : de qui il s’agit.\nConditions : période de validité et destinataire attendu.\nAuthnStatement : comment l’utilisateur a été authentifié, et quand.\nAttributeStatement : les attributs transmis.\nSignature : la garantie que rien n’a été modifié et que l’émetteur est le bon.\n\n\n\nErreurs classiques d’intégration\n\nSignature non vérifiée, ou vérifiée sur le message et non sur l’assertion.\nDestinataire non contrôlé : on peut réutiliser une assertion sur une autre application.\nPas de protection contre le rejeu de la même assertion.\nCertificat de signature expiré, renouvelé dans l’urgence un vendredi soir.\nDéconnexion globale jamais mise en place.\n\n\n\n\n\n\n\n\n\nImportantLa date à mettre dans un agenda\n\n\n\nLe certificat de signature du fournisseur d’identité a une date d’expiration. Le jour où il expire, toutes les applications fédérées tombent en même temps. Cette date doit être dans un agenda, pas seulement dans un fichier de configuration.",
+    "text": "SAML 2.0 : l’échange, étape par étape\nSAML date de 2005. Il est verbeux, fondé sur XML, et absolument partout dans les applications d’entreprise. Il n’est pas dépassé.\n\n\n\nLe flux SAML lancé par l’application : l’assertion signée transite par le navigateur.\n\n\n\n\nL’utilisateur demande une page à l’application (le fournisseur de service). Marie ouvre Salesforce.\nL’application voit qu’il n’a pas de session et le renvoie vers le fournisseur d’identité avec une demande d’authentification. Salesforce la renvoie vers login.caisse.ch.\nLe fournisseur d’identité authentifie l’utilisateur : mot de passe, MFA, ou session déjà ouverte. Elle s’authentifie avec sa passkey.\nIl produit une « assertion » : un document XML signé qui contient l’identifiant et les attributs demandés.\nLe navigateur transmet l’assertion à l’application, en général via un formulaire envoyé automatiquement.\nL’application vérifie la signature, ouvre une session locale et applique ses propres règles d’autorisation.\n\n\nVariante : l’échange démarre depuis le portail d’entreprise. C’est plus pratique, mais l’étape 2 disparaît, et avec elle le lien entre la demande et la réponse. C’est une surface d’attaque en plus.\n\nCe qu’il faut vérifier\n\n\n\nCe que contient l’assertion\n\nIssuer : qui l’a émise.\nSubject : de qui il s’agit.\nConditions : période de validité et destinataire attendu.\nAuthnStatement : comment l’utilisateur a été authentifié, et quand.\nAttributeStatement : les attributs transmis.\nSignature : la garantie que rien n’a été modifié et que l’émetteur est le bon.\n\n\n\nErreurs classiques d’intégration\n\nSignature non vérifiée, ou vérifiée sur le message et non sur l’assertion.\nDestinataire non contrôlé : on peut réutiliser une assertion sur une autre application.\nPas de protection contre le rejeu de la même assertion.\nCertificat de signature expiré, renouvelé dans l’urgence un vendredi soir.\nDéconnexion globale jamais mise en place.\n\n\n\n\n\n\n\n\n\nImportantLa date à mettre dans un agenda\n\n\n\nLe certificat de signature du fournisseur d’identité a une date d’expiration. Le jour où il expire, toutes les applications fédérées tombent en même temps. Cette date doit être dans un agenda, pas seulement dans un fichier de configuration.",
     "crumbs": [
       "Cours",
       "Les protocoles"
@@ -1221,7 +1221,7 @@
     "href": "cours/07-protocoles.html#openid-connect-la-couche-dauthentification",
     "title": "Les protocoles",
     "section": "OpenID Connect : la couche d’authentification",
-    "text": "OpenID Connect : la couche d’authentification\nOpenID Connect (OIDC) est une couche au-dessus d’OAuth 2.0. Trois ajouts seulement, mais ils changent tout.\n\n\n1\n\nLe jeton d’identité\nUn JWT signé qui décrit l’authentification : qui (sub), émis par qui (iss), pour quelle application (aud), quand (iat), jusqu’à quand (exp), comment (amr, acr), et avec quel code aléatoire (nonce).\nC’est ce jeton, et lui seul, que l’application doit vérifier pour identifier l’utilisateur.\n\n\n\n2\n\nLe point d’information\nUn service standard (userinfo) qui renvoie les attributs de l’utilisateur, regroupés par familles : profil, e-mail, adresse, téléphone.\nFini les correspondances d’attributs à réinventer pour chaque application.\n\n\n\n3\n\nDécouverte et clés publiques\nUn document publié à une adresse convenue décrit tous les points d’accès du fournisseur. Un second expose ses clés publiques de signature.\nL’intégration devient automatisable.\n\n\n\n\n\n\n\n\n\nImportantLa règle\n\n\n\nLe jeton d’identité authentifie l’utilisateur auprès de l’application. Le jeton d’accès autorise l’application auprès d’une API. Ne confondez jamais les deux usages.\n\n\n\nLes trois jetons et comment les vérifier\n\n\n\n\n\n\n\n\n\nJeton\nDestinataire\nRôle\nDurée de vie\n\n\n\n\nJeton d’identité (ID token)\nL’application cliente\nProuver qu’une authentification a eu lieu, et dans quel contexte\nTrès courte, usage unique à la connexion\n\n\nJeton d’accès (access token)\nL’API\nAutoriser des appels d’API dans les limites des droits accordés\nQuelques minutes à une heure\n\n\nJeton de rafraîchissement (refresh token)\nLe serveur d’autorisation\nObtenir un nouveau jeton d’accès sans se réauthentifier\nLongue, d’où la nécessité de le renouveler\n\n\n\n\nUn JWT est signé et encodé, pas chiffré. N’importe qui peut lire son contenu : n’y mettez jamais de donnée sensible ni de secret. Collez-en un sur jwt.io, tout se lit sans aucune clé.\nVérification minimale côté serveur : la signature (avec la clé publique du fournisseur), puis l’émetteur, le destinataire, la date d’expiration et, pour un jeton d’identité, le nonce.\nNe vous fiez jamais à l’en-tête du jeton pour choisir l’algorithme. C’est l’origine de la faille classique où l’algorithme est mis à « aucun » : l’attaquant forge n’importe quelle identité.\nUn jeton signé ne se révoque pas : il reste valable jusqu’à son expiration. Un collaborateur licencié à 10 h garde un jeton d’accès valable jusqu’à 11 h. D’où des durées courtes, et une vérification côté serveur quand il faut révoquer immédiatement.",
+    "text": "OpenID Connect : la couche d’authentification\nOpenID Connect (OIDC) est une couche au-dessus d’OAuth 2.0. Trois ajouts seulement, mais ils changent tout.\n\n\n\nLe flux OpenID Connect : le flux par code d’autorisation, plus le jeton d’identité.\n\n\n\n\n1\n\nLe jeton d’identité\nUn JWT signé qui décrit l’authentification : qui (sub), émis par qui (iss), pour quelle application (aud), quand (iat), jusqu’à quand (exp), comment (amr, acr), et avec quel code aléatoire (nonce).\nC’est ce jeton, et lui seul, que l’application doit vérifier pour identifier l’utilisateur.\n\n\n\n2\n\nLe point d’information\nUn service standard (userinfo) qui renvoie les attributs de l’utilisateur, regroupés par familles : profil, e-mail, adresse, téléphone.\nFini les correspondances d’attributs à réinventer pour chaque application.\n\n\n\n3\n\nDécouverte et clés publiques\nUn document publié à une adresse convenue décrit tous les points d’accès du fournisseur. Un second expose ses clés publiques de signature.\nL’intégration devient automatisable.\n\n\n\n\n\n\nAnatomie d’un jeton d’identité : en-tête, contenu, signature.\n\n\n\n\n\n\n\n\nImportantLa règle\n\n\n\nLe jeton d’identité authentifie l’utilisateur auprès de l’application. Le jeton d’accès autorise l’application auprès d’une API. Ne confondez jamais les deux usages.\n\n\n\nLes trois jetons et comment les vérifier\n\n\n\nChaque jeton a son destinataire.\n\n\n\n\n\n\n\n\n\n\n\nJeton\nDestinataire\nRôle\nDurée de vie\n\n\n\n\nJeton d’identité (ID token)\nL’application cliente\nProuver qu’une authentification a eu lieu, et dans quel contexte\nTrès courte, usage unique à la connexion\n\n\nJeton d’accès (access token)\nL’API\nAutoriser des appels d’API dans les limites des droits accordés\nQuelques minutes à une heure\n\n\nJeton de rafraîchissement (refresh token)\nLe serveur d’autorisation\nObtenir un nouveau jeton d’accès sans se réauthentifier\nLongue, d’où la nécessité de le renouveler\n\n\n\n\nUn JWT est signé et encodé, pas chiffré. N’importe qui peut lire son contenu : n’y mettez jamais de donnée sensible ni de secret. Collez-en un sur jwt.io, tout se lit sans aucune clé.\nVérification minimale côté serveur : la signature (avec la clé publique du fournisseur), puis l’émetteur, le destinataire, la date d’expiration et, pour un jeton d’identité, le nonce.\nNe vous fiez jamais à l’en-tête du jeton pour choisir l’algorithme. C’est l’origine de la faille classique où l’algorithme est mis à « aucun » : l’attaquant forge n’importe quelle identité.\nUn jeton signé ne se révoque pas : il reste valable jusqu’à son expiration. Un collaborateur licencié à 10 h garde un jeton d’accès valable jusqu’à 11 h. D’où des durées courtes, et une vérification côté serveur quand il faut révoquer immédiatement.",
     "crumbs": [
       "Cours",
       "Les protocoles"
@@ -1961,6 +1961,16 @@
     ]
   },
   {
+    "objectID": "slides/07-protocoles.html#saml-2.0-le-flux",
+    "href": "slides/07-protocoles.html#saml-2.0-le-flux",
+    "title": "Gestion des identités et des accès",
+    "section": "SAML 2.0 : le flux",
+    "text": "SAML 2.0 : le flux\nProtocoles",
+    "crumbs": [
+      "07 · Les protocoles"
+    ]
+  },
+  {
     "objectID": "slides/07-protocoles.html#saml-ce-quil-faut-vérifier",
     "href": "slides/07-protocoles.html#saml-ce-quil-faut-vérifier",
     "title": "Gestion des identités et des accès",
@@ -2006,6 +2016,36 @@
     "title": "Gestion des identités et des accès",
     "section": "OpenID Connect : la couche d’authentification",
     "text": "OpenID Connect : la couche d’authentification\nProtocoles\n\n\n\n1 Le jeton d’identité (ID token)\nUn JWT signé qui décrit l’authentification : qui (sub), émis par qui (iss), pour quelle application (aud), quand (iat), jusqu’à quand (exp), comment (amr, acr), et avec quel code aléatoire (nonce).\nC’est ce jeton, et lui seul, que l’application doit vérifier pour identifier l’utilisateur.\n\n\n2 Le point d’information (userinfo)\nUn service standard qui renvoie les attributs de l’utilisateur, regroupés par familles : profile, email, address, phone.\nFini les correspondances d’attributs à réinventer pour chaque application, qui étaient la plaie de SAML.\n\n\n3 Découverte et clés publiques\nUn document publié à une adresse convenue décrit tous les points d’accès du fournisseur ; un second expose ses clés publiques de signature.\nL’intégration devient automatisable, et le changement des clés cesse d’être une opération manuelle à risque.\n\n\n\nRègle : le jeton d’identité authentifie l’utilisateur auprès de l’application. Le jeton d’accès autorise l’application auprès d’une API. Ne jamais confondre les deux usages.",
+    "crumbs": [
+      "07 · Les protocoles"
+    ]
+  },
+  {
+    "objectID": "slides/07-protocoles.html#openid-connect-le-flux",
+    "href": "slides/07-protocoles.html#openid-connect-le-flux",
+    "title": "Gestion des identités et des accès",
+    "section": "OpenID Connect : le flux",
+    "text": "OpenID Connect : le flux\nProtocoles",
+    "crumbs": [
+      "07 · Les protocoles"
+    ]
+  },
+  {
+    "objectID": "slides/07-protocoles.html#anatomie-dun-jeton-didentité",
+    "href": "slides/07-protocoles.html#anatomie-dun-jeton-didentité",
+    "title": "Gestion des identités et des accès",
+    "section": "Anatomie d’un jeton d’identité",
+    "text": "Anatomie d’un jeton d’identité\nProtocoles",
+    "crumbs": [
+      "07 · Les protocoles"
+    ]
+  },
+  {
+    "objectID": "slides/07-protocoles.html#chaque-jeton-a-son-destinataire",
+    "href": "slides/07-protocoles.html#chaque-jeton-a-son-destinataire",
+    "title": "Gestion des identités et des accès",
+    "section": "Chaque jeton a son destinataire",
+    "text": "Chaque jeton a son destinataire\nProtocoles",
     "crumbs": [
       "07 · Les protocoles"
     ]

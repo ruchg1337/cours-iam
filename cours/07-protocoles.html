@@ -512,6 +512,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="saml-2.0-léchange-étape-par-étape" class="level2">
 <h2 class="anchored" data-anchor-id="saml-2.0-léchange-étape-par-étape">SAML 2.0 : l’échange, étape par étape</h2>
 <p>SAML date de 2005. Il est verbeux, fondé sur XML, et absolument partout dans les applications d’entreprise. Il n’est pas dépassé.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/flux-saml.svg" class="schema img-fluid figure-img"></p>
+<figcaption>Le flux SAML lancé par l’application : l’assertion signée transite par le navigateur.</figcaption>
+</figure>
+</div>
 <div class="etapes">
 <ol type="1">
 <li><strong>L’utilisateur demande une page</strong> à l’application (le fournisseur de service). <em>Marie ouvre Salesforce.</em></li>
@@ -683,6 +689,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="openid-connect-la-couche-dauthentification" class="level2">
 <h2 class="anchored" data-anchor-id="openid-connect-la-couche-dauthentification">OpenID Connect : la couche d’authentification</h2>
 <p>OpenID Connect (OIDC) est une couche au-dessus d’OAuth 2.0. Trois ajouts seulement, mais ils changent tout.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/flux-oidc.svg" class="schema img-fluid figure-img"></p>
+<figcaption>Le flux OpenID Connect : le flux par code d’autorisation, plus le jeton d’identité.</figcaption>
+</figure>
+</div>
 <div class="cartes">
 <div class="carte">
 <p><span class="num">1</span></p>
@@ -709,6 +721,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/jeton-identite.svg" class="schema img-fluid figure-img"></p>
+<figcaption>Anatomie d’un jeton d’identité : en-tête, contenu, signature.</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -724,6 +742,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="les-trois-jetons-et-comment-les-vérifier" class="level3">
 <h3 class="anchored" data-anchor-id="les-trois-jetons-et-comment-les-vérifier">Les trois jetons et comment les vérifier</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/trois-jetons.svg" class="schema img-fluid figure-img"></p>
+<figcaption>Chaque jeton a son destinataire.</figcaption>
+</figure>
+</div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 24%">

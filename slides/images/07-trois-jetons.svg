@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 454" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" fill="#17252e">
+<title>Le jeton d'identité va du fournisseur à l'application ; le jeton d'accès de l'application à l'API ; le jeton de rafraîchissement revient au fournisseur. Jamais le jeton d'identité vers une API.</title>
+<style>text{paint-order:stroke;stroke:#fbfaf6;stroke-width:5px;stroke-linejoin:round} .n{stroke:none} .m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace}</style>
+<defs>
+<marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+<marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker>
+</defs>
+<rect x="15.0" y="2" width="250" height="44" rx="9" fill="#0f5964"/>
+<text x="140" y="30" text-anchor="middle" font-weight="700" fill="#fff" font-size="18" class="n">Fournisseur d'identité</text>
+<rect x="417.0" y="2" width="190" height="44" rx="9" fill="#f0ece3" stroke="#e4e0d6"/>
+<text x="512" y="30" text-anchor="middle" font-weight="700" font-size="18" class="n">Application</text>
+<rect x="814.0" y="2" width="140" height="44" rx="9" fill="#f0ece3" stroke="#e4e0d6"/>
+<text x="884" y="30" text-anchor="middle" font-weight="700" font-size="18" class="n">API</text>
+<line x1="140" y1="46" x2="140" y2="410" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<line x1="512" y1="46" x2="512" y2="410" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<line x1="884" y1="46" x2="884" y2="410" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<line x1="140" y1="112" x2="505" y2="112" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<rect x="241.0" y="79" width="170" height="30" rx="15" fill="#c8651b"/>
+<text x="326" y="100" text-anchor="middle" font-weight="700" fill="#fff" font-size="16.5" class="n">Jeton d'identité</text>
+<text x="326" y="140" text-anchor="middle" fill="#5c6b73" font-size="15.5">lu par l'application pour ouvrir la session</text>
+<line x1="512" y1="200" x2="877" y2="200" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<rect x="623.0" y="167" width="150" height="30" rx="15" fill="#0f5964"/>
+<text x="698" y="188" text-anchor="middle" font-weight="700" fill="#fff" font-size="16.5" class="n">Jeton d'accès</text>
+<text x="698" y="228" text-anchor="middle" fill="#5c6b73" font-size="15.5">présenté à l'API à chaque appel</text>
+<line x1="512" y1="288" x2="147" y2="288" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<rect x="206.0" y="255" width="240" height="30" rx="15" fill="#5c6b73"/>
+<text x="326" y="276" text-anchor="middle" font-weight="700" fill="#fff" font-size="16.5" class="n">Jeton de rafraîchissement</text>
+<text x="326" y="316" text-anchor="middle" fill="#5c6b73" font-size="15.5">échangé contre un nouveau jeton d'accès</text>
+<line x1="512" y1="370" x2="877" y2="370" stroke="#b3261e" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#fr)"/>
+<g stroke="#b3261e" stroke-width="3.5" stroke-linecap="round"><line x1="686" y1="358" x2="710" y2="382"/><line x1="710" y1="358" x2="686" y2="382"/></g>
+<text x="698" y="404" text-anchor="middle" font-weight="700" fill="#b3261e" font-size="17">jamais le jeton d'identité vers une API</text>
+<text x="512" y="446" text-anchor="middle" fill="#5c6b73" font-size="16">Chaque jeton a un seul destinataire : ne les confondez jamais.</text>
+</svg>
