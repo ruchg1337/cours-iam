@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <title>Gestion des identités et des accès – Conclusion</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-3dc768aa790cf8198bd83d1328164b96.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+<script>
+// Menu des slides (touche M ou bouton en bas à gauche) : ajoute un panneau « Chapitres »
+// qui renvoie aux autres decks et au site. Quarto ne transmet pas l’option menu.custom,
+// d’où l’ajout ici, avant le chargement de reveal.js.
+(function () {
+  var decks = [["00-introduction", "Introduction"], ["01-bases", "01 · Les bases"], ["02-annuaires", "02 · Où vivent les identités"], ["03-cycle-de-vie", "03 · Le cycle de vie de l’identité"], ["04-autorisation", "04 · L’autorisation"], ["05-authentification", "05 · L’authentification"], ["06-sso-federation", "06 · SSO et fédération"], ["07-protocoles", "07 · Les protocoles"], ["08-gouvernance", "08 · Gouvernance et conformité"], ["09-frontieres", "09 · Les frontières actuelles"], ["10-projet", "10 · Mener un projet IAM"], ["11-conclusion", "Conclusion"]];
+  var ici = location.pathname.split("/").pop().replace(/\.html$/, "");
+  var li = function (href, texte, actif) {
+    return '<li class="slide-menu-item' + (actif ? ' active' : '') + '"><a href="' + href + '" style="display:block">' + texte + '</a></li>';
+  };
+  var html = '<ul class="slide-menu-items">' +
+    li("../slides.html", "Toutes les slides") + li("../index.html", "Site du cours") +
+    decks.map(function (d) { return li(d[0] + ".html", d[1], d[0] === ici); }).join("") + "</ul>";
+  var ajouter = function (config) {
+    if (config && config.menu) {
+      config.menu.custom = [{ title: "Chapitres", icon: '<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>', content: html }]
+        .concat(config.menu.custom || []);
+    }
+  };
+  // reveal.js s’installe dans window.Reveal : on enveloppe initialize au passage.
+  var reveal;
+  Object.defineProperty(window, "Reveal", {
+    configurable: true,
+    get: function () { return reveal; },
+    set: function (r) {
+      reveal = r;
+      if (r && r.initialize && !r.initialize.chapitres) {
+        var init = r.initialize;
+        r.initialize = function (config) { ajouter(config); return init.apply(this, arguments); };
+        r.initialize.chapitres = true;
+      }
+    }
+  });
+})();
+</script>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="sept-idées-à-emporter" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">1</span></p>
+<p>Authentifier et autoriser sont deux décisions distinctes, souvent prises par deux systèmes différents.</p>
+</div>
+</div>
+</section>
+<section id="sept-idées-à-emporter-1" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">2</span></p>
+<p>La valeur d’un dispositif IAM pour la sécurité se mesure au délai de fermeture des accès, pas au délai d’ouverture.</p>
+</div>
+</div>
+</section>
+<section id="sept-idées-à-emporter-2" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">3</span></p>
+<p>Le changement de poste est le maillon faible du cycle de vie ; l’accumulation de droits en est la conséquence directe.</p>
+</div>
+</div>
+</section>
+<section id="sept-idées-à-emporter-3" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">4</span></p>
+<p>Aucun modèle d’autorisation ne gagne : les architectures matures combinent RBAC, ABAC et ReBAC.</p>
+</div>
+</div>
+</section>
+<section id="sept-idées-à-emporter-4" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">5</span></p>
+<p>Tous les MFA ne se valent pas. Le seul critère qui compte : la résistance au relais en temps réel.</p>
+</div>
+</div>
+</section>
+<section id="sept-idées-à-emporter-5" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">6</span></p>
+<p>La fédération sans création automatique des comptes fabrique des comptes orphelins. Il faut les deux canaux.</p>
+</div>
+</div>
+</section>
+<section id="sept-idées-à-emporter-6" class="slide level2">
+<h2>Sept idées à emporter</h2>
+<p><span class="surtitre">Synthèse</span></p>
+<div class="cadre">
+<div class="idee">
+<p><span class="pastille">7</span></p>
+<p>Le fournisseur d’identité est devenu l’élément le plus critique du système d’information.</p>
+</div>
+</div>
+</section>
+<section id="pour-aller-plus-loin" class="slide level2" style="--corps: 17.8px; --tete: 19.6px; --pastille: 43px;">
+<h2>Pour aller plus loin</h2>
+<p><span class="surtitre">Ressources</span></p>
+<div class="cadre">
+<div class="grille c3">
+<div class="carte">
+<p><span class="tete"><span class="pastille">1</span> Normes et référentiels</span></p>
+<p>NIST SP 800-63-4, Digital Identity Guidelines (2025), gratuit, quatre volumes.<br>
+ISO/IEC 27001:2022, annexe A, mesures 5.15 à 5.18.<br>
+ISO/IEC 24760, vocabulaire de la gestion d’identité.<br>
+Guides de l’ANSSI sur l’authentification multifacteur et les mots de passe.</p>
+</div>
+<div class="carte">
+<p><span class="tete"><span class="pastille">2</span> Spécifications techniques</span></p>
+<p>SAML 2.0, OASIS.<br>
+OAuth 2.0 (RFC 6749), PKCE (RFC 7636), bonnes pratiques de sécurité (RFC 9700).<br>
+OpenID Connect Core, OpenID Foundation.<br>
+SCIM 2.0 (RFC 7642, 7643, 7644).<br>
+WebAuthn niveau 2, W3C.</p>
+</div>
+<div class="carte">
+<p><span class="tete"><span class="pastille">3</span> Lectures et cours</span></p>
+<p>Wilson et Hingnikar, Solving Identity Management in Modern Applications, Apress, 2e édition.<br>
+G. Harry, IAM : concepts et état de l’art, en libre accès sur HAL.<br>
+Webinaires IAM Online d’InCommon (Internet2), archives publiques.<br>
+Article Zanzibar de Google, pour comprendre le ReBAC.</p>
+</div>
+</div>
+<div class="bandeau">
+<p>Conseil : lisez une spécification complète, une seule fois dans votre carrière. OpenID Connect Core est la plus courte et la plus rentable des trois.</p>
+</div>
+</div>
+</section>
+<section id="questions" class="slide level2 questions">
+<h2>Questions</h2>
+<p><span class="sous-titre">Merci de votre attention. Gestion des identités et des accès</span></p>
+</section>
+<section id="sources-12-normes-droit-rapports" class="slide level2" style="--corps: 14.6px; --tete: 23.1px; --interligne: .4em;">
+<h2>Sources (1/2) : normes, droit, rapports</h2>
+<p><span class="surtitre">Sources</span></p>
+<div class="cadre">
+<div class="grille c2" style="gap: 32px;">
+<div class="carte panneau">
+<p><span class="tete">Normes et cadre légal</span></p>
+<ul>
+<li>NIST SP 800-63-4, Digital Identity Guidelines, version finale, juillet 2025 (pages.nist.gov/800-63-4).</li>
+<li>NIST SP 800-207, Zero Trust Architecture, 2020.</li>
+<li>ISO/IEC 27001:2022, annexe A (5.15 à 5.18) ; ISO/IEC 24760-1:2019, vocabulaire de la gestion d’identité.</li>
+<li>ANSSI, Recommandations relatives à l’authentification multifacteur et aux mots de passe, 2021 (cyber.gouv.fr).</li>
+<li>CISA, Implementing Phishing-Resistant MFA, fiche d’octobre 2022.</li>
+<li>LPD révisée (RS 235.1), en vigueur depuis le 1er septembre 2023, et OPDo (fedlex.admin.ch).</li>
+<li>FINMA, circulaire 2023/1 Risques et résilience opérationnels, en vigueur depuis 2024.</li>
+<li>RGPD (UE) 2016/679 ; directive NIS2 (UE) 2022/2555.</li>
+<li>Loi fédérale sur l’identité électronique (LeID), votation du 28 septembre 2025 ; informations officielles sur eid.admin.ch.</li>
+</ul>
+</div>
+<div class="carte panneau avant">
+<p><span class="tete">Rapports et chiffres</span></p>
+<ul>
+<li>Verizon, 2025 Data Breach Investigations Report : abus d’identifiants premier vecteur d’entrée (22 %), 88 % des attaques web avec identifiants volés.</li>
+<li>Microsoft, Digital Defense Report 2025 (octobre 2025) : 97 % des attaques sur l’identité sont des attaques par mot de passe, +32 % au premier semestre 2025.</li>
+<li>Gartner, Forecast: Information Security, Worldwide, 2024-2030, 3Q26 (septembre 2026) et Information Security Market Current Outlook 1Q26 (mars 2026) : 247 Mrd $ de dépenses en 2026, dont 23 Mrd $ en IAM.</li>
+<li>Google, Zanzibar: Google’s Consistent, Global Authorization System, USENIX ATC 2019 (ReBAC).</li>
+<li>CyberArk, Identity Security Threat Landscape Report 2024 : ratio identités machines / humaines.</li>
+<li>Okta, Businesses at Work 2024 : nombre d’applications par organisation.</li>
+<li>Office fédéral de la justice, communiqués sur l’e-ID (avril et juin 2026).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="sources-22-spécifications-lectures-cas-réels" class="slide level2" style="--corps: 15.1px; --tete: 23.1px; --interligne: .4em;">
+<h2>Sources (2/2) : spécifications, lectures, cas réels</h2>
+<p><span class="surtitre">Sources</span></p>
+<div class="cadre">
+<div class="grille c2" style="gap: 32px;">
+<div class="carte panneau">
+<p><span class="tete">Spécifications techniques</span></p>
+<ul>
+<li>OASIS, SAML 2.0 Core et Bindings, 2005.</li>
+<li>RFC 6749 (OAuth 2.0), RFC 7636 (PKCE), RFC 9700 (OAuth 2.0 Security Best Current Practice, janvier 2025), brouillon OAuth 2.1 (draft-ietf-oauth-v2-1).</li>
+<li>RFC 7519 (JWT), RFC 8725 (JWT Best Current Practices), RFC 7662 (introspection de jeton).</li>
+<li>OpenID Connect Core 1.0 et Discovery 1.0, OpenID Foundation.</li>
+<li>RFC 7642, 7643, 7644 (SCIM 2.0).</li>
+<li>W3C, Web Authentication Level 2, 2021 ; FIDO Alliance, CTAP 2.1 et spécifications passkeys.</li>
+<li>OWASP, Password Storage Cheat Sheet et Authentication Cheat Sheet (cheatsheetseries.owasp.org).</li>
+</ul>
+</div>
+<div class="carte panneau avant">
+<p><span class="tete">Lectures et cas réels</span></p>
+<ul>
+<li>Y. Wilson et A. Hingnikar, Solving Identity Management in Modern Applications, Apress, 2e édition, 2022.</li>
+<li>G. Harry, IAM : concepts et état de l’art, en libre accès sur HAL.</li>
+<li>InCommon / Internet2, webinaires IAM Online, archives publiques.</li>
+<li>Uber, septembre 2022 : intrusion par fatigue MFA (notifications répétées), rapport public d’Uber.</li>
+<li>MGM Resorts, septembre 2023 : réinitialisation du MFA obtenue par appel au support, communiqués et presse.</li>
+<li>Okta, octobre 2023 : vol de fichiers de session (HAR) sur le portail de support, rapport d’incident d’Okta.</li>
+<li>Microsoft / Midnight Blizzard, janvier 2024 : compte de test sans MFA et abus d’application OAuth, rapport MSRC.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p><a href="../cours/a-retenir.html">Conclusion</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Menu des diapositives"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+    // Titres de slide : 46 px par défaut, réduits jusqu’à 30 px pour tenir sur une ligne
+    // dans la largeur du contenu (1024 px). La mesure se fait sur un canvas, ce qui marche
+    // aussi pour les slides qui ne sont pas affichées.
+    (function () {
+      var LARGEUR = 1024, MAX = 46, MIN = 30;
+      function ajuster() {
+        var ctx = document.createElement("canvas").getContext("2d");
+        document.querySelectorAll(".reveal .slides section:not(.separateur):not(.titre-cours):not(.questions) > h2").forEach(function (h) {
+          var style = getComputedStyle(h);
+          ctx.font = style.fontWeight + " " + MAX + "px " + style.fontFamily;
+          var largeur = ctx.measureText(h.textContent.trim()).width;
+          var taille = Math.max(MIN, Math.min(MAX, Math.floor(MAX * LARGEUR / largeur)));
+          h.style.fontSize = taille + "px";
+        });
+      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", ajuster);
+      else ajuster();
+    })();
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copié");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copié");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/ruchg1337\.github\.io\/cours-iam\/");
+          const newWindowLabel = "(opens in a new tab)";
+          const newWindowNoteId = "quarto-ext-newwindow-label";
+          // Links reference one hidden label through aria-describedby, so the
+          // announcement never changes their accessible name.
+          var describeNewWindow = (link) => {
+            if (!window.document.getElementById(newWindowNoteId)) {
+              var newWindowNote = window.document.createElement("span");
+              newWindowNote.id = newWindowNoteId;
+              newWindowNote.hidden = true;
+              newWindowNote.textContent = newWindowLabel;
+              window.document.body.appendChild(newWindowNote);
+            }
+            var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+            if (!describedBy.includes(newWindowNoteId)) {
+              describedBy.push(newWindowNoteId);
+              link.setAttribute("aria-describedby", describedBy.join(" "));
+            }
+          }
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+                // target, if specified
+                link.setAttribute("target", "_blank");
+                if (link.getAttribute("rel") === null) {
+                  link.setAttribute("rel", "noopener");
+                }
+                describeNewWindow(link);
+              if (!link.classList.contains('no-external-icon')) {
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

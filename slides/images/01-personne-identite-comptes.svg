@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="128 182 1024 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" fill="#17252e">
+  <title>Identité, compte, identifiant, attribut : la personne, son identité numérique et ses comptes</title>
+
+  <!-- La personne -->
+  <rect x="128" y="182" width="198" height="360" rx="10" fill="#f0ece3"/>
+  <text x="147" y="216" font-size="21.3" font-weight="700" fill="#0f5964">La personne</text>
+  <text font-size="16" font-style="italic" fill="#5c6b73">
+    <tspan x="147" y="246.5">L'être humain réel, en</tspan>
+    <tspan x="147" y="264.9">chair et en os</tspan>
+  </text>
+  <circle cx="227" cy="348" r="45" fill="#c8651b"/>
+  <text x="227" y="353.7" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">MD</text>
+  <text x="227" y="421.7" text-anchor="middle" font-size="19.6" font-weight="700">Marie Dupont</text>
+  <text font-size="14.2" fill="#5c6b73" text-anchor="middle">
+    <tspan x="227" y="454.9">N'existe pas dans le</tspan>
+    <tspan x="227" y="471.3">système informatique. On</tspan>
+    <tspan x="227" y="487.7">vérifie qui elle est une</tspan>
+    <tspan x="227" y="504.1">fois, à l'engagement.</tspan>
+  </text>
+
+  <polygon points="333,353 352,353 352,344 371,362 352,380 352,371 333,371" fill="#b3aca0"/>
+
+  <!-- Identité numérique -->
+  <rect x="378" y="182" width="352" height="360" rx="10" fill="#e4efed"/>
+  <text x="397" y="216" font-size="21.3" font-weight="700" fill="#0f5964">Identité numérique</text>
+  <text font-size="16" font-style="italic" fill="#5c6b73">
+    <tspan x="397" y="246.5">Sa représentation dans l'organisation. Une</tspan>
+    <tspan x="397" y="264.9">personne peut en avoir plusieurs</tspan>
+    <tspan x="397" y="283.3">(employée, assurée).</tspan>
+  </text>
+  <g font-size="16">
+    <text x="397" y="324" fill="#5c6b73">Numéro RH</text>
+    <rect x="518" y="303" width="61" height="31" rx="15.5" fill="#0f5964"/>
+    <text x="548.5" y="323.7" text-anchor="middle" font-size="15.1" font-weight="700" fill="#fff">4711</text>
+    <text x="397" y="356" fill="#5c6b73">Nom</text>
+    <text x="518" y="356" font-weight="700">Marie Dupont</text>
+    <text x="397" y="388" fill="#5c6b73">Service</text>
+    <text x="518" y="388" font-weight="700">Prestations</text>
+    <text x="397" y="420" fill="#5c6b73">Fonction</text>
+    <text x="518" y="420" font-weight="700">Gestionnaire prestations</text>
+    <text x="397" y="452" fill="#5c6b73">Responsable</text>
+    <text x="518" y="452" font-weight="700">Paul Martin</text>
+    <text x="397" y="484" fill="#5c6b73">Fin de contrat</text>
+    <text x="518" y="484" font-weight="700">aucune (CDI)</text>
+  </g>
+  <text font-size="10.7" font-style="italic" fill="#5c6b73">
+    <tspan x="397" y="514.7">Attributs d'identité : fournis par les RH (la source de référence),</tspan>
+    <tspan x="397" y="527">les mêmes dans tous les systèmes.</tspan>
+  </text>
+
+  <polygon points="736,353 755,353 755,344 774,362 755,380 755,371 736,371" fill="#b3aca0"/>
+
+  <!-- Comptes -->
+  <rect x="781" y="182" width="371" height="360" rx="10" fill="#f0ece3"/>
+  <text x="800" y="216" font-size="21.3" font-weight="700" fill="#0f5964">Comptes</text>
+  <text font-size="16" font-style="italic" fill="#5c6b73">
+    <tspan x="800" y="246.5">Les objets techniques qui agissent dans</tspan>
+    <tspan x="800" y="264.9">chaque système. Une identité en a plusieurs.</tspan>
+  </text>
+
+  <g>
+    <rect x="796" y="300" width="340" height="64" rx="10" fill="#fff" stroke="#b3aca0"/>
+    <text x="809" y="322.9" font-size="16.9" font-weight="700">Active Directory</text>
+    <rect x="1035" y="303" width="89" height="28" rx="14" fill="#0f5964"/>
+    <text x="1079.5" y="321.9" text-anchor="middle" font-size="14.2" font-weight="700" fill="#fff">mdupont</text>
+    <text x="809" y="351.3" font-size="12.4" fill="#5c6b73">actif · groupe GRP_PREST · mot de passe + passkey</text>
+  </g>
+  <g>
+    <rect x="796" y="371" width="340" height="64" rx="10" fill="#fff" stroke="#b3aca0"/>
+    <text x="809" y="394.9" font-size="16.9" font-weight="700">Messagerie</text>
+    <rect x="953" y="375" width="171" height="28" rx="14" fill="#0f5964"/>
+    <text x="1038.5" y="393.9" text-anchor="middle" font-size="14.2" font-weight="700" fill="#fff">m.dupont@caisse.ch</text>
+    <text x="809" y="423.2" font-size="15.1" fill="#5c6b73">actif · boîte 50 Go · passkey enregistrée</text>
+  </g>
+  <g>
+    <rect x="796" y="443" width="340" height="64" rx="10" fill="#fff" stroke="#b3aca0"/>
+    <text x="809" y="466.9" font-size="16.9" font-weight="700">Application métier</text>
+    <rect x="1024" y="447" width="100" height="28" rx="14" fill="#0f5964"/>
+    <text x="1074" y="465.9" text-anchor="middle" font-size="14.2" font-weight="700" fill="#fff">MDUPONT</text>
+    <text x="809" y="494.9" font-size="14.2" fill="#5c6b73">actif · rôle PREST_VALIDER · dernier accès hier</text>
+  </g>
+  <text x="800" y="530.7" font-size="15.1" font-style="italic" fill="#5c6b73">Attributs de compte : propres à chaque système.</text>
+</svg>
