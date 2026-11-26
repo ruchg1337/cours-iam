@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 454" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" fill="#17252e">
+<title>Jeton d'identité : en-tête (algorithme et clé), contenu (iss, sub, aud, iat, exp, amr, nonce), signature vérifiée avec la clé publique du fournisseur. Encodé, pas chiffré.</title>
+<style>text{paint-order:stroke;stroke:#fbfaf6;stroke-width:5px;stroke-linejoin:round} .n{stroke:none} .m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace}</style>
+<defs>
+<marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+<marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker>
+</defs>
+<rect x="0" y="2" width="1024" height="44" rx="8" fill="#f0ece3" stroke="#e4e0d6"/>
+<text x="16" y="31" class="m n" font-size="16"><tspan fill="#b3261e">eyJhbGciOiJSUzI1NiIsImtpZCI6IjIwMjYifQ</tspan>.<tspan fill="#0f5964">eyJpc3MiOiJodHRwczovL2xvZ2lu…</tspan>.<tspan fill="#c8651b">SflKxwRJSMeKKF2QT4f…</tspan></text>
+<rect x="0" y="66" width="224" height="332" rx="9" fill="#fff" stroke="#b3261e" stroke-width="1.6"/>
+<path d="M0 75a9 9 0 0 1 9-9h206a9 9 0 0 1 9 9v29h-224z" fill="#b3261e"/>
+<text x="16" y="92" text-anchor="start" font-weight="700" fill="#fff" font-size="17" class="n">1 · En-tête</text>
+<text x="16" y="140" text-anchor="start" font-size="16" class="m n">{ "alg": "RS256",</text>
+<text x="16" y="164" text-anchor="start" font-size="16" class="m n">  "kid": "2026" }</text>
+<text x="16" y="206" text-anchor="start" fill="#5c6b73" font-size="15.5" class="n">algorithme de signature</text>
+<text x="16" y="226" text-anchor="start" fill="#5c6b73" font-size="15.5" class="n">et identifiant de la clé</text>
+<text x="16" y="300" text-anchor="start" font-weight="700" fill="#b3261e" font-size="15.5" class="n">Ne jamais choisir</text>
+<text x="16" y="321" text-anchor="start" font-weight="700" fill="#b3261e" font-size="15.5" class="n">l'algorithme d'après</text>
+<text x="16" y="342" text-anchor="start" font-weight="700" fill="#b3261e" font-size="15.5" class="n">l'en-tête (alg: none)</text>
+<rect x="240" y="66" width="512" height="332" rx="9" fill="#fff" stroke="#0f5964" stroke-width="1.6"/>
+<path d="M240 75a9 9 0 0 1 9-9h494a9 9 0 0 1 9 9v29h-512z" fill="#0f5964"/>
+<text x="256" y="92" text-anchor="start" font-weight="700" fill="#fff" font-size="17" class="n">2 · Contenu : les affirmations (claims)</text>
+<text x="256" y="136" text-anchor="start" font-size="16" class="m n">"iss": "https://login.caisse.ch"</text>
+<text x="736" y="136" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">émis par qui</text>
+<text x="256" y="174" text-anchor="start" font-size="16" class="m n">"sub": "4711"</text>
+<text x="736" y="174" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">qui</text>
+<text x="256" y="212" text-anchor="start" font-size="16" class="m n">"aud": "salesforce"</text>
+<text x="736" y="212" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">pour quelle application</text>
+<text x="256" y="250" text-anchor="start" font-size="16" class="m n">"iat": 1795000000</text>
+<text x="736" y="250" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">quand</text>
+<text x="256" y="288" text-anchor="start" font-size="16" class="m n">"exp": 1795000300</text>
+<text x="736" y="288" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">jusqu'à quand</text>
+<text x="256" y="326" text-anchor="start" font-size="16" class="m n">"amr": ["hwk"]</text>
+<text x="736" y="326" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">comment</text>
+<text x="256" y="364" text-anchor="start" font-size="16" class="m n">"nonce": "n-0S6_WzA2Mj"</text>
+<text x="736" y="364" text-anchor="end" fill="#5c6b73" font-size="15.5" class="n">lié à la demande</text>
+<rect x="768" y="66" width="256" height="332" rx="9" fill="#fff" stroke="#c8651b" stroke-width="1.6"/>
+<path d="M768 75a9 9 0 0 1 9-9h238a9 9 0 0 1 9 9v29h-256z" fill="#c8651b"/>
+<text x="784" y="92" text-anchor="start" font-weight="700" fill="#fff" font-size="17" class="n">3 · Signature</text>
+<text x="784" y="140" text-anchor="start" font-size="16" class="n">calculée par le fournisseur</text>
+<text x="784" y="162" text-anchor="start" font-size="16" class="n">avec sa clé privée</text>
+<text x="784" y="210" text-anchor="start" fill="#5c6b73" font-size="15.5" class="n">vérifiée par l'application</text>
+<text x="784" y="232" text-anchor="start" fill="#5c6b73" font-size="15.5" class="n">avec la clé publique</text>
+<text x="784" y="254" text-anchor="start" fill="#5c6b73" font-size="15.5" class="n">publiée (JWKS)</text>
+<text x="784" y="321" text-anchor="start" font-weight="700" font-size="15.5" class="n">Modifier le contenu</text>
+<text x="784" y="342" text-anchor="start" font-weight="700" font-size="15.5" class="n">invalide la signature.</text>
+<text x="512" y="440" text-anchor="middle" fill="#5c6b73" font-size="16">Encodé, pas chiffré : n'importe qui peut lire le contenu. Seule la signature garantit qu'il n'a pas été modifié.</text>
+</svg>

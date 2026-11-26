@@ -32,6 +32,14 @@ Variante : l'échange démarre depuis le portail d'entreprise (initié par l'IdP
 :::
 :::
 
+## SAML 2.0 : le flux
+
+[Protocoles]{.surtitre}
+
+::: {.cadre}
+![](images/07-flux-saml.svg){.schema fig-alt="Flux SAML en six étapes entre le navigateur de Marie, l'application et le fournisseur d'identité. Demande d'une page, renvoi vers le fournisseur avec une demande d'authentification, authentification, assertion XML signée, assertion transmise par le navigateur via un formulaire POST, vérification de la signature par l'application. L'application et le fournisseur ne se parlent pas directement."}
+:::
+
 ## SAML : ce qu'il faut vérifier {style="--corps: 18.7px; --tete: 23.1px;"}
 
 [Protocoles]{.surtitre}
@@ -171,6 +179,30 @@ L'intégration devient automatisable, et le changement des clés cesse d'être u
 ::: {.bandeau}
 Règle : le jeton d'identité authentifie l'utilisateur auprès de l'application. Le jeton d'accès autorise l'application auprès d'une API. Ne jamais confondre les deux usages.
 :::
+:::
+
+## OpenID Connect : le flux
+
+[Protocoles]{.surtitre}
+
+::: {.cadre}
+![](images/07-flux-oidc.svg){.schema fig-alt="Flux OpenID Connect en six étapes entre l'application et le fournisseur d'identité. Redirection avec scope openid, nonce, state et empreinte PKCE ; authentification de Marie ; code d'autorisation ; échange du code contre un jeton d'identité et un jeton d'accès ; vérification du jeton d'identité (signature, iss, aud, exp, nonce) ; appel facultatif à userinfo avec le jeton d'accès."}
+:::
+
+## Anatomie d'un jeton d'identité
+
+[Protocoles]{.surtitre}
+
+::: {.cadre}
+![](images/07-jeton-identite.svg){.schema fig-alt="Un jeton d'identité en trois parties Base64URL séparées par des points. En-tête : algorithme RS256 et identifiant de clé ; ne jamais choisir l'algorithme d'après l'en-tête. Contenu : iss, sub, aud, iat, exp, amr, nonce. Signature : calculée avec la clé privée du fournisseur, vérifiée avec sa clé publique (JWKS). Encodé, pas chiffré."}
+:::
+
+## Chaque jeton a son destinataire
+
+[Protocoles]{.surtitre}
+
+::: {.cadre}
+![](images/07-trois-jetons.svg){.schema fig-alt="Le jeton d'identité va du fournisseur à l'application ; le jeton d'accès va de l'application à l'API ; le jeton de rafraîchissement revient au fournisseur contre un nouveau jeton d'accès. Jamais le jeton d'identité vers une API."}
 :::
 
 ## Les trois jetons et comment les vérifier {style="--corps: 16.9px; --pad-cellule: 8px;"}

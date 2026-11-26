@@ -22,6 +22,8 @@ par les spécifications. Si vous êtes pressé, commencez par le
 SAML date de 2005. Il est verbeux, fondé sur XML, et absolument partout dans les applications
 d'entreprise. Il n'est pas dépassé.
 
+![Le flux SAML lancé par l'application : l'assertion signée transite par le navigateur.](../images/flux-saml.svg){.schema}
+
 ::: {.etapes}
 1. **L'utilisateur demande une page** à l'application (le fournisseur de service). *Marie ouvre
    Salesforce.*
@@ -147,6 +149,8 @@ retirer d'une intégration existante.
 OpenID Connect (OIDC) est une couche au-dessus d'OAuth 2.0. Trois ajouts seulement, mais ils
 changent tout.
 
+![Le flux OpenID Connect : le flux par code d'autorisation, plus le jeton d'identité.](../images/flux-oidc.svg){.schema}
+
 ::: {.cartes}
 ::: {.carte}
 [1]{.num}
@@ -180,12 +184,16 @@ L'intégration devient automatisable.
 :::
 :::
 
+![Anatomie d'un jeton d'identité : en-tête, contenu, signature.](../images/jeton-identite.svg){.schema}
+
 ::: {.callout-important title="La règle"}
 Le jeton d'identité authentifie l'utilisateur auprès de l'application. Le jeton d'accès autorise
 l'application auprès d'une API. Ne confondez jamais les deux usages.
 :::
 
 ### Les trois jetons et comment les vérifier
+
+![Chaque jeton a son destinataire.](../images/trois-jetons.svg){.schema}
 
 | Jeton | Destinataire | Rôle | Durée de vie |
 |------------------------|--------------------|--------------------------------|------------------------|
