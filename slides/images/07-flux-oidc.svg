@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 454" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" fill="#17252e">
+<title>Flux OpenID Connect en six étapes entre l'application et le fournisseur d'identité ; en orange, ce qu'OpenID Connect ajoute à OAuth 2.0.</title>
+<style>text{paint-order:stroke;stroke:#fbfaf6;stroke-width:5px;stroke-linejoin:round} .n{stroke:none} .m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace}</style>
+<defs>
+<marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+<marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker>
+</defs>
+<rect x="130.0" y="2" width="200" height="44" rx="9" fill="#f0ece3" stroke="#e4e0d6"/>
+<text x="230" y="30" text-anchor="middle" font-weight="700" font-size="18" class="n">Application</text>
+<rect x="640.0" y="2" width="300" height="44" rx="9" fill="#0f5964"/>
+<text x="790" y="30" text-anchor="middle" font-weight="700" fill="#fff" font-size="18" class="n">Fournisseur d'identité</text>
+<text x="510" y="30" text-anchor="middle" fill="#5c6b73" font-size="15.5" class="n">en <tspan fill="#c8651b">orange</tspan> : ajouts d'OIDC</text>
+<line x1="230" y1="46" x2="230" y2="454" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<line x1="790" y1="46" x2="790" y2="454" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<circle cx="20" cy="92" r="16" fill="#c8651b"/>
+<text x="20" y="98" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">1</text>
+<line x1="230" y1="92" x2="783" y2="92" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="510" y="82" text-anchor="middle" font-weight="700" font-size="18">Redirection avec scope=<tspan fill="#c8651b">openid</tspan></text>
+<text x="510" y="114" text-anchor="middle" fill="#5c6b73" font-size="15.5">+ <tspan fill="#c8651b">nonce</tspan>, state, empreinte PKCE</text>
+<circle cx="20" cy="158" r="16" fill="#c8651b"/>
+<text x="20" y="164" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">2</text>
+<rect x="640.0" y="131.0" width="300" height="54" rx="9" fill="#e4efed" stroke="#c9dcd9"/>
+<text x="790" y="154" text-anchor="middle" font-weight="700" font-size="18" class="n">Authentification</text>
+<text x="790" y="175" text-anchor="middle" fill="#5c6b73" font-size="15.5" class="n">passkey de Marie, consentement</text>
+<circle cx="20" cy="222" r="16" fill="#c8651b"/>
+<text x="20" y="228" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">3</text>
+<line x1="790" y1="222" x2="237" y2="222" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="510" y="212" text-anchor="middle" font-weight="700" font-size="18">Code d'autorisation</text>
+<text x="510" y="244" text-anchor="middle" fill="#5c6b73" font-size="15.5">à l'adresse de retour enregistrée</text>
+<circle cx="20" cy="290" r="16" fill="#c8651b"/>
+<text x="20" y="296" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">4</text>
+<line x1="230" y1="280" x2="783" y2="280" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<line x1="790" y1="300" x2="237" y2="300" stroke="#17252e" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<text x="510" y="270" text-anchor="middle" font-weight="700" font-size="18">Échange : code + secret PKCE</text>
+<text x="510" y="322" text-anchor="middle" fill="#5c6b73" font-size="15.5">réponse : <tspan fill="#c8651b">jeton d’identité</tspan> + jeton d'accès</text>
+<circle cx="20" cy="366" r="16" fill="#c8651b"/>
+<text x="20" y="372" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">5</text>
+<rect x="60.0" y="339.0" width="340" height="54" rx="9" fill="#e4efed" stroke="#c9dcd9"/>
+<text x="230" y="362" text-anchor="middle" font-weight="700" font-size="18" class="n">Vérification du <tspan fill="#c8651b">jeton d’identité</tspan></text>
+<text x="230" y="383" text-anchor="middle" fill="#5c6b73" font-size="15.5" class="n">signature, iss, aud, exp, nonce</text>
+<circle cx="20" cy="432" r="16" fill="#c8651b"/>
+<text x="20" y="438" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">6</text>
+<line x1="230" y1="432" x2="783" y2="432" stroke="#17252e" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#f)"/>
+<text x="510" y="422" text-anchor="middle" font-weight="700" font-size="18">Facultatif : <tspan fill="#c8651b">userinfo</tspan></text>
+<text x="612" y="450" text-anchor="middle" fill="#5c6b73" font-size="15.5">avec le jeton d'accès</text>
+</svg>

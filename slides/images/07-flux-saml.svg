@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 454" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="15.5" fill="#17252e">
+<title>Flux SAML en six étapes entre le navigateur de Marie, l'application et le fournisseur d'identité ; tout passe par le navigateur.</title>
+<style>text{paint-order:stroke;stroke:#fbfaf6;stroke-width:5px;stroke-linejoin:round} .n{stroke:none} .m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace}</style>
+<defs>
+<marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+<marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker>
+</defs>
+<rect x="35.0" y="2" width="230" height="44" rx="9" fill="#f0ece3" stroke="#e4e0d6"/>
+<text x="150" y="30" text-anchor="middle" font-weight="700" font-size="18" class="n">Navigateur de Marie</text>
+<rect x="405.0" y="2" width="230" height="44" rx="9" fill="#f0ece3" stroke="#e4e0d6"/>
+<text x="520" y="30" text-anchor="middle" font-weight="700" font-size="18" class="n">Application (SP)</text>
+<rect x="740.0" y="2" width="260" height="44" rx="9" fill="#0f5964"/>
+<text x="870" y="30" text-anchor="middle" font-weight="700" fill="#fff" font-size="18" class="n">Fournisseur d'identité</text>
+<line x1="150" y1="46" x2="150" y2="454" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<line x1="520" y1="46" x2="520" y2="454" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<line x1="870" y1="46" x2="870" y2="454" stroke="#c9c4b8" stroke-dasharray="5 5"/>
+<circle cx="20" cy="80" r="16" fill="#c8651b"/>
+<text x="20" y="86" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">1</text>
+<line x1="150" y1="80" x2="513" y2="80" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="335" y="70" text-anchor="middle" font-weight="700" font-size="18">Demande d'une page</text>
+<text x="335" y="101" text-anchor="middle" fill="#5c6b73" font-size="15.5">Marie ouvre Salesforce</text>
+<circle cx="20" cy="148" r="16" fill="#c8651b"/>
+<text x="20" y="154" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">2</text>
+<line x1="520" y1="136" x2="157" y2="136" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="335" y="126" text-anchor="middle" font-weight="700" font-size="18">Pas de session : renvoi</text>
+<line x1="150" y1="162" x2="863" y2="162" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="695" y="152" text-anchor="middle" font-weight="700" font-size="18">Demande d'authentification</text>
+<text x="695" y="184" text-anchor="middle" fill="#5c6b73" font-size="15.5">via le navigateur</text>
+<circle cx="20" cy="226" r="16" fill="#c8651b"/>
+<text x="20" y="232" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">3</text>
+<rect x="725.0" y="201.0" width="290" height="50" rx="9" fill="#e4efed" stroke="#c9dcd9"/>
+<text x="870" y="222" text-anchor="middle" font-weight="700" font-size="18" class="n">Authentification</text>
+<text x="870" y="243" text-anchor="middle" fill="#5c6b73" font-size="15.5" class="n">passkey, MFA ou session ouverte</text>
+<circle cx="20" cy="284" r="16" fill="#c8651b"/>
+<text x="20" y="290" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">4</text>
+<rect x="725.0" y="259.0" width="290" height="50" rx="9" fill="#e4efed" stroke="#c9dcd9"/>
+<text x="870" y="280" text-anchor="middle" font-weight="700" font-size="18" class="n">Assertion signée</text>
+<text x="870" y="301" text-anchor="middle" fill="#5c6b73" font-size="15.5" class="n">XML : identifiant et attributs</text>
+<circle cx="20" cy="350" r="16" fill="#c8651b"/>
+<text x="20" y="356" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">5</text>
+<line x1="870" y1="340" x2="157" y2="340" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="695" y="330" text-anchor="middle" font-weight="700" font-size="18">L'assertion repasse par le navigateur</text>
+<line x1="150" y1="362" x2="513" y2="362" stroke="#17252e" stroke-width="2" marker-end="url(#f)"/>
+<text x="335" y="384" text-anchor="middle" fill="#5c6b73" font-size="15.5">formulaire POST automatique</text>
+<circle cx="20" cy="426" r="16" fill="#c8651b"/>
+<text x="20" y="432" text-anchor="middle" font-weight="700" fill="#fff" font-size="16" class="n">6</text>
+<rect x="360.0" y="401.0" width="320" height="50" rx="9" fill="#e4efed" stroke="#c9dcd9"/>
+<text x="520" y="422" text-anchor="middle" font-weight="700" font-size="18" class="n">Vérification de la signature</text>
+<text x="520" y="443" text-anchor="middle" fill="#5c6b73" font-size="15.5" class="n">puis session locale et autorisation</text>
+</svg>

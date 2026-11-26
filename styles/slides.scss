@@ -355,11 +355,6 @@ $presentation-h3-font-size: 21px;
 // Schémas SVG : ils occupent la largeur du cadre.
 .reveal .cadre .quarto-figure, .reveal .cadre figure, .reveal .cadre p:has(> img.schema) { margin: 0; }
 .reveal img.schema { display: block; width: 100%; height: auto; margin: 0; max-width: none; max-height: none; }
-// Schéma du cours repris tel quel : toute la hauteur de la zone, sur fond blanc
-.reveal img.schema.plein {
-  width: auto; height: 454px; margin: 0 auto; box-sizing: border-box;
-  padding: 14px 20px; background: #fff; border: 1px solid var(--trait, #e4e0d6); border-radius: 10px;
-}
 
 // Slides de séparation (partie, chapitre)
 .reveal .slides section.separateur h2 {
