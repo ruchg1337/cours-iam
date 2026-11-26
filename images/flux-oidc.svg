@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#17252e">
+  <style>text{paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round} .n{stroke:none} .m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace}</style>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+    <marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker>
+  </defs>
+  <rect x="100.0" y="10" width="200" height="40" rx="8" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="200" y="35" text-anchor="middle" font-weight="700">Application</text>
+  <rect x="480.0" y="10" width="260" height="40" rx="8" fill="#0f5964"/>
+  <text x="610" y="35" text-anchor="middle" font-weight="700" fill="#fff" class="n">Fournisseur d'identité (OpenID)</text>
+  <line x1="200" y1="50" x2="200" y2="445" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <line x1="610" y1="50" x2="610" y2="445" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <circle cx="24" cy="98" r="12" fill="#c8651b"/><text x="24" y="103" text-anchor="middle" fill="#fff" font-weight="700" class="n">1</text>
+  <line x1="200" y1="98" x2="604" y2="98" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="405" y="88" text-anchor="middle" font-weight="700">Redirection avec scope=<tspan fill="#c8651b" font-weight="700">openid</tspan></text>
+  <text x="405" y="116" text-anchor="middle" fill="#5c6b73" font-size="12">plus <tspan fill="#c8651b" font-weight="700">nonce</tspan>, state et empreinte PKCE</text>
+  <circle cx="24" cy="164" r="12" fill="#c8651b"/><text x="24" y="169" text-anchor="middle" fill="#fff" font-weight="700" class="n">2</text>
+  <rect x="460.0" y="142.0" width="300" height="44" rx="8" fill="#eef4f3" stroke="#cfe0de"/>
+  <text x="610" y="161" text-anchor="middle" font-weight="700" class="n">Authentification</text>
+  <text x="610" y="177" text-anchor="middle" fill="#5c6b73" font-size="12" class="n">Marie s'authentifie (passkey) et consent si besoin</text>
+  <circle cx="24" cy="230" r="12" fill="#c8651b"/><text x="24" y="235" text-anchor="middle" fill="#fff" font-weight="700" class="n">3</text>
+  <line x1="610" y1="230" x2="206" y2="230" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="405" y="220" text-anchor="middle" font-weight="700">Code d'autorisation</text>
+  <text x="405" y="248" text-anchor="middle" fill="#5c6b73" font-size="12">à usage unique, à l'adresse de retour enregistrée</text>
+  <circle cx="24" cy="300" r="12" fill="#c8651b"/><text x="24" y="305" text-anchor="middle" fill="#fff" font-weight="700" class="n">4</text>
+  <line x1="200" y1="292" x2="604" y2="292" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <line x1="610" y1="308" x2="206" y2="308" stroke="#17252e" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#f)"/>
+  <text x="405" y="282" text-anchor="middle" font-weight="700">Échange : code + secret PKCE</text>
+  <text x="405" y="328" text-anchor="middle" fill="#5c6b73" font-size="12">réponse : <tspan fill="#c8651b" font-weight="700">jeton d’identité</tspan> + jeton d'accès</text>
+  <circle cx="24" cy="372" r="12" fill="#c8651b"/><text x="24" y="377" text-anchor="middle" fill="#fff" font-weight="700" class="n">5</text>
+  <rect x="50.0" y="350.0" width="300" height="44" rx="8" fill="#eef4f3" stroke="#cfe0de"/>
+  <text x="200" y="369" text-anchor="middle" font-weight="700" class="n">Vérification du <tspan fill="#c8651b" font-weight="700">jeton d’identité</tspan></text>
+  <text x="200" y="385" text-anchor="middle" fill="#5c6b73" font-size="12" class="n">signature, iss, aud, exp, nonce : session ouverte</text>
+  <circle cx="24" cy="430" r="12" fill="#c8651b"/><text x="24" y="435" text-anchor="middle" fill="#fff" font-weight="700" class="n">6</text>
+  <line x1="200" y1="430" x2="604" y2="430" stroke="#17252e" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#f)"/>
+  <text x="405" y="420" text-anchor="middle" font-weight="700">Facultatif : <tspan fill="#c8651b" font-weight="700">userinfo</tspan></text>
+  <text x="462" y="448" text-anchor="middle" fill="#5c6b73" font-size="12">avec le jeton d'accès, pour d'autres attributs</text>
+  <text x="400" y="485" text-anchor="middle" fill="#5c6b73" font-size="12.5">En <tspan fill="#c8651b" font-weight="700">orange</tspan> : ce qu'OpenID Connect ajoute au flux OAuth 2.0 par code d'autorisation.</text>
+</svg>

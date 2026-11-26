@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#17252e">
+  <style>text{paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round} .n{stroke:none} .m{font-family:ui-monospace, 'SF Mono', Menlo, Consolas, monospace}</style>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#17252e"/></marker>
+    <marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b3261e"/></marker>
+  </defs>
+  <rect x="25.0" y="10" width="170" height="40" rx="8" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="110" y="35" text-anchor="middle" font-weight="700">Navigateur de Marie</text>
+  <rect x="290.0" y="10" width="200" height="40" rx="8" fill="#fbfaf6" stroke="#e4e0d6"/>
+  <text x="390" y="35" text-anchor="middle" font-weight="700">Application (SP)</text>
+  <rect x="560.0" y="10" width="220" height="40" rx="8" fill="#0f5964"/>
+  <text x="670" y="35" text-anchor="middle" font-weight="700" fill="#fff" class="n">Fournisseur d'identité</text>
+  <line x1="110" y1="50" x2="110" y2="470" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <line x1="390" y1="50" x2="390" y2="470" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <line x1="670" y1="50" x2="670" y2="470" stroke="#c9c4b8" stroke-dasharray="4 4"/>
+  <circle cx="24" cy="95" r="12" fill="#c8651b"/><text x="24" y="100" text-anchor="middle" fill="#fff" font-weight="700" class="n">1</text>
+  <line x1="110" y1="95" x2="384" y2="95" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="250" y="85" text-anchor="middle" font-weight="700">Demande d'une page</text>
+  <text x="250" y="113" text-anchor="middle" fill="#5c6b73" font-size="12">Marie ouvre Salesforce</text>
+  <circle cx="24" cy="163" r="12" fill="#c8651b"/><text x="24" y="168" text-anchor="middle" fill="#fff" font-weight="700" class="n">2</text>
+  <line x1="390" y1="150" x2="116" y2="150" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <line x1="110" y1="176" x2="664" y2="176" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="250" y="140" text-anchor="middle" font-weight="700">Pas de session : renvoi</text>
+  <text x="530" y="166" text-anchor="middle" font-weight="700">Demande d'authentification</text>
+  <text x="530" y="194" text-anchor="middle" fill="#5c6b73" font-size="12">AuthnRequest, via le navigateur</text>
+  <circle cx="24" cy="245" r="12" fill="#c8651b"/><text x="24" y="250" text-anchor="middle" fill="#fff" font-weight="700" class="n">3</text>
+  <rect x="545.0" y="223.0" width="250" height="44" rx="8" fill="#eef4f3" stroke="#cfe0de"/>
+  <text x="670" y="242" text-anchor="middle" font-weight="700" class="n">Authentification</text>
+  <text x="670" y="258" text-anchor="middle" fill="#5c6b73" font-size="12" class="n">passkey, MFA ou session déjà ouverte</text>
+  <circle cx="24" cy="305" r="12" fill="#c8651b"/><text x="24" y="310" text-anchor="middle" fill="#fff" font-weight="700" class="n">4</text>
+  <rect x="545.0" y="283.0" width="250" height="44" rx="8" fill="#eef4f3" stroke="#cfe0de"/>
+  <text x="670" y="302" text-anchor="middle" font-weight="700" class="n">Assertion signée</text>
+  <text x="670" y="318" text-anchor="middle" fill="#5c6b73" font-size="12" class="n">document XML : identifiant et attributs</text>
+  <circle cx="24" cy="373" r="12" fill="#c8651b"/><text x="24" y="378" text-anchor="middle" fill="#fff" font-weight="700" class="n">5</text>
+  <line x1="670" y1="360" x2="116" y2="360" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <line x1="110" y1="386" x2="384" y2="386" stroke="#17252e" stroke-width="1.6" marker-end="url(#f)"/>
+  <text x="530" y="350" text-anchor="middle" font-weight="700">L'assertion repasse par le navigateur</text>
+  <text x="250" y="404" text-anchor="middle" fill="#5c6b73" font-size="12">formulaire envoyé automatiquement (POST)</text>
+  <circle cx="24" cy="445" r="12" fill="#c8651b"/><text x="24" y="450" text-anchor="middle" fill="#fff" font-weight="700" class="n">6</text>
+  <rect x="260.0" y="423.0" width="260" height="44" rx="8" fill="#eef4f3" stroke="#cfe0de"/>
+  <text x="390" y="442" text-anchor="middle" font-weight="700" class="n">Vérification de la signature</text>
+  <text x="390" y="458" text-anchor="middle" fill="#5c6b73" font-size="12" class="n">puis session locale et autorisation propre</text>
+  <text x="400" y="505" text-anchor="middle" fill="#5c6b73" font-size="12.5">Dans ce flux, l'application et le fournisseur d'identité ne se parlent pas directement : tout passe par le navigateur.</text>
+</svg>
